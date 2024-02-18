@@ -38,7 +38,7 @@ Config = {
     MoneyInventoryItemName = nil, -- name of the money inventory item, set to nil, if you don't want to use inventory item as the money
     UseOnlyMoney = false, -- set to true if you wanna disable using casino chips and use money instead
     ExchangeRate = 1, -- set value of one casino chip, for example, set to 5, if 1 chip equals to 5$ (minimum: 0.1, rounded by 0.1, 0.5 or 1)
-    ChipsInventoryItem = "casino_chips",
+    ChipsInventoryItem = "casinochips",
     UseBankMoney = false, -- cash or bank?
     DailyWidthdrawLimit = 50000, -- how much money can player withdraw from the cashier per day (24 hours), set to 0 to disable
 
@@ -146,7 +146,7 @@ Config = {
     -- Society
     -- ⚠️ In order to make society work, please follow these instructions: https://documentation.rcore.cz/paid-resources/rcore_casino/society
     EnableSociety = true, -- whether to enable society account
-    SocietyName = "society_casino",
+    SocietyName = "casino",
     SocietyLimitFromBalance = 10000, -- if society account has less money than this, it will start paying out reduced money, (SocietyLimitPayoutPercentage)
     SocietyLimitPayoutPercentage = 35, -- example: if SocietyLimitPayoutPercentage is 35%, and SocietyLimitFromBalance is 10000 => 1000 payout at the Cashier will be limited to 350, if the society bank account balance is less than 10 000
     -- when enabled, all casino payments (Cashier, Bar, Lucky Wheel) go through the society account, players don't get paid if there's not enough money in the 

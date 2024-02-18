@@ -1,6 +1,6 @@
 # <div align="center">RPEmotes 🏋️</div>
 
-## This is the OFFICIAL repository of RPEmotes. I am not associated with PopcornRP.
+## This is the OFFICIAL repository of RPEmotes.
 
 RPEmotes <b><i>was</b></i> a community driven FiveM emote menu allowing players to express themselves in roleplay with custom animations, countless facial expressions, walkstyles and props, inspired by [DullPear](https://github.com/andristum/dpemotes). 
 
@@ -57,6 +57,8 @@ Please troubleshoot it yourself and stay away from <b>unofficial</b> copies.
 
 * Italian 🇮🇹
 
+* Japanese 🇯🇵
+
 * Lithuanian 🇱🇹
 
 * Norwegian 🇳🇴
@@ -90,6 +92,10 @@ Languages can be selected and / or added in the config.lua.
 ---------------------------------------------------------------------------------------------------------
 
 # Features 🛠️
+
+ - Changeable Banner Font
+
+ - Changable Banner Colour
 
 - Multiple Translations 🌏
 
@@ -196,6 +202,31 @@ If you do not want to use the SQL features keep the `oxmysql` region in fxmanife
 Alternatively, you can use the keybind command that comes with FiveM without having to use SQL, by entering the following into F8:
 
 `bind keyboard "Yourbutton" "e youremote"`. To remove the keybind, type `"unbind keyboard "Yourbutton"`.
+
+---------------------------------------------------------------------------------------------------------
+
+# Menu Customization
+
+In the appropiately named `config.lua` file, server owners can set the MenuTitle or simply leave it blank. Ideally, this should be 11 characters or less without any spaces.
+You can also set the font, whether or not you want an outline and the MenuPosition. The available fonts are as followed:
+
+```lua
+    -- 0 : Chalet London
+    -- 1 : House Script
+    -- 2 : Monospace
+    -- 4 : Chalet Comprime Cologne
+    -- 7 : Pricedown
+```
+
+RPEmotes also supports custom banners (known as 'MenuImage') which can be defined by a simple imgur, giphy or discord URL like so:
+
+```lua
+MenuImage = 'https://i.imgur.com/osq2J0h.png',
+```
+
+You can find a banner template here - https://imgur.com/a/jRrVBog. Banners must be 512 x 128 pixels and can be either gif or png.
+
+
 
 ---------------------------------------------------------------------------------------------------------
 
