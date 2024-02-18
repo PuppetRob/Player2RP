@@ -8,7 +8,7 @@ $(document).ready(function () {
         if (event.data.action === "ui") {
             if (firstOpen) {
                 firstOpen = false;
-                $.post("https://sbm-multicharacter/started");
+                $.post("https://p2rp-multicharacter/started");
             }
             if (event.data.toggle) {
                 $(".loadingSection").fadeIn(300);
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 tebexLink = event.data.tebexLink;
                 setupArea(maxCount, event.data.mySlotCount);
                 setTimeout(() => {
-                    $.post("https://sbm-multicharacter/setupCharacters");
+                    $.post("https://p2rp-multicharacter/setupCharacters");
                     setTimeout(() => {
                         $(".loadingSection").fadeOut(300);
                     }, 2000);
@@ -91,7 +91,7 @@ $(document).on("click", "#createButton", function () {
         var uniqueId = $(selectedDivId).attr("data-uniqueId");
         $("#createButtonX").attr("data-clickedUnique", uniqueId);
 
-        $.post("https://sbm-multicharacter/cDataPed");
+        $.post("https://p2rp-multicharacter/cDataPed");
         $(".charInfoRight").animate({ left: "30vw" }, 200);
         $(".charCreateRight").animate({ left: "30vw" }, 0);
         setTimeout(() => {
@@ -119,7 +119,7 @@ $(document).on("click", ".sexButton", function () {
 
     var sex = $(this).attr("data-sex");
     $.post(
-        "https://sbm-multicharacter/cDataPed",
+        "https://p2rp-multicharacter/cDataPed",
         JSON.stringify({
             sex: sex,
         })
@@ -139,7 +139,7 @@ $(document).on("click", "#redeemAccept", function () {
     if (input) {
         firstOpen = true;
         $.post(
-            "https://sbm-multicharacter/sendInput",
+            "https://p2rp-multicharacter/sendInput",
             JSON.stringify({
                 inputData: input,
             }),
@@ -211,7 +211,7 @@ $(document).on("click", ".charItem", function () {
     $("#agreeDeleteButton").attr("data-charInfo", stringInfo);
     $(".charNameAgreeText").html(charInfoParse.firstname + " " + charInfoParse.lastname);
     $.post(
-        "https://sbm-multicharacter/cDataPed",
+        "https://p2rp-multicharacter/cDataPed",
         JSON.stringify({
             cData: parseInfo.citizenid,
         })
@@ -228,7 +228,7 @@ $(document).on("click", "#clickablePlay", function () {
     var cid = $(selectedDivId).attr("data-cid");
 
     $.post(
-        "https://sbm-multicharacter/selectCharacter",
+        "https://p2rp-multicharacter/selectCharacter",
         JSON.stringify({
             cData: cid,
         })
@@ -252,13 +252,13 @@ $(document).on("click", "#agreeDeleteButton", function () {
     $(".loadingSection").fadeIn(300);
     firstOpen = true;
     $.post(
-        "https://sbm-multicharacter/removeCharacter",
+        "https://p2rp-multicharacter/removeCharacter",
         JSON.stringify({
             citizenid: parseInfo.citizenid,
         })
     );
     $(".agreeDeleteSection").fadeOut(100);
-    // $.post("https://sbm-multicharacter/refreshCharacters");
+    // $.post("https://p2rp-multicharacter/refreshCharacters");
     // setTimeout(() => {
     // }, 1000);
     // $(".agreeDeleteSection").fadeOut(100);
@@ -376,7 +376,7 @@ $(document).on("click", "#createButtonX", function () {
     }
 
     $.post(
-        "https://sbm-multicharacter/createNewCharacter",
+        "https://p2rp-multicharacter/createNewCharacter",
         JSON.stringify({
             firstname: firstname,
             lastname: lastname,

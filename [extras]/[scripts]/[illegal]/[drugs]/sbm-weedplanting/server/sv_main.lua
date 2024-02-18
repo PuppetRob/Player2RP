@@ -10,7 +10,7 @@ WeedPlants = {}
 
 Citizen.CreateThread(function()
     Citizen.Wait(100)
-    if GetCurrentResourceName() == "sbm-weedplanting" then
+    if GetCurrentResourceName() == "p2rp-weedplanting" then
         local LoadJson = json.decode(LoadResourceFile(GetCurrentResourceName(), 'weedplants.json'))
         for k,v in ipairs(LoadJson) do
             v.coords = vector3(v.coords['x'], v.coords['y'], v.coords['z'])
@@ -23,13 +23,13 @@ Citizen.CreateThread(function()
     
 end)
 
-QBCore.Functions.CreateCallback('sbm-weedplanting:server:getTables', function(source, cb)
+QBCore.Functions.CreateCallback('p2rp-weedplanting:server:getTables', function(source, cb)
     local src = source
     cb(WeedPlants)
 end)
 
-RegisterServerEvent('sbm-weedplanting:server:addWeedPlant')
-AddEventHandler('sbm-weedplanting:server:addWeedPlant', function(loc, soilHash, seed, label)
+RegisterServerEvent('p2rp-weedplanting:server:addWeedPlant')
+AddEventHandler('p2rp-weedplanting:server:addWeedPlant', function(loc, soilHash, seed, label)
     local Player = QBCore.Functions.GetPlayer(source)
     local item = nil
     if Config.Soil[soilHash].ph == "acidic" then
@@ -56,24 +56,24 @@ AddEventHandler('sbm-weedplanting:server:addWeedPlant', function(loc, soilHash, 
 
             table.insert(WeedPlants, plantInfo)
             StorePlantsTable()
-            TriggerClientEvent('sbm-weedplanting:client:addWeedPlant', -1, plantInfo)
+            TriggerClientEvent('p2rp-weedplanting:client:addWeedPlant', -1, plantInfo)
         end
     end
 end)
 
-RegisterServerEvent('sbm-weedplanting:server:deleteWeedPlant')
-AddEventHandler('sbm-weedplanting:server:deleteWeedPlant', function(id, loc, action)
+RegisterServerEvent('p2rp-weedplanting:server:deleteWeedPlant')
+AddEventHandler('p2rp-weedplanting:server:deleteWeedPlant', function(id, loc, action)
     if WeedPlants[id] then
         if WeedPlants[id].coords==loc then
             table.remove(WeedPlants, id)
             StorePlantsTable()
-            TriggerClientEvent('sbm-weedplanting:client:deleteWeedPlant', -1, id, action)
+            TriggerClientEvent('p2rp-weedplanting:client:deleteWeedPlant', -1, id, action)
         else
             for k,v in ipairs(WeedPlants) do
                 if v.coords==loc then
                     table.remove(WeedPlants,k)
                     StorePlantsTable()
-                    TriggerClientEvent('sbm-weedplanting:client:deleteWeedPlant', -1, k, action)
+                    TriggerClientEvent('p2rp-weedplanting:client:deleteWeedPlant', -1, k, action)
                     return
                 end
             end
@@ -81,8 +81,8 @@ AddEventHandler('sbm-weedplanting:server:deleteWeedPlant', function(id, loc, act
     end
 end)
 
-RegisterServerEvent('sbm-weedplanting:server:updateWeedPlantHealth')
-AddEventHandler('sbm-weedplanting:server:updateWeedPlantHealth', function(id, loc)
+RegisterServerEvent('p2rp-weedplanting:server:updateWeedPlantHealth')
+AddEventHandler('p2rp-weedplanting:server:updateWeedPlantHealth', function(id, loc)
     if WeedPlants[id] then
         if WeedPlants[id].coords==loc then
             WeedPlants[id].health = WeedPlants[id].health + Config.InsecticideEffect
@@ -90,7 +90,7 @@ AddEventHandler('sbm-weedplanting:server:updateWeedPlantHealth', function(id, lo
                 WeedPlants[id].health = 100
             end
             StorePlantsTable()
-            TriggerClientEvent('sbm-weedplanting:client:updatePlantStatus', -1, WeedPlants)
+            TriggerClientEvent('p2rp-weedplanting:client:updatePlantStatus', -1, WeedPlants)
         else
             for k,v in ipairs(WeedPlants) do
                 if v.coords==loc then
@@ -99,7 +99,7 @@ AddEventHandler('sbm-weedplanting:server:updateWeedPlantHealth', function(id, lo
                         WeedPlants[k].health = 100
                     end
                     StorePlantsTable()
-                    TriggerClientEvent('sbm-weedplanting:client:updatePlantStatus', -1, WeedPlants)
+                    TriggerClientEvent('p2rp-weedplanting:client:updatePlantStatus', -1, WeedPlants)
                     return
                 end
             end
@@ -107,8 +107,8 @@ AddEventHandler('sbm-weedplanting:server:updateWeedPlantHealth', function(id, lo
     end
 end)
 
-RegisterServerEvent('sbm-weedplanting:server:updateWeedPlantWater')
-AddEventHandler('sbm-weedplanting:server:updateWeedPlantWater', function(id, loc)
+RegisterServerEvent('p2rp-weedplanting:server:updateWeedPlantWater')
+AddEventHandler('p2rp-weedplanting:server:updateWeedPlantWater', function(id, loc)
     if WeedPlants[id] then
         if WeedPlants[id].coords==loc then
             WeedPlants[id].water = WeedPlants[id].water + Config.WaterIncreaseLevel
@@ -116,7 +116,7 @@ AddEventHandler('sbm-weedplanting:server:updateWeedPlantWater', function(id, loc
                 WeedPlants[id].water = 100
             end
             StorePlantsTable()
-            TriggerClientEvent('sbm-weedplanting:client:updatePlantStatus', -1, WeedPlants)
+            TriggerClientEvent('p2rp-weedplanting:client:updatePlantStatus', -1, WeedPlants)
         else
             for k,v in ipairs(WeedPlants) do
                 if v.coords==loc then
@@ -125,7 +125,7 @@ AddEventHandler('sbm-weedplanting:server:updateWeedPlantWater', function(id, loc
                         WeedPlants[k].water = 100
                     end
                     StorePlantsTable()
-                    TriggerClientEvent('sbm-weedplanting:client:updatePlantStatus', -1, WeedPlants)
+                    TriggerClientEvent('p2rp-weedplanting:client:updatePlantStatus', -1, WeedPlants)
                     return
                 end
             end
@@ -139,7 +139,7 @@ Citizen.CreateThread(function()
     for k, v in pairs(Config.Seed) do
         QBCore.Functions.CreateUseableItem(k, function(source, item)
             local Player = QBCore.Functions.GetPlayer(source)
-            TriggerClientEvent('sbm-weedplanting:client:placeWeedPlant', source, k, v.label)
+            TriggerClientEvent('p2rp-weedplanting:client:placeWeedPlant', source, k, v.label)
         end)
     end
 end)
@@ -173,7 +173,7 @@ Citizen.CreateThread(function()
                 else
                     table.remove(WeedPlants,k)
                     StorePlantsTable()
-                    TriggerClientEvent('sbm-weedplanting:client:deleteWeedPlant', -1, k, "plant-dead")
+                    TriggerClientEvent('p2rp-weedplanting:client:deleteWeedPlant', -1, k, "plant-dead")
                 end
 
                 if v.state ~= Config.HarvestingState then
@@ -192,7 +192,7 @@ Citizen.CreateThread(function()
                 end
             end
             StorePlantsTable()
-            TriggerClientEvent('sbm-weedplanting:client:updatePlantStatus', -1, WeedPlants)
+            TriggerClientEvent('p2rp-weedplanting:client:updatePlantStatus', -1, WeedPlants)
         end
     end
 end)

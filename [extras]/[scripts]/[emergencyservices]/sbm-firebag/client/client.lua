@@ -19,7 +19,7 @@ local function spawnemsbag()
 end
 local ObjectList = {}
 
-RegisterNetEvent('sbm-firebag:Client:SpawnAmbulanceBag', function()
+RegisterNetEvent('p2rp-firebag:Client:SpawnAmbulanceBag', function()
     local hash = GetHashKey('prop_cs_shopping_bag')
     local ped = PlayerPedId()
     local x, y, z = table.unpack(GetOffsetFromEntityInWorldCoords(ped, 0.0, 3.0, 0.5))
@@ -29,16 +29,16 @@ RegisterNetEvent('sbm-firebag:Client:SpawnAmbulanceBag', function()
     AttachEntityToEntity(emsbag1, ped, GetPedBoneIndex(ped, 57005), 0.42, 0, -0.05, 0.10, 270.0, 60.0, true, true, false,
         true, 1, true)
         spawnemsbag()
-    TriggerServerEvent("sbm-firebag:Server:RemoveItem","emsbag",1)
+    TriggerServerEvent("p2rp-firebag:Server:RemoveItem","emsbag",1)
 end)
 
-RegisterNetEvent('sbm-firebag:Client:spawnLight', function()
+RegisterNetEvent('p2rp-firebag:Client:spawnLight', function()
 
-    TriggerServerEvent("sbm-firebag:Server:SpawnAmbulanceBag", "emsbag")
+    TriggerServerEvent("p2rp-firebag:Server:SpawnAmbulanceBag", "emsbag")
 end)
 
-RegisterNetEvent('sbm-firebag:Client:GuardarAmbulanceBag')
-AddEventHandler("sbm-firebag:Client:GuardarAmbulanceBag", function()
+RegisterNetEvent('p2rp-firebag:Client:GuardarAmbulanceBag')
+AddEventHandler("p2rp-firebag:Client:GuardarAmbulanceBag", function()
     local x, y, z = table.unpack(GetEntityCoords(PlayerPedId(), true))
     local playerPedPos = GetEntityCoords(PlayerPedId(), true)
     local AmbulanceBag = GetClosestObjectOfType(playerPedPos, 10.0, GetHashKey("prop_cs_shopping_bag"), false, false, false)
@@ -49,11 +49,11 @@ AddEventHandler("sbm-firebag:Client:GuardarAmbulanceBag", function()
     Notify("Ems Bag Taken Back with success.")
     SetEntityAsMissionEntity(AmbulanceBag, 1, 1)
     DeleteObject(AmbulanceBag)
-    TriggerServerEvent("sbm-firebag:Server:AddItem","emsbag",1)
+    TriggerServerEvent("p2rp-firebag:Server:AddItem","emsbag",1)
 end)
 
 local citizenid = nil
-AddEventHandler("sbm-firebag:Client:StorageAmbulanceBag", function()
+AddEventHandler("p2rp-firebag:Client:StorageAmbulanceBag", function()
     local charinfo = QBCore.Functions.GetPlayerData().charinfo
     citizenid = QBCore.Functions.GetPlayerData().citizenid
     TriggerEvent("inventory:client:SetCurrentStash", "Ambulance Bag",citizenid)
@@ -68,5 +68,5 @@ local AmbulanceBags = {
 }
 
 exports['qb-target']:AddTargetModel(AmbulanceBags, {
-    options = {{event   = "sbm-firebag:Client:MenuAmbulanceBag",icon    = "fa-solid fa-suitcase-medical",label   = "Fire Bag" , job = Config.Bag.Job },
-    {event   = "sbm-firebag:Client:GuardarAmbulanceBag",icon    = "fa-solid fa-suitcase-medical",label   = "Take Back Fire Bag" , job = Config.Bag.Job },},distance = 2.0 })
+    options = {{event   = "p2rp-firebag:Client:MenuAmbulanceBag",icon    = "fa-solid fa-suitcase-medical",label   = "Fire Bag" , job = Config.Bag.Job },
+    {event   = "p2rp-firebag:Client:GuardarAmbulanceBag",icon    = "fa-solid fa-suitcase-medical",label   = "Take Back Fire Bag" , job = Config.Bag.Job },},distance = 2.0 })

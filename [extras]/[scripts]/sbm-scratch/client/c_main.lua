@@ -1,10 +1,10 @@
 local cooldown = 0
 
-RegisterNetEvent("sbm-scratch:isActiveCooldown", function()
-	TriggerServerEvent("sbm-scratch:handler", cooldown > 0 and true or false, cooldown)
+RegisterNetEvent("p2rp-scratch:isActiveCooldown", function()
+	TriggerServerEvent("p2rp-scratch:handler", cooldown > 0 and true or false, cooldown)
 end)
 
-RegisterNetEvent("sbm-scratch:setCooldown", function()
+RegisterNetEvent("p2rp-scratch:setCooldown", function()
   cooldown = Config.ScratchCooldownInSeconds
 	CreateThread(function()
 		while (cooldown ~= 0) do
@@ -14,14 +14,14 @@ RegisterNetEvent("sbm-scratch:setCooldown", function()
 	end)
 end)
 
-RegisterNetEvent("sbm-scratch:startScratchingEmote", function()
+RegisterNetEvent("p2rp-scratch:startScratchingEmote", function()
 	TaskStartScenarioInPlace(GetPlayerPed(-1), "PROP_HUMAN_PARKING_METER", 0, true)
 end)
 
-RegisterNetEvent("sbm-scratch:stopScratchingEmote", function()
+RegisterNetEvent("p2rp-scratch:stopScratchingEmote", function()
 	ClearPedTasksImmediately(GetPlayerPed(-1))
 end)
 
 RegisterNUICallback('deposit', function(data)
-	TriggerServerEvent('sbm-scratch:deposit', data.key, data.price, data.amount, data.type)
+	TriggerServerEvent('p2rp-scratch:deposit', data.key, data.price, data.amount, data.type)
 end)

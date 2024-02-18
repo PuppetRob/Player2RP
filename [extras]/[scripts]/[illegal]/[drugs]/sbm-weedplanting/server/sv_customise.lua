@@ -13,7 +13,7 @@ function ShowNotification(source, msg, type)
     end
 end
 
-RegisterServerEvent("sbm-weedplanting:server:removeItem", function(itemName)
+RegisterServerEvent("p2rp-weedplanting:server:removeItem", function(itemName)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.Functions.RemoveItem(itemName, 1) then
@@ -23,7 +23,7 @@ RegisterServerEvent("sbm-weedplanting:server:removeItem", function(itemName)
     end
 end)
 
-QBCore.Functions.CreateCallback("sbm-weedplanting:server:hasItem", function(source, cb, item)
+QBCore.Functions.CreateCallback("p2rp-weedplanting:server:hasItem", function(source, cb, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local retval = false
@@ -33,8 +33,8 @@ QBCore.Functions.CreateCallback("sbm-weedplanting:server:hasItem", function(sour
     cb(retval)
 end)
 
-RegisterServerEvent('sbm-weedplanting:server:harvestWeed')
-AddEventHandler('sbm-weedplanting:server:harvestWeed', function(id, loc)
+RegisterServerEvent('p2rp-weedplanting:server:harvestWeed')
+AddEventHandler('p2rp-weedplanting:server:harvestWeed', function(id, loc)
     local source = source
     local Player = QBCore.Functions.GetPlayer(source)
     local received = true
@@ -59,7 +59,7 @@ AddEventHandler('sbm-weedplanting:server:harvestWeed', function(id, loc)
         if received then
             table.remove(WeedPlants, id)
             StorePlantsTable()
-            TriggerClientEvent('sbm-weedplanting:client:deleteWeedPlant', -1, id, "harvested")
+            TriggerClientEvent('p2rp-weedplanting:client:deleteWeedPlant', -1, id, "harvested")
         else
             for k, v in pairs(addedItems) do
                 Player.Functions.RemoveItem(v.item, v.amount)

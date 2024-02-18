@@ -55,10 +55,10 @@ end ]]
 local function CutIron(point)
     local ped = PlayerPedId()
     local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
-    QBCore.Functions.TriggerCallback('sbm-welding:server:HasItems', function(result)
+    QBCore.Functions.TriggerCallback('p2rp-welding:server:HasItems', function(result)
         if result then
-            TriggerServerEvent('sbm-welding:server:RemoveItem', point)
-                TriggerServerEvent('sbm-welding:server:SetBusyState', point, true)
+            TriggerServerEvent('p2rp-welding:server:RemoveItem', point)
+                TriggerServerEvent('p2rp-welding:server:SetBusyState', point, true)
                 FreezeEntityPosition(ped, true)
                 TriggerEvent('animations:client:EmoteCommandStart', {"weld"})
               --  PoliceCall()
@@ -71,9 +71,9 @@ local function CutIron(point)
                             if SucceededAttempts + 1 >= NeededAttempts then
                                 Welding = false
                                 ClearPedTasks(PlayerPedId())
-                                TriggerServerEvent('sbm-welding:server:searchCheckpoint', point)
+                                TriggerServerEvent('p2rp-welding:server:searchCheckpoint', point)
                                 Config.Checkpoints[point]["opened"] = true
-                                TriggerServerEvent('sbm-welding:server:SetBusyState', point, true)
+                                TriggerServerEvent('p2rp-welding:server:SetBusyState', point, true)
                                 SucceededAttempts = 0
                                 FreezeEntityPosition(ped, false)
                                 SetTimeout(500, function()
@@ -91,7 +91,7 @@ local function CutIron(point)
                             TriggerEvent('animations:client:EmoteCommandStart', {"c"})
                             Welding = false
                             ClearPedTasks(PlayerPedId())
-                            TriggerServerEvent('sbm-welding:server:SetBusyState', point, false)
+                            TriggerServerEvent('p2rp-welding:server:SetBusyState', point, false)
                             QBCore.Functions.Notify("Process Canceled..", "error")
                             SucceededAttempts = 0
                             FreezeEntityPosition(ped, false)
@@ -109,12 +109,12 @@ end
 
 -- Events
 
-RegisterNetEvent('sbm-welding:client:SetBusyState', function(point, bool)
+RegisterNetEvent('p2rp-welding:client:SetBusyState', function(point, bool)
     Config.Checkpoints[point]["opened"]= bool
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    QBCore.Functions.TriggerCallback('sbm-welding:server:GetCheckpointsConfig', function(CheckpointsConfig)
+    QBCore.Functions.TriggerCallback('p2rp-welding:server:GetCheckpointsConfig', function(CheckpointsConfig)
         Config.Checkpoints = CheckpointsConfig
     end)
 end)

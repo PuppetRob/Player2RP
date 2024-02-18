@@ -82,7 +82,7 @@ Citizen.CreateThread(function()
                     if street2 ~= nil then 
                         streetLabel = streetLabel .. " " .. street2
                     end
-                    TriggerServerEvent("sbm-chopshop:server:callCops", "Chopshop", 0, streetLabel, pos)
+                    TriggerServerEvent("p2rp-chopshop:server:callCops", "Chopshop", 0, streetLabel, pos)
                     copsCalled = true
                 end
                 Citizen.Wait(5000)
@@ -97,8 +97,8 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterNetEvent('sbm-chopshop:jobaccept')
-AddEventHandler('sbm-chopshop:jobaccept', function()
+RegisterNetEvent('p2rp-chopshop:jobaccept')
+AddEventHandler('p2rp-chopshop:jobaccept', function()
     if cooldown == false then
         if LicensePlate ~= nil then
             QBCore.Functions.Notify(Config.Locale["JobActive"], 'error')
@@ -157,8 +157,8 @@ function ScrapVehicle()
 end
 
 -- Police alert function used to alert all active police on Duty
-RegisterNetEvent('sbm-chopshop:client:robberyCall')
-AddEventHandler('sbm-chopshop:client:robberyCall', function(type, key, streetLabel, coords)
+RegisterNetEvent('p2rp-chopshop:client:robberyCall')
+AddEventHandler('p2rp-chopshop:client:robberyCall', function(type, key, streetLabel, coords)
     if PlayerJob.name == "police" and onDuty then
         local bank = "Vehicle Robbery"
         if type == "Chopshop" then
@@ -266,7 +266,7 @@ end)
 
 function StartAnimation(k)
 	if Config.CarTable[k].anim == "wheel1" or Config.CarTable[k].anim == "wheel2" or Config.CarTable[k].anim == "wheel3" or Config.CarTable[k].anim == "wheel4" then
-		TriggerEvent('sbm-chopshop:wheelanimation')
+		TriggerEvent('p2rp-chopshop:wheelanimation')
 		Citizen.Wait(7400)
 		if Config.CarTable[k].anim == "wheel1" then
 			SetVehicleWheelXOffset(vehicle, 0, -2000)
@@ -278,32 +278,32 @@ function StartAnimation(k)
 			SetVehicleWheelXOffset(vehicle, 3, -2000)
 		end
 		Config.CarTable[k].chopped = true
-		TriggerServerEvent('sbm-chopshop:server:rewardplayer', Config.CarTable[k].anim)	
+		TriggerServerEvent('p2rp-chopshop:server:rewardplayer', Config.CarTable[k].anim)	
 	elseif Config.CarTable[k].anim == "door" then
 		TaskOpenVehicleDoor(GetPlayerPed(-1),vehicle,3000,Config.CarTable[k].getin,10)
 		Citizen.Wait(2500)  
-		TriggerEvent('sbm-chopshop:dooranimation')
+		TriggerEvent('p2rp-chopshop:dooranimation')
 		Citizen.Wait(9000)
 		SetVehicleDoorBroken(vehicle,Config.CarTable[k].destroy,true)
 		Config.CarTable[k].chopped = true
-		TriggerServerEvent('sbm-chopshop:server:rewardplayer', Config.CarTable[k].anim)
+		TriggerServerEvent('p2rp-chopshop:server:rewardplayer', Config.CarTable[k].anim)
 	elseif Config.CarTable[k].anim == "trunk" then
 		SetVehicleDoorOpen(vehicle, Config.CarTable[k].destroy, false, true)
 		Citizen.Wait(2500)  
-		TriggerEvent('sbm-chopshop:trunkanimation')
+		TriggerEvent('p2rp-chopshop:trunkanimation')
 		Citizen.Wait(4000)
 		Config.CarTable[k].chopped = true
-		TriggerServerEvent('sbm-chopshop:server:rewardplayer', Config.CarTable[k].anim)
+		TriggerServerEvent('p2rp-chopshop:server:rewardplayer', Config.CarTable[k].anim)
 		Citizen.Wait(9500)
 		SetVehicleDoorBroken(vehicle,Config.CarTable[k].destroy,true)
 	elseif Config.CarTable[k].anim == "hood" then
 		SetVehicleDoorOpen(vehicle, Config.CarTable[k].destroy, false, true)
 		Citizen.Wait(2500)  
-		TriggerEvent('sbm-chopshop:hoodanimation')
+		TriggerEvent('p2rp-chopshop:hoodanimation')
 		Citizen.Wait(9000)
 		SetVehicleDoorBroken(vehicle,Config.CarTable[k].destroy,true)
 		Config.CarTable[k].chopped = true
-		TriggerServerEvent('sbm-chopshop:server:rewardplayer', Config.CarTable[k].anim)
+		TriggerServerEvent('p2rp-chopshop:server:rewardplayer', Config.CarTable[k].anim)
 	end
 end
 

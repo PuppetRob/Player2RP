@@ -19,7 +19,7 @@ Config.Target = "qb-target"
     The event for target is 
 
     --type = "client",
-	--event = "sbm-weedplanting:client:checkClosestPlant",
+	--event = "p2rp-weedplanting:client:checkClosestPlant",
 
     You will need to add this in config for qb-target.
 ]]--

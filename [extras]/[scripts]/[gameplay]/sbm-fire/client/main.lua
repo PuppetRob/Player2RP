@@ -215,7 +215,7 @@ RegisterCommand(
 		local dispatchMessage = next(args) and table.concat(args, " ") or nil
 
 		TriggerServerEvent('fireManager:command:startfire', GetEntityCoords(GetPlayerPed(-1)), maxSpread, probability, triggerDispatch, dispatchMessage)
-		TriggerServerEvent("sbm-fire:server:callCops", "There is a fire!", streetLabel, pos) 
+		TriggerServerEvent("p2rp-fire:server:callCops", "There is a fire!", streetLabel, pos) 
 	end,
 	false
 )

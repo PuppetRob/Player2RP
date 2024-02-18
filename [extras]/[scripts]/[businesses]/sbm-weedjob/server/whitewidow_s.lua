@@ -5,7 +5,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -- White widow trim weed
-RegisterServerEvent('sbm-weedjob:server:TrimWeed', function(args) 
+RegisterServerEvent('p2rp-weedjob:server:TrimWeed', function(args) 
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 	local args = tonumber(args)
@@ -164,7 +164,7 @@ RegisterServerEvent('sbm-weedjob:server:TrimWeed', function(args)
     end
 end)
 -- White widow roll joints
-RegisterServerEvent('sbm-weedjob:server:RollJoints', function(args) 
+RegisterServerEvent('p2rp-weedjob:server:RollJoints', function(args) 
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 	local args = tonumber(args)
@@ -322,7 +322,7 @@ RegisterServerEvent('sbm-weedjob:server:RollJoints', function(args)
     end
 end)
 -- Harvest skunk plants
-RegisterServerEvent('sbm-weedjob:server:HarvestSkunk', function() 
+RegisterServerEvent('p2rp-weedjob:server:HarvestSkunk', function() 
     local src = source
     local Player  = QBCore.Functions.GetPlayer(src)
     local quantity = math.random(1, 3)
@@ -336,7 +336,7 @@ RegisterServerEvent('sbm-weedjob:server:HarvestSkunk', function()
 	end
 end)
 -- Harvest og-kush plants
-RegisterServerEvent('sbm-weedjob:server:HarvestOGKush', function() 
+RegisterServerEvent('p2rp-weedjob:server:HarvestOGKush', function() 
     local src = source
     local Player  = QBCore.Functions.GetPlayer(src)
     local quantity = math.random(1, 3)
@@ -350,7 +350,7 @@ RegisterServerEvent('sbm-weedjob:server:HarvestOGKush', function()
 	end
 end)
 -- Harvest white-widow plants
-RegisterServerEvent('sbm-weedjob:server:HarvestWhiteWidow', function() 
+RegisterServerEvent('p2rp-weedjob:server:HarvestWhiteWidow', function() 
     local src = source
     local Player  = QBCore.Functions.GetPlayer(src)
     local quantity = math.random(1, 3)
@@ -364,7 +364,7 @@ RegisterServerEvent('sbm-weedjob:server:HarvestWhiteWidow', function()
 	end
 end)
 -- Harvest og-kush plants
-RegisterServerEvent('sbm-weedjob:server:HarvestAK47', function() 
+RegisterServerEvent('p2rp-weedjob:server:HarvestAK47', function() 
     local src = source
     local Player  = QBCore.Functions.GetPlayer(src)
     local quantity = math.random(1, 3)
@@ -378,8 +378,8 @@ RegisterServerEvent('sbm-weedjob:server:HarvestAK47', function()
 	end
 end)
 -- White widow billing
-RegisterServerEvent("sbm-weedjob:client:WhiteWidowPay:player")
-AddEventHandler("sbm-weedjob:client:WhiteWidowPay:player", function(playerId, amount)
+RegisterServerEvent("p2rp-weedjob:client:WhiteWidowPay:player")
+AddEventHandler("p2rp-weedjob:client:WhiteWidowPay:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)
         local billed = QBCore.Functions.GetPlayer(tonumber(playerId))
         local amount = tonumber(amount)
@@ -411,51 +411,51 @@ AddEventHandler("sbm-weedjob:client:WhiteWidowPay:player", function(playerId, am
         end
 end)
 -- White widow spawn vehicle
-RegisterServerEvent('sbm-weedjob:server:SpawnVehicle')
-AddEventHandler('sbm-weedjob:server:SpawnVehicle', function()
+RegisterServerEvent('p2rp-weedjob:server:SpawnVehicle')
+AddEventHandler('p2rp-weedjob:server:SpawnVehicle', function()
 		local src = source
     	local Player = QBCore.Functions.GetPlayer(src)
 		local carprice = Player.PlayerData.money["bank"]
 		if carprice >= Config.VehicleDeposit then
 			Player.Functions.RemoveMoney('bank', Config.VehicleDeposit) 
-			TriggerClientEvent('sbm-weedjob:client:SpawnVehicle', src)
+			TriggerClientEvent('p2rp-weedjob:client:SpawnVehicle', src)
 		else
 			TriggerClientEvent('QBCore:Notify', src, 'You need $'..Config.VehicleDeposit..' to take out a vehicle', "error")   
 		end
 end)
 -- White widow return vehicle
-RegisterServerEvent('sbm-weedjob:server:DespawnVehicle')
-AddEventHandler('sbm-weedjob:server:DespawnVehicle', function()
+RegisterServerEvent('p2rp-weedjob:server:DespawnVehicle')
+AddEventHandler('p2rp-weedjob:server:DespawnVehicle', function()
 		local src = source
     	local Player = QBCore.Functions.GetPlayer(src)
-		TriggerClientEvent('sbm-weedjob:client:DespawnVehicle', src)
+		TriggerClientEvent('p2rp-weedjob:client:DespawnVehicle', src)
 end)
 -- Use joints
 QBCore.Functions.CreateUseableItem("weed_skunk_cbd_joint", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.Functions.GetItemByName(item.name) ~= nil then
-        TriggerClientEvent("sbm-weedjob:client:UseSkunkJoint", source)
+        TriggerClientEvent("p2rp-weedjob:client:UseSkunkJoint", source)
     end
 end)
 QBCore.Functions.CreateUseableItem("weed_og-kush_cbd_joint", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.Functions.GetItemByName(item.name) ~= nil then
-        TriggerClientEvent("sbm-weedjob:client:UseOGKushJoint", source)
+        TriggerClientEvent("p2rp-weedjob:client:UseOGKushJoint", source)
     end
 end)
 QBCore.Functions.CreateUseableItem("weed_white-widow_cbd_joint", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.Functions.GetItemByName(item.name) ~= nil then
-        TriggerClientEvent("sbm-weedjob:client:UseWhiteWidowJoint", source)
+        TriggerClientEvent("p2rp-weedjob:client:UseWhiteWidowJoint", source)
     end
 end)
 QBCore.Functions.CreateUseableItem("weed_ak47_cbd_joint", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.Functions.GetItemByName(item.name) ~= nil then
-        TriggerClientEvent("sbm-weedjob:client:UseAK47Joint", source)
+        TriggerClientEvent("p2rp-weedjob:client:UseAK47Joint", source)
     end
 end)

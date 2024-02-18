@@ -82,7 +82,7 @@ local function onShareDisplay(text, target)
 end
 
 -- Register the event
-RegisterNetEvent('sbm-3d:shareDisplay', onShareDisplay)
+RegisterNetEvent('p2rp-3d:shareDisplay', onShareDisplay)
 
 -- Add the chat suggestion
 TriggerEvent('chat:addSuggestion', '/' .. lang.commandName, lang.commandDescription, lang.commandSuggestion)

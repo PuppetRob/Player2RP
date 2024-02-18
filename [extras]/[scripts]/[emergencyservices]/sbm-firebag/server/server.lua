@@ -15,22 +15,22 @@ local function CreateObjectId()
     end
 end
 
-QBCore.Functions.CreateUseableItem('emsbag', function(source, item)TriggerClientEvent("sbm-firebag:Client:spawnLight", source)end)
+QBCore.Functions.CreateUseableItem('emsbag', function(source, item)TriggerClientEvent("p2rp-firebag:Client:spawnLight", source)end)
 
-RegisterNetEvent('sbm-firebag:Server:SpawnAmbulanceBag', function(type)
+RegisterNetEvent('p2rp-firebag:Server:SpawnAmbulanceBag', function(type)
     local src = source
     local objectId = CreateObjectId()
     Objects[objectId] = type
-    TriggerClientEvent("sbm-firebag:Client:SpawnAmbulanceBag", src, objectId, type, src)
+    TriggerClientEvent("p2rp-firebag:Client:SpawnAmbulanceBag", src, objectId, type, src)
 end)
 
-RegisterNetEvent('sbm-firebag:Server:RemoveItem', function(item, amount)
+RegisterNetEvent('p2rp-firebag:Server:RemoveItem', function(item, amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.RemoveItem(item, amount)
 end)
 
-RegisterNetEvent('sbm-firebag:Server:AddItem', function(item, amount)
+RegisterNetEvent('p2rp-firebag:Server:AddItem', function(item, amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.AddItem(item, amount)

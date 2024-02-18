@@ -1,6 +1,6 @@
 function clickButton(type) {
   $.post(
-    "https://" + GetParentResourceName() + "/sbm-airsusp:change",
+    "https://" + GetParentResourceName() + "/p2rp-airsusp:change",
     JSON.stringify({ type: type, value: document.getElementById('info').innerHTML})
   ).then(res => {$("#info").text(res)});
 }
@@ -15,7 +15,7 @@ function Open(data) {
 
 function Close() {
   $("body").css("display", "none");
-  $.post("https://" + GetParentResourceName() + "/sbm-airsusp:closeUI");
+  $.post("https://" + GetParentResourceName() + "/p2rp-airsusp:closeUI");
 }
 
 

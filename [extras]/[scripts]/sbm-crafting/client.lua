@@ -98,7 +98,7 @@ local function spawnObj(model, coords, heading)
              icon = "fa-solid fa-hammer",
              label = "Craft",
              action = function()
-                TriggerServerEvent("sbm-crafting_sv:getWorkBenchData")
+                TriggerServerEvent("p2rp-crafting_sv:getWorkBenchData")
              end
         }
         },
@@ -118,7 +118,7 @@ end
 
 RegisterNUICallback("discardBlueprint", function(data, cb)
     if currentBenchId then
-        QBCore.Functions.TriggerCallback('sbm-crafting_sv:discardBlueprint', function (result)
+        QBCore.Functions.TriggerCallback('p2rp-crafting_sv:discardBlueprint', function (result)
             cb(result)
         end, currentBenchId, data.currentBlueprint)
     else
@@ -128,7 +128,7 @@ end)
 
 RegisterNUICallback("attemptCraft", function(data, cb)
     if currentBenchId then
-        TriggerServerEvent("sbm-crafting_sv:attemptCraft", currentBenchId, data.currentRecipe, data.amt, data.isBlueprintRecipe)
+        TriggerServerEvent("p2rp-crafting_sv:attemptCraft", currentBenchId, data.currentRecipe, data.amt, data.isBlueprintRecipe)
     end
 end)
 
@@ -138,7 +138,7 @@ RegisterNUICallback("close", function(data, cb)
     StopAnimTask(player, "mini@repair", "fixing_a_player", 1.0)
 end)
 
-RegisterNetEvent("sbm-crafting_cl:openCraftingBench", function(craftingBenchData, benchId)
+RegisterNetEvent("p2rp-crafting_cl:openCraftingBench", function(craftingBenchData, benchId)
     currentBenchId = benchId
     local player = PlayerPedId()
     local craftingRep = PlayerData.metadata.craftingrep
@@ -182,7 +182,7 @@ RegisterNetEvent("sbm-crafting_cl:openCraftingBench", function(craftingBenchData
     openCraftingMenu()
 end)
 
-RegisterNetEvent("sbm-crafting_cl:increasedRep", function(craftingRep, attachmentRep)
+RegisterNetEvent("p2rp-crafting_cl:increasedRep", function(craftingRep, attachmentRep)
     local recipes = getThresholdRecipes(craftingRep, attachmentRep)
     if #recipes > #currentDefaultRecipes then
         local newUnlocks = getNewUnlocks(recipes, currentDefaultRecipes)

@@ -60,7 +60,7 @@ local function givePlate(source, plateNumber)
 end
 
 -- NEEDS TESTING
-QBCore.Functions.CreateCallback('sbm-plateswap:server:isFakePlate', function(source, cb, fakePlate)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:isFakePlate', function(source, cb, fakePlate)
    if plateExistsAsFakePlate(fakePlate) then
       if useDebug then
          print('Was a fake plate')
@@ -76,7 +76,7 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:isFakePlate', function(sou
 end)
 
 -- NEEDS TESTING
-QBCore.Functions.CreateCallback('sbm-plateswap:server:getRealPlateFromFakePlate', function(source, cb, fakePlate)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:getRealPlateFromFakePlate', function(source, cb, fakePlate)
    local realPlateFromDb = MySQL.Sync.fetchAll('SELECT plate FROM player_vehicles WHERE fakeplate = ?', {fakePlate})
    if useDebug then
       print('real plate:',dump(realPlateFromDb))
@@ -91,7 +91,7 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:getRealPlateFromFakePlate'
    end
 end)
 
-QBCore.Functions.CreateCallback('sbm-plateswap:server:getFakePlateFromRealPlate', function(source, cb, plate)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:getFakePlateFromRealPlate', function(source, cb, plate)
    local fakePlateFromDb = MySQL.Sync.fetchAll('SELECT fakeplate FROM player_vehicles WHERE plate = ?', {plate})
    if useDebug then
       print('fake plate', dump(fakePlateFromDb))
@@ -103,7 +103,7 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:getFakePlateFromRealPlate'
    end
 end)
 
-QBCore.Functions.CreateCallback('sbm-plateswap:server:createItem', function(source, cb, fakePlate)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:createItem', function(source, cb, fakePlate)
    if useDebug then
       print('creating plate item', fakePlate)
    end
@@ -135,7 +135,7 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:createItem', function(sour
    end
 end)
 
-QBCore.Functions.CreateCallback('sbm-plateswap:server:removeFakePlate', function(source, cb, fakePlate)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:removeFakePlate', function(source, cb, fakePlate)
    if useDebug then
       print('Removing fake plate', fakePlate)
    end
@@ -151,7 +151,7 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:removeFakePlate', function
    cb(results[1].plate)
 end)
 
-QBCore.Functions.CreateCallback('sbm-plateswap:server:setFakePlate', function(source, cb, fakePlate, plate)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:setFakePlate', function(source, cb, fakePlate, plate)
    if useDebug then
       print('Setting fakeplate to', fakePlate, plate)
    end
@@ -180,7 +180,7 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:setFakePlate', function(so
    end
 end)
 
-QBCore.Functions.CreateCallback('sbm-plateswap:server:getFakePlateId', function(source, cb)
+QBCore.Functions.CreateCallback('p2rp-plateswap:server:getFakePlateId', function(source, cb)
    if useDebug then
       print('Getting plate from inventory')
    end
@@ -210,21 +210,21 @@ QBCore.Functions.CreateCallback('sbm-plateswap:server:getFakePlateId', function(
 end)
 
 QBCore.Commands.Add('setfakeplate', 'Change the license plate of a car to a fake one. (Admin Only)',{ { name = 'New plate', help = 'new plate for the vehicle' } }, true, function(source, args)
-   TriggerClientEvent('sbm-plateswap:client:setFakePlate', source, args[1])
+   TriggerClientEvent('p2rp-plateswap:client:setFakePlate', source, args[1])
 end, 'admin')
 
 QBCore.Commands.Add('removefakeplate', 'Change the license plate of a car to a original. (Admin Only)',{}, true, function(source)
-   TriggerClientEvent('sbm-plateswap:client:removeFakePlate', source)
+   TriggerClientEvent('p2rp-plateswap:client:removeFakePlate', source)
 end, 'admin')
 
 
 QBCore.Commands.Add('cwdebugplateswap', 'toggle debug for plateswap', {}, true, function(source, args)
     useDebug = not useDebug
     print('debug is now:', useDebug)
-    TriggerClientEvent('sbm-plateswap:client:toggleDebug',source, useDebug)
+    TriggerClientEvent('p2rp-plateswap:client:toggleDebug',source, useDebug)
 end, 'admin')
 
-RegisterNetEvent('sbm-plateswap:server:callCops', function(coords, streetLabel)
+RegisterNetEvent('p2rp-plateswap:server:callCops', function(coords, streetLabel)
    local alertData = {
        title = Lang:t('info.police_message'),
        coords = {x = coords.x, y = coords.y, z = coords.z},

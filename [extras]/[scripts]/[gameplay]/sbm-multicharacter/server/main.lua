@@ -22,12 +22,12 @@ AddEventHandler('QBCore:Server:OnPlayerUnload', function(src)
     hasDonePreloading[src] = false
 end)
 
-RegisterNetEvent('sbm-multicharacter:server:disconnect', function()
+RegisterNetEvent('p2rp-multicharacter:server:disconnect', function()
     local src = source
     DropPlayer(src, "Disconnected")
 end)
 
-RegisterNetEvent('sbm-multicharacter:server:createCharacter', function(data)
+RegisterNetEvent('p2rp-multicharacter:server:createCharacter', function(data)
     local src = source
     local newData = {}
     newData.cid = data.cid
@@ -42,7 +42,7 @@ RegisterNetEvent('sbm-multicharacter:server:createCharacter', function(data)
                 print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
                 QBCore.Commands.Refresh(src)
                 loadHouseData(src)
-                TriggerClientEvent("sbm-multicharacter:client:closeNUI", src)
+                TriggerClientEvent("p2rp-multicharacter:client:closeNUI", src)
                 TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
                 GiveStarterItems(src)
         else
@@ -50,13 +50,13 @@ RegisterNetEvent('sbm-multicharacter:server:createCharacter', function(data)
             SetPlayerRoutingBucket(src, randbucket)
             print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
-            TriggerClientEvent("sbm-multicharacter:client:closeNUIdefault", src)
+            TriggerClientEvent("p2rp-multicharacter:client:closeNUIdefault", src)
             GiveStarterItems(src)
         end
     end
 end)
 
-RegisterNetEvent('sbm-multicharacter:server:deleteCharacter', function(citizenid)
+RegisterNetEvent('p2rp-multicharacter:server:deleteCharacter', function(citizenid)
     local src = source
     QBCore.Player.DeleteCharacter(src, citizenid)
     TriggerClientEvent('QBCore:Notify', src, "CHAR DELETED" , "success")
@@ -64,7 +64,7 @@ end)
 
 -- Callbacks
 
-QBCore.Functions.CreateCallback("sbm-multicharacter:server:GetUserCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("p2rp-multicharacter:server:GetUserCharacters", function(source, cb)
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
 
@@ -72,12 +72,12 @@ QBCore.Functions.CreateCallback("sbm-multicharacter:server:GetUserCharacters", f
     cb(result)
 end)
 
-QBCore.Functions.CreateCallback("sbm-multicharacter:server:GetServerLogs", function(_, cb)
+QBCore.Functions.CreateCallback("p2rp-multicharacter:server:GetServerLogs", function(_, cb)
     local result = ExecuteSql('SELECT * FROM server_logs')
     cb(result)
 end)
 
-QBCore.Functions.CreateCallback("sbm-multicharacter:server:GetNumberOfCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("p2rp-multicharacter:server:GetNumberOfCharacters", function(source, cb)
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
     local numOfChars = 0
@@ -109,7 +109,7 @@ QBCore.Functions.CreateCallback("sbm-multicharacter:server:GetNumberOfCharacters
     cb(callBackData)
 end)
 
-QBCore.Functions.CreateCallback('sbm-multicharacter:sendInput', function(source, cb, data)
+QBCore.Functions.CreateCallback('p2rp-multicharacter:sendInput', function(source, cb, data)
     local _source = source
     local inputData = data.inputData
     local result = ExecuteSql("SELECT * FROM ak4y_multichar_codes WHERE code = '"..inputData.."'")

@@ -21,7 +21,7 @@ end
 
 RegisterNetEvent(Config.Core..":Client:OnPlayerLoaded")
 AddEventHandler(Config.Core..":Client:OnPlayerLoaded", function()
-	QBCore.Functions.TriggerCallback('sbm-weedplanting:server:getTables', function(plantsTable)
+	QBCore.Functions.TriggerCallback('p2rp-weedplanting:server:getTables', function(plantsTable)
         for k, v in ipairs(plantsTable) do
 			v.textH = vector3(v.coords[1], v.coords[2], v.coords[3]+1.5)	--health status text
 			v.textP = vector3(v.coords[1], v.coords[2], v.coords[3]+1.7)	--progress status text
@@ -58,7 +58,7 @@ AddEventHandler('onResourceStart', function(resource)
 
 		Wait(100)
 		local p = promise.new()
-		QBCore.Functions.TriggerCallback("sbm-weedplanting:server:getTables", function(plantsTable)
+		QBCore.Functions.TriggerCallback("p2rp-weedplanting:server:getTables", function(plantsTable)
 			p:resolve(plantsTable)
 		end)
 		WeedPlants = Citizen.Await(p)
@@ -80,8 +80,8 @@ function DoDestroyAnim(id, coords)
 	
 end
 
-RegisterNetEvent("sbm-weedplanting:client:checkClosestPlant")
-AddEventHandler("sbm-weedplanting:client:checkClosestPlant", function(data)
+RegisterNetEvent("p2rp-weedplanting:client:checkClosestPlant")
+AddEventHandler("p2rp-weedplanting:client:checkClosestPlant", function(data)
 	closestDistance = 2.0
 	local index = 0
 	if WeedPlants then
@@ -94,13 +94,13 @@ AddEventHandler("sbm-weedplanting:client:checkClosestPlant", function(data)
 			ShowNotification(Config.Locale["invalid_plant"], "error")
 			return
 		else
-			TriggerEvent("sbm-weedplanting:client:OpenOptions", index)
+			TriggerEvent("p2rp-weedplanting:client:OpenOptions", index)
 		end
 	end
 end)
 
-RegisterNetEvent("sbm-weedplanting:client:OpenOptions")
-AddEventHandler("sbm-weedplanting:client:OpenOptions", function(id)
+RegisterNetEvent("p2rp-weedplanting:client:OpenOptions")
+AddEventHandler("p2rp-weedplanting:client:OpenOptions", function(id)
 	currentPlantId = id
 	nearestPlant = id
 	currentObj = WeedPlants[id].obj
@@ -140,12 +140,12 @@ RegisterNUICallback("OptionHandler" , function(data , cb)
 			ShowNotification(Config.Locale["plant_not_ready"], "error")
 		end
 	elseif data.action == "insecticide-option" then
-		TriggerEvent("sbm-weedplanting:client:giveInsecticide")
+		TriggerEvent("p2rp-weedplanting:client:giveInsecticide")
 	elseif data.action == "destroy-option" then
 		
 		DoDestroyAnim(currentPlantId, WeedPlants[currentPlantId].coords)
 	elseif data.action == "water-option" then
-		TriggerEvent("sbm-weedplanting:client:giveWater")
+		TriggerEvent("p2rp-weedplanting:client:giveWater")
     end
 end)
 
@@ -201,13 +201,13 @@ function HarvestWeed(id, obj)
 end
 
 
-RegisterNetEvent('sbm-weedplanting:client:placeWeedPlant')
-AddEventHandler('sbm-weedplanting:client:placeWeedPlant', function(seed, label)
+RegisterNetEvent('p2rp-weedplanting:client:placeWeedPlant')
+AddEventHandler('p2rp-weedplanting:client:placeWeedPlant', function(seed, label)
 	checkPlantingSurface(seed, label)
 end)
 
-RegisterNetEvent('sbm-weedplanting:client:addWeedPlant')
-AddEventHandler('sbm-weedplanting:client:addWeedPlant', function(data)
+RegisterNetEvent('p2rp-weedplanting:client:addWeedPlant')
+AddEventHandler('p2rp-weedplanting:client:addWeedPlant', function(data)
 	local plant = data
 	if #(GetEntityCoords(PlayerPedId()) - data.coords)<= 150.0 then
 		local obj = CreateObject(Config.Stages[1].model, data.coords.x, data.coords.y, data.coords.z + Config.Stages[1].offset, false)
@@ -218,8 +218,8 @@ AddEventHandler('sbm-weedplanting:client:addWeedPlant', function(data)
 	table.insert(WeedPlants, plant)
 end)
 
-RegisterNetEvent('sbm-weedplanting:client:updatePlantStatus')
-AddEventHandler('sbm-weedplanting:client:updatePlantStatus', function(data)
+RegisterNetEvent('p2rp-weedplanting:client:updatePlantStatus')
+AddEventHandler('p2rp-weedplanting:client:updatePlantStatus', function(data)
 	for k,v in ipairs(WeedPlants) do
 		v.health = data[k].health
 		v.progress = data[k].progress
@@ -239,12 +239,12 @@ AddEventHandler('sbm-weedplanting:client:updatePlantStatus', function(data)
 	end
 end)
 
-RegisterNetEvent('sbm-weedplanting:client:giveInsecticide')
-AddEventHandler('sbm-weedplanting:client:giveInsecticide', function()
+RegisterNetEvent('p2rp-weedplanting:client:giveInsecticide')
+AddEventHandler('p2rp-weedplanting:client:giveInsecticide', function()
 	local pos = GetEntityCoords(PlayerPedId())
 
 	local p = promise.new()
-	QBCore.Functions.TriggerCallback("sbm-weedplanting:server:hasItem", function(result)
+	QBCore.Functions.TriggerCallback("p2rp-weedplanting:server:hasItem", function(result)
 		p:resolve(result)
 	end, Config.Items["insecticide"])
 	local result = Citizen.Await(p)
@@ -263,12 +263,12 @@ AddEventHandler('sbm-weedplanting:client:giveInsecticide', function()
 	end
 end)
 
-RegisterNetEvent('sbm-weedplanting:client:giveWater')
-AddEventHandler('sbm-weedplanting:client:giveWater', function()
+RegisterNetEvent('p2rp-weedplanting:client:giveWater')
+AddEventHandler('p2rp-weedplanting:client:giveWater', function()
 	local pos = GetEntityCoords(PlayerPedId())
 
 	local p = promise.new()
-	QBCore.Functions.TriggerCallback("sbm-weedplanting:server:hasItem", function(result)
+	QBCore.Functions.TriggerCallback("p2rp-weedplanting:server:hasItem", function(result)
 		p:resolve(result)
 	end, Config.Items["water"])
 	local result = Citizen.Await(p)
@@ -287,8 +287,8 @@ AddEventHandler('sbm-weedplanting:client:giveWater', function()
 	end
 end)
 
-RegisterNetEvent('sbm-weedplanting:client:deleteWeedPlant')
-AddEventHandler('sbm-weedplanting:client:deleteWeedPlant', function(plantID, action)
+RegisterNetEvent('p2rp-weedplanting:client:deleteWeedPlant')
+AddEventHandler('p2rp-weedplanting:client:deleteWeedPlant', function(plantID, action)
 	if WeedPlants[plantID] then
 		DeleteEntity(WeedPlants[plantID].obj)
 		table.remove(WeedPlants, plantID)
@@ -328,7 +328,7 @@ function checkPlantingSurface(seed, label)
 				local result = false
 				if item ~= nil then
 					local p = promise.new()
-					QBCore.Functions.TriggerCallback("sbm-weedplanting:server:hasItem", function(result)
+					QBCore.Functions.TriggerCallback("p2rp-weedplanting:server:hasItem", function(result)
 						p:resolve(result)
 					end, item)
 					result = Citizen.Await(p)
@@ -359,7 +359,7 @@ end
 function burnWeedPlants(id, loc)
 	Citizen.CreateThread(function()
 		Citizen.SetTimeout(3000, function()
-			TriggerServerEvent("sbm-weedplanting:server:deleteWeedPlant", id, loc)
+			TriggerServerEvent("p2rp-weedplanting:server:deleteWeedPlant", id, loc)
 		end)
 	end)
 end

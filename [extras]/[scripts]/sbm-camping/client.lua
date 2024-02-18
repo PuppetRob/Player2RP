@@ -7,8 +7,8 @@ debugCommand = false
 
 local prevtent = 0
 local prevfire = 0
-RegisterNetEvent('sbm-camping:campfire')
-AddEventHandler('sbm-camping:campfire', function()
+RegisterNetEvent('p2rp-camping:campfire')
+AddEventHandler('p2rp-camping:campfire', function()
     local x,y,z = table.unpack(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 2.0, -1.55))
     local prop = CreateObject(GetHashKey("prop_beach_fire"), x+3.2, y+0.4, z+0.2, true, false, true)
     if prevfire ~= 0 then
@@ -43,7 +43,7 @@ if debugCommand then
                 OpenCamp() -- Functions
                 prevtent = prop
                 ClearPedTasksImmediately(PlayerPedId())
-                TriggerEvent('sbm-camping:campfire')
+                TriggerEvent('p2rp-camping:campfire')
                 camping = true
 
 
@@ -54,8 +54,8 @@ if debugCommand then
     end, false)
 end                   
       
-RegisterNetEvent("sbm-camping:client:UseCampingKit")
-AddEventHandler("sbm-camping:client:UseCampingKit", function()
+RegisterNetEvent("p2rp-camping:client:UseCampingKit")
+AddEventHandler("p2rp-camping:client:UseCampingKit", function()
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["camp"], "remove")
     TriggerEvent('chatMessage', "SYSTEM", "error", "/takedowntent to pack up your campsite!")
     if prevtent ~= 0 then
@@ -69,7 +69,7 @@ AddEventHandler("sbm-camping:client:UseCampingKit", function()
     OpenCamp() -- Functions
     prevtent = prop
     ClearPedTasksImmediately(PlayerPedId())
-    TriggerEvent('sbm-camping:campfire')
+    TriggerEvent('p2rp-camping:campfire')
     camping = true
 end)
 
@@ -87,9 +87,9 @@ RegisterCommand('takedowntent', function(source, args, rawCommand)
             SetEntityAsMissionEntity(prevtent)
             DeleteObject(prevtent)
             prevtent = 0
-            TriggerEvent('sbm-camping:campfiredel')
+            TriggerEvent('p2rp-camping:campfiredel')
             ClearPedTasksImmediately(PlayerPedId())
-            TriggerServerEvent("sbm-camping:server:giveBackTent")
+            TriggerServerEvent("p2rp-camping:server:giveBackTent")
             camping = false
         else
             QBCore.Functions.Notify("You are too far away from your tent, we know of no black magic here!","error")
@@ -99,8 +99,8 @@ end, false)
 
 
 
-RegisterNetEvent('sbm-camping:campfiredel')
-AddEventHandler('sbm-camping:campfiredel', function()
+RegisterNetEvent('p2rp-camping:campfiredel')
+AddEventHandler('p2rp-camping:campfiredel', function()
     if prevfire == 0 then
         --TriggerEvent('chatMessage', '', {255,255,255}, '^8Error: ^0no previous campfire spawned, or your previous campfire has already been deleted.')
     else

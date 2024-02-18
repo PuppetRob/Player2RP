@@ -471,24 +471,24 @@ end)
 
 ------------------------------------------------------------------
 
-RegisterNetEvent("sbm-crafting_sv:getWorkBenchData", function()
+RegisterNetEvent("p2rp-crafting_sv:getWorkBenchData", function()
     local src = source
     local closestBench = getClosestBench(src)
     if closestBench then
-        TriggerClientEvent("sbm-crafting_cl:openCraftingBench", src, craftingBenches[closestBench], closestBench)
+        TriggerClientEvent("p2rp-crafting_cl:openCraftingBench", src, craftingBenches[closestBench], closestBench)
     else
         TriggerClientEvent('QBCore:Notify', src, 'Unable to find crafting bench', 'error')
     end
 end)
 
-RegisterNetEvent("sbm-crafting_sv:getCraftingBenchBlueprints", function(benchId)
+RegisterNetEvent("p2rp-crafting_sv:getCraftingBenchBlueprints", function(benchId)
     local src = source
     if craftingBenches[benchId] then
-        TriggerClientEvent("sbm-crafting_cl:loadCraftingBlueprints", src, craftingBenches[benchId].blueprints)
+        TriggerClientEvent("p2rp-crafting_cl:loadCraftingBlueprints", src, craftingBenches[benchId].blueprints)
     end
 end)
 
-QBCore.Functions.CreateCallback('sbm-crafting_sv:discardBlueprint', function(source, cb, benchId, blueprintToRemove)
+QBCore.Functions.CreateCallback('p2rp-crafting_sv:discardBlueprint', function(source, cb, benchId, blueprintToRemove)
     local src = source
     if craftingBenches[benchId] then
         local blueprintFound = false
@@ -515,7 +515,7 @@ QBCore.Functions.CreateCallback('sbm-crafting_sv:discardBlueprint', function(sou
     end
 end)
 
-RegisterNetEvent("sbm-crafting_sv:attemptCraft", function(benchId, itemToCraft, amount, isBlueprintRecipe)
+RegisterNetEvent("p2rp-crafting_sv:attemptCraft", function(benchId, itemToCraft, amount, isBlueprintRecipe)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
@@ -589,10 +589,10 @@ RegisterNetEvent("sbm-crafting_sv:attemptCraft", function(benchId, itemToCraft, 
 
                 if isAttachment then
                     Player.Functions.SetMetaData("attachmentcraftingrep", attachmentRep + (points * amount))
-                    TriggerClientEvent("sbm-crafting_cl:increasedRep", src, rep, attachmentRep + (points * amount))
+                    TriggerClientEvent("p2rp-crafting_cl:increasedRep", src, rep, attachmentRep + (points * amount))
                 else
                     Player.Functions.SetMetaData("craftingrep", rep + (points * amount))
-                    TriggerClientEvent("sbm-crafting_cl:increasedRep", src, rep + (points * amount), attachmentRep)
+                    TriggerClientEvent("p2rp-crafting_cl:increasedRep", src, rep + (points * amount), attachmentRep)
                 end
 
                 TriggerClientEvent('QBCore:Notify', src, 'Successfully crafted ' ..amount.. ' ' ..itemName..'(s)', 'success')
@@ -631,10 +631,10 @@ RegisterNetEvent("sbm-crafting_sv:attemptCraft", function(benchId, itemToCraft, 
 
                 if isAttachment then
                     Player.Functions.SetMetaData("attachmentcraftingrep", attachmentRep + (points * maxCraft))
-                    TriggerClientEvent("sbm-crafting_cl:increasedRep", src, rep, attachmentRep + (points * maxCraft))
+                    TriggerClientEvent("p2rp-crafting_cl:increasedRep", src, rep, attachmentRep + (points * maxCraft))
                 else
                     Player.Functions.SetMetaData("craftingrep", rep + (points * maxCraft))
-                    TriggerClientEvent("sbm-crafting_cl:increasedRep", src, rep + (points * maxCraft), attachmentRep)
+                    TriggerClientEvent("p2rp-crafting_cl:increasedRep", src, rep + (points * maxCraft), attachmentRep)
                 end
                 TriggerClientEvent('QBCore:Notify', src, 'Successfully crafted ' ..maxCraft.. ' ' ..itemName..'(s)', 'success')
             end

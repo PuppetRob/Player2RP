@@ -1,0 +1,35 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>beachbar\interior_beachbar_milo_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo2_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo3_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo4_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo5_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo6_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo7_.ymap</Item>
+    <Item>smallroom\interior_smallroom_milo8_.ymap</Item>
+    <Item>interior\interior_beachroom_milo_.ymap</Item>
+    <Item>interior\interior_beachroom_milo2_.ymap</Item>
+    <Item>interior\interior_beachroom_milo3_.ymap</Item>
+    <Item>interior\interior_beachroom_milo4_.ymap</Item>
+    <Item>interior\interior_beachroom_milo5_.ymap</Item>
+    <Item>interior\interior_beachroom_milo6_.ymap</Item>
+    <Item>interior\interior_beachroom_milo7_.ymap</Item>
+    <Item>interior\interior_beachroom_milo8_.ymap</Item>
+    <Item>hei_sm_16_strm_0.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames>
+    <Item>beachbar\interior_beachbar.ytyp</Item>
+    <Item>interior\interior_beachroom.ytyp</Item>
+    <Item>smallroom\interior_smallroom.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+</CodeWalkerProject>

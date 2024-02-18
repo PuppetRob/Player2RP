@@ -210,8 +210,8 @@ Citizen.CreateThread(function()
     end 
 end)
 
-RegisterNetEvent("sbm-tcg:client:badgesound")
-AddEventHandler("sbm-tcg:client:badgesound", function()
+RegisterNetEvent("p2rp-tcg:client:badgesound")
+AddEventHandler("p2rp-tcg:client:badgesound", function()
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "badge", 0.8)
 end)
 

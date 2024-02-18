@@ -6,11 +6,11 @@ QBCore.Functions.CreateUseableItem("giftbox", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player.Functions.RemoveItem('giftbox') then return end
-        TriggerClientEvent('sbm-giftbox:Client:OpenGiftBox', src, item)
+        TriggerClientEvent('p2rp-giftbox:Client:OpenGiftBox', src, item)
 end)
 
 -- Gift Box Rewards --
-RegisterNetEvent('sbm-giftbox:Server:GiftBoxRewards', function()
+RegisterNetEvent('p2rp-giftbox:Server:GiftBoxRewards', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local MaxRewards = Config.MaxRewards

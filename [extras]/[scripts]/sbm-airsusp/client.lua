@@ -1,11 +1,11 @@
 local level = nil
 
-RegisterNetEvent("sbm-airsusp:enterVeh", function(entityId)
-    TriggerServerEvent('sbm-airsusp:fetch', NetworkGetNetworkIdFromEntity(entityId))
+RegisterNetEvent("p2rp-airsusp:enterVeh", function(entityId)
+    TriggerServerEvent('p2rp-airsusp:fetch', NetworkGetNetworkIdFromEntity(entityId))
 end)
 
 
-RegisterNetEvent("sbm-airsusp:fetchChange", function(curVeh, value, lvl)
+RegisterNetEvent("p2rp-airsusp:fetchChange", function(curVeh, value, lvl)
     level = lvl
     if GetVehicleSuspensionHeight(NetToVeh(curVeh)) ~= value then
         SetVehicleSuspensionHeight(NetToVeh(curVeh), value)
@@ -24,12 +24,12 @@ function OpenSuspensionUI()
         }
     })
     if not level then
-        TriggerServerEvent('sbm-airsusp:fetch', NetworkGetNetworkIdFromEntity(GetVehiclePedIsIn(PlayerPedId())))
+        TriggerServerEvent('p2rp-airsusp:fetch', NetworkGetNetworkIdFromEntity(GetVehiclePedIsIn(PlayerPedId())))
     end
 end
 
 
-RegisterNUICallback('sbm-airsusp:change', function(data, cb)
+RegisterNUICallback('p2rp-airsusp:change', function(data, cb)
     local veh = GetVehiclePedIsIn(PlayerPedId())
     local vPlate = GetVehicleNumberPlateText(veh)
     if data.type == 'up' then 
@@ -47,18 +47,18 @@ RegisterNUICallback('sbm-airsusp:change', function(data, cb)
         SetVehicleSuspensionHeight(veh, GetVehicleSuspensionHeight(veh) + CodeStudio.ChangePerLevel)
         level = level - 1
     end
-    TriggerServerEvent('sbm-airsusp:update', NetworkGetNetworkIdFromEntity(veh), level, GetVehicleSuspensionHeight(veh))
+    TriggerServerEvent('p2rp-airsusp:update', NetworkGetNetworkIdFromEntity(veh), level, GetVehicleSuspensionHeight(veh))
     cb(level)
 end)
 
 
-RegisterNUICallback('sbm-airsusp:closeUI', function(data,cb)
+RegisterNUICallback('p2rp-airsusp:closeUI', function(data,cb)
     SetNuiFocus(false, false)
     cb(true)
 end)
 
 
-RegisterNetEvent("sbm-airsusp:openUI", function()
+RegisterNetEvent("p2rp-airsusp:openUI", function()
     OpenSuspensionUI()
 end)
 

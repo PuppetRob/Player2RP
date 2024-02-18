@@ -12,13 +12,13 @@ end)
 
 QBCore.Functions.CreateUseableItem("bodycam" , function(source, item)
     local _src = source
-    TriggerClientEvent("sbm-bodycam:openBoy", _src, item, tonumber(os.date("%H")), tonumber(os.date("%M")), tonumber(os.date("%S")))
+    TriggerClientEvent("p2rp-bodycam:openBoy", _src, item, tonumber(os.date("%H")), tonumber(os.date("%M")), tonumber(os.date("%S")))
 end)
 
 if Config.Debug then
-    QBCore.Commands.Add('debugbodycam', 'debugging sbm-bodycam', {}, false, function(source, args)
+    QBCore.Commands.Add('debugbodycam', 'debugging p2rp-bodycam', {}, false, function(source, args)
     local _src = source
-    TriggerClientEvent("sbm-bodycam:openBoy", _src, item, tonumber(os.date("%H")), tonumber(os.date("%M")), tonumber(os.date("%S")))
+    TriggerClientEvent("p2rp-bodycam:openBoy", _src, item, tonumber(os.date("%H")), tonumber(os.date("%M")), tonumber(os.date("%S")))
 end)
 end
 

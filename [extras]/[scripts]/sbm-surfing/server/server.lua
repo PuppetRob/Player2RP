@@ -19,7 +19,7 @@ AddEventHandler('rent:server:surf', function(totales, soldi, boatModel, BerthId)
 
         local plate = "surf"..math.random(111, 999)
 
-        TriggerClientEvent('sbm-surfing:Auto', src, boatModel, plate)
+        TriggerClientEvent('p2rp-surfing:Auto', src, boatModel, plate)
     else
 
     TriggerClientEvent('QBCore:Notify', src, 'You have no money to Rent a Surfboard', 'error', 4000)

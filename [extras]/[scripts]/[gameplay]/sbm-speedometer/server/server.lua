@@ -17,7 +17,7 @@ Citizen.CreateThread(function()
 	local customer = nil	
 	local actual_server_ip
 
-	if resName ~= "sbm-speedometer" then
+	if resName ~= "p2rp-speedometer" then
 		print("^2["..resName.."] - IT WAS NOT STARTED CORRECTLY.")
 		print("^2["..resName.."] - THE RESOURCE NAME MUST BE speedometer")
 		--Stop_Resource()

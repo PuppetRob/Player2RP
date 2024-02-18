@@ -51,8 +51,8 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterServerEvent('sbm-guns:wonHacking')
-AddEventHandler('sbm-guns:wonHacking', function()
+RegisterServerEvent('p2rp-guns:wonHacking')
+AddEventHandler('p2rp-guns:wonHacking', function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local chipSlot = Player.Functions.GetItemByName('electronickit')
@@ -92,8 +92,8 @@ end)
 
 
  
-RegisterServerEvent('sbm-guns:server:useDecryptionKey')
-AddEventHandler('sbm-guns:server:useDecryptionKey', function(item)
+RegisterServerEvent('p2rp-guns:server:useDecryptionKey')
+AddEventHandler('p2rp-guns:server:useDecryptionKey', function(item)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	
@@ -107,7 +107,7 @@ AddEventHandler('sbm-guns:server:useDecryptionKey', function(item)
 			if keys[activeKeys[keysUsed + 1]].itemName == item then
 				keysUsed = keysUsed + 1
 				if keysUsed == 3 then
-					TriggerClientEvent('sbm-guns:hackingMinigame', src)
+					TriggerClientEvent('p2rp-guns:hackingMinigame', src)
 				else
 					TriggerClientEvent('QBCore:Notify', src, "Correct key!")
 				end
@@ -118,8 +118,8 @@ AddEventHandler('sbm-guns:server:useDecryptionKey', function(item)
 	end
 end)
 
-RegisterServerEvent('sbm-guns:createHeistLoop')
-AddEventHandler('sbm-guns:createHeistLoop', function()
+RegisterServerEvent('p2rp-guns:createHeistLoop')
+AddEventHandler('p2rp-guns:createHeistLoop', function()
 	heistId = heistId + 1
 
 	local thisId = heistId
@@ -158,14 +158,14 @@ AddEventHandler('sbm-guns:createHeistLoop', function()
 		end
 
 		if heistId == thisId then
-			TriggerEvent('sbm-guns:createHeistLoop')
+			TriggerEvent('p2rp-guns:createHeistLoop')
 		end
 	end
 end)
 
-RegisterServerEvent('sbm-guns:obtainDrops')
-AddEventHandler('sbm-guns:obtainDrops', function()
-	TriggerClientEvent('sbm-guns:obtainDrops', source, activeDrops)
+RegisterServerEvent('p2rp-guns:obtainDrops')
+AddEventHandler('p2rp-guns:obtainDrops', function()
+	TriggerClientEvent('p2rp-guns:obtainDrops', source, activeDrops)
 end)
 
 
@@ -182,8 +182,8 @@ AddEventHandler('checkDrill', function(dropId)
 	end
 end)
 
-RegisterServerEvent('sbm-guns:pickUpDrop')
-AddEventHandler('sbm-guns:pickUpDrop', function(dropId)
+RegisterServerEvent('p2rp-guns:pickUpDrop')
+AddEventHandler('p2rp-guns:pickUpDrop', function(dropId)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local drillSlot = Player.Functions.GetItemByName('drill')
@@ -203,7 +203,7 @@ AddEventHandler('sbm-guns:pickUpDrop', function(dropId)
 				TriggerClientEvent('QBCore:Notify', src, "Picked up " .. dropData.label)
 				TriggerClientEvent('clearTasks', src)
 
-				TriggerClientEvent('sbm-guns:manipulateDrop', -1, dropId)
+				TriggerClientEvent('p2rp-guns:manipulateDrop', -1, dropId)
 			else
 				TriggerClientEvent("QBCore:Notify", src, "You need to have a drill on you...", "error")
 			end
@@ -211,8 +211,8 @@ AddEventHandler('sbm-guns:pickUpDrop', function(dropId)
 	end
 end)
 
-RegisterServerEvent('sbm-guns:hackingCompleted')
-AddEventHandler('sbm-guns:hackingCompleted', function()
+RegisterServerEvent('p2rp-guns:hackingCompleted')
+AddEventHandler('p2rp-guns:hackingCompleted', function()
 	local src = source
 
 	if not weaponDropped then
@@ -236,20 +236,20 @@ AddEventHandler('sbm-guns:hackingCompleted', function()
 			dropIds = dropIds + 1
 			activeDrops[dropIds] = {pickupLocation = math.random(pickupLocations), itemName = item.itemName, label = item.label}
 
-			TriggerClientEvent('sbm-guns:manipulateDrop', -1, dropIds, activeDrops[dropIds])
-			TriggerClientEvent('sbm-guns:createBlipOnDrop', src, dropIds, item.label)
-			TriggerEvent('sbm-guns:createHeistLoop')
+			TriggerClientEvent('p2rp-guns:manipulateDrop', -1, dropIds, activeDrops[dropIds])
+			TriggerClientEvent('p2rp-guns:createBlipOnDrop', src, dropIds, item.label)
+			TriggerEvent('p2rp-guns:createHeistLoop')
 		end
 	end
 end)
 
-TriggerEvent('sbm-guns:createHeistLoop')
+TriggerEvent('p2rp-guns:createHeistLoop')
 
 
 QBCore.Functions.CreateUseableItem('electronickit', function(source, item) 
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
-		TriggerClientEvent('sbm-guns:useChip', source)
+		TriggerClientEvent('p2rp-guns:useChip', source)
 	end
 end)
 
@@ -257,7 +257,7 @@ QBCore.Functions.CreateUseableItem("greenchip", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
 		local itemName = item.name
-		TriggerClientEvent('sbm-guns:useDecryptionKey', source,  'greenchip')
+		TriggerClientEvent('p2rp-guns:useDecryptionKey', source,  'greenchip')
     end
 end)
 
@@ -265,7 +265,7 @@ QBCore.Functions.CreateUseableItem("redchip", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
 		local itemName = item.name
-		TriggerClientEvent('sbm-guns:useDecryptionKey', source,  'redchip')
+		TriggerClientEvent('p2rp-guns:useDecryptionKey', source,  'redchip')
     end
 end)
 
@@ -273,6 +273,6 @@ QBCore.Functions.CreateUseableItem("bluechip", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
 		local itemName = item.name
-		TriggerClientEvent('sbm-guns:useDecryptionKey', source, 'bluechip')
+		TriggerClientEvent('p2rp-guns:useDecryptionKey', source, 'bluechip')
     end
 end)

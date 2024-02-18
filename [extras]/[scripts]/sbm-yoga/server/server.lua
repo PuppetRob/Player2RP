@@ -4,7 +4,7 @@ if Config.Framework == 'esx' then
     for k, v in pairs(Config.YogaMats) do
         ESX.RegisterUsableItem(k, function(source)
             local xPlayer = ESX.GetPlayerFromId(source)
-            TriggerClientEvent('sbm-yoga:placemat', source, k, v)
+            TriggerClientEvent('p2rp-yoga:placemat', source, k, v)
             xPlayer.removeInventoryItem(k, 1)
         end)
     end
@@ -13,7 +13,7 @@ elseif Config.Framework == 'qb' then
     for k, v in pairs(Config.YogaMats) do
         QBCore.Functions.CreateUseableItem(k, function(source, item)
             local player = QBCore.Functions.GetPlayer(source)
-            TriggerClientEvent('sbm-yoga:placemat', source, item, v)
+            TriggerClientEvent('p2rp-yoga:placemat', source, item, v)
             player.Functions.RemoveItem(item.name, 1)
         end)
     end
@@ -27,7 +27,7 @@ local function GetItemFromModel(model)
     end
 end
 
-RegisterNetEvent('sbm-yoga:pickup', function(model)
+RegisterNetEvent('p2rp-yoga:pickup', function(model)
     if model then
         local item = GetItemFromModel(model)
         if Config.Framework == 'esx' then

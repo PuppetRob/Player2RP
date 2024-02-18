@@ -1,4 +1,4 @@
-QBCore.Functions.CreateCallback("sbm-multicharacter:server:setupCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("p2rp-multicharacter:server:setupCharacters", function(source, cb)
     local license = QBCore.Functions.GetIdentifier(source, 'license')
     local plyChars = {}
     local result = ExecuteSql("SELECT * FROM players WHERE license = '"..license.."'")
@@ -76,7 +76,7 @@ function loadHouseData(src)
 end
 
 
-RegisterNetEvent('sbm-multicharacter:server:loadUserData', function(cData)
+RegisterNetEvent('p2rp-multicharacter:server:loadUserData', function(cData)
     local src = source
     if QBCore.Player.Login(src, cData) then
         repeat

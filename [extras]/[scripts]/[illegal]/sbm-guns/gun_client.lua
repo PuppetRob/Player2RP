@@ -422,8 +422,8 @@ local pickupLocations = {
 
 local activeDrops = {}
 
-RegisterNetEvent('sbm-guns:manipulateDrop')
-AddEventHandler('sbm-guns:manipulateDrop', function(dropId, dropData)
+RegisterNetEvent('p2rp-guns:manipulateDrop')
+AddEventHandler('p2rp-guns:manipulateDrop', function(dropId, dropData)
 	if not dropData then
 		if activeDrops[dropId].blip and DoesBlipExist(activeDrops[dropId].blip) then
 			RemoveBlip(activeDrops[dropId].blip)
@@ -438,13 +438,13 @@ AddEventHandler('sbm-guns:manipulateDrop', function(dropId, dropData)
 	activeDrops[dropId] = dropData
 end)
 
-RegisterNetEvent('sbm-guns:obtainDrops')
-AddEventHandler('sbm-guns:obtainDrops', function(serverDrops)
+RegisterNetEvent('p2rp-guns:obtainDrops')
+AddEventHandler('p2rp-guns:obtainDrops', function(serverDrops)
 	activeDrops = serverDrops
 end)
 
-RegisterNetEvent('sbm-guns:createBlipOnDrop')
-AddEventHandler('sbm-guns:createBlipOnDrop', function(dropId)
+RegisterNetEvent('p2rp-guns:createBlipOnDrop')
+AddEventHandler('p2rp-guns:createBlipOnDrop', function(dropId)
 	while not activeDrops[dropId] do
 		Citizen.Wait(0)
 	end
@@ -502,8 +502,8 @@ end
 
 local inAnimation = false
 
-RegisterNetEvent('sbm-guns:openCrate')
-AddEventHandler('sbm-guns:openCrate', function(crateObject)
+RegisterNetEvent('p2rp-guns:openCrate')
+AddEventHandler('p2rp-guns:openCrate', function(crateObject)
 	LoadAnimDict("amb@medic@standing@tendtodead@enter")
 	LoadAnimDict("amb@medic@standing@tendtodead@idle_a")
 
@@ -533,7 +533,7 @@ AddEventHandler('sbm-guns:openCrate', function(crateObject)
 end)
 
 Citizen.CreateThread(function()
-	TriggerServerEvent('sbm-guns:obtainDrops')
+	TriggerServerEvent('p2rp-guns:obtainDrops')
 
 	while true do
 		local dropDistance, dropId = ScanActiveDrops()
@@ -563,11 +563,11 @@ RegisterNetEvent('do')
 AddEventHandler('do', function(dropId)
 	inAnimation = true
 
-	TriggerEvent('sbm-guns:openCrate', activeDrops[dropId].object)
+	TriggerEvent('p2rp-guns:openCrate', activeDrops[dropId].object)
 	exports['ps-dispatch']:GunRobbery()
 	-- local finished = exports["op-progressbar"]:progressBar("Drilling Crate", math.random(20000, 30000))
 	QBCore.Functions.Progressbar("drilling_", "Drilling...", math.random(20000, 30000), false, true, {}, {}, {}, {}, function()
-		TriggerServerEvent('sbm-guns:pickUpDrop', dropId)
+		TriggerServerEvent('p2rp-guns:pickUpDrop', dropId)
 		inAnimation = false
 	end)
 end) 
@@ -629,14 +629,14 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('sbm-guns:useChip')
+RegisterNetEvent('p2rp-guns:useChip')
 
-AddEventHandler('sbm-guns:useChip', function()
+AddEventHandler('p2rp-guns:useChip', function()
 	local dstcheck = #(GetEntityCoords(PlayerPedId()) - hackingPosition)
 
 	if dstcheck < 5 then
 		if StartHacking() then
-			TriggerServerEvent('sbm-guns:wonHacking')
+			TriggerServerEvent('p2rp-guns:wonHacking')
 		end
 	end
 end)
@@ -655,38 +655,38 @@ end
 
 
 RegisterNetEvent('opguns:doDecryptionAnimation')
-AddEventHandler('sbm-guns:doDecryptionAnimation', function()
+AddEventHandler('p2rp-guns:doDecryptionAnimation', function()
 	local ped = PlayerPedId()
 	RequestAnimDict('missheist_jewel@hacking')
 	TaskPlayAnim(ped, "missheist_jewel@hacking", "hack_loop", 8.0, 1.0, -1, 9, 0, 0, 0, 0)
 end)
 
-RegisterNetEvent('sbm-guns:useDecryptionKey')
-AddEventHandler('sbm-guns:useDecryptionKey', function(item)
+RegisterNetEvent('p2rp-guns:useDecryptionKey')
+AddEventHandler('p2rp-guns:useDecryptionKey', function(item)
 	local dstcheck = #(GetEntityCoords(PlayerPedId()) - hackingPosition)
 	-- print(item)
 	if dstcheck < 5 then
-		TriggerEvent('sbm-guns:doDecryptionAnimation')
+		TriggerEvent('p2rp-guns:doDecryptionAnimation')
 
 
 		QBCore.Functions.Progressbar("drilling_", "Decrypting with key...", math.random(10000, 15000), false, true, {}, {}, {}, {}, function()
 			ClearPedTasks(PlayerPedId())
 			RemoveAnimDict("missheist_jewel@hacking")
-			TriggerServerEvent('sbm-guns:server:useDecryptionKey', item)
+			TriggerServerEvent('p2rp-guns:server:useDecryptionKey', item)
 		end)
 	end
 end)
 
 function hackingCompleted(success, timeremaining)
 	if success then	
-		TriggerServerEvent('sbm-guns:hackingCompleted')
+		TriggerServerEvent('p2rp-guns:hackingCompleted')
 	end
 
 	TriggerEvent('mhacking:hide')
 end
 
-RegisterNetEvent('sbm-guns:hackingMinigame')
-AddEventHandler('sbm-guns:hackingMinigame', function()
+RegisterNetEvent('p2rp-guns:hackingMinigame')
+AddEventHandler('p2rp-guns:hackingMinigame', function()
 	TriggerEvent("mhacking:show")
 	TriggerEvent("mhacking:start", 7, 35, hackingCompleted)
 end)

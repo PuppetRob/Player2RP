@@ -8,8 +8,8 @@ QBCore.Functions.CreateCallback('camp:item', function(source, cb, item)
     cb(hasitem)
 end)
 
-RegisterNetEvent("sbm-camping:server:giveBackTent")
-AddEventHandler("sbm-camping:server:giveBackTent", function()
+RegisterNetEvent("p2rp-camping:server:giveBackTent")
+AddEventHandler("p2rp-camping:server:giveBackTent", function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.AddItem("camp",1)
@@ -21,6 +21,6 @@ QBCore.Functions.CreateUseableItem("camp", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(source)
     if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("sbm-camping:client:UseCampingKit", source)
+        TriggerClientEvent("p2rp-camping:client:UseCampingKit", source)
 end
 end)

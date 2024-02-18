@@ -3,8 +3,8 @@ QBCore = exports['qb-core']:GetCoreObject()
 
 local GlobalCD = false
 
-RegisterServerEvent('sbm-hostage:ServerCooldown')
-AddEventHandler('sbm-hostage:ServerCooldown', function()
+RegisterServerEvent('p2rp-hostage:ServerCooldown')
+AddEventHandler('p2rp-hostage:ServerCooldown', function()
     local CDTime = math.ceil(Config.GlobalCooldown * 60)
     if not GlobalCD then 
         GlobalCD = true
@@ -22,8 +22,8 @@ AddEventHandler('sbm-hostage:ServerCooldown', function()
     end
 end)
 
-RegisterServerEvent('sbm-hostage:srv:RobHostage')
-AddEventHandler('sbm-hostage:srv:RobHostage', function()
+RegisterServerEvent('p2rp-hostage:srv:RobHostage')
+AddEventHandler('p2rp-hostage:srv:RobHostage', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player ~= nil then 
@@ -36,7 +36,7 @@ AddEventHandler('sbm-hostage:srv:RobHostage', function()
     end
 end)
 
-QBCore.Functions.CreateCallback('sbm-hostage:GetGlobalCooldown', function(source, cb)
+QBCore.Functions.CreateCallback('p2rp-hostage:GetGlobalCooldown', function(source, cb)
     if Config.EnableGlobalCooldown then 
         cb(GlobalCD)
     else
@@ -44,7 +44,7 @@ QBCore.Functions.CreateCallback('sbm-hostage:GetGlobalCooldown', function(source
     end
 end)
 
-QBCore.Functions.CreateCallback('sbm-hostage:getCops', function(source, cb)
+QBCore.Functions.CreateCallback('p2rp-hostage:getCops', function(source, cb)
     local amount = 0
     if Config.EnableRequiredCops then 
         for k, v in pairs(QBCore.Functions.GetPlayers()) do
@@ -62,24 +62,24 @@ QBCore.Functions.CreateCallback('sbm-hostage:getCops', function(source, cb)
 end)
 
 
-RegisterServerEvent('sbm-hostage:srv:releaseHostage')
-AddEventHandler('sbm-hostage:srv:releaseHostage', function(data)
+RegisterServerEvent('p2rp-hostage:srv:releaseHostage')
+AddEventHandler('p2rp-hostage:srv:releaseHostage', function(data)
     local src = source
-    TriggerClientEvent('sbm-hostage:releaseHostage', -1, data)
-    TriggerClientEvent('sbm-hostage:SetReleaseSource', src)
+    TriggerClientEvent('p2rp-hostage:releaseHostage', -1, data)
+    TriggerClientEvent('p2rp-hostage:SetReleaseSource', src)
 end)
 
-RegisterServerEvent('sbm-hostage:attach')
-AddEventHandler('sbm-hostage:attach', function(source, target)
-    TriggerClientEvent('sbm-hostage:attach', -1, source, target)
+RegisterServerEvent('p2rp-hostage:attach')
+AddEventHandler('p2rp-hostage:attach', function(source, target)
+    TriggerClientEvent('p2rp-hostage:attach', -1, source, target)
 end)
 
-RegisterServerEvent('sbm-hostage:deattach')
-AddEventHandler('sbm-hostage:deattach', function(source, target)
-    TriggerClientEvent('sbm-hostage:deattach', -1, source, target)
+RegisterServerEvent('p2rp-hostage:deattach')
+AddEventHandler('p2rp-hostage:deattach', function(source, target)
+    TriggerClientEvent('p2rp-hostage:deattach', -1, source, target)
 end)
 
-RegisterServerEvent('sbm-hostage:srv:HandcuffAnimations')
-AddEventHandler('sbm-hostage:srv:HandcuffAnimations', function(playerped1, target)
-    TriggerClientEvent('sbm-hostage:HandcuffAnimations', -1, playerped1, target)
+RegisterServerEvent('p2rp-hostage:srv:HandcuffAnimations')
+AddEventHandler('p2rp-hostage:srv:HandcuffAnimations', function(playerped1, target)
+    TriggerClientEvent('p2rp-hostage:HandcuffAnimations', -1, playerped1, target)
 end)

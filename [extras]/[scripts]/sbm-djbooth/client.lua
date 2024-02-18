@@ -29,7 +29,7 @@ local musicHeader = {
     {
         header = 'Play some music!',
         params = {
-            event = 'sbm-djbooth:client:playMusic'
+            event = 'p2rp-djbooth:client:playMusic'
         }
     }
 }
@@ -46,7 +46,7 @@ function createMusicMenu()
             header = '🎶 | Play a song',
             txt = 'Enter a youtube URL',
             params = {
-                event = 'sbm-djbooth:client:musicMenu',
+                event = 'p2rp-djbooth:client:musicMenu',
                 args = {
                     zoneName = currentZone
                 }
@@ -57,7 +57,7 @@ function createMusicMenu()
             txt = 'Pause currently playing music',
             params = {
                 isServer = true,
-                event = 'sbm-djbooth:server:pauseMusic',
+                event = 'p2rp-djbooth:server:pauseMusic',
                 args = {
                     zoneName = currentZone
                 }
@@ -68,7 +68,7 @@ function createMusicMenu()
             txt = 'Resume playing paused music',
             params = {
                 isServer = true,
-                event = 'sbm-djbooth:server:resumeMusic',
+                event = 'p2rp-djbooth:server:resumeMusic',
                 args = {
                     zoneName = currentZone
                 }
@@ -78,7 +78,7 @@ function createMusicMenu()
             header = '🔈 | Change Volume',
             txt = 'Resume playing paused music',
             params = {
-                event = 'sbm-djbooth:client:changeVolume',
+                event = 'p2rp-djbooth:client:changeVolume',
                 args = {
                     zoneName = currentZone
                 }
@@ -89,7 +89,7 @@ function createMusicMenu()
             txt = 'Stop the music & choose a new song',
             params = {
                 isServer = true,
-                event = 'sbm-djbooth:server:stopMusic',
+                event = 'p2rp-djbooth:server:stopMusic',
                 args = {
                     zoneName = currentZone
                 }
@@ -168,12 +168,12 @@ end)
 
 -- Events
 
-RegisterNetEvent('sbm-djbooth:client:playMusic', function()
+RegisterNetEvent('p2rp-djbooth:client:playMusic', function()
     createMusicMenu()
     exports['qb-menu']:openMenu(musicMenu)
 end)
 
-RegisterNetEvent('sbm-djbooth:client:musicMenu', function()
+RegisterNetEvent('p2rp-djbooth:client:musicMenu', function()
     local dialog = exports['qb-input']:ShowInput({
         header = 'Song Selection',
         submitText = "Submit",
@@ -188,11 +188,11 @@ RegisterNetEvent('sbm-djbooth:client:musicMenu', function()
     })
     if dialog then
         if not dialog.song then return end
-        TriggerServerEvent('sbm-djbooth:server:playMusic', dialog.song, currentZone)
+        TriggerServerEvent('p2rp-djbooth:server:playMusic', dialog.song, currentZone)
     end
 end)
 
-RegisterNetEvent('sbm-djbooth:client:changeVolume', function()
+RegisterNetEvent('p2rp-djbooth:client:changeVolume', function()
     local dialog = exports['qb-input']:ShowInput({
         header = 'Music Volume',
         submitText = "Submit",
@@ -207,6 +207,6 @@ RegisterNetEvent('sbm-djbooth:client:changeVolume', function()
     })
     if dialog then
         if not dialog.volume then return end
-        TriggerServerEvent('sbm-djbooth:server:changeVolume', dialog.volume, currentZone)
+        TriggerServerEvent('p2rp-djbooth:server:changeVolume', dialog.volume, currentZone)
     end
 end)

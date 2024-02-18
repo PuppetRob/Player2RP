@@ -190,12 +190,12 @@ local blips = {
 
  -- {title="A Black Market", colour=40, id=303, x = 559.63, y = 2794.83, z = 42.16, scale = 0.650}, -- Behind plasma in harmony | Patoche Free
  -- {title="A Oxy Run", colour=40, id=303, x = 1387.31, y = 3608.27, z = 38.94, scale = 0.650}, -- Airpot, add pilot in pedspawner
- -- {title="Chop Shop", colour=40, id=303, x = 752.36, y = -1207.53, z = 24.76, scale = 0.650}, -- sbm-chopshop
+ -- {title="Chop Shop", colour=40, id=303, x = 752.36, y = -1207.53, z = 24.76, scale = 0.650}, -- p2rp-chopshop
  -- {title="A Illegal Med", colour=40, id=303, x = -1373.0, y = -327.0, z = 40.0, scale = 0.650}, -- Near Bloods MLO off Perth Street | Free from Charlie
  -- {title="Grandma", colour=40, id=303, x = 3313.76, y = 5178.0, z = 19.61, scale = 0.65}, -- Grandma
  -- {title="Eclipse Applestore", colour=13, id=184, x = -747.71, y = 257.16, z = 78.26, scale = 0.65},
  -- {title="San Andreas Applestore", colour=13, id=184, x = -778.81, y = -608.47, z = 31.21, scale = 0.65}, 
- -- {title="Machinery Theft", colour=40, id=303, x = 2707.05, y = 2777.29, z = 37.88, scale = 0.65}, -- sbm-machines
+ -- {title="Machinery Theft", colour=40, id=303, x = 2707.05, y = 2777.29, z = 37.88, scale = 0.65}, -- p2rp-machines
   
    
    -- Weed

@@ -19,7 +19,7 @@ function CreateTargetExports(obj)
 		options = {
 			{
 				type = "client",
-				event = "sbm-weedplanting:client:checkClosestPlant",
+				event = "p2rp-weedplanting:client:checkClosestPlant",
 				icon = "fas fa-cannabis",
 				label = "Check Plant",
 			},
@@ -43,8 +43,8 @@ function ProgressBar(type, id, coords, obj) -- do not change these parameters
 		}, {}, {}, function() -- Done    
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
-			TriggerServerEvent("sbm-weedplanting:server:removeItem", Config.Items["water"])  -- do not touch this
-			TriggerServerEvent("sbm-weedplanting:server:updateWeedPlantWater", id, coords)  -- do not touch this
+			TriggerServerEvent("p2rp-weedplanting:server:removeItem", Config.Items["water"])  -- do not touch this
+			TriggerServerEvent("p2rp-weedplanting:server:updateWeedPlantWater", id, coords)  -- do not touch this
 		end, function()	--cancel
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
@@ -62,7 +62,7 @@ function ProgressBar(type, id, coords, obj) -- do not change these parameters
 		}, {}, {}, function() -- Done    
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
-			TriggerServerEvent("sbm-weedplanting:server:deleteWeedPlant", id, coords)  -- do not touch this
+			TriggerServerEvent("p2rp-weedplanting:server:deleteWeedPlant", id, coords)  -- do not touch this
 		end, function()	--cancel
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
@@ -80,8 +80,8 @@ function ProgressBar(type, id, coords, obj) -- do not change these parameters
 		}, {}, {}, function() -- Done    
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
-			TriggerServerEvent("sbm-weedplanting:server:removeItem", Config.Items["insecticide"])  -- do not touch this
-			TriggerServerEvent("sbm-weedplanting:server:updateWeedPlantHealth", id, coords)  -- do not touch this
+			TriggerServerEvent("p2rp-weedplanting:server:removeItem", Config.Items["insecticide"])  -- do not touch this
+			TriggerServerEvent("p2rp-weedplanting:server:updateWeedPlantHealth", id, coords)  -- do not touch this
 		end, function()	--cancel
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
@@ -98,7 +98,7 @@ function ProgressBar(type, id, coords, obj) -- do not change these parameters
 			ClearPedTasks(ped)
 			ClearPedSecondaryTask(ped)
 			if DoesEntityExist(obj) then
-				TriggerServerEvent("sbm-weedplanting:server:harvestWeed", id, coords) -- do not touch this
+				TriggerServerEvent("p2rp-weedplanting:server:harvestWeed", id, coords) -- do not touch this
 				currentObj = nil  -- do not touch this
 			end
 		end, function()	--cancel
@@ -120,7 +120,7 @@ function ProgressBarPlant(a, b, c, d) -- do not change the parameters
 		}, {}, {}, function() -- Done    
 		ClearPedTasks(ped)
 		ClearPedSecondaryTask(ped)
-		TriggerServerEvent("sbm-weedplanting:server:addWeedPlant", a, b, c, d) -- do not touch this
+		TriggerServerEvent("p2rp-weedplanting:server:addWeedPlant", a, b, c, d) -- do not touch this
 	end, function()	--cancel
 		ClearPedTasks(ped)
 		ClearPedSecondaryTask(ped)

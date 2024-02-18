@@ -58,7 +58,7 @@ local function VehicleList()
             header = v,
             txt = "Vehicle: "..v.."",
             params = {
-                event = "sbm-galaxy:client:SpawnListVehicle",
+                event = "p2rp-galaxy:client:SpawnListVehicle",
                 args = {
                     headername = v,
                     spawnName = k
@@ -78,7 +78,7 @@ local function VehicleList()
 end
 
 
-RegisterNetEvent("sbm-galaxy:client:SpawnListVehicle",function(data)
+RegisterNetEvent("p2rp-galaxy:client:SpawnListVehicle",function(data)
     local vehicleSpawnName=data.spawnName
     SpawnListVehicle(vehicleSpawnName)
 end) 

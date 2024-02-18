@@ -15,7 +15,7 @@ function dump(o)
 end
 
 function resetPlateIfFake(fakePlate, veh)
-    QBCore.Functions.TriggerCallback('sbm-plateswap:server:getRealPlateFromFakePlate', function(realPlate)
+    QBCore.Functions.TriggerCallback('p2rp-plateswap:server:getRealPlateFromFakePlate', function(realPlate)
         if realPlate then
             SetVehicleNumberPlateText(veh, realPlate)
         end
@@ -23,7 +23,7 @@ function resetPlateIfFake(fakePlate, veh)
 end
 
 function applyFakePlateIfExists(realPlate, veh)
-    QBCore.Functions.TriggerCallback('sbm-plateswap:server:getFakePlateFromRealPlate', function(fakePlate)
+    QBCore.Functions.TriggerCallback('p2rp-plateswap:server:getFakePlateFromRealPlate', function(fakePlate)
         if fakePlate then
             SetVehicleNumberPlateText(veh, fakePlate)
         end
@@ -39,7 +39,7 @@ local function callCops()
     if street2 ~= nil then
         streetLabel = streetLabel .. " " .. street2
     end 
-    TriggerServerEvent("sbm-plateswap:server:callCops", coordinates,  streetLabel)
+    TriggerServerEvent("p2rp-plateswap:server:callCops", coordinates,  streetLabel)
 end
 
 local function setPlate(fakePlate, vehicle)
@@ -49,10 +49,10 @@ local function setPlate(fakePlate, vehicle)
         print('vehicle', vehicle)
     end
     local plate = QBCore.Functions.GetPlate(vehicle)
-    QBCore.Functions.TriggerCallback('sbm-plateswap:server:setFakePlate', function(plateWasAvailable)
+    QBCore.Functions.TriggerCallback('p2rp-plateswap:server:setFakePlate', function(plateWasAvailable)
         if plateWasAvailable then
             SetVehicleNumberPlateText(vehicle, captializedFakePlate)
-            TriggerServerEvent('sbm-plateswap:server:setFakePlate', plate, captializedFakePlate)
+            TriggerServerEvent('p2rp-plateswap:server:setFakePlate', plate, captializedFakePlate)
             Wait(200)
             QBCore.Functions.TriggerCallback('qb-vehiclekeys:server:GetVehicleKeys', function(keysList)
                 if keysList[plate] then
@@ -84,7 +84,7 @@ local function removeFakePlate(vehicle)
     end
     QBCore.Functions.TriggerCallback('qb-vehiclekeys:server:GetVehicleKeys', function(keysList)
         if keysList[fakePlate] then
-            QBCore.Functions.TriggerCallback('sbm-plateswap:server:removeFakePlate', function(ogPlate)
+            QBCore.Functions.TriggerCallback('p2rp-plateswap:server:removeFakePlate', function(ogPlate)
                 SetVehicleNumberPlateText(vehicle, ogPlate)
             end, fakePlate)
         else
@@ -118,7 +118,7 @@ local function takePlate(entity)
                 disableMouse = false,
                 disableCombat = true,
             }, {}, {}, {}, function()
-                QBCore.Functions.TriggerCallback('sbm-plateswap:server:createItem', function(plateWasAvailable)
+                QBCore.Functions.TriggerCallback('p2rp-plateswap:server:createItem', function(plateWasAvailable)
                     if plateWasAvailable == 'OK' then
                         local chance = math.random(1,100)
                         if chance < Config.Settings.PoliceCallChance then
@@ -152,7 +152,7 @@ end
 
 local function applyPlate(entity)
     local plate = QBCore.Functions.GetPlate(entity)
-    QBCore.Functions.TriggerCallback('sbm-plateswap:server:isFakePlate', function(isFake)
+    QBCore.Functions.TriggerCallback('p2rp-plateswap:server:isFakePlate', function(isFake)
         if not isFake then
             TriggerEvent('animations:client:EmoteCommandStart', {"mechanic4"})
             QBCore.Functions.Progressbar("applying_plate", Lang:t('info.applying'), Config.Settings.AddTime, false, true, {
@@ -161,7 +161,7 @@ local function applyPlate(entity)
                 disableMouse = false,
                 disableCombat = true,
             }, {}, {}, {}, function()
-                QBCore.Functions.TriggerCallback('sbm-plateswap:server:getFakePlateId', function(fakePlate)
+                QBCore.Functions.TriggerCallback('p2rp-plateswap:server:getFakePlateId', function(fakePlate)
                     if fakePlate then
                         if useDebug then
                             print('item found', fakePlate)
@@ -182,15 +182,15 @@ local function applyPlate(entity)
     end, plate)
 end
 
-RegisterNetEvent('sbm-plateswap:client:setFakePlate', function(fakePlate)
+RegisterNetEvent('p2rp-plateswap:client:setFakePlate', function(fakePlate)
     local captializedFakePlate = fakePlate:upper()
     print('fakeplate', captializedFakePlate)
     local player = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(player, false)
-    QBCore.Functions.TriggerCallback('sbm-plateswap:server:setFakePlate', function(plateWasAvailable)
+    QBCore.Functions.TriggerCallback('p2rp-plateswap:server:setFakePlate', function(plateWasAvailable)
         if plateWasAvailable then
             SetVehicleNumberPlateText(vehicle, captializedFakePlate)
-            TriggerServerEvent('sbm-plateswap:server:setFakePlate', plate, captializedFakePlate)
+            TriggerServerEvent('p2rp-plateswap:server:setFakePlate', plate, captializedFakePlate)
             Wait(200)
             TriggerEvent('qb-vehiclekeys:client:AddKeys', fakePlate:upper())
         else
@@ -199,7 +199,7 @@ RegisterNetEvent('sbm-plateswap:client:setFakePlate', function(fakePlate)
     end, captializedFakePlate, plate)
 end)
 
-RegisterNetEvent('sbm-plateswap:client:removeFakePlate', function()
+RegisterNetEvent('p2rp-plateswap:client:removeFakePlate', function()
     local player = PlayerPedId()
 
     local vehicle = GetVehiclePedIsIn(player, false)
@@ -210,7 +210,7 @@ RegisterNetEvent('sbm-plateswap:client:removeFakePlate', function()
     if useDebug then
         print('fake plate', fakePlate)
     end
-    QBCore.Functions.TriggerCallback('sbm-plateswap:server:removeFakePlate', function(ogPlate)
+    QBCore.Functions.TriggerCallback('p2rp-plateswap:server:removeFakePlate', function(ogPlate)
         SetVehicleNumberPlateText(vehicle, ogPlate)
     end, fakePlate)
     --TriggerEvent('qb-vehiclekeys:client:AddKeys', fakePlate:upper())
@@ -281,7 +281,7 @@ CreateThread(function()
     })
 end)
 
-RegisterNetEvent('sbm-plateswap:client:toggleDebug', function(debug)
+RegisterNetEvent('p2rp-plateswap:client:toggleDebug', function(debug)
    print('Setting debug to', debug)
    useDebug = debug
 end)

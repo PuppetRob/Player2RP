@@ -1,4 +1,4 @@
-const scriptName = "sbm-crafting";
+const scriptName = "p2rp-crafting";
 let currentRecipe = null;
 let currentBlueprint = null;
 

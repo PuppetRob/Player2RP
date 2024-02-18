@@ -14,18 +14,18 @@ end)
 RegisterNetEvent("baseevents:enteredVehicle", function(currentVehicle, currentSeat)
     local src = source
     if (currentSeat == -1) then
-        TriggerClientEvent("sbm-airsusp:enterVeh", src, currentVehicle)
+        TriggerClientEvent("p2rp-airsusp:enterVeh", src, currentVehicle)
     end 
 end)
 
 
 RegisterNetEvent('entityCreating', function(entity)
 	if VehData[GetVehicleNumberPlateText(entity)] then 
-		TriggerClientEvent('sbm-airsusp:fetchChange', -1, entity, VehData[GetVehicleNumberPlateText(entity)].value, VehData[GetVehicleNumberPlateText(entity)].level)
+		TriggerClientEvent('p2rp-airsusp:fetchChange', -1, entity, VehData[GetVehicleNumberPlateText(entity)].value, VehData[GetVehicleNumberPlateText(entity)].level)
 	end
 end)
 
-RegisterServerEvent('sbm-airsusp:fetch', function(netID)
+RegisterServerEvent('p2rp-airsusp:fetch', function(netID)
 	local src = source
 	local loadFile = LoadResourceFile(GetCurrentResourceName(), "./saveData.json")  
 	local openData = json.decode(loadFile)
@@ -36,7 +36,7 @@ RegisterServerEvent('sbm-airsusp:fetch', function(netID)
 			for k, v in pairs(openData) do
 				if v.plate == plate then
 					found = true
-					TriggerClientEvent('sbm-airsusp:fetchChange', -1, netID, v.value, v.level)
+					TriggerClientEvent('p2rp-airsusp:fetchChange', -1, netID, v.value, v.level)
 					if not VehData[plate] then
 						local newValue = {plate = v.plate, value = v.value, level = v.level}
 						VehData[plate] = newValue
@@ -44,21 +44,21 @@ RegisterServerEvent('sbm-airsusp:fetch', function(netID)
 				end
 			end
 			if not found then
-				TriggerClientEvent('sbm-airsusp:fetchChange', src, netID, 0, 0)
+				TriggerClientEvent('p2rp-airsusp:fetchChange', src, netID, 0, 0)
 			end
 		end
 	else
 		if VehData[plate] then 
-			TriggerClientEvent('sbm-airsusp:fetchChange', -1, netID, VehData[plate].value, VehData[plate].level)
+			TriggerClientEvent('p2rp-airsusp:fetchChange', -1, netID, VehData[plate].value, VehData[plate].level)
 		else
-			TriggerClientEvent('sbm-airsusp:fetchChange', src, netID, 0, 0)
+			TriggerClientEvent('p2rp-airsusp:fetchChange', src, netID, 0, 0)
 		end
 	end
 end)
 
 
 
-RegisterServerEvent('sbm-airsusp:update', function(netID, level, value)
+RegisterServerEvent('p2rp-airsusp:update', function(netID, level, value)
 	local loadFile = LoadResourceFile(GetCurrentResourceName(), "./saveData.json")  
 	local openData = json.decode(loadFile)
 	local newopenData = {}
@@ -83,7 +83,7 @@ RegisterServerEvent('sbm-airsusp:update', function(netID, level, value)
 			end
 			SaveResourceFile(GetCurrentResourceName(), "saveData.json", json.encode(newopenData), -1)
 		end
-		TriggerClientEvent('sbm-airsusp:fetchChange', -1, netID, value, level)
+		TriggerClientEvent('p2rp-airsusp:fetchChange', -1, netID, value, level)
 	else
 		if VehData[plate] then 
 			VehData[plate].value = value
@@ -92,7 +92,7 @@ RegisterServerEvent('sbm-airsusp:update', function(netID, level, value)
 			local newValue = {plate = plate, value = value, level = level}
 			VehData[plate] = newValue
 		end
-		TriggerClientEvent('sbm-airsusp:fetchChange', -1, netID, value, level)
+		TriggerClientEvent('p2rp-airsusp:fetchChange', -1, netID, value, level)
 	end
 end)
 

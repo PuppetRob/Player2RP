@@ -57,8 +57,8 @@ AddEventHandler(
 --================================--
 
 
-RegisterServerEvent('sbm-fire:server:callCops')
-AddEventHandler('sbm-fire:server:callCops', function(type, streetLabel, coords)
+RegisterServerEvent('p2rp-fire:server:callCops')
+AddEventHandler('p2rp-fire:server:callCops', function(type, streetLabel, coords)
     local data = {displayCode = '10-67', description = 'Fire Alarm', isImportant = 0, recipientList = {'police', 'ambulance'}, length = '20000', infoM = 'fa-info-circle', info = 'A Fire Alarm has been set off!'}
     local dispatchData = {dispatchData = data, caller = 'Alarm', coords = vector3(coords.x, coords.y, coords.z)} 
     TriggerEvent('wf-alerts:svNotify', dispatchData) 

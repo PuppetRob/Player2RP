@@ -16,8 +16,8 @@ AddEventHandler("bodycam:time", function (h,m,s)
     })
 end)
 
-RegisterNetEvent("sbm-bodycam:openBoy")
-AddEventHandler("sbm-bodycam:openBoy", function (item, h,m,s)
+RegisterNetEvent("p2rp-bodycam:openBoy")
+AddEventHandler("p2rp-bodycam:openBoy", function (item, h,m,s)
     local Player = QBCore.Functions.GetPlayerData()
     if PlayerJob.name == "lspd" or PlayerJob.name == 'sast' or PlayerJob.name == 'bcso' then
         if Player.charinfo.gender == "0" then

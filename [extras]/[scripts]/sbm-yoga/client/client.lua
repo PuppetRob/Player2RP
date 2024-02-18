@@ -11,7 +11,7 @@ for k, v in pairs(Config.YogaMats) do
     table.insert(yogamats, v)
 end
 
-RegisterNetEvent('sbm-yoga:placemat', function(item, model)
+RegisterNetEvent('p2rp-yoga:placemat', function(item, model)
     local ped = PlayerPedId()
     local x, y, z = table.unpack(GetOffsetFromEntityInWorldCoords(ped, 0.0, 1.0, 0))
     RequestModel(model)
@@ -39,7 +39,7 @@ if Config.Target == 'qtarget' then
                 icon = "fa-solid fa-arrow-up-from-bracket",
                 label = "Pick Up",
                 action = function(entity)
-                    TriggerEvent('sbm-yoga:pickup', entity)
+                    TriggerEvent('p2rp-yoga:pickup', entity)
                 end,
                 canInteract = function()
                     if IsEntityAMissionEntity(entity) then
@@ -49,7 +49,7 @@ if Config.Target == 'qtarget' then
                 end
             },
             {
-                event = 'sbm-yoga:lotusflower',
+                event = 'p2rp-yoga:lotusflower',
                 icon = "fa-solid fa-lungs",
                 label = "Do Yoga",
                 canInteract = function(entity)
@@ -65,7 +65,7 @@ if Config.Target == 'qtarget' then
 elseif Config.Target == 'ox_target' then
     exports.ox_target:addModel(yogamats, {
          {
-            event = 'sbm-yoga:lotusflower',
+            event = 'p2rp-yoga:lotusflower',
             icon = "fa-solid fa-lungs",
             label = "Lotus Flower",
             canInteract = function(entity)
@@ -80,7 +80,7 @@ elseif Config.Target == 'ox_target' then
             icon = "fa-solid fa-arrow-up-from-bracket",
             label = "Pick Up",
             onSelect = function(data)
-                TriggerEvent('sbm-yoga:pickup', data.entity)
+                TriggerEvent('p2rp-yoga:pickup', data.entity)
             end,
             canInteract = function(entity)
                 if not doingYoga and IsEntityAMissionEntity(entity) then
@@ -99,7 +99,7 @@ elseif Config.Target == 'qb-target' then
                 icon = "fa-solid fa-arrow-up-from-bracket",
                 label = "Pick Up",
                 action = function(entity)
-                    TriggerEvent('sbm-yoga:pickup', entity)
+                    TriggerEvent('p2rp-yoga:pickup', entity)
                 end,
                 canInteract = function(entity)
                     if IsEntityAMissionEntity(entity) then
@@ -109,7 +109,7 @@ elseif Config.Target == 'qb-target' then
                 end,
             },
             {
-                event = 'sbm-yoga:lotusflower',
+                event = 'p2rp-yoga:lotusflower',
                 icon = "fa-solid fa-lungs",
                 label = "Do Yoga",
                 canInteract = function(entity)
@@ -124,7 +124,7 @@ elseif Config.Target == 'qb-target' then
     }) 
 end
 
-RegisterNetEvent('sbm-yoga:pickup', function(entity)
+RegisterNetEvent('p2rp-yoga:pickup', function(entity)
     local ped = PlayerPedId()
     NetworkRequestControlOfEntity(entity)
     while not NetworkRequestControlOfEntity(entity) do
@@ -136,7 +136,7 @@ RegisterNetEvent('sbm-yoga:pickup', function(entity)
     TaskPlayAnim(ped, "anim@gangops@facility@servers@bodysearch@", "player_search", 8.0, -8.0, -1, 48, 0, false, false, false)
     Wait(5000)
     ClearPedTasks(ped)
-    TriggerServerEvent('sbm-yoga:pickup', GetEntityModel(entity))
+    TriggerServerEvent('p2rp-yoga:pickup', GetEntityModel(entity))
     SetEntityAsMissionEntity(yogaMat, false, false)
     SetEntityAsNoLongerNeeded(yogaMat)
     DeleteEntity(entity)
@@ -144,7 +144,7 @@ RegisterNetEvent('sbm-yoga:pickup', function(entity)
     RemoveAnimDict('anim@gangops@facility@servers@bodysearch@')
 end)
 
-RegisterNetEvent('sbm-yoga:lotusflower',function()
+RegisterNetEvent('p2rp-yoga:lotusflower',function()
     local ped = PlayerPedId()
     doingYoga = true
     TaskStartScenarioInPlace(ped, 'WORLD_HUMAN_YOGA', 0, true)

@@ -10,7 +10,7 @@ $(function() {
 
 	document.onkeyup = function (data) {
 		if (data.which == 27) { // Escape key
-			$.post('https://sbm-plasmakart/escape', JSON.stringify({}));
+			$.post('https://p2rp-plasmakart/escape', JSON.stringify({}));
 		}
 	};
 	
@@ -19,7 +19,7 @@ $(function() {
 
 		// Verify date
 		
-		$.post('https://sbm-plasmakart/validate', JSON.stringify({
+		$.post('https://p2rp-plasmakart/validate', JSON.stringify({
 			
 			sessionname: $("#sessionName").val(),
 			gamemode: $("#GameMode").val(),

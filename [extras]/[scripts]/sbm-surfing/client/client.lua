@@ -96,8 +96,8 @@ end ]]--
 
 ------------------------------------------END BLIP-------------------------------------------------
 -----------------------------------------------GENERA SURF----------------------------------------------
-RegisterNetEvent('sbm-surfing:Auto')
-AddEventHandler('sbm-surfing:Auto', function(boatModel, plate)
+RegisterNetEvent('p2rp-surfing:Auto')
+AddEventHandler('p2rp-surfing:Auto', function(boatModel, plate)
     --DoScreenFadeOut(250)
     --Citizen.Wait(250)
     QBCore.Functions.SpawnVehicle(boatModel, function(veh)
@@ -107,7 +107,7 @@ AddEventHandler('sbm-surfing:Auto', function(boatModel, plate)
         SetEntityHeading(veh, CashoutSurfspaw.SpawnVehicle.h)
         TaskWarpPedIntoVehicle(GetPlayerPed(-1), veh, -1)
         SetVehicleEngineOn(veh, true, true)
-        --exports['sbm-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(veh), true)
+        --exports['p2rp-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(veh), true)
 
     end, CashoutSurfspaw.SpawnVehicle, true)
    --SetTimeout(1000, function()

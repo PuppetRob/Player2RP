@@ -18,7 +18,7 @@ local HostageGL = nil
 
 Citizen.CreateThread(function()
     while true do 
-        QBCore.Functions.TriggerCallback('sbm-hostage:getCops', function(cops)
+        QBCore.Functions.TriggerCallback('p2rp-hostage:getCops', function(cops)
             if cops ~= nil then 
                 copsonline = tonumber(cops)
             end
@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
 				if distanceToNPC <= Config.DistancefromNPC then
                 if copsonline >= Config.RequiredCops then 
                     randomact = math.random(1,9)
-                    QBCore.Functions.TriggerCallback('sbm-hostage:GetGlobalCooldown', function(GlobalCD)
+                    QBCore.Functions.TriggerCallback('p2rp-hostage:GetGlobalCooldown', function(GlobalCD)
                     if not GlobalCD then 
 						if GetEntityAlpha(NPC) == 255 then
                             if not UnderCD then 
@@ -63,7 +63,7 @@ Citizen.CreateThread(function()
                                         HostageInTrunk[NPC] = false
                                         IsHostageSitting[NPC] = false
                                         
-                                        TriggerEvent("sbm-hostage:hostagesurrender", NPC)
+                                        TriggerEvent("p2rp-hostage:hostagesurrender", NPC)
                                         
                                         hasHostage = true
                                     end
@@ -133,8 +133,8 @@ function IsWeaponPowerful()
 end
 
 
-RegisterNetEvent('sbm-hostage:hostagesurrender')
-AddEventHandler('sbm-hostage:hostagesurrender', function(hostage) 
+RegisterNetEvent('p2rp-hostage:hostagesurrender')
+AddEventHandler('p2rp-hostage:hostagesurrender', function(hostage) 
  
 	Citizen.CreateThread(function()
 
@@ -163,7 +163,7 @@ AddEventHandler('sbm-hostage:hostagesurrender', function(hostage)
             end)
         end
 
-        TriggerEvent('sbm-hostage:CooldownHandle')
+        TriggerEvent('p2rp-hostage:CooldownHandle')
 
         local model = GetEntityModel(hostage)
 
@@ -171,34 +171,34 @@ AddEventHandler('sbm-hostage:hostagesurrender', function(hostage)
             options = {
                 {
                     type = "client",
-                    event = "sbm-hostage:RobHostage",
+                    event = "p2rp-hostage:RobHostage",
                     icon = "fas fa-hands",
                     label = "Loot the Hostage",
                 },
 --[[                 {
                     type = "server",
-                    event = "sbm-hostage:srv:releaseHostage",
+                    event = "p2rp-hostage:srv:releaseHostage",
                     icon = "fas fa-hands",
                     label = "Release the Hostage",
                     hostage = hostage,
                 }, ]]
                 {
                     type = "client",
-                    event = "sbm-hostage:putdown",
+                    event = "p2rp-hostage:putdown",
                     icon = "fas fa-hands",
                     label = "Put the Hostage Down",
                     hostage = hostage,
                 },
                 {
                     type = "client",
-                    event = "sbm-hostage:togglegrab",
+                    event = "p2rp-hostage:togglegrab",
                     icon = "fas fa-hands",
                     label = "Grab the Hostage",
                     hostage = hostage,
                 },
 --[[                 {
                     type = "client",
-                    event = "sbm-hostage:handcuff",
+                    event = "p2rp-hostage:handcuff",
                     icon = "fas fa-hands",
                     label = "Cuff the Hostage",
                     hostage = hostage,
@@ -238,8 +238,8 @@ AddEventHandler('sbm-hostage:hostagesurrender', function(hostage)
 	end)
 end)
 
-RegisterNetEvent('sbm-hostage:RobHostage')
-AddEventHandler('sbm-hostage:RobHostage', function()
+RegisterNetEvent('p2rp-hostage:RobHostage')
+AddEventHandler('p2rp-hostage:RobHostage', function()
     local hostage = HostageGL
     if not hasRobbed then 
         QBCore.Functions.Progressbar("robbing_player", "Stealing Cash..", math.random(5000, 7000), false, true, {
@@ -253,7 +253,7 @@ AddEventHandler('sbm-hostage:RobHostage', function()
             flags = 16,
         }, {}, {}, function() -- Done
             StopAnimTask(PlayerPedId(), "random@shop_robbery", "robbery_action_b", 1.0)
-            TriggerServerEvent('sbm-hostage:srv:RobHostage')
+            TriggerServerEvent('p2rp-hostage:srv:RobHostage')
             hasRobbed = true
         end, function() -- Cancel
             StopAnimTask(PlayerPedId(), "random@shop_robbery", "robbery_action_b", 1.0)
@@ -264,8 +264,8 @@ AddEventHandler('sbm-hostage:RobHostage', function()
     end
 end)
 
-RegisterNetEvent('sbm-hostage:releaseHostage')
-AddEventHandler('sbm-hostage:releaseHostage', function(data)
+RegisterNetEvent('p2rp-hostage:releaseHostage')
+AddEventHandler('p2rp-hostage:releaseHostage', function(data)
     local hostage = data.hostage
 
     FreezeEntityPosition(hostage, false)
@@ -286,34 +286,34 @@ AddEventHandler('sbm-hostage:releaseHostage', function(data)
     TaskWanderStandard(hostage, 10.0, 10)
 end)
 
-RegisterNetEvent('sbm-hostage:SetReleaseSource')
-AddEventHandler('sbm-hostage:SetReleaseSource', function()
+RegisterNetEvent('p2rp-hostage:SetReleaseSource')
+AddEventHandler('p2rp-hostage:SetReleaseSource', function()
     HostageGL = nil 
     hasHostage = false
     hasRobbed = false
 end)
 
-RegisterNetEvent('sbm-hostage:togglegrab')
-AddEventHandler('sbm-hostage:togglegrab', function(data)
+RegisterNetEvent('p2rp-hostage:togglegrab')
+AddEventHandler('p2rp-hostage:togglegrab', function(data)
     local hostage = HostageGL
 	local player = PlayerPedId()
 	if IsHostageGrabbed[hostage] then
-		TriggerServerEvent('sbm-hostage:deattach', player, hostage)
+		TriggerServerEvent('p2rp-hostage:deattach', player, hostage)
 		IsHostageGrabbed[hostage] = false
 	else
-		TriggerServerEvent('sbm-hostage:attach', player, hostage)
+		TriggerServerEvent('p2rp-hostage:attach', player, hostage)
 		IsHostageGrabbed[hostage] = true
 	end	
 end)
 
 RegisterCommand('ungrab', function()
     if HostageGL ~= nil then 
-        TriggerEvent('sbm-hostage:togglegrab')
+        TriggerEvent('p2rp-hostage:togglegrab')
     end
 end)
 
-RegisterNetEvent('sbm-hostage:putdown')
-AddEventHandler('sbm-hostage:putdown', function()
+RegisterNetEvent('p2rp-hostage:putdown')
+AddEventHandler('p2rp-hostage:putdown', function()
     
     local hostage = HostageGL
 	local player = PlayerPedId()
@@ -341,10 +341,10 @@ AddEventHandler('sbm-hostage:putdown', function()
 end)
 
 
-RegisterNetEvent('sbm-hostage:CooldownHandle')
-AddEventHandler('sbm-hostage:CooldownHandle', function()
+RegisterNetEvent('p2rp-hostage:CooldownHandle')
+AddEventHandler('p2rp-hostage:CooldownHandle', function()
     if Config.EnableGlobalCooldown then 
-        TriggerServerEvent('sbm-hostage:ServerCooldown')
+        TriggerServerEvent('p2rp-hostage:ServerCooldown')
     end
     if Config.EnablePlayerCooldown then 
         local CooldownTime = math.ceil(Config.PlayerCooldown * 60)
@@ -364,24 +364,24 @@ AddEventHandler('sbm-hostage:CooldownHandle', function()
     end
 end)
 
-RegisterNetEvent('sbm-hostage:attach')
-AddEventHandler('sbm-hostage:attach', function(source, target)
+RegisterNetEvent('p2rp-hostage:attach')
+AddEventHandler('p2rp-hostage:attach', function(source, target)
 	AttachEntityToEntity(target, source, 11816, -0.3, 0.4, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 2, true)
 	SetEntityCollision(target, false, false)
 	SetBlockingOfNonTemporaryEvents(target, true)
 	SetPedCanPlayGestureAnims(target, false)
 end)
 
-RegisterNetEvent('sbm-hostage:deattach')
-AddEventHandler('sbm-hostage:deattach', function(source, target)
+RegisterNetEvent('p2rp-hostage:deattach')
+AddEventHandler('p2rp-hostage:deattach', function(source, target)
 	SetEntityCollision(target, true, true)
 	DetachEntity(target, true, false)
 	SetBlockingOfNonTemporaryEvents(target, true)
 	SetPedCanPlayGestureAnims(target, true)
 end)
 
-RegisterNetEvent('sbm-hostage:handcuff')
-AddEventHandler('sbm-hostage:handcuff', function()	
+RegisterNetEvent('p2rp-hostage:handcuff')
+AddEventHandler('p2rp-hostage:handcuff', function()	
 QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(result)
     if result then
         local hostage = HostageGL
@@ -395,12 +395,12 @@ QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(result)
                     SetPedAsGroupMember(hostage, playerGroupId)
                     TaskGoToEntity(hostage, PlayerPedId(), -1, 1.0, 10.0, 1073741824.0, 0)
 
-                    TriggerServerEvent('sbm-hostage:srv:HandcuffAnimations', player, hostage)
+                    TriggerServerEvent('p2rp-hostage:srv:HandcuffAnimations', player, hostage)
 
                     IsHostageCuffed[hostage] = true
                     HostageTaken = true
                 else
-                    TriggerServerEvent('sbm-hostage:srv:Uncuff', hostage)
+                    TriggerServerEvent('p2rp-hostage:srv:Uncuff', hostage)
                     IsHostageCuffed[hostage] = false
                     ClearPedTasksImmediately(hostage)
                 end
@@ -413,14 +413,14 @@ end, 'handcuffs')
 
 end)
 
-RegisterNetEvent('sbm-hostage:SyncUncuff')
+RegisterNetEvent('p2rp-hostage:SyncUncuff')
 AddEventHandler('Uncuff', function(hostage)
     IsHostageCuffed[hostage] = false
     ClearPedTasksImmediately(hostage)
 end)
 
-RegisterNetEvent('sbm-hostage:HandcuffAnimations')
-AddEventHandler('sbm-hostage:HandcuffAnimations', function(playerped1, hostage)
+RegisterNetEvent('p2rp-hostage:HandcuffAnimations')
+AddEventHandler('p2rp-hostage:HandcuffAnimations', function(playerped1, hostage)
 
     IsHostageCuffed[hostage] = true
 

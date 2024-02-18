@@ -4,15 +4,15 @@ local function ResetCheckpointStateTimer(point)
     local time = Config.ReloadTime
     SetTimeout(time, function()
         Config.Checkpoints[point]["opened"] = false
-        TriggerClientEvent('sbm-welding:client:SetBusyState', -1, point, false)
+        TriggerClientEvent('p2rp-welding:client:SetBusyState', -1, point, false)
     end)
 end
 
-QBCore.Functions.CreateCallback('sbm-welding:server:GetCheckpointsConfig', function(source, cb)
+QBCore.Functions.CreateCallback('p2rp-welding:server:GetCheckpointsConfig', function(source, cb)
     cb(Config.Checkpoints)
 end)
 
-QBCore.Functions.CreateCallback('sbm-welding:server:HasItems', function(source, cb)
+QBCore.Functions.CreateCallback('p2rp-welding:server:HasItems', function(source, cb)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local gastube = Player.Functions.GetItemByName("gastube")
@@ -24,12 +24,12 @@ QBCore.Functions.CreateCallback('sbm-welding:server:HasItems', function(source, 
     end
 end)
 
-RegisterNetEvent('sbm-welding:server:SetBusyState', function(point, bool)
+RegisterNetEvent('p2rp-welding:server:SetBusyState', function(point, bool)
     Config.Checkpoints[point]["opened"] = bool
-    TriggerClientEvent('sbm-welding:client:SetBusyState', -1, point, bool)
+    TriggerClientEvent('p2rp-welding:client:SetBusyState', -1, point, bool)
 end)
 
-RegisterNetEvent('sbm-welding:server:RemoveItem', function(point)
+RegisterNetEvent('p2rp-welding:server:RemoveItem', function(point)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local itemInfo2 = QBCore.Shared.Items["gastube"]
@@ -37,13 +37,13 @@ RegisterNetEvent('sbm-welding:server:RemoveItem', function(point)
     TriggerClientEvent('inventory:client:ItemBox', src, itemInfo2, "remove")
 end)
 
-RegisterNetEvent('sbm-welding:server:searchCheckpoint', function(point)
+RegisterNetEvent('p2rp-welding:server:searchCheckpoint', function(point)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local itemInfo = QBCore.Shared.Items["metalscrap"]
     Player.Functions.AddItem("metalscrap", 12)
     TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
     Config.Checkpoints[point]["opened"] = true
-    TriggerClientEvent('sbm-welding:client:SetBusyState', -1, point, true)
+    TriggerClientEvent('p2rp-welding:client:SetBusyState', -1, point, true)
     ResetCheckpointStateTimer(point)
 end)

@@ -8,7 +8,7 @@ local lang = Languages[Config.language]
 -- @desc Handle /me command
 local function onMeCommand(source, args)
     local text = "* " .. lang.prefix .. table.concat(args, " ") .. " *"
-    TriggerClientEvent('sbm-3d:shareDisplay', -1, text, source)
+    TriggerClientEvent('p2rp-3d:shareDisplay', -1, text, source)
 end
 
 -- Register the command

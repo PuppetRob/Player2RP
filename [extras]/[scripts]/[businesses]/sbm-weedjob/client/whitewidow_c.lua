@@ -42,7 +42,7 @@ exports['qb-target']:AddBoxZone("whitewidowduty", Config.WhiteWidowDuty, 1.0, 10
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:WhiteWidowDutyMenu",
+            event = "p2rp-weedjob:client:WhiteWidowDutyMenu",
             icon = "fas fa-clock", 
             label = "Clock In/Out",
 			job = "whitewidow",
@@ -51,7 +51,7 @@ exports['qb-target']:AddBoxZone("whitewidowduty", Config.WhiteWidowDuty, 1.0, 10
     distance = 1.0
 })
 -- White widow duty menu
-RegisterNetEvent('sbm-weedjob:client:WhiteWidowDutyMenu', function(data)
+RegisterNetEvent('p2rp-weedjob:client:WhiteWidowDutyMenu', function(data)
     exports['qb-menu']:openMenu({
         { 
             header = "On/Off Duty",
@@ -61,7 +61,7 @@ RegisterNetEvent('sbm-weedjob:client:WhiteWidowDutyMenu', function(data)
             header = "• Clock In/Out",
             txt = "Don't forget to clock in and out!",
             params = {
-                event = "sbm-weedjob:client:SetDuty",
+                event = "p2rp-weedjob:client:SetDuty",
             }
         },
         {
@@ -83,8 +83,8 @@ RegisterNetEvent('QBCore:Client:SetDuty')
 AddEventHandler('QBCore:Client:SetDuty', function(duty)
     onDuty = duty
 end)
-RegisterNetEvent("sbm-weedjob:client:SetDuty")
-AddEventHandler("sbm-weedjob:client:SetDuty", function()
+RegisterNetEvent("p2rp-weedjob:client:SetDuty")
+AddEventHandler("p2rp-weedjob:client:SetDuty", function()
     TriggerServerEvent("QBCore:ToggleDuty")
 end)
 -- Targeting for white widow storage location
@@ -97,7 +97,7 @@ exports['qb-target']:AddBoxZone("whitewidowstorage", Config.WhiteWidowStorage, 1
     }, {
         options = {
             {
-                event = "sbm-weedjob:client:WhiteWidowStorage",
+                event = "p2rp-weedjob:client:WhiteWidowStorage",
                 icon = "fas fa-box",
                 label = "Storage",
                 job = "whitewidow",
@@ -106,8 +106,8 @@ exports['qb-target']:AddBoxZone("whitewidowstorage", Config.WhiteWidowStorage, 1
         distance = 1.5
     })
 -- White widow storage
-RegisterNetEvent("sbm-weedjob:client:WhiteWidowStorage")
-AddEventHandler("sbm-weedjob:client:WhiteWidowStorage", function()
+RegisterNetEvent("p2rp-weedjob:client:WhiteWidowStorage")
+AddEventHandler("p2rp-weedjob:client:WhiteWidowStorage", function()
     TriggerEvent("inventory:client:SetCurrentStash", "whitewidowstorage")
     TriggerServerEvent("inventory:server:OpenInventory", "stash", "whitewidowstorage", {
         maxweight = 500000,
@@ -124,7 +124,7 @@ exports['qb-target']:AddBoxZone("whitewidowpay", Config.WhiteWidowPay, 1.0, 40.0
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:WhiteWidowPay",
+            event = "p2rp-weedjob:client:WhiteWidowPay",
             parms = "1",
             icon = "fas fa-credit-card",
             label = "Charge Customer",
@@ -143,7 +143,7 @@ exports['qb-target']:AddBoxZone("whitewidowpay2", Config.WhiteWidowPay2, 1.0, 10
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:WhiteWidowPay",
+            event = "p2rp-weedjob:client:WhiteWidowPay",
             parms = "1",
             icon = "fas fa-credit-card",
             label = "Charge Customer",
@@ -162,7 +162,7 @@ exports['qb-target']:AddBoxZone("whitewidowpay3", Config.WhiteWidowPay3, 1.0, 10
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:WhiteWidowPay",
+            event = "p2rp-weedjob:client:WhiteWidowPay",
             parms = "1",
             icon = "fas fa-credit-card",
             label = "Charge Customer",
@@ -172,7 +172,7 @@ exports['qb-target']:AddBoxZone("whitewidowpay3", Config.WhiteWidowPay3, 1.0, 10
     distance = 1.0
 })
 -- White widow cash register requires qb-input
-RegisterNetEvent("sbm-weedjob:client:WhiteWidowPay", function()
+RegisterNetEvent("p2rp-weedjob:client:WhiteWidowPay", function()
     local dialog = exports['qb-input']:ShowInput({
         header = "Till",
         submitText = "Bill Person",
@@ -193,7 +193,7 @@ RegisterNetEvent("sbm-weedjob:client:WhiteWidowPay", function()
     })
     if dialog then
         if not dialog.id or not dialog.amount then return end
-        TriggerServerEvent("sbm-weedjob:client:WhiteWidowPay:player", dialog.id, dialog.amount)
+        TriggerServerEvent("p2rp-weedjob:client:WhiteWidowPay:player", dialog.id, dialog.amount)
     end
 end)
 -- Targeting for white widow shop
@@ -254,7 +254,7 @@ RegisterNetEvent('case-whitewidow:client:TrimmingMenu', function()
             header = "Skunk",
             txt = "Process CBD Skunk crops into bags.",
             params = {
-                event = "sbm-weedjob:server:TrimWeed",
+                event = "p2rp-weedjob:server:TrimWeed",
                 isServer = true,
                 args = 1
             }
@@ -263,7 +263,7 @@ RegisterNetEvent('case-whitewidow:client:TrimmingMenu', function()
             header = "OG-Kush",
             txt = "Process CBD OG Kush crops into bags.",
             params = {
-                event = "sbm-weedjob:server:TrimWeed",
+                event = "p2rp-weedjob:server:TrimWeed",
                 isServer = true,
                 args = 2
             }
@@ -272,7 +272,7 @@ RegisterNetEvent('case-whitewidow:client:TrimmingMenu', function()
             header = "White Widow",
             txt = "Process CBD White Widow crops into bags.",
             params = {
-                event = "sbm-weedjob:server:TrimWeed",
+                event = "p2rp-weedjob:server:TrimWeed",
                 isServer = true,
                 args = 3
             }
@@ -281,7 +281,7 @@ RegisterNetEvent('case-whitewidow:client:TrimmingMenu', function()
             header = "AK47",
             txt = "Process CBD AK47 crops into bags.",
             params = {
-                event = "sbm-weedjob:server:TrimWeed",
+                event = "p2rp-weedjob:server:TrimWeed",
                 isServer = true,
                 args = 4
             }
@@ -289,7 +289,7 @@ RegisterNetEvent('case-whitewidow:client:TrimmingMenu', function()
         {
             header = "< Exit",
             params = {
-                event = "sbm-weedjob:client:StopMenu"
+                event = "p2rp-weedjob:client:StopMenu"
             }
         },
     })
@@ -325,7 +325,7 @@ RegisterNetEvent('case-whitewidow:client:RollJoints', function()
             header = "CBD Skunk",
             txt = "Roll up some CBD Skunk.",
             params = {
-                event = "sbm-weedjob:server:RollJoints",
+                event = "p2rp-weedjob:server:RollJoints",
                 isServer = true,
                 args = 1
             }
@@ -334,7 +334,7 @@ RegisterNetEvent('case-whitewidow:client:RollJoints', function()
             header = "CBD OG-Kush",
             txt = "Roll up some CBD OG-Kush.",
             params = {
-                event = "sbm-weedjob:server:RollJoints",
+                event = "p2rp-weedjob:server:RollJoints",
                 isServer = true,
                 args = 2
             }
@@ -343,7 +343,7 @@ RegisterNetEvent('case-whitewidow:client:RollJoints', function()
             header = "CBD White-Widow",
             txt = "Roll up some CBD White-Widow",
             params = {
-                event = "sbm-weedjob:server:RollJoints",
+                event = "p2rp-weedjob:server:RollJoints",
                 isServer = true,
                 args = 3
             }
@@ -352,7 +352,7 @@ RegisterNetEvent('case-whitewidow:client:RollJoints', function()
             header = "CBD AK-47",
             txt = "Roll up some CBD AK-47.",
             params = {
-                event = "sbm-weedjob:server:RollJoints",
+                event = "p2rp-weedjob:server:RollJoints",
                 isServer = true,
                 args = 4
             }
@@ -360,7 +360,7 @@ RegisterNetEvent('case-whitewidow:client:RollJoints', function()
         {
             header = "< Exit",
             params = {
-                event = "sbm-weedjob:client:StopMenu"
+                event = "p2rp-weedjob:client:StopMenu"
             }
         },
     })
@@ -401,15 +401,15 @@ exports['qb-target']:AddBoxZone("whitewidowtray", Config.WhiteWidowTray, 1.0, 10
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:OpenTray",
+            event = "p2rp-weedjob:client:OpenTray",
             icon = "fas fa-box", 
             label = "Collect Order",
         },
     },
     distance = 1.0
 })
-RegisterNetEvent("sbm-weedjob:client:OpenTray")
-AddEventHandler("sbm-weedjob:client:OpenTray", function()
+RegisterNetEvent("p2rp-weedjob:client:OpenTray")
+AddEventHandler("p2rp-weedjob:client:OpenTray", function()
     TriggerEvent("inventory:client:SetCurrentStash", "whitewidowtray")
     TriggerServerEvent("inventory:server:OpenInventory", "stash", "whitewidowtray", {
         maxweight = 20000,
@@ -427,7 +427,7 @@ exports['qb-target']:AddBoxZone("skunkplants", Config.WhiteWidowWeed1, 1.0, 40.0
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:HarvestSkunk",
+            event = "p2rp-weedjob:client:HarvestSkunk",
             icon = "fas fa-cannabis", 
             label = "Harvest CBD Skunk",
         },
@@ -444,7 +444,7 @@ exports['qb-target']:AddBoxZone("ogplants", Config.WhiteWidowWeed2, 1.0, 40.0, {
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:HarvestOGKush",
+            event = "p2rp-weedjob:client:HarvestOGKush",
             icon = "fas fa-cannabis", 
             label = "Harvest CBD OG-Kush",
         },
@@ -461,7 +461,7 @@ exports['qb-target']:AddBoxZone("whitewidowplants", Config.WhiteWidowWeed3, 1.0,
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:HarvestWhiteWidow",
+            event = "p2rp-weedjob:client:HarvestWhiteWidow",
             icon = "fas fa-cannabis", 
             label = "Harvest CBD White-Widow",
         },
@@ -478,7 +478,7 @@ exports['qb-target']:AddBoxZone("akplants", Config.WhiteWidowWeed4, 1.0, 40.0, {
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:HarvestAK47",
+            event = "p2rp-weedjob:client:HarvestAK47",
             icon = "fas fa-cannabis", 
             label = "Harvest CBD AK-47",
         },
@@ -486,7 +486,7 @@ exports['qb-target']:AddBoxZone("akplants", Config.WhiteWidowWeed4, 1.0, 40.0, {
     distance = 1.5
 })
 -- Harvest skunk plants
-RegisterNetEvent('sbm-weedjob:client:HarvestSkunk', function()
+RegisterNetEvent('p2rp-weedjob:client:HarvestSkunk', function()
 	local playerPed = PlayerPedId()
     playAnim("anim@amb@business@weed@weed_inspecting_lo_med_hi@", "weed_crouch_checkingleaves_idle_01_inspector", 35000)
 	local finished = exports["reload-skillbar"]:taskBar(math.random(5000,7500),math.random(2,4))
@@ -510,7 +510,7 @@ RegisterNetEvent('sbm-weedjob:client:HarvestSkunk', function()
                 FreezeEntityPosition(playerPed, true)
                TriggerEvent('ProgressBar:drawBar', HarvestTime, 'Harvesting CBD skunk..') 
                 Wait(HarvestTime)
-                TriggerServerEvent('sbm-weedjob:server:HarvestSkunk')
+                TriggerServerEvent('p2rp-weedjob:server:HarvestSkunk')
                 ClearPedTasks(playerPed)
                 FreezeEntityPosition(playerPed, false)
             end
@@ -520,7 +520,7 @@ end)
 
 
 -- Harvest og-kush plants
-RegisterNetEvent('sbm-weedjob:client:HarvestOGKush', function()
+RegisterNetEvent('p2rp-weedjob:client:HarvestOGKush', function()
 	local playerPed = PlayerPedId()
     playAnim("anim@amb@business@weed@weed_inspecting_lo_med_hi@", "weed_crouch_checkingleaves_idle_01_inspector", 35000)
 	local finished = exports["reload-skillbar"]:taskBar(math.random(5000,7500),math.random(2,4))
@@ -544,7 +544,7 @@ RegisterNetEvent('sbm-weedjob:client:HarvestOGKush', function()
                 FreezeEntityPosition(playerPed, true)
                 TriggerEvent('ProgressBar:drawBar', HarvestTime, 'Harvesting CBD OG Kush..') 
                 Wait(HarvestTime)
-                TriggerServerEvent('sbm-weedjob:server:HarvestOGKush')
+                TriggerServerEvent('p2rp-weedjob:server:HarvestOGKush')
                 ClearPedTasks(playerPed)
                 FreezeEntityPosition(playerPed, false)
             end
@@ -552,7 +552,7 @@ RegisterNetEvent('sbm-weedjob:client:HarvestOGKush', function()
  
 end)
 -- Harvest og-kush plants
-RegisterNetEvent('sbm-weedjob:client:HarvestWhiteWidow', function()
+RegisterNetEvent('p2rp-weedjob:client:HarvestWhiteWidow', function()
 	local playerPed = PlayerPedId()
     playAnim("anim@amb@business@weed@weed_inspecting_lo_med_hi@", "weed_crouch_checkingleaves_idle_01_inspector", 35000)
 	local finished = exports["reload-skillbar"]:taskBar(math.random(7000,10000),math.random(1,2))
@@ -577,7 +577,7 @@ RegisterNetEvent('sbm-weedjob:client:HarvestWhiteWidow', function()
                 FreezeEntityPosition(playerPed, true)
                 TriggerEvent('ProgressBar:drawBar', HarvestTime, 'Harvesting CBD White Widow..') 
                 Wait(HarvestTime)
-                TriggerServerEvent('sbm-weedjob:server:HarvestWhiteWidow')
+                TriggerServerEvent('p2rp-weedjob:server:HarvestWhiteWidow')
                 ClearPedTasks(playerPed)
                 FreezeEntityPosition(playerPed, false)
             end
@@ -585,7 +585,7 @@ RegisterNetEvent('sbm-weedjob:client:HarvestWhiteWidow', function()
 
 end)
 -- Harvest og-kush plants
-RegisterNetEvent('sbm-weedjob:client:HarvestAK47', function()
+RegisterNetEvent('p2rp-weedjob:client:HarvestAK47', function()
 	local playerPed = PlayerPedId()
     playAnim("anim@amb@business@weed@weed_inspecting_lo_med_hi@", "weed_crouch_checkingleaves_idle_01_inspector", 35000)
 	local finished = exports["reload-skillbar"]:taskBar(math.random(5000,7500),math.random(2,4))
@@ -609,7 +609,7 @@ RegisterNetEvent('sbm-weedjob:client:HarvestAK47', function()
                 FreezeEntityPosition(playerPed, true)
                 TriggerEvent('ProgressBar:drawBar', HarvestTime, 'Harvesting CBD AK47..') 
                 Wait(HarvestTime)
-                TriggerServerEvent('sbm-weedjob:server:HarvestAK47')
+                TriggerServerEvent('p2rp-weedjob:server:HarvestAK47')
                 ClearPedTasks(playerPed)
                 FreezeEntityPosition(playerPed, false)
             end
@@ -626,7 +626,7 @@ exports['qb-target']:AddBoxZone("whitewidowgarage", Config.WhiteWidowGarage, 1.0
     }, {
     options = {
         {
-            event = "sbm-weedjob:client:GetVehicle",
+            event = "p2rp-weedjob:client:GetVehicle",
             icon = "fas fa-car", 
             label = "Take Out Vehicle",
 			job = "whitewidow",
@@ -635,7 +635,7 @@ exports['qb-target']:AddBoxZone("whitewidowgarage", Config.WhiteWidowGarage, 1.0
     distance = 1.5
 })
 -- Take out vehicle
-RegisterNetEvent('sbm-weedjob:client:GetVehicle', function()
+RegisterNetEvent('p2rp-weedjob:client:GetVehicle', function()
     exports['qb-menu']:openMenu({
         {
             header = "White Widow Garage",
@@ -646,7 +646,7 @@ RegisterNetEvent('sbm-weedjob:client:GetVehicle', function()
             header = "Take out a Van",
             txt = "$"..Config.VehicleDeposit.." none refundable deposit required",
             params = {
-                event = "sbm-weedjob:server:SpawnVehicle",
+                event = "p2rp-weedjob:server:SpawnVehicle",
                 isServer = true,
             }
         },
@@ -654,21 +654,21 @@ RegisterNetEvent('sbm-weedjob:client:GetVehicle', function()
 		    header = "Return Van",
             txt = "Thank you for returning the van!",
             params = {
-                event = "sbm-weedjob:server:DespawnVehicle",
+                event = "p2rp-weedjob:server:DespawnVehicle",
                 isServer = true,
             }
         },
         {
             header = "< Exit",
             params = {
-                event = "sbm-weedjob:client:StopMenu"
+                event = "p2rp-weedjob:client:StopMenu"
             }
         },
     })
 end)
 -- White widow vehicle spawner
-RegisterNetEvent('sbm-weedjob:client:SpawnVehicle')
-AddEventHandler('sbm-weedjob:client:SpawnVehicle', function()
+RegisterNetEvent('p2rp-weedjob:client:SpawnVehicle')
+AddEventHandler('p2rp-weedjob:client:SpawnVehicle', function()
 	SetNewWaypoint(Config.VehicleSpawn.x, Config.VehicleSpawn.y)
 		QBCore.Functions.SpawnVehicle(Config.Vehicle, function(veh)
 			exports['p2rp-fuel']:SetFuel(veh, 100)
@@ -683,14 +683,14 @@ AddEventHandler('sbm-weedjob:client:SpawnVehicle', function()
 		end, Config.VehicleSpawn, false)
 end)
 -- Despawn vehicle
-RegisterNetEvent('sbm-weedjob:client:DespawnVehicle')
-AddEventHandler('sbm-weedjob:client:DespawnVehicle', function()
+RegisterNetEvent('p2rp-weedjob:client:DespawnVehicle')
+AddEventHandler('p2rp-weedjob:client:DespawnVehicle', function()
 	DeleteEntity(spawnedveh)
 	rented = false
 end)
 -- Use joint effects
 -- Use joint skunk
-RegisterNetEvent('sbm-weedjob:client:UseSkunkJoint', function()
+RegisterNetEvent('p2rp-weedjob:client:UseSkunkJoint', function()
 	local playerPed = PlayerPedId()
 	QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
 		if HasItem then
@@ -722,7 +722,7 @@ RegisterNetEvent('sbm-weedjob:client:UseSkunkJoint', function()
 	end, "lighter")
 end)
 -- Use joint ogkush
-RegisterNetEvent('sbm-weedjob:client:UseOGKushJoint', function()
+RegisterNetEvent('p2rp-weedjob:client:UseOGKushJoint', function()
 	local playerPed = PlayerPedId()
 	QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
 		if HasItem then
@@ -754,7 +754,7 @@ RegisterNetEvent('sbm-weedjob:client:UseOGKushJoint', function()
 	end, "lighter")
 end)
 -- Use joint whitewidow
-RegisterNetEvent('sbm-weedjob:client:UseWhiteWidowJoint', function()
+RegisterNetEvent('p2rp-weedjob:client:UseWhiteWidowJoint', function()
 	local playerPed = PlayerPedId()
 	QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
 		if HasItem then
@@ -786,7 +786,7 @@ RegisterNetEvent('sbm-weedjob:client:UseWhiteWidowJoint', function()
 	end, "lighter")
 end)
 -- Use joint ak47
-RegisterNetEvent('sbm-weedjob:client:UseAK47Joint', function()
+RegisterNetEvent('p2rp-weedjob:client:UseAK47Joint', function()
 	local playerPed = PlayerPedId()
 	QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
 		if HasItem then
@@ -819,7 +819,7 @@ RegisterNetEvent('sbm-weedjob:client:UseAK47Joint', function()
 end)
 -- Do not change anything below here
 -- Function to close qb-menu
-RegisterNetEvent('sbm-weedjob:client:StopMenu', function()
+RegisterNetEvent('p2rp-weedjob:client:StopMenu', function()
     ClearPedTasks(PlayerPedId())
 end)
 -- Animations function

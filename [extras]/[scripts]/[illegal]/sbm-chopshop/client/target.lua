@@ -11,7 +11,7 @@ Citizen.CreateThread(function()
     options = {
       {
         type = "client",
-        event = "sbm-chopshop:StartMenu",
+        event = "p2rp-chopshop:StartMenu",
         icon = "fas fa-hammer",
         label = "Chop Parts",
         job = all,
@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
             options = {
               {
                 type = "client",
-                event = "sbm-chopshop:jobaccept",
+                event = "p2rp-chopshop:jobaccept",
                 icon = 'fas fa-car',
                 label = 'Locate A Vehicle',
               }
@@ -53,7 +53,7 @@ Citizen.CreateThread(function()
     options = {
       {
         type = "client",
-        event = "sbm-chopshop:StartMenu",
+        event = "p2rp-chopshop:StartMenu",
         icon = "fas fa-hammer",
         label = "Chop Parts",
         job = all,
@@ -75,7 +75,7 @@ Citizen.CreateThread(function()
             options = {
               {
                 type = "client",
-                event = "sbm-chopshop:jobaccept",
+                event = "p2rp-chopshop:jobaccept",
                 icon = 'fas fa-car',
                 label = 'Locate A Vehicle',
               }
@@ -95,7 +95,7 @@ Citizen.CreateThread(function()
       options = {
         {
           type = "client",
-          event = "sbm-chopshop:StartMenu",
+          event = "p2rp-chopshop:StartMenu",
           icon = "fas fa-hammer",
           label = "Chop Parts",
           job = {"all"},
@@ -113,7 +113,7 @@ Citizen.CreateThread(function()
       options = {
         {
           type = "client",
-          event = "sbm-chopshop:jobaccept",
+          event = "p2rp-chopshop:jobaccept",
           icon = "fas fa-car",
           label = "Locate A Vehicle",
           job = {"all"},

@@ -1,4 +1,4 @@
-RegisterNetEvent('sbm-chopshop:StartMenu', function()
+RegisterNetEvent('p2rp-chopshop:StartMenu', function()
     if Config.Menu == "nh" then
         TriggerEvent('nh-context:sendMenu', {
             {
@@ -11,7 +11,7 @@ RegisterNetEvent('sbm-chopshop:StartMenu', function()
                 header = "Door",
                 txt = "",
                 params = {
-                    event = "sbm-chopshop:chopdoor",
+                    event = "p2rp-chopshop:chopdoor",
                     args = {
                         number = 1,
                         id = 2
@@ -23,7 +23,7 @@ RegisterNetEvent('sbm-chopshop:StartMenu', function()
                 header = "Wheel",
                 txt = "",
                 params = {
-                    event = "sbm-chopshop:chopwheel",
+                    event = "p2rp-chopshop:chopwheel",
                     args = {
                         number = 1,
                         id = 3
@@ -35,7 +35,7 @@ RegisterNetEvent('sbm-chopshop:StartMenu', function()
                 header = "Hood",
                 txt = "",
                 params = {
-                    event = "sbm-chopshop:chophood",
+                    event = "p2rp-chopshop:chophood",
                     args = {
                         number = 1,
                         id = 4
@@ -47,7 +47,7 @@ RegisterNetEvent('sbm-chopshop:StartMenu', function()
                 header = "Trunk",
                 txt = "",
                 params = {
-                    event = "sbm-chopshop:choptrunk",
+                    event = "p2rp-chopshop:choptrunk",
                     args = {
                         number = 1,
                         id = 5
@@ -65,28 +65,28 @@ RegisterNetEvent('sbm-chopshop:StartMenu', function()
                 header = "",
                 txt = "Door",
                 params = {
-                    event = "sbm-chopshop:chopdoor"
+                    event = "p2rp-chopshop:chopdoor"
                 }
             },
             {
                 header = "",
                 txt = "Wheel",
                 params = {
-                    event = "sbm-chopshop:chopwheel"
+                    event = "p2rp-chopshop:chopwheel"
                 }
             },
             {
                 header = "",
                 txt = "Hood",
                 params = {
-                    event = "sbm-chopshop:chophood"
+                    event = "p2rp-chopshop:chophood"
                 }
             },
             {
                 header = "",
                 txt = "Trunk",
                 params = {
-                    event = "sbm-chopshop:choptrunk"
+                    event = "p2rp-chopshop:choptrunk"
                 }
             },
             {
@@ -100,22 +100,22 @@ RegisterNetEvent('sbm-chopshop:StartMenu', function()
     end
 end)
 
-RegisterNetEvent('sbm-chopshop:chopdoor')
-AddEventHandler('sbm-chopshop:chopdoor', function()
-    TriggerServerEvent("sbm-chopshop:server:chopdoor")
+RegisterNetEvent('p2rp-chopshop:chopdoor')
+AddEventHandler('p2rp-chopshop:chopdoor', function()
+    TriggerServerEvent("p2rp-chopshop:server:chopdoor")
 end)
 
-RegisterNetEvent('sbm-chopshop:chopwheel')
-AddEventHandler('sbm-chopshop:chopwheel', function()
-    TriggerServerEvent("sbm-chopshop:server:chopwheel")
+RegisterNetEvent('p2rp-chopshop:chopwheel')
+AddEventHandler('p2rp-chopshop:chopwheel', function()
+    TriggerServerEvent("p2rp-chopshop:server:chopwheel")
 end)
 
-RegisterNetEvent('sbm-chopshop:chophood')
-AddEventHandler('sbm-chopshop:chophood', function()
-    TriggerServerEvent("sbm-chopshop:server:chophood")
+RegisterNetEvent('p2rp-chopshop:chophood')
+AddEventHandler('p2rp-chopshop:chophood', function()
+    TriggerServerEvent("p2rp-chopshop:server:chophood")
 end)
 
-RegisterNetEvent('sbm-chopshop:choptrunk')
-AddEventHandler('sbm-chopshop:choptrunk', function()
-    TriggerServerEvent("sbm-chopshop:server:choptrunk")
+RegisterNetEvent('p2rp-chopshop:choptrunk')
+AddEventHandler('p2rp-chopshop:choptrunk', function()
+    TriggerServerEvent("p2rp-chopshop:server:choptrunk")
 end)

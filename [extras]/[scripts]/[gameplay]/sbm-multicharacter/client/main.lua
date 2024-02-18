@@ -27,7 +27,7 @@ CreateThread(function()
 	while true do
 		Wait(0)
 		if NetworkIsSessionStarted() then
-			TriggerEvent('sbm-multicharacter:client:chooseCharX')
+			TriggerEvent('p2rp-multicharacter:client:chooseCharX')
 			return
 		end
 	end
@@ -54,7 +54,7 @@ function skyCam(bool)
 end
 
 function openCharMenu(bool)
-    QBCore.Functions.TriggerCallback("sbm-multicharacter:server:GetNumberOfCharacters", function(result)
+    QBCore.Functions.TriggerCallback("p2rp-multicharacter:server:GetNumberOfCharacters", function(result)
         local defaultOpenCharSlot = AK4Y.DefaultOpenCharSlot + result.addedCount
         if bool then 
             while not opened do 
@@ -91,7 +91,7 @@ end
 
 -- Events
 
-RegisterNetEvent('sbm-multicharacter:client:closeNUIdefault', function() -- This event is only for no starting apartments
+RegisterNetEvent('p2rp-multicharacter:client:closeNUIdefault', function() -- This event is only for no starting apartments
     DeleteEntity(charPed)
     SetNuiFocus(false, false)
     DoScreenFadeOut(500)
@@ -110,12 +110,12 @@ RegisterNetEvent('sbm-multicharacter:client:closeNUIdefault', function() -- This
     TriggerEvent('qb-clothes:client:CreateFirstCharacter')
 end)
 
-RegisterNetEvent('sbm-multicharacter:client:closeNUI', function()
+RegisterNetEvent('p2rp-multicharacter:client:closeNUI', function()
     DeleteEntity(charPed)
     SetNuiFocus(false, false)
 end)
 
-RegisterNetEvent('sbm-multicharacter:client:chooseCharX', function()
+RegisterNetEvent('p2rp-multicharacter:client:chooseCharX', function()
     SetNuiFocus(false, false)
     Wait(1000)
     local interior = GetInteriorAtCoords(AK4Y.Interior.x, AK4Y.Interior.y, AK4Y.Interior.z - 18.9)
@@ -142,7 +142,7 @@ end)
 RegisterNUICallback('disconnectButton', function(_, cb)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
-    TriggerServerEvent('sbm-multicharacter:server:disconnect')
+    TriggerServerEvent('p2rp-multicharacter:server:disconnect')
     cb("ok")
 end)
 
@@ -150,7 +150,7 @@ RegisterNUICallback('selectCharacter', function(data, cb)
     local cData = data.cData
     DoScreenFadeOut(10)
     AK4Y.PlayerLoaded(cData)
-    TriggerServerEvent('sbm-multicharacter:server:loadUserData', cData)
+    TriggerServerEvent('p2rp-multicharacter:server:loadUserData', cData)
     openCharMenu(false)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
@@ -158,7 +158,7 @@ RegisterNUICallback('selectCharacter', function(data, cb)
 end)
 
 RegisterNUICallback('setupCharacters', function(_, cb)
-    QBCore.Functions.TriggerCallback("sbm-multicharacter:server:setupCharacters", function(result)
+    QBCore.Functions.TriggerCallback("p2rp-multicharacter:server:setupCharacters", function(result)
         SendNUIMessage({
             action = "setupCharacters",
             characters = result
@@ -168,7 +168,7 @@ RegisterNUICallback('setupCharacters', function(_, cb)
 end)
 
 RegisterNUICallback('refreshCharacters', function(_, cb)
-    QBCore.Functions.TriggerCallback("sbm-multicharacter:server:setupCharacters", function(result)
+    QBCore.Functions.TriggerCallback("p2rp-multicharacter:server:setupCharacters", function(result)
         SendNUIMessage({
             action = "refreshCharacters",
             characters = result
@@ -190,16 +190,16 @@ RegisterNUICallback('createNewCharacter', function(data, cb)
     elseif cData.gender == "female" then
         cData.gender = 1
     end
-    TriggerServerEvent('sbm-multicharacter:server:createCharacter', cData)
+    TriggerServerEvent('p2rp-multicharacter:server:createCharacter', cData)
     Wait(500)
     cb("ok")
 end)
 
 RegisterNUICallback('removeCharacter', function(data, cb)
-    TriggerServerEvent('sbm-multicharacter:server:deleteCharacter', data.citizenid)
+    TriggerServerEvent('p2rp-multicharacter:server:deleteCharacter', data.citizenid)
     DeletePed(charPed)
     opened = false
-    TriggerEvent('sbm-multicharacter:client:chooseCharX')
+    TriggerEvent('p2rp-multicharacter:client:chooseCharX')
     cb("ok")
 end)
 
@@ -207,11 +207,11 @@ local sendInputProtect = 0
 RegisterNUICallback('sendInput', function(data, cb)
     if sendInputProtect < GetGameTimer() then 
         sendInputProtect = GetGameTimer() + 1500
-        QBCore.Functions.TriggerCallback("sbm-multicharacter:sendInput", function(result)
+        QBCore.Functions.TriggerCallback("p2rp-multicharacter:sendInput", function(result)
             if result then 
                 DeletePed(charPed)
                 opened = false
-                TriggerEvent('sbm-multicharacter:client:chooseCharX')
+                TriggerEvent('p2rp-multicharacter:client:chooseCharX')
             end
             cb(result)
         end, data)

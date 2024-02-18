@@ -2,8 +2,8 @@ if Config.Version == "new" then
     QBCore = exports['qb-core']:GetCoreObject()
 end
 
-RegisterNetEvent("sbm-chopshop:syncchopcars")
-AddEventHandler("sbm-chopshop:syncchopcars", SyncCars)
+RegisterNetEvent("p2rp-chopshop:syncchopcars")
+AddEventHandler("p2rp-chopshop:syncchopcars", SyncCars)
 
 function GiveReward(data)
 	local src = source
@@ -34,8 +34,8 @@ function GiveReward(data)
 	end
 end
 
-RegisterServerEvent('sbm-chopshop:server:callCops')
-AddEventHandler('sbm-chopshop:server:callCops', function(type, bank, streetLabel, coords)
+RegisterServerEvent('p2rp-chopshop:server:callCops')
+AddEventHandler('p2rp-chopshop:server:callCops', function(type, bank, streetLabel, coords)
     local msg = ""
     msg = "Possible Vehicle Robbery"
     local alertData = {
@@ -43,19 +43,19 @@ AddEventHandler('sbm-chopshop:server:callCops', function(type, bank, streetLabel
         coords = {x = coords.x, y = coords.y, z = coords.z},
         description = msg,
     }
-    TriggerClientEvent("sbm-chopshop:client:robberyCall", -1, type, bank, streetLabel, coords)
+    TriggerClientEvent("p2rp-chopshop:client:robberyCall", -1, type, bank, streetLabel, coords)
     TriggerClientEvent("qs-smartphone:client:addPoliceAlert", -1, alertData)
 end)
 
-RegisterNetEvent("sbm-chopshop:server:rewardplayer")
-AddEventHandler("sbm-chopshop:server:rewardplayer", GiveReward)
+RegisterNetEvent("p2rp-chopshop:server:rewardplayer")
+AddEventHandler("p2rp-chopshop:server:rewardplayer", GiveReward)
 
 function SyncCars(list) 
-	TriggerClientEvent('sbm-chopshop:carlist', -1,list) 
+	TriggerClientEvent('p2rp-chopshop:carlist', -1,list) 
 end
 
-RegisterNetEvent("sbm-chopshop:server:chopdoor")
-AddEventHandler("sbm-chopshop:server:chopdoor", function()
+RegisterNetEvent("p2rp-chopshop:server:chopdoor")
+AddEventHandler("p2rp-chopshop:server:chopdoor", function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local door = "carpart_door"
@@ -66,7 +66,7 @@ AddEventHandler("sbm-chopshop:server:chopdoor", function()
 		local amount = Config.DoorItems[randomitem]["amount"]
 		Player.Functions.RemoveItem("carpart_door", 1)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['carpart_door'], "remove")
-		TriggerClientEvent('sbm-chopshop:doorchopanim', src)
+		TriggerClientEvent('p2rp-chopshop:doorchopanim', src)
 		Citizen.Wait(12500)
 		Player.Functions.AddItem(item, amount, false, info)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
@@ -75,8 +75,8 @@ AddEventHandler("sbm-chopshop:server:chopdoor", function()
 	end
 end)
 
-RegisterNetEvent("sbm-chopshop:server:chopwheel")
-AddEventHandler("sbm-chopshop:server:chopwheel", function()
+RegisterNetEvent("p2rp-chopshop:server:chopwheel")
+AddEventHandler("p2rp-chopshop:server:chopwheel", function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local wheel = "carpart_wheel"
@@ -87,7 +87,7 @@ AddEventHandler("sbm-chopshop:server:chopwheel", function()
 		local amount = Config.WheelItems[randomitem]["amount"]
 		Player.Functions.RemoveItem("carpart_wheel", 1)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['carpart_wheel'], "remove")
-		TriggerClientEvent('sbm-chopshop:wheelchopanim', src)
+		TriggerClientEvent('p2rp-chopshop:wheelchopanim', src)
 		Citizen.Wait(14000)
 		Player.Functions.AddItem(item, amount, false, info)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
@@ -97,8 +97,8 @@ AddEventHandler("sbm-chopshop:server:chopwheel", function()
 end)
 
 
-RegisterNetEvent("sbm-chopshop:server:chophood")
-AddEventHandler("sbm-chopshop:server:chophood", function()
+RegisterNetEvent("p2rp-chopshop:server:chophood")
+AddEventHandler("p2rp-chopshop:server:chophood", function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local hood = "carpart_hood" 
@@ -109,7 +109,7 @@ AddEventHandler("sbm-chopshop:server:chophood", function()
 		local amount = Config.DoorItems[randomitem]["amount"]
 		Player.Functions.RemoveItem("carpart_hood", 1)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['carpart_hood'], "remove")
-		TriggerClientEvent('sbm-chopshop:hoodchopanim', src)
+		TriggerClientEvent('p2rp-chopshop:hoodchopanim', src)
 		Citizen.Wait(12500)
 		Player.Functions.AddItem(item, amount, false, info)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
@@ -119,8 +119,8 @@ AddEventHandler("sbm-chopshop:server:chophood", function()
 end)
 
 
-RegisterNetEvent("sbm-chopshop:server:choptrunk")
-AddEventHandler("sbm-chopshop:server:choptrunk", function()
+RegisterNetEvent("p2rp-chopshop:server:choptrunk")
+AddEventHandler("p2rp-chopshop:server:choptrunk", function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local trunk = "carpart_trunk"
@@ -131,7 +131,7 @@ AddEventHandler("sbm-chopshop:server:choptrunk", function()
 		local amount = Config.DoorItems[randomitem]["amount"]
 		Player.Functions.RemoveItem("carpart_trunk", 1)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['carpart_trunk'], "remove")
-		TriggerClientEvent('sbm-chopshop:trunkchopanim', src)
+		TriggerClientEvent('p2rp-chopshop:trunkchopanim', src)
 		Citizen.Wait(12500)
 		Player.Functions.AddItem(item, amount, false, info)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")

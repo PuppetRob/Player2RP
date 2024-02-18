@@ -1,6 +1,6 @@
 
-RegisterNetEvent('sbm-chopshop:wheelanimation')
-AddEventHandler('sbm-chopshop:wheelanimation', function()
+RegisterNetEvent('p2rp-chopshop:wheelanimation')
+AddEventHandler('p2rp-chopshop:wheelanimation', function()
     TriggerEvent('animations:client:EmoteCommandStart', {"mechanic3"})
 	QBCore.Functions.Progressbar("wheel", Config.Locale["Wheel"], 7000, false, true, {
 		disableMovement = true,
@@ -22,8 +22,8 @@ AddEventHandler('sbm-chopshop:wheelanimation', function()
 	DeleteObject(wheelprop)
 end)
 
-RegisterNetEvent('sbm-chopshop:dooranimation')
-AddEventHandler('sbm-chopshop:dooranimation', function()
+RegisterNetEvent('p2rp-chopshop:dooranimation')
+AddEventHandler('p2rp-chopshop:dooranimation', function()
     TriggerEvent('animations:client:EmoteCommandStart', {"mechanic4"})
 	QBCore.Functions.Progressbar("Door1", Config.Locale["Door1"], (4000), false, true, {
 	    disableMovement = true,
@@ -54,8 +54,8 @@ AddEventHandler('sbm-chopshop:dooranimation', function()
 	DeleteObject(doorprop)
 end)
 
-RegisterNetEvent('sbm-chopshop:trunkanimation')
-AddEventHandler('sbm-chopshop:trunkanimation', function()
+RegisterNetEvent('p2rp-chopshop:trunkanimation')
+AddEventHandler('p2rp-chopshop:trunkanimation', function()
     TriggerEvent('animations:client:EmoteCommandStart', {"mechanic"})
 	QBCore.Functions.Progressbar("Trunk1", Config.Locale["searching"], (4000), false, true, {
 	    disableMovement = true,
@@ -85,8 +85,8 @@ AddEventHandler('sbm-chopshop:trunkanimation', function()
 	Citizen.Wait(4500)
 end)
 
-RegisterNetEvent('sbm-chopshop:hoodanimation')
-AddEventHandler('sbm-chopshop:hoodanimation', function()
+RegisterNetEvent('p2rp-chopshop:hoodanimation')
+AddEventHandler('p2rp-chopshop:hoodanimation', function()
     TriggerEvent('animations:client:EmoteCommandStart', {"mechanic4"})
 	QBCore.Functions.Progressbar("Hood1", Config.Locale["Door1"], (4000), false, true, {
 	    disableMovement = true,
@@ -117,8 +117,8 @@ AddEventHandler('sbm-chopshop:hoodanimation', function()
 	DeleteObject(trunkprop)
 end)
 
-RegisterNetEvent('sbm-chopshop:wheelchopanim')
-AddEventHandler('sbm-chopshop:wheelchopanim', function()
+RegisterNetEvent('p2rp-chopshop:wheelchopanim')
+AddEventHandler('p2rp-chopshop:wheelchopanim', function()
 	local ped = PlayerPedId()
 	QBCore.Functions.Progressbar("wheel", Config.Locale["chopwheel"], 13000, false, true, {
 		disableMovement = true,
@@ -149,8 +149,8 @@ AddEventHandler('sbm-chopshop:wheelchopanim', function()
 	DeleteObject(wheeleobj)
 end)
 
-RegisterNetEvent('sbm-chopshop:doorchopanim')
-AddEventHandler('sbm-chopshop:doorchopanim', function()
+RegisterNetEvent('p2rp-chopshop:doorchopanim')
+AddEventHandler('p2rp-chopshop:doorchopanim', function()
 	local ped = PlayerPedId()    
 	QBCore.Functions.Progressbar("door", Config.Locale["chopdoor"], 13000, false, true, {
 		disableMovement = true,
@@ -181,8 +181,8 @@ AddEventHandler('sbm-chopshop:doorchopanim', function()
 	DeleteObject(doorobj)
 end)
 
-RegisterNetEvent('sbm-chopshop:hoodchopanim')
-AddEventHandler('sbm-chopshop:hoodchopanim', function()
+RegisterNetEvent('p2rp-chopshop:hoodchopanim')
+AddEventHandler('p2rp-chopshop:hoodchopanim', function()
 	local ped = PlayerPedId()    
 	QBCore.Functions.Progressbar("hood", Config.Locale["chophood"], 12500, false, true, {
 		disableMovement = true,
@@ -213,8 +213,8 @@ AddEventHandler('sbm-chopshop:hoodchopanim', function()
 	DeleteObject(hoodobj)
 end)
 
-RegisterNetEvent('sbm-chopshop:trunkchopanim')
-AddEventHandler('sbm-chopshop:trunkchopanim', function()
+RegisterNetEvent('p2rp-chopshop:trunkchopanim')
+AddEventHandler('p2rp-chopshop:trunkchopanim', function()
 	local ped = PlayerPedId()
 	QBCore.Functions.Progressbar("trunk", Config.Locale["choptrunk"], 12500, false, true, {
 		disableMovement = true,

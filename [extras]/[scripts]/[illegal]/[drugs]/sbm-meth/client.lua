@@ -34,25 +34,25 @@ local pause = false
 local quality = 0
 local LastCar
 
-RegisterNetEvent('sbm-meth:stop')
-AddEventHandler('sbm-meth:stop', function()
+RegisterNetEvent('p2rp-meth:stop')
+AddEventHandler('p2rp-meth:stop', function()
 	started = false
 	QBCore.Functions.Notify("Production stopped...", "error")
 	FreezeEntityPosition(LastCar, false)
 end)
 
-RegisterNetEvent('sbm-meth:stopfreeze')
-AddEventHandler('sbm-meth:stopfreeze', function(id)
+RegisterNetEvent('p2rp-meth:stopfreeze')
+AddEventHandler('p2rp-meth:stopfreeze', function(id)
 	FreezeEntityPosition(id, false)
 end)
 
-RegisterNetEvent('sbm-meth:notify')
-AddEventHandler('sbm-meth:notify', function(message)
+RegisterNetEvent('p2rp-meth:notify')
+AddEventHandler('p2rp-meth:notify', function(message)
 	QBCore.Functions.Notify(message)
 end)
 
-RegisterNetEvent('sbm-meth:startprod')
-AddEventHandler('sbm-meth:startprod', function()
+RegisterNetEvent('p2rp-meth:startprod')
+AddEventHandler('p2rp-meth:startprod', function()
 	started = true
 	FreezeEntityPosition(CurrentVehicle,true)
 	QBCore.Functions.Notify("Production started", "success")	
@@ -60,8 +60,8 @@ AddEventHandler('sbm-meth:startprod', function()
 	SetVehicleDoorOpen(CurrentVehicle, 2)
 end)
 
-RegisterNetEvent('sbm-meth:smoke')
-AddEventHandler('sbm-meth:smoke', function(posx, posy, posz, bool)
+RegisterNetEvent('p2rp-meth:smoke')
+AddEventHandler('p2rp-meth:smoke', function(posx, posy, posz, bool)
 	if bool == 'a' then
 		if not HasNamedPtfxAssetLoaded("core") then
 			RequestNamedPtfxAsset("core")
@@ -80,7 +80,7 @@ AddEventHandler('sbm-meth:smoke', function(posx, posy, posz, bool)
 end)
 
 -------------------------------------------------------EVENTS NEGATIVE
-RegisterNetEvent('sbm-meth:boom', function()
+RegisterNetEvent('p2rp-meth:boom', function()
 	playerPed = (PlayerPedId())
 	local pos = GetEntityCoords((PlayerPedId()))
 	pause = false
@@ -88,13 +88,13 @@ RegisterNetEvent('sbm-meth:boom', function()
 	started = false
 	Citizen.Wait(500)
 	CurrentVehicle = GetVehiclePedIsUsing(PlayerPedId(-1))
-	TriggerServerEvent('sbm-meth:blow', pos.x, pos.y, pos.z)
-	TriggerEvent('sbm-meth:stop')
+	TriggerServerEvent('p2rp-meth:blow', pos.x, pos.y, pos.z)
+	TriggerEvent('p2rp-meth:stop')
 	FreezeEntityPosition(LastCar,false)
 end)
 
-RegisterNetEvent('sbm-meth:blowup')
-AddEventHandler('sbm-meth:blowup', function(posx, posy, posz)
+RegisterNetEvent('p2rp-meth:blowup')
+AddEventHandler('p2rp-meth:blowup', function(posx, posy, posz)
 	AddExplosion(posx, posy, posz + 2, 15, 20.0, true, false, 1.0, true)
 	if not HasNamedPtfxAssetLoaded("core") then
 		RequestNamedPtfxAsset("core")
@@ -108,8 +108,8 @@ AddEventHandler('sbm-meth:blowup', function(posx, posy, posz)
 	StopParticleFxLooped(fire, 0)	
 end)
 
-RegisterNetEvent('sbm-meth:drugged')
-AddEventHandler('sbm-meth:drugged', function()
+RegisterNetEvent('p2rp-meth:drugged')
+AddEventHandler('p2rp-meth:drugged', function()
 	local pos = GetEntityCoords((PlayerPedId()))
 	SetTimecycleModifier("drug_drive_blend01")
 	SetPedMotionBlur((PlayerPedId()), true)
@@ -119,74 +119,74 @@ AddEventHandler('sbm-meth:drugged', function()
 	pause = false
 	Citizen.Wait(90000)
 	ClearTimecycleModifier()
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:q-1police', function(data)
+RegisterNetEvent('p2rp-meth:q-1police', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "error")
 	quality = quality - 1
 	pause = false
 	TriggerServerEvent('police:server:policeAlert', 'Person reports stange smell!')
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:q-1', function(data)
+RegisterNetEvent('p2rp-meth:q-1', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "error")
 	quality = quality - 1
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:q-3', function(data)
+RegisterNetEvent('p2rp-meth:q-3', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "error")
 	quality = quality - 3
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:q-5', function(data)
+RegisterNetEvent('p2rp-meth:q-5', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "error")
 	quality = quality - 5
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
 -------------------------------------------------------EVENTS POSITIVE
-RegisterNetEvent('sbm-meth:q2', function(data)
+RegisterNetEvent('p2rp-meth:q2', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "success")
 	quality = quality + 2
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:q3', function(data)
+RegisterNetEvent('p2rp-meth:q3', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "success")
 	quality = quality + 3
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:q5', function(data)
+RegisterNetEvent('p2rp-meth:q5', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "success")
 	quality = quality + 5
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
-RegisterNetEvent('sbm-meth:gasmask', function(data)
+RegisterNetEvent('p2rp-meth:gasmask', function(data)
 	local pos = GetEntityCoords((PlayerPedId()))
 	QBCore.Functions.Notify(data.message, "success")
 	SetPedPropIndex(playerPed, 1, 26, 7, true)
 	quality = quality + 2
 	pause = false
-	TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+	TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 end)
 
 -------------------------------------------------------THREAD
@@ -206,8 +206,8 @@ Citizen.CreateThread(function(data)
 							DrawText3D(pos.x, pos.y, pos.z, '~g~E~w~ to (cook)')
 							if IsControlJustReleased(0, Keys['E']) then
 								if IsVehicleSeatFree(CurrentVehicle, 3) then
-									TriggerServerEvent('sbm-meth:start')
-									TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+									TriggerServerEvent('p2rp-meth:start')
+									TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 									progress = 0
 									pause = false
 									quality = 0		
@@ -220,14 +220,14 @@ Citizen.CreateThread(function(data)
 		else	
 				if started then
 					started = false
-					TriggerEvent('sbm-meth:stop')
+					TriggerEvent('p2rp-meth:stop')
 					FreezeEntityPosition(LastCar,false)
 				end
 		end		
 		if started == true then			
 			if progress < 96 then
 				Citizen.Wait(500)
-				-- TriggerServerEvent('sbm-meth:make', pos.x,pos.y,pos.z)
+				-- TriggerServerEvent('p2rp-meth:make', pos.x,pos.y,pos.z)
 				if not pause and IsPedInAnyVehicle(playerPed) then
 					progress = progress +  1
 					quality = quality + 1
@@ -248,7 +248,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Fix with tape",
 							params = {
-								event = "sbm-meth:q-3",
+								event = "p2rp-meth:q-3",
 								args = {
 									message = "That kinda fixed it, i think?!"
 								}
@@ -257,13 +257,13 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Let it go!",
 							params = {
-								event = "sbm-meth:boom"
+								event = "p2rp-meth:boom"
 							}
 						},
 						{
 							header = "🔴 Replace tube",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "Replacing was the best solution!"
 								}
@@ -285,7 +285,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Open a window",
 							params = {
-								event = "sbm-meth:q-1police",
+								event = "p2rp-meth:q-1police",
 								args = {
 									message = "The smell is reaching more people..."
 								}
@@ -294,13 +294,13 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Breathe it in..",
 							params = {
-								event = "sbm-meth:drugged"
+								event = "p2rp-meth:drugged"
 							}
 						},
 						{
 							header = "🔴 Put on a gass mask",
 							params = {
-								event = "sbm-meth:gasmask",
+								event = "p2rp-meth:gasmask",
 								args = {
 									message = "Good Choice"
 								}
@@ -322,7 +322,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Add more temperature",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "A higher temperture made the perfect balance!"
 								}
@@ -331,7 +331,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Add more pressure",
 							params = {
-								event = "sbm-meth:q-3",
+								event = "p2rp-meth:q-3",
 								args = {
 									message = "The pressure fluctuated a lot.."
 								}
@@ -340,7 +340,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Lower the pressure",
 							params = {
-								event = "sbm-meth:q-5",
+								event = "p2rp-meth:q-5",
 								args = {
 									message = "That was the worst thing to do!"
 								}
@@ -362,7 +362,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Do nothing..",
 							params = {
-								event = "sbm-meth:q-5",
+								event = "p2rp-meth:q-5",
 								args = {
 									message = "The Meth is smelling like pure acetone"
 								}
@@ -371,13 +371,13 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Use a straw to suck it out",
 							params = {
-								event = "sbm-meth:drugged"
+								event = "p2rp-meth:drugged"
 							}
 						},
 						{
 							header = "🔴 Add lithium to stabilize",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "Smart solution"
 								}
@@ -399,7 +399,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Add it in the mix!",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "Science, Bitch!"
 								}
@@ -408,7 +408,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Put away",
 							params = {
-								event = "sbm-meth:q-1",
+								event = "p2rp-meth:q-1",
 								args = {
 									message = "Not very creative are you?"
 								}
@@ -430,7 +430,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Blow it out with a compressor",
 							params = {
-								event = "sbm-meth:q-5",
+								event = "p2rp-meth:q-5",
 								args = {
 									message = "You made a mess of the product!"
 								}
@@ -439,7 +439,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Replace the filter!",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "Replacing was the best option!"
 								}
@@ -448,7 +448,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Clean it with a brush",
 							params = {
-								event = "sbm-meth:q-1",
+								event = "p2rp-meth:q-1",
 								args = {
 									message = "It helped but not enough"
 								}
@@ -470,13 +470,13 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Breathe it in..",
 							params = {
-								event = "sbm-meth:drugged"
+								event = "p2rp-meth:drugged"
 							}
 						},
 						{
 							header = "🔴 Put on a gass mask",
 							params = {
-								event = "sbm-meth:gasmask",
+								event = "p2rp-meth:gasmask",
 								args = {
 									message = "Gas Mask smells like ass"
 								}
@@ -485,7 +485,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Open a window",
 							params = {
-								event = "sbm-meth:q-1police",
+								event = "p2rp-meth:q-1police",
 								args = {
 									message = "The smell is reaching more people..."
 								}
@@ -507,13 +507,13 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Let it go!",
 							params = {
-								event = "sbm-meth:boom"
+								event = "p2rp-meth:boom"
 							}
 						},
 						{
 							header = "🔴 Fix it with tape",
 							params = {
-								event = "sbm-meth:q-3",
+								event = "p2rp-meth:q-3",
 								args = {
 									message = "That kinda fixed it, i think?!"
 								}
@@ -522,7 +522,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Replace tube",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "Replacing was the best solution!"
 								}
@@ -544,7 +544,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Just pinch it off!",
 							params = {
-								event = "sbm-meth:q5",
+								event = "p2rp-meth:q5",
 								args = {
 									message = "SUPER JOB, i'm proud!"
 								}
@@ -553,7 +553,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Go outside to shit!",
 							params = {
-								event = "sbm-meth:q-1police",
+								event = "p2rp-meth:q-1police",
 								args = {
 									message = "Somebody spotted you're suspicious work!"
 								}
@@ -562,7 +562,7 @@ Citizen.CreateThread(function(data)
 						{
 							header = "🔴 Shit your pants!",
 							params = {
-								event = "sbm-meth:q-5",
+								event = "p2rp-meth:q-5",
 								args = {
 									message = "Not good! Everything smells like SHIT!"
 								}
@@ -571,11 +571,11 @@ Citizen.CreateThread(function(data)
 					})
 				end
 			else
-				TriggerEvent('sbm-meth:stop')
+				TriggerEvent('p2rp-meth:stop')
 				progress = 100
 				QBCore.Functions.Notify('Meth production: ' .. progress .. '%')
 				QBCore.Functions.Notify("Done!!", "success")
-				TriggerServerEvent('sbm-meth:finish', quality)
+				TriggerServerEvent('p2rp-meth:finish', quality)
 				SetPedPropIndex(playerPed, 1, 0, 0, true)
 				FreezeEntityPosition(LastCar, false)
 			end				
@@ -590,7 +590,7 @@ Citizen.CreateThread(function()
 			else
 				if started then
 					started = false
-					TriggerEvent('sbm-meth:stop')
+					TriggerEvent('p2rp-meth:stop')
 					FreezeEntityPosition(LastCar,false)
 				end		
 			end
