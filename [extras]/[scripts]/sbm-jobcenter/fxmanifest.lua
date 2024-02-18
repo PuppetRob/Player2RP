@@ -29,7 +29,7 @@ files {
     'html/style.css',
     'html/img/*',
     'html/background/*',
-    'html/bg.png'
+  --  'html/bg.png'
 }
 
 escrow_ignore {

@@ -4,7 +4,7 @@ files {
 	'weaponarchetypes.meta',
 	'weaponanimations.meta',
 	'weaponpressurewand.meta',
-	'weapons.meta'
+	--'weapons.meta'
 	}
 
 	data_file 'WEAPON_METADATA_FILE' 'weaponarchetypes.meta'

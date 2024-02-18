@@ -51,8 +51,8 @@ Config.ox_inventory = oxHas and 'esx' or false
 Config.codem_inventory = codemHas and 'esx' or false
 
 -- Target script
-Config.Target = true             -- Enable or disable target system
-Config.TargetScript = 'qb-target' -- 'ox_target' or 'qb-target' only!
+Config.Target = false             -- Enable or disable target system
+Config.TargetScript = 'ox_target' -- 'ox_target' or 'qb-target' only!
 
 -- Leave it as default if you dont know what you are doing
 Config.ScreenshotBasic = 'screenshot-basic'
@@ -255,12 +255,14 @@ Config.GarageScript = 'qb-garages'
 ---@param plate Return the plate of vehicle
 ---@param model Give the model IsNamedRendertargetLinked
 function VehicleKeys(vehicle, hash, plate, model)
-    if GetResourceState('qs-vehiclekeys') == 'started' then     -- QS VEHICLEKEYS
+    if GetResourceState('qs-vehiclekeys') == 'started' then
         exports['qs-vehiclekeys']:GiveKeys(plate, model)
-    elseif GetResourceState('qb-vehiclekeys') == 'started' then -- QB VEHICLEKEYS
+    elseif GetResourceState('qb-vehiclekeys') == 'started' then
         TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(vehicle))
-    elseif GetResourceState('vehicles_keys') == 'started' then  -- JAKSAM VEHICLEKEYS
+    elseif GetResourceState('vehicles_keys') == 'started' then
         TriggerServerEvent('vehicles_keys:selfGiveVehicleKeys', plate)
+    elseif GetResourceState('mono_carkeys') == 'started' then
+        exports.mono_carkeys:ClientInventoryKeys('add', plate)
     else
         print('^4[QS Smartphone] ^3[Debug]^0: If you have any vehiclekeys remember to add your vehiclekeys event in config.lua line 1249...') -- You can remove this.
     end
@@ -273,7 +275,7 @@ end
 --░░╚██╔╝░╚██╔╝░███████╗░░░██║░░░  ██║░░░░░██║░░██║╚█████╔╝██║░╚███║███████╗
 --░░░╚═╝░░░╚═╝░░╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝
 
-Config.WetPhone = true                  -- Being in the water, the phone will break and will give you the same item but with the prefix "wet_".
+Config.WetPhone = false                  -- Being in the water, the phone will break and will give you the same item but with the prefix "wet_".
 Config.RepairWetPhone = 'phone_module'   -- With said item, we can repair the wet phone.
 Config.RepairWetPhoneNpc = true          -- Be able to repair your phone with the NPC Telephone Technician.
 Config.RepairWetPhoneNpcPrice = 100      -- Price to repair a wet phone in the Technician.
@@ -290,21 +292,21 @@ Config.RepairWetPhoneNpcAccount = 'bank' -- Choose here the account to pay the t
 -- These works will have permission to publish in the News app.
 Config.WeazelJob = {
     'weazelnews',
+    'police',
+    'weazel',
 }
 
 -- Jobs available to receive Police App alerts.
 Config.PoliceAppJobs = {
-    [1] = 'lspd',
-    [2] = 'bcso',
+    [1] = 'police',
+    -- [2] = 'sheriff',
 }
 
 --- @param job 'Name of job who will receive the message'
 --- @param name 'Visible label'
 --- @param img  'Image of contact'
 Config.Jobs = {
-    { job = 'lspd',    name = 'lspd',  img = './img/apps/police.png' },
-    { job = 'bcso',    name = 'bcso',  img = './img/apps/police.png' },
-    { job = 'safr',    name = 'safr',  img = './img/apps/police.png' },
+    { job = 'police',    name = 'Policia',  img = './img/apps/police.png' },
     { job = 'ambulance', name = 'Ems',      img = './img/apps/ambulance.png' },
     { job = 'mechanic',  name = 'Mechanic', img = './img/apps/mechanic.png' },
 }
@@ -314,8 +316,7 @@ Config.Jobs = {
     to put it another way it is to enter and exit of duty.
 ]]
 Config.jobCommands = { -- Just enter a number here, this is the number that will appear when you call.
-    ['lspd'] = '911',
-    ['bcso'] = '912',
+    ['police'] = '112',
     ['ambulance'] = '113',
     ['mechanic'] = '114',
 }
@@ -328,7 +329,7 @@ Config.jobCommands = { -- Just enter a number here, this is the number that will
 --╚═════╝░░╚═════╝░╚═════╝░╚═╝╚═╝░░╚══╝╚══════╝╚═════╝░╚═════╝░
 
 Config.JobsInPhone = {
-    ['lspd'] = {
+    ['police'] = {
         order = 1,
         name = 'police',
         label = 'Police',
@@ -706,7 +707,7 @@ Config.uberItems = {
 --░░░╚═╝░░░╚══════╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░╚════╝░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝
 
 Config.ResetPassword = {
-    spawnNPC = false,
+    spawnNPC = true,
     spots = {
         {
             coords = vec3(-1524.32, -409.3, 35.6),
@@ -759,7 +760,7 @@ Config.ResetPassword = {
 Config.CustomDispatch = false -- Use a custom dispatch script? (Jobs message only)
 --[[
     'client' excute on client side go to (qs-smartphone/client/custom/misc/dispatch.lua 'qs-smartphone:client:CustomClientDispatch')
-    'server' excute on server side go to (qs-smartphone/server/custom/misc/dispatch.lua 'qs-smartphone:sever:CustomServerDispatch')
+    'server' excute on server side go to (qs-smartphone/server/custom/misc/dispatch.lua 'qs-smartphone:server:CustomServerDispatch')
 ]]
 Config.CustomDispatchSide = 'client'
 
