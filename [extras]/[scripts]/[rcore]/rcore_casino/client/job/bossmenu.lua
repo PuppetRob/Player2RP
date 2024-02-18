@@ -40,7 +40,9 @@ CreateThread(function()
     bossMenu.on("key", function()
         if Framework.Active == 1 then
             TriggerEvent(Events.ES_BOSS_MENU, Config.JobName, function(data, menu)
-                menu.close()
+                if menu then
+                    menu.close()
+                end
             end, {
                 withdraw = true,
                 deposit = true,
@@ -137,7 +139,7 @@ CreateThread(function()
                     end
                 end)
             else
-               Casino_ShowNotInOpenHoursPrompt(false)
+                Casino_ShowNotInOpenHoursPrompt(false)
             end
         end)
     end

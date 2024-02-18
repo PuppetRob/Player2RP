@@ -34,6 +34,7 @@ PODIUM_PROPS = nil
 IN_TP_SCENE = false
 OPEN_STATE = {"", ""}
 FORCE_CLOSED = false
+JOB_PROGRESS = {}
 
 local PLAYER_CHIPS_ANIMATED = -1
 local LastCasinoUpdate = 0
@@ -62,7 +63,7 @@ GAME_INFO_PANEL = nil
 -- digital wall
 local DigitalWall_Themes = {"CASINO_DIA_PL", "CASINO_HLW_PL", "CASINO_SNWFLK_PL", "CASINO_WIN_PL"}
 local DigitalWall_RenderTarget = nil
-local DigitalWall_Theme = 1 -- *winter* :OH_pepePleading:
+local DigitalWall_Theme = 3 -- *winter* :OH_pepePleading:
 local DigitalWall_ClipTime = 0
 local DigitalWall_PlayingConfetti = false
 local DigitalWall_Alpha = 0
@@ -288,7 +289,7 @@ function Casino_AnimateBalance()
         if PLAYER_CHIPS_ANIMATED == -1 then
             PLAYER_CHIPS_ANIMATED = PLAYER_CHIPS
             BeginScaleformScriptHudMovieMethod(21, "SET_PLAYER_CHIPS")
-            ScaleformMovieMethodAddParamInt(PLAYER_CHIPS)
+            PushScaleformMovieMethodParameterString(CommaValue(PLAYER_CHIPS))
             EndScaleformMovieMethod()
             return
         end
@@ -301,7 +302,7 @@ function Casino_AnimateBalance()
         PLAYER_CHIPS_ANIMATED = PLAYER_CHIPS
 
         BeginScaleformScriptHudMovieMethod(22, "SET_PLAYER_CHIP_CHANGE")
-        ScaleformMovieMethodAddParamInt(math.ceil(diff))
+        PushScaleformMovieMethodParameterString(CommaValue(math.ceil(diff)))
         ScaleformMovieMethodAddParamBool(append)
         EndScaleformMovieMethod()
 
@@ -312,13 +313,13 @@ function Casino_AnimateBalance()
             local i = actualStep < 0.5 and 0 or math.floor(actualStep)
 
             BeginScaleformScriptHudMovieMethod(21, "SET_PLAYER_CHIPS")
-            ScaleformMovieMethodAddParamInt(math.ceil(i))
+            PushScaleformMovieMethodParameterString(CommaValue(math.ceil(i)))
             EndScaleformMovieMethod()
             Wait(0)
         end
 
         BeginScaleformScriptHudMovieMethod(21, "SET_PLAYER_CHIPS")
-        ScaleformMovieMethodAddParamInt(PLAYER_CHIPS)
+        PushScaleformMovieMethodParameterString(CommaValue(PLAYER_CHIPS))
         EndScaleformMovieMethod()
 
         Wait(1000)
@@ -361,6 +362,21 @@ function ForgotLastStartedGameType(ifGame)
     end
 end
 
+function Podium_ShowFullscreenInfo()
+    if (IsAtJob(Config.JobName, nil, 1, Config.BossGrade) or PLAYER_IS_ADMIN) then
+        FullscreenPrompt(Translation.Get("BOSS_FULLSCREEN_PODIUM_CAPT"), Translation.Get("PODIUM_INFO_4"), nil, nil)
+        SetNewWaypoint(934.481, -1.952)
+    else
+        local m
+        if PODIUM_PROPS then
+            m = (Translation.Get("PODIUM_INFO")):format(PODIUM_PROPS.podiumName)
+        else
+            m = Translation.Get("PODIUM_INFO_3")
+        end
+        FullscreenPrompt(Translation.Get("BOSS_FULLSCREEN_PODIUM_CAPT"), m, nil, nil)
+    end
+end
+
 -- handle interaction buttons
 
 -- interaction key pressed
@@ -399,8 +415,7 @@ local function InteractionKeyPressed()
         Cashier_OnInteraction()
     elseif LAST_INTERACTION_GAME == "seating" then
         Seating_OnInteraction()
-    elseif LAST_INTERACTION_GAME == "cameras" or LAST_INTERACTION_GAME == "officeelevator" or LAST_INTERACTION_GAME ==
-        "officeelevatorout" then
+    elseif LAST_INTERACTION_GAME == "cameras" then
         Office.OnInteraction()
     elseif LAST_INTERACTION_GAME == "casinoleaving" then
         StartCasinoLeaveScene()
@@ -414,6 +429,10 @@ local function InteractionKeyPressed()
         StartElevatorScene(LAST_INTERACTION_ENTITY)
     elseif LAST_INTERACTION_GAME == "xmastree" then
         Xmas_Action(LAST_INTERACTION_ENTITY)
+    elseif LAST_INTERACTION_GAME == "cleanertrollycontrol" then
+        Cleaner_AttachTrollyRequest(LAST_INTERACTION_ENTITY)
+    elseif LAST_INTERACTION_GAME == "cleanertrollytools" then
+        Cleaner_OpenToolsRequest()
     end
 end
 
@@ -457,6 +476,8 @@ local function LeaveKeyPressed()
         Seating_OnInteractionQuit()
     elseif LAST_STARTED_GAME_TYPE == "cameras" then
         Office.CameraLeaveRequest()
+    elseif LAST_STARTED_GAME_TYPE == "cleanertrollytools" then
+        Cleaner_QuitRequest()
     end
 end
 
@@ -471,6 +492,7 @@ function StopFromPlaying()
         -- leave chairs
         CAN_INTERACT = true
         LeaveKeyPressed()
+        LAST_STARTED_GAME_TYPE = nil
     end
 end
 
@@ -493,6 +515,26 @@ function InfoPanel_UpdateNotification(newNotification)
         return
     end
     DebugStart("InfoPanel_UpdateNotification")
+
+    if Config.NotifySystem then
+        if Config.NotifySystem == 2 and newNotification and newNotification ~= "" then
+            exports['okokNotify']:Alert("", removePlaceholderText(newNotification), 3000, 'info', true)
+            return
+        elseif Config.NotifySystem == 3 and newNotification and newNotification ~= "" then
+            exports['esx_notify']:Notify("info", 3000, removePlaceholderText(newNotification))
+            return
+        elseif Config.NotifySystem == 4 and newNotification and newNotification ~= "" then
+            exports['qb-notify']:Notify(removePlaceholderText(newNotification), "primary", 3000)
+            return
+        elseif Config.NotifySystem == 5 and newNotification and newNotification ~= "" then
+            lib.notify({
+                description = newNotification,
+                duration = 3000,
+                type = 'info'
+            })
+            return
+        end
+    end
 
     if Config.UIFontName and newNotification then
         newNotification = "<font face=\"" .. Config.UIFontName .. "\">" .. newNotification .. "</font>"
@@ -571,7 +613,7 @@ local function InteractableObjectFound(game, entity, coords, model)
         return
     end
 
-    if PLAYER_DRUNK_LEVEL >= 0.9 then
+    if PLAYER_DRUNK_LEVEL >= 0.9 and game ~= "casinoleaving" then
         InfoPanel_UpdateNotification(Translation.Get("DRUNK_MESSAGE"))
         return
     end
@@ -610,9 +652,6 @@ local function InteractableObjectFound(game, entity, coords, model)
     elseif game == "cameras" then
         Office.ShowNotifyUI("cameras")
 
-    elseif game == "officeelevator" or game == "officeelevatorout" then
-        Office.ShowNotifyUI(game)
-
     elseif game == "casinoleaving" then
         LAST_INTERACTION_GAME = "casinoleaving"
         InfoPanel_UpdateNotification(Translation.Get("PRESS_TO_LEAVE_CASINO"))
@@ -622,6 +661,9 @@ local function InteractableObjectFound(game, entity, coords, model)
         InfoPanel_UpdateNotification(Translation.Get("DIAMOND_WALL_BROKE_3"))
 
     elseif game == "podium" then
+        if Config.UseTarget then
+            return
+        end
         local m
         if PODIUM_PROPS then
             m = (Translation.Get("PODIUM_INFO")):format(PODIUM_PROPS.podiumName)
@@ -634,13 +676,18 @@ local function InteractableObjectFound(game, entity, coords, model)
         end
         LAST_INTERACTION_GAME = "podium"
         InfoPanel_UpdateNotification(m)
-
     elseif game == "elevator" then
+        if Config.UseTarget then
+            return
+        end
         LAST_INTERACTION_GAME = "elevator"
         InfoPanel_UpdateNotification(Translation.Get("BOSS_PRESS_TO_USE_ELEVATOR"))
-
     elseif game == "xmastree" then
         Xmas_ShowNotify(entity)
+    elseif game == "cleanertrollycontrol" then
+        Cleaner_ShowNotifyUI(1)
+    elseif game == "cleanertrollytools" then
+        Cleaner_ShowNotifyUI(2)
     end
 end
 
@@ -713,6 +760,13 @@ local function SlowTimer()
         end
     end
 
+    -- jobs
+    if Config.Jobs then
+        if Config.Jobs.Cleaner.Enabled then
+            Cleaner_SpawnDirtAroundPlayerArea()
+        end
+    end
+
     TriggerServerEvent("Casino:GetMoney")
     TriggerServerEvent("Casino:GetChips")
 
@@ -740,7 +794,6 @@ local function OneSecondTimer()
     end
     SlowTimer()
 end
-
 -- check for avaiable object to interact with
 local function CheckForInteractions()
     -- not yet
@@ -777,10 +830,12 @@ local function CheckForInteractions()
     local playerPos = GetPlayerPosition()
 
     -- check for lucky wheel
-    local luckyDistance = #(playerPos - LuckyWheel_GetCoords())
-    if luckyDistance < 2 then
-        InteractableObjectExists("luckywheel", nil, nil)
-        return
+    if Config.LUCKY_WHEEL_ENABLED then
+        local luckyDistance = #(playerPos - LuckyWheel_GetCoords())
+        if luckyDistance < 2 then
+            InteractableObjectExists("luckywheel", nil, nil)
+            return
+        end
     end
 
     -- check for inside track
@@ -869,7 +924,7 @@ local function CheckForInteractions()
                         WaitForPlayerOnCoords(o.safearea, 5000)
                         SetEntityCoordsNoOffset(PlayerPedId(), o.safearea, true, true, true, true)
                         Wait(3000)
-                        InfoPanel_UpdateNotification("")
+                        InfoPanel_UpdateNotification(nil)
                     end)
                 end
             end
@@ -892,16 +947,6 @@ local function CheckForInteractions()
         return
     end
 
-    if #(playerPos - OfficeElevatorCheckpointPositions[1]) < 1.0 and PLAYER_IS_BOSS then
-        InteractableObjectExists("officeelevator", nil, nil)
-        return
-    end
-
-    if #(playerPos - OfficeElevatorCheckpointPositions[2]) < 1.0 and PLAYER_IS_BOSS then
-        InteractableObjectExists("officeelevatorout", nil, nil)
-        return
-    end
-
     -- xmas
     local xmasTree = Xmas_GetTree(playerPos)
     if xmasTree then
@@ -921,17 +966,42 @@ local function CheckForInteractions()
     for k, v in pairs(ELEVATORS) do
         local elevCheckpoint = GetObjectOffsetFromCoords(v.leftPosition, v.heading, 0.0, -0.75, 1.0)
 
-        if #(playerPos - elevCheckpoint) < 1.0 then
+        if #(playerPos - elevCheckpoint) < 1.5 then
             InteractableObjectExists("elevator", v, v.leftPosition)
             return
         end
     end
 
-    if Jobs.Enabled then
-        if IsAtJob(Jobs.Electrician.JobName, nil, Jobs.Electrician.MinGrade, Jobs.Electrician.MaxGrade) then
-            if #(playerPos - JobConsts.FUSEBOX_POS) < 1.0 and (DigitalWall_Broken or ELECTRICITY_BROKEN) then
-                InteractableObjectExists("fusebox", nil, nil)
-                return
+    -- rcore_casino_jobs
+    if Config.Jobs then
+        -- check for electrician
+        if Config.Jobs.Electrician.Enabled then
+            if IsAtJob(Config.Jobs.Electrician.JobName, nil, Config.Jobs.Electrician.MinGrade,
+                Config.Jobs.Electrician.MaxGrade) then
+                if #(playerPos - Config.Jobs.JobConsts.FUSEBOX_POS) < 1.0 and (DigitalWall_Broken or ELECTRICITY_BROKEN) then
+                    InteractableObjectExists("fusebox", nil, nil)
+                    return
+                end
+            end
+        end
+
+        -- check for cleaner
+        if Config.Jobs.Cleaner.Enabled and
+            IsAtJob(Config.Jobs.Cleaner.JobName, nil, Config.Jobs.Cleaner.MinGrade, Config.Jobs.Cleaner.MaxGrade) then
+            if not JOB_PROGRESS.attachedTrolly then
+                -- not working, look for trolly
+                local trolly = CleanerJob_GetNearbyTrolly()
+                JOB_PROGRESS.trolly = trolly
+                if trolly then
+                    local interactionState = CleanerJob_GetInteractionTypeFromCoords(trolly)
+                    if interactionState == 1 then
+                        InteractableObjectExists("cleanertrollycontrol", trolly)
+                        return
+                    elseif interactionState == 2 then
+                        InteractableObjectExists("cleanertrollytools", trolly)
+                        return
+                    end
+                end
             end
         end
     end
@@ -1125,24 +1195,28 @@ function DigitalWall_SetTheme(theme, save, alpha)
 end
 
 function Casino_CreateFuseBox()
+    print("X1")
     if Casino_FuseBox then
         return
     end
+    print("X2")
     local model = GetHashKey("ch_prop_ch_fuse_box_01a")
     RequestModelAndWait(model)
-    Casino_FuseBox = CreateObject(model, JobConsts.FUSEBOX_POS, false, false, false)
-    SetEntityHeading(Casino_FuseBox, JobConsts.FUSEBOX_ROT)
-    Casino_FuseBoxBlip = SetCasinoBlip(JobConsts.FUSEBOX_POS, 650, Translation.Get("FUSE_BOX"), false)
+    Casino_FuseBox = CreateObject(model, Config.Jobs.JobConsts.FUSEBOX_POS, false, false, false)
+    SetEntityHeading(Casino_FuseBox, Config.Jobs.JobConsts.FUSEBOX_ROT)
+    Casino_FuseBoxBlip = SetCasinoBlip(Config.Jobs.JobConsts.FUSEBOX_POS, 650, Translation.Get("FUSE_BOX"), false)
     SetBlipColour(Casino_FuseBoxBlip, 19)
 
     if DigitalWall_Broken then
-        if IsAtJob(Jobs.Electrician.JobName, nil, Jobs.Electrician.MinGrade, Jobs.Electrician.MaxGrade) then
+        if IsAtJob(Config.Jobs.Electrician.JobName, nil, Config.Jobs.Electrician.MinGrade,
+            Config.Jobs.Electrician.MaxGrade) then
             ShowHelpNotification(Translation.Get("DIAMOND_WALL_BROKE_2"))
         else
             ShowHelpNotification(Translation.Get("DIAMOND_WALL_BROKE"))
         end
     elseif ELECTRICITY_BROKEN then
-        if IsAtJob(Jobs.Electrician.JobName, nil, Jobs.Electrician.MinGrade, Jobs.Electrician.MaxGrade) then
+        if IsAtJob(Config.Jobs.Electrician.JobName, nil, Config.Jobs.Electrician.MinGrade,
+            Config.Jobs.Electrician.MaxGrade) then
             ShowHelpNotification(Translation.Get("DIAMOND_WALL_BROKE_5"))
         else
             ShowHelpNotification(Translation.Get("DIAMOND_WALL_BROKE_4"))
@@ -1388,7 +1462,28 @@ end
 function OnEnterCasino()
     local startTime = GetGameTimer()
     DebugStart("OnEnterCasino")
+    if Config.CLEAR_OBJECTS_ON_ENTER then
+        -- clear evetything else
+        local pPos = GetEntityCoords(PlayerPedId())
+        ClearAreaOfObjects(pPos.x, pPos.y, pPos.z, 100.0, 0)
+        ClearAreaOfPeds(pPos.x, pPos.y, pPos.z, 100.0, 0)
+    end
     Debug("Entered casino. Loading stuff")
+
+    if Config.MapType == 5 then
+        -- Request coliision on enter
+        -- SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
+        SetEntityHeading(PlayerPedId(), 247.53)
+        FreezeEntityPosition(PlayerPedId(), true)
+        RequestCollisionAtCoord(Config.EnterPosition)
+        local t = GetGameTimer() + 5000
+        while not HasCollisionLoadedAroundEntity(PlayerPedId()) and GetGameTimer() < t do
+            Wait(33)
+        end
+        FreezeEntityPosition(PlayerPedId(), false)
+    end
+
+    -- Load casino
     LAST_STARTED_GAME_TYPE = nil
     CAN_MOVE = true
     CASINO_ENTERS = CASINO_ENTERS + 1
@@ -1408,6 +1503,8 @@ function OnEnterCasino()
             ActivateInteriorEntitySet(interiorid, "horse_bettings")
             RefreshInterior(interiorid)
         end
+    elseif Config.MapType == 6 then
+        ReplaceMap6Props()
     end
 
     -- get initial drunk level
@@ -1417,6 +1514,13 @@ function OnEnterCasino()
     if Config.RestrictControls then
         SetCurrentPedWeapon(PlayerPedId(), GetHashKey("weapon_unarmed"), true)
     end
+
+    -- prepare Inside Track black wall
+    if IsNamedRendertargetRegistered("casinoscreen_02") then
+        ReleaseNamedRendertarget("casinoscreen_02")
+    end
+    screenTargetGlobal = CreateScaleformHandle("casinoscreen_02", (Config.MapType == 5 and
+        "rcore_vw_vwint01_betting_screen" or "vw_vwint01_betting_screen"))
 
     -- hide exterior icon
     RemoveBlip(CASINO_BLIP)
@@ -1436,11 +1540,6 @@ function OnEnterCasino()
 
     -- reset settings for scanning dealers
     CasinoDoubleChecked = false
-
-    -- register strings
-    for _, v in pairs(stringValues) do
-        AddTextEntry(v[1], v[2])
-    end
 
     if Config.MapType ~= 5 then
         if Config.ENTER_CASINO_FADEOUT ~= 0 and (Config.ENTER_CASINO_FADEOUT == 2 or CASINO_ENTERS == 1) then
@@ -1518,7 +1617,9 @@ function OnEnterCasino()
     StartDigitalWalls()
 
     -- load Lucky Wheel
-    LuckyWheel_Load()
+    if Config.LUCKY_WHEEL_ENABLED then
+        LuckyWheel_Load()
+    end
 
     -- load Scene Peds
     ScenePed_Start()
@@ -1540,6 +1641,9 @@ function OnEnterCasino()
 
     -- load clothing
     ClothingShop_Load()
+
+    -- load office
+    Office_Load()
 
     -- xmas
     if Config.Xmas then
@@ -1597,6 +1701,9 @@ function PlayCasinoInteriorSound()
         -- StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE")
         return
     end
+    if ELECTRICITY_BROKEN then
+        return
+    end
     DebugStart("PlayCasinoInteriorSound")
     StopStream()
     Wait(500)
@@ -1641,6 +1748,17 @@ end
 function OnLeaveCasino()
     DebugStart("OnLeaveCasino")
     Debug("Left casino. Unloading stuff")
+
+    -- unload Inside Track wall
+    if IsNamedRendertargetRegistered("casinoscreen_02") then
+        ReleaseNamedRendertarget("casinoscreen_02")
+    end
+
+    -- remove target zones
+    RemoveAllTargetZones()
+
+    -- stop inside track
+    InsideTrackDestroy()
 
     -- stop scene
     NewLoadSceneStop()
@@ -1747,7 +1865,9 @@ function OnLeaveCasino()
     ClothingShop_Destroy()
 
     -- stop Lucky Wheel
-    LuckyWheel_Stop()
+    if Config.LUCKY_WHEEL_ENABLED then
+        LuckyWheel_Stop()
+    end
 
     -- destroy peds
     Peds_Destroy()
@@ -1755,6 +1875,14 @@ function OnLeaveCasino()
     -- xmas
     if Config.Xmas then
         Xmas_Destroy()
+    end
+
+    -- rcore_casino_jobs
+    if Config.Jobs then
+        -- clean up dirt objects/trollys
+        Cleaner_CleanUp()
+        -- destroy fuse box
+        Casino_DestroyFuseBox()
     end
 
     -- unload digital wall
@@ -1769,9 +1897,6 @@ function OnLeaveCasino()
 
     UnloadCasinoAssets()
     PLAYER_CACHE = {}
-
-    -- jobs
-    Casino_DestroyFuseBox()
 
     -- reset radar zoom
     Wait(100)
@@ -1848,7 +1973,7 @@ end)
 
 -- casino interior data
 RegisterNetEvent("Casino:Interior")
-AddEventHandler("Casino:Interior", function(podiumProps, wallBroken, electricityBroken, blacklisted)
+AddEventHandler("Casino:Interior", function(podiumProps, wallBroken, electricityBroken, blacklisted, jobInfo)
     if type(podiumProps) ~= 'table' then
         podiumProps = json.decode(podiumProps)
     end
@@ -1869,14 +1994,13 @@ AddEventHandler("Casino:Interior", function(podiumProps, wallBroken, electricity
 
     -- digital wall / electricity problems
     -- create fuse box for job
-    if Jobs.Enabled then
+    if Config.Jobs and Config.Jobs.Electrician.Enabled then
         DigitalWall_Broken = wallBroken
         ELECTRICITY_BROKEN = electricityBroken
         if wallBroken then
             DigitalWall_SetTheme(4, false, 255)
         end
         if electricityBroken then
-            PlaySoundFrontend(-1, "FLIGHT_SCHOOL_LESSON_PASSED", "HUD_AWARDS", false)
             SetArtificialLightsState(true)
         else
             SetArtificialLightsState(false)
@@ -1885,7 +2009,30 @@ AddEventHandler("Casino:Interior", function(podiumProps, wallBroken, electricity
         if electricityBroken or wallBroken then
             Casino_CreateFuseBox()
         end
+
+        if jobInfo.dirtySteps then
+            for _, v in pairs(jobInfo.dirtySteps) do
+                Cleaner_AddNearbyDirt(v.id, "prop_rub_litter_03c", v.coords, nil, 10.0, 255, 1)
+            end
+        end
     end
+end)
+
+RegisterNetEvent("Casino:ElectricityBroke")
+AddEventHandler("Casino:ElectricityBroke", function()
+    ELECTRICITY_BROKEN = true
+    PlaySoundFrontend(-1, "FLIGHT_SCHOOL_LESSON_PASSED", "HUD_AWARDS", false)
+    SetArtificialLightsState(true)
+    StopStream()
+    Casino_CreateFuseBox()
+end)
+
+RegisterNetEvent("Casino:WallBroke")
+AddEventHandler("Casino:WallBroke", function()
+    DigitalWall_Broken = true
+    PlaySoundFrontend(-1, "FLIGHT_SCHOOL_LESSON_PASSED", "HUD_AWARDS", false)
+    DigitalWall_SetTheme(4, false, 255)
+    Casino_CreateFuseBox()
 end)
 
 RegisterNetEvent("Casino:BecomeVIP")
@@ -2063,12 +2210,12 @@ end)
 -- start fuse box repair
 RegisterNetEvent("Casino:StartFuseBox")
 AddEventHandler("Casino:StartFuseBox", function(state)
-    if not Jobs.Enabled then
+    if not Config.Jobs or not Config.Jobs.Electrician.Enabled then
         return
     end
     if state then
         local board = exports["rcore_casino_jobs"].GetCircuitBoard()
-        local d = Jobs.Electrician.Difficulty["FuseBox"]
+        local d = Config.Jobs.Electrician.Difficulty["FuseBox"]
         board.LoadAndStart(d.CircuitBoardLevel, d.CircuitBoardLifes, function(succ)
             if succ then
                 TriggerServerEvent("Casino:FuseBoxFixed")
@@ -2084,7 +2231,7 @@ end)
 -- fuse box state changed
 RegisterNetEvent("Casino:FuseBoxStateChanged")
 AddEventHandler("Casino:FuseBoxStateChanged", function(wallBroken, electricityBroken)
-    if not Jobs.Enabled then
+    if not Config.Jobs or not Config.Jobs.Electrician.Enabled then
         return
     end
 
@@ -2109,6 +2256,8 @@ AddEventHandler("Casino:FuseBoxStateChanged", function(wallBroken, electricityBr
         Casino_CreateFuseBox()
     else
         Casino_DestroyFuseBox()
+        -- play sound back after fuse box is fixed
+        PlayCasinoInteriorSound()
     end
 end)
 
@@ -2190,18 +2339,10 @@ function StartGTAOTPScene()
 
     -- if no door, tp without animation
     if not doorObject then
-        DoScreenFadeOut(2000)
-        Wait(2000)
-        FreezeEntityPosition(PlayerPedId(), true)
-        RequestCollisionAtCoord(Config.EnterPosition)
+        DoScreenFadeOut(1000)
+        Wait(1000)
         SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
         SetEntityHeading(PlayerPedId(), 247.53414916992)
-        Wait(500)
-        t = GetGameTimer() + 5000
-        while not HasCollisionLoadedAroundEntity(PlayerPedId()) and GetGameTimer() < t do
-            Wait(33)
-        end
-        FreezeEntityPosition(PlayerPedId(), false)
         return
     end
 
@@ -2215,6 +2356,13 @@ function StartGTAOTPScene()
     CreateThread(function()
         DoScreenFadeOut(500)
         Wait(500)
+
+        local interiorId = GetInteriorAtCoords(Config.EnterPosition)
+        local t = GetGameTimer() + 5000
+        PinInteriorInMemory(interiorId)
+        while not IsInteriorReady(interiorId) and GetGameTimer() < t do
+            Wait(33)
+        end
 
         local playerClone = ClonePed(PlayerPedId(), 0.0, false)
         local introDict = "anim@amb@casino@valet@intro@"
@@ -2258,18 +2406,9 @@ function StartGTAOTPScene()
         Wait(100)
         DoScreenFadeIn(2000)
 
-        FreezeEntityPosition(PlayerPedId(), true)
         RequestCollisionAtCoord(Config.EnterPosition)
         SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
         SetEntityHeading(PlayerPedId(), 247.53414916992)
-
-        Wait(500)
-        t = GetGameTimer() + 5000
-        while not HasCollisionLoadedAroundEntity(PlayerPedId()) and GetGameTimer() < t do
-            Wait(33)
-        end
-
-        FreezeEntityPosition(PlayerPedId(), false)
 
         if GetSynchronizedScenePhase(s) > 0.0 and DoesEntityExist(valetPed) and DoesEntityExist(playerClone) then
             t = GetGameTimer() + 10000
@@ -2471,13 +2610,13 @@ if Config.MapType ~= 5 then
                 if dc then
                     -- dc.Ipl.Building.Remove()
                     dc.Ipl.Main.Remove()
-                    dc.Ipl.Carpark.Remove()
-                    dc.Ipl.Garage.Remove()
+                    -- dc.Ipl.Carpark.Remove()
+                    -- dc.Ipl.Garage.Remove()
                 end
                 local dm = exports["bob74_ipl"]:GetBikerGangObject()
                 if dm then
-                    dm.Clubhouse.MissionsWall.Clear()
-                    dm.Clubhouse.ClearAll()
+                    --  dm.Clubhouse.MissionsWall.Clear()
+                    --  dm.Clubhouse.ClearAll()
                 end
             end)
         end
@@ -2504,3 +2643,5 @@ end
 if Framework.Active == 3 then
     TriggerServerEvent("Casino:GetProgress")
 end
+
+-- AddTextEntry("ITH_NAME_056", "Miss Triggered") -- replace the name here

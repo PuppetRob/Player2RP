@@ -142,7 +142,9 @@ function Cashier_RequestVIP()
 
     local message = string.format(Translation.Get("CASHIER_VIP_CONFIRM_MSG"), FormatPrice(Config.CASHIER_VIP_PRICE))
     if Config.CASHIER_VIP_DURATION then
-        message = message .. string.format(Translation.Get("CASHIER_VIP_CONFIRM_MSG_2"), FormatTimestamp(Config.CASHIER_VIP_DURATION))
+        message = message ..
+                      string.format(Translation.Get("CASHIER_VIP_CONFIRM_MSG_2"),
+                FormatTimestamp(Config.CASHIER_VIP_DURATION))
     end
     FullscreenPrompt(Translation.Get("CASHIER_VIP_CONFIRM_CAPT"), message, function(yes)
         if yes then
@@ -153,7 +155,10 @@ function Cashier_RequestVIP()
     end)
 end
 
-function Cashier_OnInteraction()
+function Cashier_OnInteraction(forceCoords)
+    if forceCoords then
+        s_cashierCoords = forceCoords
+    end
     DebugStart("Cashier_OnInteraction")
     if not CAN_INTERACT then
         return
@@ -176,6 +181,9 @@ function Cashier_OnBecomeVIP()
 end
 
 function Cashier_ShowNotifyUI(coords)
+    if Config.UseTarget then
+        return
+    end
     DebugStart("Cashier_ShowNotifyUI")
     local cashier = GetCashierFromCoords(coords)
 
@@ -208,13 +216,32 @@ function Cashier_Load()
             o.ped = cashier.ped
             SetPedBrave(cashier.ped)
             table.insert(cashiers, cashier)
+
+            -- target
+            local targetOffset = GetObjectOffsetFromCoords(coords, head, 0.0, 0.2, 0.5)
+            CreateTargetZone(vector3(targetOffset.x, targetOffset.y, targetOffset.z), 1.0, 2.0, 0.0, {{
+                num = 1,
+                type = "client",
+                event = "Casino:Target",
+                icon = 'fas fa-cash-register',
+                label = removePlaceholderText(Translation.Get("CASHIER_PRESS_TO_USE")),
+                targeticon = 'fas fa-cash-register',
+                canInteract = function(entity, distance, data)
+                    return CAN_INTERACT
+                end,
+                drawColor = {255, 255, 255, 255},
+                successDrawColor = {30, 144, 255, 255},
+                eventAction = "cashier_enter",
+                cashierCoords = coords,
+            }})
+
         end
     end
     SetCasinoBlip(cashiers[1].coords, 683, Translation.Get("BLIP_CASHIER"), false)
 end
 
 RegisterNetEvent("Cashier:Use")
-AddEventHandler("Cashier:Use", function(coords, playerId, greetings, moneyLimit, canPurchaseVIP, maxMoney)
+AddEventHandler("Cashier:Use", function(coords, playerId, greetings, moneyLimit, canPurchaseVIP, maxMoney, extraData)
     local cashier = GetCashierFromCoords(coords)
     if not cashier then
         return
@@ -225,7 +252,7 @@ AddEventHandler("Cashier:Use", function(coords, playerId, greetings, moneyLimit,
         UnblockPlayerInteraction()
         SetInventoryBusy(true)
         LAST_STARTED_GAME_TYPE = "cashier"
-        Cashier_ShowMenu(moneyLimit, canPurchaseVIP, maxMoney)
+        Cashier_ShowMenu(moneyLimit, canPurchaseVIP, maxMoney, extraData)
         s_lastMoneyLimit = moneyLimit
         s_cashierCoords = coords
         s_myCashier = cashier
@@ -262,24 +289,25 @@ end)
 
 -- trade results
 RegisterNetEvent("Casino:TradeResults")
-AddEventHandler("Casino:TradeResults", function(chipsNow, moneyNow, comment, moneyLimit, pCache)
+AddEventHandler("Casino:TradeResults", function(chipsNow, moneyNow, comment, moneyLimit, societyNow, pCache)
     if chipsNow and chipsNow ~= -1 then
         PLAYER_CHIPS = chipsNow
         PLAYER_MONEY = moneyNow
         s_lastMoneyLimit = moneyLimit
-        if pCache then
+        if pCache and type(pCache) == "table" then
             PLAYER_CACHE = pCache
         end
         Casino_AnimateBalance()
         if s_myCashier ~= nil then
             PlayPedAmbientSpeechWithVoiceNative(s_myCashier.ped, comment, "u_f_m_casinocash_01",
                 "SPEECH_PARAMS_FORCE_NORMAL", 0)
-            ResetCashierUISelection(moneyLimit)
+            ResetCashierUISelection(moneyLimit, societyNow)
         end
     else
         Cashier_OnQuit()
         local societyMoney = moneyNow
-        FullscreenPrompt(Translation.Get("CASHIER_TRADEIN_FAILED_CAPT"), Translation.Get("CASHIER_TRADEIN_FAILED_MSG"), nil, string.format(Translation.Get("CASHIER_SOCIETY_BALANCE"), FormatPrice(societyMoney)))
+        FullscreenPrompt(Translation.Get("CASHIER_TRADEIN_FAILED_CAPT"), Translation.Get("CASHIER_TRADEIN_FAILED_MSG"),
+            nil, string.format(Translation.Get("CASHIER_SOCIETY_BALANCE"), FormatPrice(societyMoney)))
         PlaySoundFrontend(-1, "CHECKPOINT_MISSED", "HUD_MINI_GAME_SOUNDSET", true)
     end
 end)

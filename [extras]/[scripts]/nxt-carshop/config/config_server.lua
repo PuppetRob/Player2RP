@@ -25,7 +25,7 @@ if Config.Framework == "QBCore" then
 	GetPlayerFromSource = QBCore.Functions.GetPlayer
 	GetPlayerFromSourceByCitizenId = QBCore.Functions.GetPlayerByCitizenId
 
-    local AccountManagement = exports['qb-management']
+    local AccountManagement = exports['qb-banking']
 
     function getAccount(accountName)
         return AccountManagement:GetAccount(accountName)

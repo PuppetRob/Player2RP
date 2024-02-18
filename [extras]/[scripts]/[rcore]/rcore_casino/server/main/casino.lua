@@ -21,6 +21,12 @@ DAY_OF_WEEK = 0 -- *fake* day of the week inside casino
 FORCE_CLOSED = false
 GetPlayerIdentifier_ = GetPlayerIdentifier
 
+function GetServerTime()
+    local currentTimestamp = os.time()
+    local modifiedTimestamp = currentTimestamp + ((Config.ServerTimezoneOffsetHours or 0) * 60 * 60)
+    return modifiedTimestamp
+end
+
 function GetPlayerIdentifierType(playerId, idType)
     for i = 0, 10, 1 do
         local idData = GetPlayerIdentifier_(playerId, i)
@@ -123,6 +129,24 @@ local function RecountCasinoPlayers()
     end
 end
 
+local function GetPlayerDailyWidthdrawLimitForToday(playerId)
+    if not Config.DailyWidthdrawLimit or Config.DailyWidthdrawLimit <= 0 then
+        return 2147483647
+    end
+    local withdrawLimit = Config.DailyWidthdrawLimit
+    local playerIdentifier = GetPlayerIdentifier(playerId)
+    local c = Cache:GetNow(playerIdentifier)
+    if c then
+        local today = os.date("%x", GetServerTime())
+        if c.lastWithdraw and c.lastWithdraw == today then
+            withdrawLimit = Config.DailyWidthdrawLimit - c.withdraw
+        else
+            withdrawLimit = Config.DailyWidthdrawLimit
+        end
+    end
+    return withdrawLimit
+end
+
 RegisterNetEvent("Cashier:Use")
 AddEventHandler("Cashier:Use", function(coords, usedBefore, isDrunk)
     local playerId = source
@@ -155,17 +179,46 @@ AddEventHandler("Cashier:Use", function(coords, usedBefore, isDrunk)
         greetingsType = "WELCOME_DRUNK"
     end
 
-    local maxMoney = GetMoneyFromSociety()
+    local maxMoney = Config.EnableSociety and GetMoneyFromSociety() or 2147483647
     local moneyPercentage = GetCasinoMoneyWithdrawPercentage()
     local canPurchaseVIP = true
+
+    -- daily withdraw
+    local dailyWithdraw = GetPlayerDailyWidthdrawLimitForToday(playerId)
+    if dailyWithdraw < maxMoney then
+        maxMoney = dailyWithdraw
+    end
+
+    -- extra data
+    local extraData = {}
+    if Config.JobsEnabled then
+        if IsPlayerAtJob(playerId, Config.Jobs.MONEYLOAD_STARTJOBNAME, nil, Config.Jobs.MONEYLOAD_STARTJOBGRADE,
+            Config.Jobs.MONEYLOAD_STARTJOBGRADE) then
+            -- player is allowed to request moneyload mission
+            extraData.MoneyLoad = {
+                missionActive = MoneyLoad.active == true,
+                jobMembers = GetJobMembers(Config.Jobs.MONEYLOAD_WORKERJOBNAME, Config.Jobs.MONEYLOAD_WORKERJOBGRADE),
+                memberNames = nil
+            }
+            for k, v in pairs(extraData.MoneyLoad.jobMembers) do
+                if not extraData.MoneyLoad.memberNames then
+                    extraData.MoneyLoad.memberNames = GetPlayerRealName(v)
+                else
+                    extraData.MoneyLoad.memberNames = extraData.MoneyLoad.memberNames .. ", " .. GetPlayerRealName(v)
+                end
+            end
+        end
+    end
+
     if Config.CASHIER_VIP_PASS_ITEM and Config.CASHIER_VIP_PASS_ITEM ~= "" and Config.CASHIER_VIP_PASS_ITEM ~= 0 then
         canPurchaseVIP = (GetPlayerCasinoItemCount(playerId, Config.CASHIER_VIP_PASS_ITEM) ~= 0)
     end
     if Config.CASHIER_MULTITASK then
         TriggerClientEvent("Cashier:Use", playerId, coords, playerId, greetingsType, moneyPercentage, canPurchaseVIP,
-            maxMoney)
+            maxMoney, extraData)
     else
-        BroadcastCasino("Cashier:Use", coords, playerId, greetingsType, moneyPercentage, canPurchaseVIP, maxMoney)
+        BroadcastCasino("Cashier:Use", coords, playerId, greetingsType, moneyPercentage, canPurchaseVIP, maxMoney,
+            extraData)
     end
 end)
 
@@ -294,6 +347,9 @@ end
 -- gets player money from DB
 function GetPlayerMoney(playerId)
     DebugStart("GetPlayerMoney")
+    if Config.MoneyInventoryItemName then
+        return GetPlayerCasinoItemCount(playerId, Config.MoneyInventoryItemName)
+    end
     local xPlayer = ESX.GetPlayerFromId(playerId)
     local balance = -1
     if xPlayer then
@@ -325,10 +381,14 @@ function AddPlayerMoney(playerId, money, ignoreSociety)
             end
             RemoveMoneyFromSociety(money)
         end
-        if Config.UseBankMoney then
-            xPlayer.addAccountMoney("bank", money)
+        if Config.MoneyInventoryItemName then
+            AddCasinoItem(playerId, Config.MoneyInventoryItemName, money)
         else
-            xPlayer.addMoney(money)
+            if Config.UseBankMoney then
+                xPlayer.addAccountMoney("bank", money)
+            else
+                xPlayer.addMoney(money)
+            end
         end
         return true
     end
@@ -340,10 +400,14 @@ function RemovePlayerMoney(playerId, money)
     DebugStart("RemovePlayerMoney")
     local xPlayer = ESX.GetPlayerFromId(playerId)
     if xPlayer then
-        if Config.UseBankMoney then
-            xPlayer.removeAccountMoney("bank", money)
+        if Config.MoneyInventoryItemName then
+            RemoveCasinoItem(playerId, Config.MoneyInventoryItemName, money)
         else
-            xPlayer.removeMoney(money)
+            if Config.UseBankMoney then
+                xPlayer.removeAccountMoney("bank", money)
+            else
+                xPlayer.removeMoney(money)
+            end
         end
         if Config.EnableSociety then
             GiveMoneyToSociety(money)
@@ -533,6 +597,20 @@ local function LimitCashierRate(playerId)
     return false
 end
 
+local function GetMaxSocietyAndLimitMoneyAfterTradeForPlayer(playerId)
+    -- refresh society money
+    local maxMoney = Config.EnableSociety and GetMoneyFromSociety() or 2147483647
+    local moneyPercentage = GetCasinoMoneyWithdrawPercentage()
+    -- daily withdraw
+    if Config.DailyWidthdrawLimit and Config.DailyWidthdrawLimit > 0 then
+        local dailyWithdraw = GetPlayerDailyWidthdrawLimitForToday(playerId)
+        if dailyWithdraw < maxMoney then
+            maxMoney = dailyWithdraw
+        end
+    end
+    return maxMoney
+end
+
 -- player wants to trade-in chips
 RegisterNetEvent("Casino:TradeInChips")
 AddEventHandler("Casino:TradeInChips", function(chips)
@@ -557,6 +635,17 @@ AddEventHandler("Casino:TradeInChips", function(chips)
     if getMoneyPercentage <= 0 then
         return
     end
+
+    local useDailyLimit = Config.DailyWidthdrawLimit and Config.DailyWidthdrawLimit > 0
+    if useDailyLimit then
+        local maxWithdraw = GetPlayerDailyWidthdrawLimitForToday(playerId)
+        local realChips = math.ceil(chips * Config.ExchangeRate)
+        local reducedMoney = math.floor((chips / 100) * getMoneyPercentage)
+        if reducedMoney > maxWithdraw then
+            return
+        end
+    end
+
     local tradedIn = false
     local paid = Pay(playerId, "Trade In Chips", chips, "Cashier")
     if paid and paid ~= -1 then
@@ -564,10 +653,27 @@ AddEventHandler("Casino:TradeInChips", function(chips)
         local reducedMoney = math.floor((chips / 100) * getMoneyPercentage)
         if AddPlayerMoney(playerId, reducedMoney) then
             tradedIn = true
+            local playerIdentifier = GetPlayerIdentifier(playerId)
+            local c = Cache:GetNow(playerIdentifier)
+            -- save it in daily limit
+            if useDailyLimit then
+                if c then
+                    local today = os.date("%x", GetServerTime())
+                    if c.lastWithdraw and c.lastWithdraw == today then
+                        c.withdraw = c.withdraw + reducedMoney
+                    else
+                        c.withdraw = reducedMoney
+                    end
+                    c.lastWithdraw = today
+                end
+            end
             local moneyNow = GetPlayerMoney(playerId)
             local percentageNow = GetCasinoMoneyWithdrawPercentage()
-            TriggerClientEvent("Casino:TradeResults", playerId, paid, moneyNow, "TRANSACTION_EXCHANGE", percentageNow)
+            local moneyLimitNow = GetMaxSocietyAndLimitMoneyAfterTradeForPlayer(playerId)
+            TriggerClientEvent("Casino:TradeResults", playerId, paid, moneyNow, "TRANSACTION_EXCHANGE", percentageNow,
+                moneyLimitNow, c)
             AddLogEvent(playerId, "Trade-In Chips", -chips, false)
+
         else
             -- couldn't add that much money (society?), returning chips
             AddCasinoItem(playerId, Config.ChipsInventoryItem, originalChips)
@@ -603,8 +709,11 @@ AddEventHandler("Casino:AcquireChips", function(chips)
         chipsNow = Win(playerId, "Acquire Chips", chips, "Cashier")
         RemovePlayerMoney(playerId, realChipsValue)
         local percentageNow = GetCasinoMoneyWithdrawPercentage()
+        local moneyLimitNow = GetMaxSocietyAndLimitMoneyAfterTradeForPlayer(playerId)
+        local playerIdentifier = GetPlayerIdentifier(playerId)
+        local c = Cache:GetNow(playerIdentifier)
         TriggerClientEvent("Casino:TradeResults", playerId, chipsNow, money - realChipsValue, "CASH_DESK_REQUEST_CHIPS",
-            percentageNow)
+            percentageNow, moneyLimitNow, c)
         AddLogEvent(playerId, "Acquire Chips", chips, false)
     else
         local societyMoney = GetMoneyFromSociety()
@@ -614,14 +723,14 @@ end)
 
 -- player wants to refresh his balance
 RegisterNetEvent("Casino:DailyBonus")
-AddEventHandler("Casino:DailyBonus", function(chips)
+AddEventHandler("Casino:DailyBonus", function()
     local playerId = source
     local identifier = GetPlayerIdentifier(playerId)
     Cache:Get(identifier, function(p)
         if not p then
             return
         end
-        local today = os.date("%x")
+        local today = os.date("%x", GetServerTime())
         if p.lastDailyBonus and p.lastDailyBonus == today then
             return
         end
@@ -630,8 +739,9 @@ AddEventHandler("Casino:DailyBonus", function(chips)
         local chipsNow = Win(playerId, "Daily Bonus", Config.CASHIER_DAILY_BONUS, "Cashier")
         local money = GetPlayerMoney(playerId)
         local percentageNow = GetCasinoMoneyWithdrawPercentage()
-
-        TriggerClientEvent("Casino:TradeResults", playerId, chipsNow, money, "VICTIMIZED_REACT", percentageNow, p)
+        local moneyLimitNow = GetMaxSocietyAndLimitMoneyAfterTradeForPlayer(playerId)
+        TriggerClientEvent("Casino:TradeResults", playerId, chipsNow, money, "VICTIMIZED_REACT", percentageNow,
+            moneyLimitNow, p)
     end)
 end)
 
@@ -654,7 +764,7 @@ AddEventHandler("Casino:BecomeVIP", function()
         if Config.CASHIER_VIP_PASS_ITEM and Config.CASHIER_VIP_PASS_ITEM ~= "" and Config.CASHIER_VIP_PASS_ITEM ~= 0 then
             -- RemoveCasinoItem(playerId, Config.CASHIER_VIP_PASS_ITEM, 1)
         end
-        local vipUntil = os.time() + (Config.CASHIER_VIP_DURATION or 2147483647)
+        local vipUntil = GetServerTime() + (Config.CASHIER_VIP_DURATION or 2147483647)
         p.vipUntil = vipUntil
         BroadcastCasino("Casino:BecomeVIP", playerId, vipUntil)
     end)
@@ -689,7 +799,8 @@ AddEventHandler("Casino:SaveAmbientPeds", function(buffer)
     if not IsPlayerAdmin(playerId) then
         return
     end
-    local fileNames = {"peddata.txt", "peddata_gabz.txt", "peddata_gabz.txt", "peddata_k4mb1.txt", "peddata_gtao.txt"}
+    local fileNames = {"peddata.txt", "peddata_gabz.txt", "peddata_gabz.txt", "peddata_k4mb1.txt", "peddata_gtao.txt",
+                       "0", "peddata_oldk4mb1.txt"}
     local fileName = fileNames[Config.MapType]
     if not fileName then
         return
@@ -727,9 +838,11 @@ AddEventHandler("Casino:PodiumReplace", function(vehicleModel, vehicleProps)
                     vehTable = "player_vehicles"
                 end
 
-                MySQL.Sync.execute('DELETE FROM ' .. vehTable .. ' WHERE plate = @plate LIMIT 1', {
-                    ['@plate'] = vehicleProps.plate
-                })
+                MySQL.Sync.execute("DELETE FROM " .. vehTable ..
+                                       " WHERE (LOWER(plate) = LOWER(@plate) OR UPPER(plate) = UPPER(@plate) OR REPLACE(UPPER(plate), ' ', '') = REPLACE(LOWER(@plate), ' ', '') OR REPLACE(LOWER(plate), ' ', '') = REPLACE(UPPER(@plate), ' ', '')) LIMIT 1",
+                    {
+                        ['@plate'] = vehicleProps.plate
+                    })
             end
         end
 
@@ -752,6 +865,17 @@ AddEventHandler("Casino:PodiumRemove", function()
     BroadcastCasino("Casino:PodiumVehicleChanged", "")
 end)
 
+-- break electricity
+function BreakCasinoElectricity()
+    Cache.Settings["ElectricityBroken"] = true
+    BroadcastCasino("Casino:ElectricityBroke")
+end
+
+function BreakCasinoWall()
+    Cache.Settings["WallBroken"] = true
+    BroadcastCasino("Casino:WallBroke")
+end
+
 -- player tells server he entered casino
 function Casino_ResendPlayerProgress(playerId)
     DebugStart("Casino_ResendPlayerProgress")
@@ -762,7 +886,7 @@ function Casino_ResendPlayerProgress(playerId)
         end
         -- transfer old vips to new 
         if p.vip and not p.vipUntil then
-            local vipUntil = os.time() + Config.CASHIER_VIP_DURATION
+            local vipUntil = GetServerTime() + Config.CASHIER_VIP_DURATION
             p.vipUntil = vipUntil
             p.vip = nil
         end
@@ -772,7 +896,8 @@ function Casino_ResendPlayerProgress(playerId)
             chips = GetPlayerChips(playerId)
         }
         local playerAdmin = IsPlayerAdmin(playerId)
-        TriggerClientEvent("Casino:Progress", playerId, playerBalance, os.time(), os.date("%x"), p, GameStates,
+        local osTime = GetServerTime()
+        TriggerClientEvent("Casino:Progress", playerId, playerBalance, osTime, os.date("%x", osTime), p, GameStates,
             playerAdmin)
         p.firstTime = false
         SendPlayerInventory(playerId)
@@ -795,18 +920,17 @@ AddEventHandler("Casino:Enter", function()
     end
 
     -- Jobs
-    if Jobs.Enabled then
+    if Config.Jobs and Config.Jobs.Electrician.Enabled then
         if not Cache.Settings["WallBroken"] then
             DigitalWallUsedTimes = DigitalWallUsedTimes + 1
-            if DigitalWallUsedTimes >= Jobs.Electrician.Difficulty["FuseBox"].WallDurability then
-                Cache.Settings["WallBroken"] = true
+            if DigitalWallUsedTimes >= Config.Jobs.Electrician.Difficulty["FuseBox"].WallDurability then
+                BreakCasinoWall()
             end
         end
-
         if not Cache.Settings["ElectricityBroken"] then
             ElectricityUsedTimes = ElectricityUsedTimes + 1
-            if ElectricityUsedTimes >= Jobs.Electrician.Difficulty["FuseBox"].ElectricityDurability then
-                Cache.Settings["ElectricityBroken"] = true
+            if ElectricityUsedTimes >= Config.Jobs.Electrician.Difficulty["FuseBox"].ElectricityDurability then
+                BreakCasinoElectricity()
             end
         end
     end
@@ -832,7 +956,17 @@ AddEventHandler("Casino:Enter", function()
         local wallBroken = Cache.Settings["WallBroken"]
         local electricityBroken = Cache.Settings["ElectricityBroken"]
         local blacklisted = Cache:BlacklistContains(identifier)
-        TriggerClientEvent("Casino:Interior", playerId, podiumProps, wallBroken, electricityBroken, blacklisted)
+
+        -- jobData
+        local jobInfo = {}
+        -- jobs
+        if Config.Jobs then
+            if Config.Jobs.Cleaner.Enabled then
+                jobInfo.dirtySteps = Cleaner_GetDirtySteps()
+            end
+        end
+
+        TriggerClientEvent("Casino:Interior", playerId, podiumProps, wallBroken, electricityBroken, blacklisted, jobInfo)
         TriggerEvent("PlayerJoinedCasino", playerId)
         AddLogEvent(playerId, "Entered Casino")
     end)
@@ -858,14 +992,18 @@ function PrintInfo()
     elseif Config.Ghmattimysql then
         mysqlRes = "ghmattimysql"
     end
+    local frameworks = {"ESX", "QB", "Standalone", "Custom"}
     local mapNames = {"DLCiplLoader", "Gabz Casino", "NoPixel Casino", "k4mb1", "GTA:O Interior"}
+    local dateTime = os.date("%d.%m.%Y, %I:%M %p", GetServerTime())
 
     print("^3")
     print("rcore_casino")
+    print(string.format("^7framework: ^3%s", frameworks[Framework.Active]))
     print(string.format("^7version: ^3%s", GetResourceMetadata(GetCurrentResourceName(), "version")))
     print(string.format("^7database: ^3%s", mysqlRes))
     print(string.format("^7map: ^3%s", mapNames[Config.MapType]))
     print(string.format("^7society: ^3%s", Config.SocietyName))
+    print(string.format("^7casino time: ^3%s", dateTime))
     print("https://documentation.rcore.cz/paid-resources/rcore_casino")
     print("^7")
 end
@@ -903,8 +1041,10 @@ function IsCasinoOpenAtCurrentTime()
         return true
     end
 
-    local currentDay = os.date("%w") + 1
-    local currentHour = math.ceil(os.date("%H"))
+    local osTime = GetServerTime()
+    local currentDay = os.date("%w", osTime) + 1
+    local currentHour = math.ceil(os.date("%H", osTime))
+
     local hours = Config.OpeningHours[currentDay]
 
     if not hours then
@@ -931,12 +1071,16 @@ function GetCasinoNextOpenTime()
         return Translation.Get("OPENINGHOURS_OPEN")
     end
 
-    local currentDay = math.ceil(os.date("%w"))
-    local currentHour = math.ceil(os.date("%H"))
+    local osTime = GetServerTime()
+    local currentDay = os.date("%w", osTime) + 1
+    local currentHour = math.ceil(os.date("%H", osTime))
     local inDays = 0
 
     function CasinoOpenSoon(cDay, cHour)
         local h = Config.OpeningHours[cDay]
+        if not h then
+            return false
+        end
         local hF = false
 
         for k, v in pairs(h) do
@@ -953,12 +1097,17 @@ function GetCasinoNextOpenTime()
         local day = Repeat(currentDay, 7) + 1
         local hours = Config.OpeningHours[day]
 
+        local openHour = hours and hours[1] or ""
+        if openHour == -1 then
+            openHour = "00"
+        end
+
         if inDays == 0 and hours and openSoon then
             return string.format(Translation.Get("OPENINGHOURS_TODAY"), openSoon .. ":00")
         elseif inDays == 1 and hours then
-            return string.format(Translation.Get("OPENINGHOURS_TOMORROW"), hours[1] .. ":00")
+            return string.format(Translation.Get("OPENINGHOURS_TOMORROW"), openHour .. ":00")
         elseif inDays > 1 and hours then
-            return string.format(Translation.Get("OPENINGHOURS_INXDAYS"), inDays, hours[1] .. ":00")
+            return string.format(Translation.Get("OPENINGHOURS_INXDAYS"), inDays, openHour .. ":00")
         end
 
         inDays = inDays + 1
@@ -1114,6 +1263,9 @@ end)
 -- player gets casino info after joining the server
 RegisterNetEvent("Casino:GetInfo")
 AddEventHandler("Casino:GetInfo", function()
+    if not ESX then
+        return
+    end
     local playerId = source
     local isAdmin = IsPlayerAdmin(playerId)
     TriggerClientEvent("Casino:InitialInfo", playerId, GameStates, isAdmin, playerId)
@@ -1123,14 +1275,13 @@ end)
 RegisterNetEvent("Casino:StartFuseBox")
 AddEventHandler("Casino:StartFuseBox", function()
     local playerId = source
-
-    local playerId = source
-    if not Jobs.Enabled then
+    if not Config.Jobs or not Config.Jobs.Electrician.Enabled then
         return
     end
 
     -- not a worker
-    if not IsPlayerAtJob(playerId, Jobs.Electrician.JobName, nil, Jobs.Electrician.MinGrade, Jobs.Electrician.MaxGrade) then
+    if not IsPlayerAtJob(playerId, Config.Jobs.Electrician.JobName, nil, Config.Jobs.Electrician.MinGrade,
+        Config.Jobs.Electrician.MaxGrade) then
         return
     end
 
@@ -1142,15 +1293,14 @@ AddEventHandler("Casino:StartFuseBox", function()
     end
 
     -- use one of the circuit boards in inventory
-    if Jobs.Electrician.CircuitBoardNeedsPurchase then
-        local boards = GetPlayerCasinoItemCount(playerId, Jobs.Electrician.CircuitBoardItemName)
+    if Config.Jobs.Electrician.CircuitBoardNeedsPurchase then
+        local boards = GetPlayerCasinoItemCount(playerId, Config.Jobs.Electrician.CircuitBoardItemName)
         if boards < 1 then
             TriggerClientEvent("Casino:StartFuseBox", playerId, 0)
             return
         end
-        RemoveCasinoItem(playerId, Jobs.Electrician.CircuitBoardItemName, 1)
+        RemoveCasinoItem(playerId, Config.Jobs.Electrician.CircuitBoardItemName, 1)
     end
-
     -- run circuit board game on client
     TriggerClientEvent("Casino:StartFuseBox", playerId, 1)
 end)
@@ -1161,18 +1311,18 @@ AddEventHandler("Casino:FuseBoxFixed", function()
     local playerId = source
 
     local playerId = source
-    if not Jobs.Enabled then
+    if not Config.Jobs or not Config.Jobs.Electrician.Enabled then
         return
     end
 
     -- not a worker
-    if not IsPlayerAtJob(playerId, Jobs.Electrician.JobName, nil, Jobs.Electrician.MinGrade, Jobs.Electrician.MaxGrade) then
+    if not IsPlayerAtJob(playerId, Config.Jobs.Electrician.JobName, nil, Config.Jobs.Electrician.MinGrade,
+        Config.Jobs.Electrician.MaxGrade) then
         return
     end
     DigitalWallUsedTimes = 0
     Cache:UpdateSetting("WallBroken", false)
     Cache:UpdateSetting("ElectricityBroken", false)
-
     BroadcastCasino("Casino:FuseBoxStateChanged", false, false)
 end)
 
@@ -1201,6 +1351,11 @@ for k, v in pairs(mapDependencies) do
             print("^1[Casino] You should remove '" .. v .. "' from dependencies in fxmanifest.lua.^7")
         end)
     end
+end
+
+local assets = GetResourceState("rcore_casino_assets")
+if assets ~= "started" then
+    print("^1[Casino] Please install dependency `rcore_casino_assets`, and make sure it starts before rcore_casino!^7")
 end
 
 RegisterCommand("casinoversion", function()

@@ -1,19 +1,6 @@
--- missions
-MissionModels = {
-    -- Props
-    MoneyBag = GetHashKey("prop_money_bag_01"),
-    MoneyBagPlayer = GetHashKey("ch_prop_ch_duffelbag_01x"),
-    Gangsters = {GetHashKey("csb_porndudes"), GetHashKey("csb_ramp_gang"), GetHashKey("csb_ortega"),
-                 GetHashKey("csb_mp_agent14")},
-    -- Cars
-    TruckCar = GetHashKey("Stockade"),
-    GangstersCar = GetHashKey("Buccaneer")
-}
-MissionDicts = {
-    DuffelBag = "anim@heists@money_grab@duffel"
-}
 -- machine properties for each hash, for both server & client
-machineHashes = {-1932041857, -1519644200, -430989390, 654385216, 161343630, 1096374064, 207578973, -487222358}
+machineHashes = {-1932041857, -1519644200, -430989390, 654385216, 161343630, 1096374064, 207578973, -487222358,
+-271916471, -1885297978, -1072855969,  1031635129,  681595944, -1313086203, -731399252}
 machineReelsRotations = {0.0, 23.0, 67.7, 90.5, 113.15, 135.37, 157.6, 0}
 machineModels = {}
 machineModels[-1932041857] = {
@@ -807,112 +794,6 @@ horsePresets = {{
     colors = {16770310, 16751169, 16772294, 16777215},
     odds = 5
 }}
-
-stringValues = {{"SLOTS_RT_BET", "Bet"}, {"SLOTS_RT_LSTWIN", "Last Win"}, {"SLOTS_MESN101", "Barf Me Out!"},
-                {"SLOTS_MESP101", "Awesome!"}, {"SLOTS_MESN102", "Not Even!"}, {"SLOTS_MESP102", "Tubular"},
-                {"SLOTS_MESN103", "Grody!"}, {"SLOTS_MESP103", "Wow!"}, {"SLOTS_MESN104", "Gnarly"},
-                {"SLOTS_MESP104", "Fantastic!"}, {"SLOTS_MESN105", "Oh. My. God."}, {"SLOTS_MESP105", "Groovy"},
-                {"SLOTS_MESN106", "Take a Chill Pill"}, {"SLOTS_MESP106", "Radical!"}, {"SLOTS_MESN107", "So Lame!"},
-                {"SLOTS_MESP107", "Righteous!"}, {"SLOTS_MESN108", "Hoser"}, {"SLOTS_MESP108", "Like Totally!"},
-                {"SLOTS_MESN109", "Spazz"}, {"SLOTS_MESP109", "Clutch!"}, {"SLOTS_MESN110", "You're Trippin'"},
-                {"SLOTS_MESP110", "Illin!"}, {"SLOTS_MESN111", "Harsh!"}, {"SLOTS_MESP111", "Sick!"},
-                {"SLOTS_MESN112", "Gag Me!"}, {"SLOTS_MESP112", "Tight"}, {"SLOTS_MESN113", "Bummer Dude!"},
-                {"SLOTS_MESP113", "Bitchin'!"}, {"SLOTS_MESN114", "Bogus!"}, {"SLOTS_MESP114", "Totally Studly!"},
-                {"SLOTS_MESN115", "Major Buzz Kill!"}, {"SLOTS_MESP115", "Whoa!"}, {"SLOTS_MESN116", "Wipe out!"},
-                {"SLOTS_MESP116", "Sweet!"}, {"SLOTS_MESN201", "Trigger Warning!"}, {"SLOTS_MESP201", "You Can Do It!"},
-                {"SLOTS_MESN202", "Not Fair!"}, {"SLOTS_MESP202", "Breathe Deep!"}, {"SLOTS_MESN203", "Pout!"},
-                {"SLOTS_MESP203", "Keep It Up!"}, {"SLOTS_MESN204", "Conservatives Suck!"},
-                {"SLOTS_MESP204", "Stay Positive!"}, {"SLOTS_MESN205", "Blame Conservatives!"},
-                {"SLOTS_MESP205", "You're a Good Person"}, {"SLOTS_MESN206", "Call Your Therapist"},
-                {"SLOTS_MESP206", "You're in a Safe Space"}, {"SLOTS_MESN207", "Feeling Oppressed?"},
-                {"SLOTS_MESP207", "Virtue Signal!"}, {"SLOTS_MESN208", "Trolled!"},
-                {"SLOTS_MESP208", "You're No Snowflake!"}, {"SLOTS_MESN209", "Check Your Privilege"},
-                {"SLOTS_MESP209", "Do Yoga!"}, {"SLOTS_MESN210", "Support Public Radio"},
-                {"SLOTS_MESP210", "Meditate More!"}, {"SLOTS_MESN211", "You're Not Woke!"},
-                {"SLOTS_MESP211", "You Make a Difference!"}, {"SLOTS_MESN212", "Be Conscious of Your Bias!"},
-                {"SLOTS_MESP212", "Recycle!"}, {"SLOTS_MESN213", "Don't Be a Troll!"},
-                {"SLOTS_MESP213", "You're Precious!"}, {"SLOTS_MESN214", "Woke!"}, {"SLOTS_MESP214", "Enlightenment!"},
-                {"SLOTS_MESN215", "Breathe Deep"}, {"SLOTS_MESP215", "Mindfulness!"}, {"SLOTS_MESN216", "Downvote!"},
-                {"SLOTS_MESP216", "Acknowledge Privilege!"}, {"SLOTS_MESN301", "Ouch!"},
-                {"SLOTS_MESP301", "Lock and Load!"}, {"SLOTS_MESN302", "That Ain't Good!"},
-                {"SLOTS_MESP302", "Shoot One Off"}, {"SLOTS_MESN303", "What the Hell?"}, {"SLOTS_MESP303", "Get Some!"},
-                {"SLOTS_MESN304", "Dead as Hell!"}, {"SLOTS_MESP304", "Mission Accomplished!"},
-                {"SLOTS_MESN305", "Well I'll Be!"}, {"SLOTS_MESP305", "You're a Patriot!"},
-                {"SLOTS_MESN306", "You Even Tryin'?"}, {"SLOTS_MESP306", "Mericuh!"}, {"SLOTS_MESN307", "Shucks!"},
-                {"SLOTS_MESP307", "Yee-Hah!"}, {"SLOTS_MESN308", "Confoundit!"}, {"SLOTS_MESP308", "Let's Do This!"},
-                {"SLOTS_MESN309", "Dagnabbit!"}, {"SLOTS_MESP309", "Y'all Havin Fun?"}, {"SLOTS_MESN310", "Well Crud!"},
-                {"SLOTS_MESP310", "Be a Hero!"}, {"SLOTS_MESN311", "Blame Foreigners"}, {"SLOTS_MESP311", "Oorah!"},
-                {"SLOTS_MESN312", "Friggin Bullshit!"}, {"SLOTS_MESP312", "Target Acquired!"},
-                {"SLOTS_MESN313", "Total ClusterF!"}, {"SLOTS_MESP313", "Nuke'Em from Orbit!"},
-                {"SLOTS_MESN314", "FUBAR!"}, {"SLOTS_MESP314", "Alien BBQ!"}, {"SLOTS_MESN315", "Man Down!"},
-                {"SLOTS_MESP315", "Freedoms Protected!"}, {"SLOTS_MESN316", "KIA!"}, {"SLOTS_MESP316", "Darn Tootin'!"},
-                {"SLOTS_MESN401", "Shamed!"}, {"SLOTS_MESP401", "Famed!"}, {"SLOTS_MESN402", "Embarrassing!"},
-                {"SLOTS_MESP402", "Fame!"}, {"SLOTS_MESN403", "Terrible!"}, {"SLOTS_MESP403", "You Can Do It!"},
-                {"SLOTS_MESN404", "How Awful!"}, {"SLOTS_MESP404", "You're SO Talented"},
-                {"SLOTS_MESN405", "Voted Off!"}, {"SLOTS_MESP405", "You're a Star"}, {"SLOTS_MESN406", "So Sorry!"},
-                {"SLOTS_MESP406", "Be Amazing!"}, {"SLOTS_MESN407", "That's a Fail!"}, {"SLOTS_MESP407", "Do It!"},
-                {"SLOTS_MESN408", "Well That Sucked!"}, {"SLOTS_MESP408", "You're Number One!"},
-                {"SLOTS_MESN409", "No Talent!"}, {"SLOTS_MESP409", "You Got This!"},
-                {"SLOTS_MESN410", "Is That You Lazlow?"}, {"SLOTS_MESP410", "You're the Best!"},
-                {"SLOTS_MESN411", "Suicide Watch!"}, {"SLOTS_MESP411", "You're #1"},
-                {"SLOTS_MESN412", "Dropped by Sponsors"}, {"SLOTS_MESP412", "Be Unstoppable!"},
-                {"SLOTS_MESN413", "Career OVER!"}, {"SLOTS_MESP413", "Terrifyingly Talented!"},
-                {"SLOTS_MESN414", "Upstaged!"}, {"SLOTS_MESP414", "You're on FIRE!"}, {"SLOTS_MESN415", "Boooo!"},
-                {"SLOTS_MESP415", "So Hawt!"}, {"SLOTS_MESN416", "What a Disaster!"},
-                {"SLOTS_MESP416", "America's Darling!"}, {"SLOTS_MESN501", "You Have Been Cursed!"},
-                {"SLOTS_MESP501", "You Have Been Blessed!"}, {"SLOTS_MESN502", "The Gods Are Enraged!"},
-                {"SLOTS_MESP502", "The Pharaoh is Pleased!"}, {"SLOTS_MESN503", "You Angered the Gods!"},
-                {"SLOTS_MESP503", "Bask in the Glow!"}, {"SLOTS_MESN504", "Ruined!"},
-                {"SLOTS_MESP504", "Glory Awaits!"}, {"SLOTS_MESN505", "Hope Eclipsed!"},
-                {"SLOTS_MESP505", "The Gods are Pleased!"}, {"SLOTS_MESN506", "Kingdom Ruined"},
-                {"SLOTS_MESP506", "The Sphinx Awaits!"}, {"SLOTS_MESN507", "Dynasty in Shambles"},
-                {"SLOTS_MESP507", "Build the Pyramids!"}, {"SLOTS_MESN508", "Life's a Desert"},
-                {"SLOTS_MESP508", "Conquered!"}, {"SLOTS_MESN509", "Tomb Prepared!"},
-                {"SLOTS_MESP509", "Riches Await!"}, {"SLOTS_MESN510", "Afterlife Awaits"},
-                {"SLOTS_MESP510", "Prosperity is Coming!"}, {"SLOTS_MESN511", "Dead and Buried"},
-                {"SLOTS_MESP511", "Hail the New Pharaoh!"}, {"SLOTS_MESN512", "Sands Take You!"},
-                {"SLOTS_MESP512", "You Are the Golden God!"}, {"SLOTS_MESN513", "Your Fate is Sealed"},
-                {"SLOTS_MESP513", "You Are Legend!"}, {"SLOTS_MESN514", "Dynasty in Ruins!"},
-                {"SLOTS_MESP514", "Cats Are Great!"}, {"SLOTS_MESN515", "Empire Destroyed!"},
-                {"SLOTS_MESP515", "Magnificent Ruler!"}, {"SLOTS_MESN516", "Mummified!"},
-                {"SLOTS_MESP516", "A Bountiful Return!"}, {"SLOTS_MESN601", "Wasted"}, {"SLOTS_MESP601", "Take a Stab"},
-                {"SLOTS_MESN602", "Murdered"}, {"SLOTS_MESP602", "Make a Killing"},
-                {"SLOTS_MESN603", "What a Massacre"}, {"SLOTS_MESP603", "Kill it!"}, {"SLOTS_MESN604", "Stabbed"},
-                {"SLOTS_MESP604", "Time to Kill It!"}, {"SLOTS_MESN605", "Annihilated!"}, {"SLOTS_MESP605", "Play!"},
-                {"SLOTS_MESN606", "Dead"}, {"SLOTS_MESP606", "Slay It!"}, {"SLOTS_MESN607", "Foul Play!"},
-                {"SLOTS_MESP607", "Time for Blood"}, {"SLOTS_MESN608", "Done!"}, {"SLOTS_MESP608", "Slaughter It!"},
-                {"SLOTS_MESN609", "Cooked!"}, {"SLOTS_MESP609", "Be the Hunter!"}, {"SLOTS_MESN610", "Slaughtered"},
-                {"SLOTS_MESP610", "Bathe in Blood!"}, {"SLOTS_MESN611", "What a Horror!"},
-                {"SLOTS_MESP611", "Kill 'Em All!"}, {"SLOTS_MESN612", "Destroyed"}, {"SLOTS_MESP612", "No Remorse!"},
-                {"SLOTS_MESN613", "You're the Victim!"}, {"SLOTS_MESP613", "Draw First Blood!"},
-                {"SLOTS_MESN614", "Fried"}, {"SLOTS_MESP614", "More Body Bags!"}, {"SLOTS_MESN615", "No Escape!"},
-                {"SLOTS_MESP615", "You're a Cutter!"}, {"SLOTS_MESN616", "Eradicated!"},
-                {"SLOTS_MESP616", "Chop, Chop!"}, {"SLOTS_MESN701", "Busted"}, {"SLOTS_MESP701", "What a Tycoon!"},
-                {"SLOTS_MESN702", "Broke!"}, {"SLOTS_MESP702", "Magnate!"}, {"SLOTS_MESN703", "Ouch!"},
-                {"SLOTS_MESP703", "Get Mining!"}, {"SLOTS_MESN704", "Bankrupt!"}, {"SLOTS_MESP704", "So Prosperous!"},
-                {"SLOTS_MESN705", "Chapter 11"}, {"SLOTS_MESP705", "Loaded!"}, {"SLOTS_MESN706", "That hurts!"},
-                {"SLOTS_MESP706", "Dividends!"}, {"SLOTS_MESN707", "Strapped for Cash!"}, {"SLOTS_MESP707", "Bling!"},
-                {"SLOTS_MESN708", "Soup Line!"}, {"SLOTS_MESP708", "Priceless!"}, {"SLOTS_MESN709", "Urgh!"},
-                {"SLOTS_MESP709", "Rolling in It!"}, {"SLOTS_MESN710", "You're No One!"}, {"SLOTS_MESP710", "Easy!"},
-                {"SLOTS_MESN711", "Worthless"}, {"SLOTS_MESP711", "Impeccable Taste!"}, {"SLOTS_MESN712", "Spent!"},
-                {"SLOTS_MESP712", "So Extravagant!"}, {"SLOTS_MESN713", "Bounced!"}, {"SLOTS_MESP713", "Minted!"},
-                {"SLOTS_MESN714", "Ruined!"}, {"SLOTS_MESP714", "Fat Cat!"}, {"SLOTS_MESN715", "Destitute!"},
-                {"SLOTS_MESP715", "High Class!"}, {"SLOTS_MESN716", "Faker!"}, {"SLOTS_MESP716", "Sparkling!"},
-                {"SLOTS_MESN801", "Washed up!"}, {"SLOTS_MESP801", "You're Number One!"},
-                {"SLOTS_MESN802", "You're C List Now!"}, {"SLOTS_MESP802", "The 80's Rule!"},
-                {"SLOTS_MESN803", "Vinewood Hates You!"}, {"SLOTS_MESP803", "You Won the War!"},
-                {"SLOTS_MESN804", "The 80's Are Over!"}, {"SLOTS_MESP804", "Be an Action Hero!"},
-                {"SLOTS_MESN805", "Your Career Is Done!"}, {"SLOTS_MESP805", "America Loves You!"},
-                {"SLOTS_MESN806", "Time to Retire"}, {"SLOTS_MESP806", "Party it Up!"},
-                {"SLOTS_MESN807", "You've Been Forgotten!"}, {"SLOTS_MESP807", "You're Unstoppable!"},
-                {"SLOTS_MESN808", "Eliminated"}, {"SLOTS_MESP808", "You're the Biggest!"}, {"SLOTS_MESN809", "Wasted"},
-                {"SLOTS_MESP809", "You're the Best!"}, {"SLOTS_MESN810", "Done!"}, {"SLOTS_MESP810", "It's Never Over"},
-                {"SLOTS_MESN811", "See Ya!"}, {"SLOTS_MESP811", "You Saved America!"},
-                {"SLOTS_MESN812", "America Hates You!"}, {"SLOTS_MESP812", "Over the Top!"},
-                {"SLOTS_MESN813", "Straight to DVD"}, {"SLOTS_MESP813", "Blockbuster!"},
-                {"SLOTS_MESN814", "Box Office Bomb!"}, {"SLOTS_MESP814", "Pumped Up!"}, {"SLOTS_MESN815", "Recast!"},
-                {"SLOTS_MESP815", "Big Leagues!"}, {"SLOTS_MESN816", "Only Terrorists Lose!"},
-                {"SLOTS_MESP816", "Glory Days!"}}
 
 LuckyWheelItems = {}
 LuckyWheelItems["Drinks"] = {
@@ -1798,31 +1679,31 @@ PokerHandValueCode = function(handValue)
             return "PAIR_OF_KINGS"
         end
     elseif handValue == 2 then
-        return "2_HIGH"
+        return "CARD_2_HIGH"
     elseif handValue == 3 then
-        return "3_HIGH"
+        return "CARD_3_HIGH"
     elseif handValue == 4 then
-        return "4_HIGH"
+        return "CARD_4_HIGH"
     elseif handValue == 5 then
-        return "5_HIGH"
+        return "CARD_5_HIGH"
     elseif handValue == 6 then
-        return "6_HIGH"
+        return "CARD_6_HIGH"
     elseif handValue == 7 then
-        return "7_HIGH"
+        return "CARD_7_HIGH"
     elseif handValue == 8 then
-        return "8_HIGH"
+        return "CARD_8_HIGH"
     elseif handValue == 9 then
-        return "9_HIGH"
+        return "CARD_9_HIGH"
     elseif handValue == 10 then
-        return "10_HIGH"
+        return "CARD_10_HIGH"
     elseif handValue == 11 then
-        return "JACK_HIGH"
+        return "CARD_JACK_HIGH"
     elseif handValue == 12 then
-        return "QUEEN_HIGH"
+        return "CARD_QUEEN_HIGH"
     elseif handValue == 13 then
-        return "KING_HIGH"
+        return "CARD_KING_HIGH"
     else
-        return "ACE_HIGH"
+        return "CARD_ACE_HIGH"
     end
 
     return ''
@@ -2472,12 +2353,6 @@ OfficeCameraDevices = {{
     rotation = vector3(-14.139241, 0.057556, 17.286900)
 }}
 
-OfficeElevatorCheckpointPositions = {vector3(954.201233, 57.955307, 75.432678),
-                                     vector3(976.115662, 71.942528, 70.233093)}
-OfficeElevatorPositions = {vector3(953.094849, 58.523357, 74.432640), vector3(976.501404, 72.795372, 69.233124)}
-OfficeElevatorCameras = {vector3(956.843506, 55.780270, 76.748672), vector3(973.700989, 68.106819, 71.578827)}
-OfficeElevatorDropOutPosition = {vector3(977.109619, 73.571777, 70.233093), vector3(953.215759, 58.489521, 75.432678)}
-
 OfficeBossMarkerPosition = vector3(958.92, 55.23, 74.44)
 OfficeTableEnterPosition = vector3(957.281433, 54.995884, 75.442604)
 OfficeTableAnimPosition = vector3(956.668579, 55.526340, 75.442604)
@@ -2532,11 +2407,17 @@ INSIDE_TRACK_WALL = {
 DIGITAL_WALL_MODEL = "vw_vwint01_video_overlay"
 
 PODIUMOBJECT_POS = vector3(935.104980, 42.565639, 71.273697)
-ELEVATORS = {}
+ELEVATORS = {{
+    leftPosition = vec3(975.526794, 73.482430, 69.229164),
+    rightPosition = vec3(978.059021, 71.900017, 69.229149),
+    rotation = vector3(0.000000, -0.000000, 328.0),
+    heading = 328.0,
+    dropPosition = vec3(954.240234, 57.936405, 75.432686)
+}, {
+    leftPosition = vec3(952.449341, 57.643650, 74.429672),
+    rightPosition = vec3(953.845398, 59.877773, 74.431488),
+    rotation = vector3(0.000000, -0.000000, 57.99993896484),
+    heading = 57.99993896484,
+    dropPosition = vec3(976.083862, 71.525627, 70.233093)
+}}
 CASINO_IPLS = {"hei_dlc_windows_casino", "hei_dlc_casino_aircon", "vw_dlc_casino_door", "hei_dlc_casino_door"}
-
-if not Jobs then
-    Jobs = {
-        Enabled = false
-    }
-end

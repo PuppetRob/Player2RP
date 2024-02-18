@@ -456,16 +456,17 @@ function Cache:PlayerOwnsVehicle(identifier, plate)
     else
         -- Mysql
         if Framework.Active == 1 then
-            result = MySQL.Sync.fetchAll("SELECT * FROM owned_vehicles WHERE plate = @plate AND owner = @identifier", {
-                ['@plate'] = plate,
-                ['@identifier'] = identifier
-            })
-        elseif Framework.Active == 2 then
             result = MySQL.Sync.fetchAll(
-                "SELECT * FROM player_vehicles WHERE plate = @plate AND citizenid = @identifier", {
-                    ['@plate'] = plate,
-                    ['@identifier'] = identifier
+                "SELECT * FROM owned_vehicles WHERE owner = @identifier AND (LOWER(plate) = LOWER(@plate) OR UPPER(plate) = UPPER(@plate) OR REPLACE(UPPER(plate), ' ', '') = REPLACE(LOWER(@plate), ' ', '') OR REPLACE(LOWER(plate), ' ', '') = REPLACE(UPPER(@plate), ' ', ''))",
+                {
+                    ['@identifier'] = identifier,
+                    ['@plate'] = plate
                 })
+        elseif Framework.Active == 2 then
+            result = MySQL.Sync.fetchAll("SELECT * FROM player_vehicles WHERE citizenid = @identifier AND (LOWER(plate) = LOWER(@plate) OR UPPER(plate) = UPPER(@plate) OR REPLACE(UPPER(plate), ' ', '') = REPLACE(LOWER(@plate), ' ', '') OR REPLACE(LOWER(plate), ' ', '') = REPLACE(UPPER(@plate), ' ', ''))", {
+                ['@identifier'] = identifier,
+                ['@plate'] = plate
+            })
         end
     end
 
@@ -599,6 +600,38 @@ function Cache:GiveVehicle(playerId, vehicleProps)
     end
 end
 
+local function Framework_Check()
+    -- check for inventory items
+    if not Config.UseOnlyMoney then
+        if Framework.Active == 1 then
+            if ESX and ESX.GetItemLabel then
+                local label = ESX.GetItemLabel(Config.ChipsInventoryItem)
+                if not label then
+                    print("^3[Casino][Warning] It looks like the '" .. Config.ChipsInventoryItem ..
+                              "' inventory item doesn't exist! Import the included .sql file in your MYSQL database, or install the inventory items manually in your inventory system.^0")
+                end
+            end
+        elseif Framework.Active == 2 then
+            local invState = GetResourceState("qb-inventory")
+            if (invState == "starting" or invState == "started") and ESX and ESX.QBCore and ESX.QBCore.Shared and
+                ESX.QBCore.Shared.Items and not ESX.QBCore.Shared.Items[Config.ChipsInventoryItem] then
+                print("^3[Casino][Warning] It looks like the '" .. Config.ChipsInventoryItem ..
+                          "' inventory item doesn't exist! Please follow the installation instructions at https://documentation.rcore.cz/paid-resources/rcore_casino/installing-on-qbcore^0")
+            end
+        end
+    end
+    -- replace "society_casino" to "casino" for SocietyName, if "casino" exists
+    if Framework.Active == 2 and Config.SocietyName == "society_casino" and Config.EnableSociety then
+        local mState = GetResourceState("qb-management")
+        if (mState == "starting" or mState == "started") and ESX and ESX.QBCore and ESX.QBCore.Shared and
+            ESX.QBCore.Shared.Jobs and not ESX.QBCore.Shared.Jobs["society_casino"] and ESX.QBCore.Shared.Jobs["casino"] then
+            print(
+                "^3[Casino][Warning] It looks like the society 'society_casino' doesn't exist, but society 'casino' does, changing Config.SocietyName to 'casino' in config.lua^0")
+            Config.SocietyName = "casino"
+        end
+    end
+end
+
 local function Mysql_Check()
     if Config.MongoDB then
         return
@@ -646,6 +679,8 @@ local function Start()
     Mysql_Check()
     Cache:LoadSettings()
     CreateThread(function()
+        Wait(1000)
+        Framework_Check()
         if Config.EnableSociety then
             if Framework.Active == 1 then
                 local esx_society = false

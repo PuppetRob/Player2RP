@@ -5,10 +5,11 @@ dependencies {
     '/server:4752',
     '/onesync',
     '/gameBuild:2060',
-   -- 'rcore_casino_interior'
+    'rcore_casino_assets',
+    'rcore_casino_interior'
 }
 
-version '1.0.42'
+version '1.0.55'
 
 client_scripts {
     -- Rage UI
@@ -20,12 +21,14 @@ client_scripts {
     'client/ui/items/*.lua',
 
     "config.lua",
-    --"config_jobs.lua",
+    "locales/*.lua",
+    
     "reporter.lua",
     "client/framework/*.lua",
     "const.lua",
     "coords.lua",
     "client/main/utils.lua",
+    "client/main/target.lua",
     "client/main/casino.lua",
     "client/interior/announcer.lua",
     "client/interior/cashier.lua",
@@ -50,14 +53,14 @@ client_scripts {
 
     "client/utils/*.lua",
     "client/job/*.lua",
-    --"client/games/missions.lua",
+    "client/games/missions.lua",
     "xmas/xmas_cl.lua",
 }
 
 server_scripts {
     "@mysql-async/lib/MySQL.lua",
     "config.lua",
-    --"config_jobs.lua",
+    "locales/*.lua",
     "config_server.lua",
     "reporter.lua",
     "const.lua",
@@ -66,6 +69,7 @@ server_scripts {
     "server/games/insidetrack.lua",
     "server/main/casino.lua",
     "server/main/cache.lua",
+    "server/games/jobs.lua",
     "server/games/luckywheel.lua",
     "server/main/sceneped.lua",
     "server/interior/drinkingbar.lua",
@@ -76,13 +80,12 @@ server_scripts {
     "server/main/casinocontrol.lua",
     "server/main/log.lua",
     "server/utils/*.lua",
-    --"server/games/missions.lua",
+    "server/games/missions.lua",
     "xmas/xmas_sv.lua",
 }
 
 shared_scripts {
     "shared/*.lua",
-    "translation.lua",
 }
 
 escrow_ignore {
@@ -110,7 +113,8 @@ escrow_ignore {
     "server/framework/*.lua",
     "xmas/xmas_cl.lua",
     "xmas/xmas_sv.lua",
-    'client/ui/**/*.lua'
+    'client/ui/**/*.lua',
+    'locales/**/*.lua'
 }
 
 ui_page 'client/html/index.html'
@@ -124,6 +128,7 @@ files {
     'client/interior/peddata_gabz.txt',
     'client/interior/peddata_k4mb1.txt',
     'client/interior/peddata_gtao.txt',
+    'client/interior/peddata_oldk4mb1.txt',
 }
 
 lua54 "yes"

@@ -44,13 +44,16 @@ local function RefreshCashierVIPItem()
     end
 end
 
-function ResetCashierUISelection(moneyLimit)
+function ResetCashierUISelection(moneyLimit, societyMoney)
     moneyPercentage = moneyLimit
+    if societyMoney then
+        maxSocietyMoney = societyMoney
+    end
     menu_TradeInListIndex = 1
     menu_AcquireListIndex = 1
     menu_confirmedIndex = -1
     moneyOptions = CashierGetMoneyBalanceOptions(PLAYER_MONEY)
-    chipsOptions = CashierGetBalanceOptions(PLAYER_CHIPS, maxSocietyMoney)
+    chipsOptions = CashierGetBalanceOptions(PLAYER_CHIPS, maxSocietyMoney / Config.ExchangeRate)
 
     withdrawBadge = moneyPercentage == 100 and RageUI.BadgeStyle.None or RageUI.BadgeStyle.Alert
     withdrawDesc = Translation.Get("CASHIER_TRADEIN_DESC")
@@ -67,10 +70,11 @@ function ResetCashierUISelection(moneyLimit)
 end
 
 -- show cashier ui
-function Cashier_ShowMenu(moneyLimit, vipAllowed, maxMoney)
+function Cashier_ShowMenu(moneyLimit, vipAllowed, maxMoney, extraData)
+    print(json.encode(extraData))
     canPurchaseVIP = vipAllowed
-    maxSocietyMoney = Config.EnableSociety and maxMoney or 2147483647
-    ResetCashierUISelection(moneyLimit)
+    maxSocietyMoney = maxMoney
+    ResetCashierUISelection(moneyLimit, maxSocietyMoney)
     InfoPanel_UpdateNotification(nil)
 
     local cashierMenu = RageUI.CreateMenu("", Translation.Get("CASHIER_CAPT"), 25, 25, "shopui_title_casino_banner",
@@ -177,8 +181,16 @@ function Cashier_ShowMenu(moneyLimit, vipAllowed, maxMoney)
                 Cashier_RequestVIP()
             end)
 
-            if MONEYLOAD_TAKE then
+            local canOrderDelivery = extraData.MoneyLoad and Config.JobsEnabled and
+                                         Config.Jobs.MONEYLOAD_STARTFROMCASHIERUI and
+                                         IsAtJob(Config.JobName, nil, Config.Jobs.MONEYLOAD_STARTJOBGRADE,
+                    Config.Jobs.MONEYLOAD_STARTJOBGRADE)
+
+            if MONEYLOAD_TAKE or canOrderDelivery then
                 i:AddSeparator("Mission Options")
+            end
+
+            if MONEYLOAD_TAKE then
                 i:AddButton(Translation.Get("MONEYLOAD_CASHIER_CAPTION"),
                     string.format(Translation.Get("MONEYLOAD_CASHIER_DESC"), FormatPrice(MONEYLOAD_TAKE)), {
                         IsDisabled = dailyBonusUsed,
@@ -207,6 +219,33 @@ function Cashier_ShowMenu(moneyLimit, vipAllowed, maxMoney)
                             end
                         end)
                     end)
+            else
+                if canOrderDelivery then
+                    local oderAllowed = true
+                    local orderDesc = string.format(Translation.Get("MONEYLOAD_CASHIER_ORDER_DELIVERY_DESC"),
+                        FormatPrice(Config.Jobs.MONEYLOAD_TAKE))
+                    if #extraData.MoneyLoad.jobMembers > 0 then
+                        orderDesc = orderDesc .. " " ..
+                                        string.format(Translation.Get("MONEYLOAD_CASHIER_MEMBERLIST"),
+                                extraData.MoneyLoad.memberNames)
+                    else
+                        oderAllowed = false
+                        orderDesc = Translation.Get("MONEYLOAD_CASHIER_MEMBERLIST_EMPTY")
+                    end
+                    if extraData.MoneyLoad.missionActive then
+                        oderAllowed = false
+                        orderDesc = Translation.Get("MONEYLOAD_CASHIER_ORDER_DELIVERY_ALREADYACTIVE")
+                    end
+
+                    i:AddButton(Translation.Get("MONEYLOAD_CASHIER_ORDER_DELIVERY"), orderDesc, {
+                        IsDisabled = not oderAllowed,
+                        RightLabelColor = RageUI.ItemsColour.White,
+                        RightBadge = RageUI.BadgeStyle.Package
+                    }, nil, function()
+                        Cashier_OnQuit()
+                        TriggerServerEvent("CasinoMission:MoneyLoad:Order")
+                    end)
+                end
             end
 
             if exchangeRateDesc then
@@ -360,7 +399,7 @@ end
 function Workers_ShowMenu(workers)
     InfoPanel_UpdateNotification(nil)
     CloseAllMenus()
-    
+
     local gradeOptions = {"Unemployed", "Grade 0", "Grade 1", "Grade 2 (Boss)"}
     local workersMenu = RageUI.CreateMenu("", "Casino Workers", 25, 25, "shopui_title_casino_banner",
         "shopui_title_casino_banner")

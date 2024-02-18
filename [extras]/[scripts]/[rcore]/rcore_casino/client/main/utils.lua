@@ -1043,6 +1043,11 @@ function IsEntityInCasino(entity)
         return false
     end
 
+    -- custom casino
+    if Config.MapType == 6 then
+        return roomCount == 5
+    end
+
     -- k4casino
     if Config.MapType == 4 then
         local c = int ~= 0 and roomCount == 10 and
@@ -1104,9 +1109,33 @@ function WaitForPlayerOnCoords(coords, maxTimeMs)
     WaitForPedOnCoords(PlayerPedId(), coords, 0.05, maxTimeMs)
 end
 
+function removePlaceholderText(inputString)
+    local outputString = inputString:gsub("~.-~", "")
+    return outputString
+end
+
 function ShowHelpNotification(text)
     if not ENABLE_HUD then
         return
+    end
+    if Config.NotifySystem then
+        if Config.NotifySystem == 2 and text and text ~= "" then
+            exports['okokNotify']:Alert("", removePlaceholderText(text), 3000, 'info', true)
+            return
+        elseif Config.NotifySystem == 3 and text and text ~= "" then
+            exports['esx_notify']:Notify("info", 3000, removePlaceholderText(text))
+            return
+        elseif Config.NotifySystem == 4 and text and text ~= "" then
+            exports['qb-notify']:Notify(removePlaceholderText(text), "primary", 3000)
+            return
+        elseif Config.NotifySystem == 5 and text and text ~= "" then
+            lib.notify({
+                description = text,
+                duration = 3000,
+                type = 'info'
+            })
+            return
+        end
     end
     BeginTextCommandDisplayHelp("THREESTRINGS")
     if Config.UIFontName and text then
@@ -1717,8 +1746,8 @@ function _ClonePed(ped)
 
         if headBlend then
             SetPedHeadBlendData(clone, headBlend.shapeFirst, headBlend.shapeSecond, headBlend.shapeThird,
-            headBlend.skinFirst, headBlend.skinSecond, headBlend.skinThird, headBlend.shapeMix, headBlend.skinMix,
-            headBlend.thirdMix, false)
+                headBlend.skinFirst, headBlend.skinSecond, headBlend.skinThird, headBlend.shapeMix, headBlend.skinMix,
+                headBlend.thirdMix, false)
         end
         if headStructure then
             SetHeadStructure(clone, headStructure)

@@ -1,28 +1,46 @@
 Config = {
+    -- Locale
+    Locale = "en", -- en
+
     -- Map
-    MapType = 2, -- 1: for DLCiplLoader, 2: Gabz Casino, 3: NoPixel Casino, 4: k4mb1 casino, 5: GTA:O Interior (rcore_casino_interior)
+    MapType = 2,
+    -- 1: UncleJust Casino / DLCiplLoader
+    -- 2: Gabz Casino
+    -- 3: NoPixel Casino
+    -- 4: k4mb1 casino
+    -- 5: GTA:O Interior (rcore_casino_interior)
+    -- 6: Underground Casino PALETO
+    -- 7: K4MB1 old enterable casino (casinointerior & casinoexterior)
+    -- make sure rcore_casino_interior is disabled when using another map type, and don't forget to remove rcore_casino_interior from dependencies in fxmanifest.lua as well
 
     --[[
     Gabz Casino
-    • make sure rcore_casino_interior is disabled, remove rcore_casino_interior from dependencies in fxmanifest.lua
     • copy "\extra\gabz-casino\gabz_vw_vwdlc_int_01.ytyp" to "cfx-gabz-casino\stream\ytyp\"
    
     NoPixel Casino
-    • make sure rcore_casino_interior is disabled, remove rcore_casino_interior from dependencies in fxmanifest.lua
     • delete \stream\Main\ydr\vw_prop_vw_luckywheel_01a.ydr in NoPixel Casino
     • copy "\extra\nopixel\gbz_vw_vwdlc_int_01.ytyp" inside stream\Main\ytyp in NoPixel Casino
     • copy "\extra\nopixel\vw_vwint01_betting_desks.ydr" inside stream\Main\ydr in NoPixel Casino
+
+    K4MB1 old enterable casino
+    • copy "brown_casinoextended.ytyp" to "casinointerior\stream\base k4mb1-old-casino"
     ]]
 
     -- Xmas trees
-    -- • configurable in xmas\xmas_cl.lua nad xmas\xmas_sv.lua
+    -- • configurable in xmas\xmas_cl.lua and xmas\xmas_sv.lua
     Xmas = false,
 
+    -- Target
+    UseTarget = true, -- whether to use target zones or not
+    TargetZoneType = 3, -- 1: q_target, 2: bt_target, 3: qb-target, 4: ox_target
+
     -- Money Or Casino Chips? 
+    MoneyInventoryItemName = nil, -- name of the money inventory item, set to nil, if you don't want to use inventory item as the money
     UseOnlyMoney = false, -- set to true if you wanna disable using casino chips and use money instead
     ExchangeRate = 1, -- set value of one casino chip, for example, set to 5, if 1 chip equals to 5$ (minimum: 0.1, rounded by 0.1, 0.5 or 1)
-    ChipsInventoryItem = "casinochips",
+    ChipsInventoryItem = "casino_chips",
     UseBankMoney = false, -- cash or bank?
+    DailyWidthdrawLimit = 50000, -- how much money can player withdraw from the cashier per day (24 hours), set to 0 to disable
 
     -- Behave in casino?
     RestrictControls = true, -- don't jump, don't attack inside the Casino
@@ -57,11 +75,12 @@ Config = {
     SLOTS_1ST_PERSON = true, -- switch to 1st person when spinning slots
 
     -- Lucky Wheel
+    LUCKY_WHEEL_ENABLED = true, -- set to false, if you don't want to use Lucky Wheel
     LUCKY_WHEEL_FREE_DRINKS_FOR = (60 * 60 * 24), -- when someone spins "Free Drinks" at the Lucky Wheel, how long they get free drinks for. def: 24 hours (60 * 60 * 24)
     LUCKY_WHEEL_COOLDOWN = (60 * 60 * 24), -- how long players have to wait for their next spin. def: 24 hours (60 * 60 * 24)
     LUCKY_WHEEL_VEHICLE_ALTERNATIVE = "Money9", -- if player spins Vehicle, but there is no avaiable podium vehicle at the moment, spin to this item. Def: "Money50K" (the second biggest price)
     LUCKY_WHEEL_CAR_WINABLE = true, -- true: players can win the car, false: car is just a decoration
-    LUCKY_WHEEL_PAY_TO_SPIN = 50000, -- set price for the spin (chips), set 0 for free spins, or set to existing inventory name, for example LUCKY_WHEEL_PAY_TO_SPIN = "wheel_ticket" to pay with an inventory item
+    LUCKY_WHEEL_PAY_TO_SPIN = 0, -- set price for the spin (chips), set 0 for free spins, or set to existing inventory name, for example LUCKY_WHEEL_PAY_TO_SPIN = "wheel_ticket" to pay with an inventory item
     LUCKY_WHEEL_CAR_ONE_WINNER = true, -- set to true, if only one player can win the podium vehicle. the vehicle will disapear from the podium after someone wins it.
 
     -- Blackjack
@@ -82,10 +101,10 @@ Config = {
     CAS_DOUBLECHECK_COORDS = vector3(984.528, 52.299, 70.238),
     CASINO_ENABLE_AMBIENT_PEDS = true, -- standing peds
     CASINO_ENABLE_AMBIENT_PEDS_SLOTS = true, -- peds playing slots
-    CASINO_ENABLE_AMBIENT_PEDS_POKER = false, -- peds playing poker
-    CASINO_ENABLE_AMBIENT_PEDS_BLACKJACK = false, -- peds playing blackjack
-    CASINO_ENABLE_AMBIENT_PEDS_ROULETTE = false, -- peds playing roulette
-    CASINO_AMBIENT_PEDS_DENSITY = 2, -- 1: a few, 2: medium, 3: all peds
+    CASINO_ENABLE_AMBIENT_PEDS_POKER = true, -- peds playing poker
+    CASINO_ENABLE_AMBIENT_PEDS_BLACKJACK = true, -- peds playing blackjack
+    CASINO_ENABLE_AMBIENT_PEDS_ROULETTE = true, -- peds playing roulette
+    CASINO_AMBIENT_PEDS_DENSITY = 3, -- 1: a few, 2: medium, 3: all peds
     CASINO_SAVE_TIMER = 30000, -- database update interval
     DISABLE_IDLE_CAM = true, -- disable idle cam animations (looking around)
     CASINO_ANIM_TIMEOUT = 750, -- pause between animations (in milliseconds), decrease this number to make interaction animations faster, be careful, smaller number can cause desync in animations if players have high ping. def: 750
@@ -94,8 +113,9 @@ Config = {
     ENTER_CASINO_FADEOUT = 1, -- whether to fadeout the screen when entering (loading) casino or not (0: disabled, 1: only first enter, 2: every time)
     CASHIER_MULTITASK = true, -- multiple players can use the Cashier at the same time
     LOAD_SCENE = true, -- load the whole casino playing area after entering (recommended)
+    CLEAR_OBJECTS_ON_ENTER = false, -- destroy all locally created peds/objects after entering the casino, to save up space, set to false
     --
-    JOB_PODIUMCAR_OWNERSHIP_CHECK = false,
+    JOB_PODIUMCAR_OWNERSHIP_CHECK = true,
     JOB_PODIUMCAR_OWNERSHIP_DELETE_ORIGINAL = true,
     JOB_PODIUMCAR_DELETE_ORIGINAL_FUNCTION_CLIENT = function(vehicleId, plateNumber) -- client function that the car dealer executes after delivering the car
         DeleteVehicle(vehicleId)
@@ -115,7 +135,7 @@ Config = {
 
     -- Drinking
     DrunkSystem = 1,
-    -- 1 = built-in, resets drunk level after leaving casino
+    -- 1 = auto-detect / built-in, resets drunk level after leaving casino
     -- 2 = esx_status
     -- 3 = evidence:client:SetStatus
     -- 4 = rcore_drunk -- https://store.rcore.cz/package/5161129
@@ -124,8 +144,9 @@ Config = {
     EnableGuidebookIntegration = false, -- https://store.rcore.cz/package/5041989
 
     -- Society
+    -- ⚠️ In order to make society work, please follow these instructions: https://documentation.rcore.cz/paid-resources/rcore_casino/society
     EnableSociety = true, -- whether to enable society account
-    SocietyName = "casino",
+    SocietyName = "society_casino",
     SocietyLimitFromBalance = 10000, -- if society account has less money than this, it will start paying out reduced money, (SocietyLimitPayoutPercentage)
     SocietyLimitPayoutPercentage = 35, -- example: if SocietyLimitPayoutPercentage is 35%, and SocietyLimitFromBalance is 10000 => 1000 payout at the Cashier will be limited to 350, if the society bank account balance is less than 10 000
     -- when enabled, all casino payments (Cashier, Bar, Lucky Wheel) go through the society account, players don't get paid if there's not enough money in the 
@@ -138,8 +159,18 @@ Config = {
     for more details open /server/main/society.lua
     ]]
 
+    -- Notifications
+    NotifySystem = 1,
+    --[[
+    1: default GTAV style notifications
+    2: okokNotify
+    3: esx_notify
+    4: qb_notify,
+    5: ox_notify
+    ]]
+
     -- Job
-    BossGrade = 4, -- the max grade (boss) for the casino job
+    BossGrade = 2, -- the max grade (boss) for the casino job
     BossName = "boss",
     JobName = "casino", -- id of the job (not a title, I guess, don't change it)
 
@@ -153,7 +184,7 @@ Config = {
     -- Ui
     UIFontName = nil, -- font for the UI, set to nil, if you don't want to use a custom font, set to a font name (with ""), if you wanna register and use a font that's inside your /stream/fonts folder
     ShowHowToPlayUI = 1, -- How to play/Info about the game UI (Menu that shows after pressing 'E' to play. (0: disabled, 1: only once, 2: every time after pressing 'E')
-    ShowChipsHud = false, -- whether to use the built-in chips hud on the top-right corner
+    ShowChipsHud = true, -- whether to use the built-in chips hud on the top-right corner
     UseNUIHUD = false, -- whether to use chips hud on NUI (you can customize it in 'html/index.html')
 
     -- Database
@@ -168,12 +199,10 @@ Config = {
 }
 
 Framework = {
-    -- 1 = es_extended
-    -- 2 = QBcore
-    -- 3 = Standalone (⚠️ check https://documentation.rcore.cz/paid-resources/rcore_casino/standalone-version)
-    -- 4 = Custom (⚠️ check https://documentation.rcore.cz/paid-resources/rcore_casino/custom-framework)
+    -- ⚠️ For Standalone version docs visit https://documentation.rcore.cz/paid-resources/rcore_casino/standalone-version
+    -- ⚠️ For Custom framework version docs visit https://documentation.rcore.cz/paid-resources/rcore_casino/custom-framework
 
-    Active = 2,
+    Active = 5, -- Choose 1 for ESX, 2 for QBCore, 3 for Standalone, 4 for Custom, 5 for auto detect
     -- Please follow the installation tutorial: --
     -- https://documentation.rcore.cz/paid-resources/rcore_casino
 
@@ -187,7 +216,7 @@ Framework = {
     QB_CORE_RESOURCE_NAME = "qb-core",
     QBCORE_SHARED_OBJECT = "QBCore:GetObject",
     -- standalone settings
-    STANDALONE_INITIAL_CHIPS = 0 -- chips that everyone gets after first enter
+    STANDALONE_INITIAL_CHIPS = 100000 -- chips that everyone gets after first enter
 }
 
 if Framework.Active == 2 then
@@ -262,17 +291,9 @@ GameStates = {{
     title = "Cameras",
     enabled = true
 }, {
-    activity = "officeelevator",
-    title = "Office Elevator",
-    enabled = true
-}, {
-    activity = "officeelevatorout",
-    title = "Office Elevator (Down)",
-    enabled = true
-}, {
     activity = "casinoteleporter",
     title = "Casino Teleporter (In)",
-    enabled = false
+    enabled = true
 }, {
     activity = "casinoentrance",
     title = "Casino Entrance",
@@ -294,6 +315,8 @@ Config.OpeningHours = {
     [7] = {-1} -- Saturday
 }
 
+Config.ServerTimezoneOffsetHours = 0 -- Adjusts the server time based on the timezone difference
+
 -- customize the blip function here
 -- used blip icon ids: 
 -- Inside Track: 684, Lucky Wheel: 681, Cashier: 683, Table Games: 680, VIP Area / Exterior Icon: 679, 
@@ -304,7 +327,7 @@ function SetCasinoBlip(coords, blipIcon, blipName, exterior)
     --------------
     SetBlipSprite(blip, blipIcon)
     SetBlipDisplay(blip, 4)
-    SetBlipScale(blip, 0.65)
+    SetBlipScale(blip, 1.2)
     SetBlipColour(blip, 0)
     SetBlipAsShortRange(blip, exterior and Config.CASINO_BLIPS_SHORT_RANGE or false)
     --------------
@@ -322,4 +345,58 @@ function RemoveMissionBlip(name)
         RemoveBlip(MissionBlips[name])
         MissionBlips[name] = nil
     end
+end
+
+-- auto-detect framework
+if Framework.Active == 5 then
+    local esxState = GetResourceState(Framework.ES_EXTENDED_RESOURCE_NAME)
+    local qbState = GetResourceState(Framework.QB_CORE_RESOURCE_NAME)
+
+    if esxState == "starting" or esxState == "started" then
+        print("^3[Casino] Framework ^2ESX^3 detected.^7")
+        Framework.Active = 1
+    elseif qbState == "starting" or qbState == "started" then
+        print("^3[Casino] Framework ^2QBCore^3 detected.^7")
+        Framework.Active = 2
+    else
+        Framework.Active = 3
+    end
+end
+
+-- auto detect drunk system
+if Config.DrunkSystem == 1 then
+    local rcoreDrunkState = GetResourceState("rcore_drunk")
+    local esxStatusState = GetResourceState("esx_status")
+
+    if rcoreDrunkState == "starting" or rcoreDrunkState == "started" then
+        Config.DrunkSystem = 4
+        print("^3[Casino] ^2rcore_drunk^3 detected.^7")
+    elseif esxStatusState == "starting" or esxStatusState == "started" then
+        Config.DrunkSystem = 2
+        print("^3[Casino] ^2esx_status^3 detected.^7")
+    elseif Framework.Active == 2 then
+        Config.DrunkSystem = 3
+        print("^3[Casino] drunk system set to ^2evidence:^3.^7")
+    end
+end
+
+-- used for translations
+Translation = {}
+function Translation.Get(str)
+    if not Translation[Config.Locale] then
+        print(string.format("[%s] The language does not exists: %s", GetCurrentResourceName(), Config.Locale))
+        return string.format("The language does not exists: %s", Config.Locale)
+    end
+    if not Translation[Config.Locale][str] then
+        print(string.format("[%s] The translation does not exists: %s", GetCurrentResourceName(), str))
+        return string.format("The translation does not exists: %s", str)
+    end
+    return Translation[Config.Locale][str]
+end
+
+-- used for missions
+local jobsState = GetResourceState("rcore_casino_jobs")
+Config.JobsEnabled = jobsState == "starting" or jobsState == "started"
+if Config.JobsEnabled then
+    Config.Jobs = exports["rcore_casino_jobs"]:GetJobsConfig()
 end

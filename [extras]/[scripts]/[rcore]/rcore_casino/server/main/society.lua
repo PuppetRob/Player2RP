@@ -173,7 +173,7 @@ end
 
 function GetMoneyFromSociety()
     if not Config.EnableSociety then
-        return 0
+        return 2147483647
     end
     if Framework.Active == 3 or Framework.Active == 4 then
         --[[ add your own method to handle society money in here:
