@@ -10,16 +10,16 @@ Config.BackgroundSettings = {
 }
 
 Config.Title = { 
-    title : "SBMRP", 
+    title : "P2RP", 
     subtitle : "" 
 }
 
 Config.ServerInformation = {
-    title : "SERVER INFORMATION",
+    title : "Welcome",
     subtitle : "",
     infos : [
         { info : "HOW TO CONNECT" },
-        { info : "Press F8 and type connect join.sbmgaming.net" },
+        { info : "We hope you enjoy your stay!" },
       /*  { info : "Lorem ipsum dolor sit amet consectetur. Sed eu consectetur3" }, */
     ]
 }
@@ -49,10 +49,7 @@ Config.Staff = {
         {name : "Cass", role :"Owner", avatar:"https://media.discordapp.net/attachments/1052372106605772801/1088344188208287784/127025.png?width=910&height=910"},
         {name : "Puppet", role :"Developer", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101045201176375306/discord-among-us.gif"},
         {name : "Butters", role :"Staff", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101044491177185300/e7ab03bac23eb9b3f5bd67ba27ca7b08.gif"},
-        {name : "Amanda", role :"Staff", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101044491177185300/e7ab03bac23eb9b3f5bd67ba27ca7b08.gif"},
-        {name : "Tightas", role :"Staff", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101044491177185300/e7ab03bac23eb9b3f5bd67ba27ca7b08.gif"},
         {name : "Mark", role :"Staff", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101044491177185300/e7ab03bac23eb9b3f5bd67ba27ca7b08.gif"},
-        {name : "Trig", role :"Staff", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101044491177185300/e7ab03bac23eb9b3f5bd67ba27ca7b08.gif"},
         {name : "Hawkins", role :"Staff", avatar:"https://cdn.discordapp.com/attachments/1052372106605772801/1101044491177185300/e7ab03bac23eb9b3f5bd67ba27ca7b08.gif"},
 
     ]
