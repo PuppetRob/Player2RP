@@ -876,6 +876,31 @@
         <StdDoorRotDir>StdDoorOpenBothDir</StdDoorRotDir>
       </Tuning>
     </Item>
+    <Item>
+      <Name>PbmcSlidingDoor</Name>
+      <Tuning>
+        <AutoOpenVolumeOffset x="0.000000" y="0.000000" z="0.000000" />
+        <Flags />
+        <AutoOpenRadiusModifier value="1.800000" />
+        <AutoOpenRate value="2.500000" />
+        <AutoOpenCosineAngleBetweenThreshold value="-1.000000" />
+        <AutoOpenCloseRateTaper value="false" />
+        <UseAutoOpenTriggerBox value="false" />
+        <CustomTriggerBox value="false" />
+        <TriggerBoxMinMax>
+          <min x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+          <max x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+        </TriggerBoxMinMax>
+        <BreakableByVehicle value="false" />
+        <BreakingImpulse value="0.000000" />
+        <ShouldLatchShut value="false" />
+        <MassMultiplier value="1.000000" />
+        <WeaponImpulseMultiplier value="1.000000" />
+        <RotationLimitAngle value="0.000000" />
+        <TorqueAngularVelocityLimit value="5.000000" />
+        <StdDoorRotDir>StdDoorOpenBothDir</StdDoorRotDir>
+      </Tuning>
+    </Item>
   </NamedTuningArray>
   <ModelToTuneMapping>
     <Item>
@@ -1736,6 +1761,94 @@
     </Item>
     <Item>
       <ModelName>map4all_pdm_door05b</ModelName> <!-- PDM -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door01</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door02</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door03</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door04</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door05</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door06</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door07</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door08</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door09</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door10</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door11</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door12</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door13</ModelName> <!-- PBMC -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door14</ModelName> <!-- PBMC -->
+      <TuningName>PbmcSlidingDoor</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pbmc_props_door15</ModelName> <!-- PBMC -->
+      <TuningName>PbmcSlidingDoor</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door01</ModelName> <!-- AIR PATROL -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door02_l</ModelName> <!-- AIR PATROL -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door02_r</ModelName> <!-- AIR PATROL -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door03</ModelName> <!-- AIR PATROL -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door04</ModelName> <!-- AIR PATROL -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door05</ModelName> <!-- AIR PATROL -->
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>map4all_pdh_door06</ModelName> <!-- AIR PATROL -->
       <TuningName>DefaultStandardLatchShut</TuningName>
     </Item>
   </ModelToTuneMapping>
