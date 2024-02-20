@@ -46,7 +46,7 @@ Citizen.CreateThread(function()
 
         if data.PolyZone then
 
-            exports["nxt-carshop"]:AddCircleZone("nxt-carshop:isNear", data.ShopCoords, 100, {
+            exports["p2rp-carshop"]:AddCircleZone("p2rp-carshop:isNear", data.ShopCoords, 100, {
                 data = shop,
             })
 
