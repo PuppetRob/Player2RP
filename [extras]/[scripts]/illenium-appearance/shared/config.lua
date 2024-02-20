@@ -10,7 +10,7 @@ Config.SurgeonCost = 100
 Config.ChargePerTattoo = true -- Charge players per tattoo. Config.TattooCost will become the cost of 1 tattoo. The cost can be overridden by adding `cost` key in shared/tattoos.lua for specific tattoos
 
 -- Only set this to true if you're using rcore_tattoos
-Config.RCoreTattoosCompatibility = false
+Config.RCoreTattoosCompatibility = true
 
 Config.AsynchronousLoading = false -- Change this to false if you want the NUI data to load before displaying the appearance UI
 
@@ -29,7 +29,7 @@ Config.OutfitCodeLength = 10
 Config.UseRadialMenu = false
 Config.UseOxRadial = false -- Set to true to use ox_lib radial menu, both this and UseRadialMenu must be true 
 
-Config.EnablePedsForShops = true
+Config.EnablePedsForShops = false
 Config.EnablePedsForClothingRooms = false
 Config.EnablePedsForPlayerOutfitRooms = false
 
@@ -65,7 +65,7 @@ Config.GenderBasedOnPed = true
 Config.AlwaysKeepProps = false
 
 Config.PersistUniforms = false -- Keeps Job / Gang Outfits on player reconnects / logout
-Config.OnDutyOnlyClothingRooms = false -- Set to `true` to make the clothing rooms accessible only to players who are On Duty
+Config.OnDutyOnlyClothingRooms = true -- Set to `true` to make the clothing rooms accessible only to players who are On Duty
 
 Config.BossManagedOutfits = false -- Allows Job / Gang bosses to manage their own job / gang outfits
 

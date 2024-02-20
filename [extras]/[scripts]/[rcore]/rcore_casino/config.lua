@@ -321,7 +321,7 @@ Config.ServerTimezoneOffsetHours = 0 -- Adjusts the server time based on the tim
 -- used blip icon ids: 
 -- Inside Track: 684, Lucky Wheel: 681, Cashier: 683, Table Games: 680, VIP Area / Exterior Icon: 679, 
 -- [https://docs.fivem.net/docs/game-references/blips/]
-
+--[[ 
 function SetCasinoBlip(coords, blipIcon, blipName, exterior)
     local blip = AddBlipForCoord(coords)
     --------------
@@ -338,7 +338,7 @@ function SetCasinoBlip(coords, blipIcon, blipName, exterior)
         table.insert(CasinoBlips, blip)
     end
     return blip
-end
+end ]]
 
 function RemoveMissionBlip(name)
     if MissionBlips[name] then
