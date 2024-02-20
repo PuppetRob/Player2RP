@@ -193,15 +193,15 @@ div#q-loading-bar {
 
 /* Vehicle HUD */
 
-speed:after {
-    content: "MPH"; /* If using KPH change this content from MPH */
+/* speed:after {
+    content: "MPH"; /* If using KPH change this content from MPH 
     display: block;
     padding-top: 3px;
     padding-left: 2px;
     padding-right: 2px;
     padding-bottom: 8px;
     font-weight: 900;
-}
+ */ 
 
 altitude:after {
     content: "ALT";
@@ -212,7 +212,7 @@ altitude:after {
     font-weight: 900;
 }
 
-speed {
+/* speed {
     transform: rotate(150deg);
     font-size: 2.4vh;
     position: fixed;
@@ -220,7 +220,7 @@ speed {
     text-align: center;
     font-weight: 600;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.7);
-}
+} */
 
 altitude {
     transform: rotate(135deg);

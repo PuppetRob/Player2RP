@@ -311,7 +311,7 @@
             </div>
             <div id="veh-container">
                 <div v-show="show">
-                    <div class="responsive" id="speedometer">
+<!--                     <div class="responsive" id="speedometer">
                         <q-circular-progress id="Speedo" class="q-ml-xl" style="transform: rotate(-150deg); opacity: 60%;" :value="speedometer" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
                         <q-circular-progress id="Speedo" class="q-ml-xl" style="transform: rotate(-150deg); left: -50%;" show-value :value="speed" :thickness="0.21" color="gauge" :min="0" :max="600">
                         <speed id="Speed">{{(speed)}}</speed>
@@ -320,18 +320,18 @@
                         <q-circular-progress id="FuelGaugeBackground" class="q-ml-xl" style="transform: rotate(-125deg); opacity: 60%;" :value="fuelgauge" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
                         <q-circular-progress id="FuelGaugeValue" class="q-ml-xl" style="transform: rotate(-125deg); left: -50%;" show-value :value="fuel" :thickness="0.21" :style="{color: fuelColor}">
                         <q-icon id="FuelGaugeIcon" name="fas fa-gas-pump" style="transform: rotate(125deg);" color="white"/>
-                    </div>
+                    </div> -->
                     <div class="responsive" id="altitudegauge" v-if="showAltitude">
                         <q-circular-progress id="Altimeter" class="q-ml-xl" style="transform: rotate(-135deg); opacity: 60%;" :value="altitudegauge" size="70px" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
                         <q-circular-progress id="AltimeterValue" class="q-ml-xl" style="transform: rotate(-135deg); left: -50%;" show-value :value="altitude" size="70px" :thickness="0.21" color="gauge" :min="0" :max="750">
                         <altitude id="Alt">{{(altitude)}}</altitude>
                     </div>
                     <transition name="fade">
-                    <div class="responsive" id="seatbelt" v-if="showSeatbelt">
+<!--                     <div class="responsive" id="seatbelt" v-if="showSeatbelt">
                         <q-circular-progress id="SeatbeltLocation" class="q-ml-xl" style="transform: rotate(-125deg); opacity: 60%;" size="70px" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
                         <q-circular-progress id="SeatbeltLocation" class="q-ml-xl" style="transform: rotate(-125deg); left: -40%;" show-value size="70px" :thickness="0.21" color="gauge" :min="0" :max="750">
                         <q-icon id="SeatbeltIcon" name="fas fa-user-slash" style="transform: rotate(125deg);" :value="seatbelt" size="21px" :style="{color: seatbeltColor}"/>
-                    </div>
+                    </div> -->
                     </transition>
                     <div class="border">
                         <div class="square" v-if="showSquare"></div>
