@@ -1,6 +1,6 @@
 QBConfig = {}
 
-QBConfig.MaxPlayers = GetConvarInt('sv_maxclients', 128) -- Gets max players from config file, default 48
+QBConfig.MaxPlayers = GetConvarInt('sv_maxclients', 8) -- Gets max players from config file, default 48
 QBConfig.DefaultSpawn = vector4(-737.4, -2277.63, 13.44, 133.89)
 QBConfig.UpdateInterval = 5                             -- how often to update player data in minutes
 QBConfig.StatusInterval = 5000                          -- how often to check hunger/thirst status in milliseconds
@@ -8,7 +8,7 @@ QBConfig.StatusInterval = 5000                          -- how often to check hu
 QBConfig.Money = {}
 QBConfig.Money.MoneyTypes = { cash = 2000, bank = 20000, crypto = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
 QBConfig.Money.DontAllowMinus = { 'cash', 'bank' }                -- Money that is not allowed going in minus
-QBConfig.Money.PayCheckTimeOut = 15                                 -- The time in minutes that it will give the paycheck
+QBConfig.Money.PayCheckTimeOut = 60                                 -- The time in minutes that it will give the paycheck
 QBConfig.Money.PayCheckSociety = false                              -- If true paycheck will come from the society account that the player is employed at, requires qb-management
 
 QBConfig.Player = {}
