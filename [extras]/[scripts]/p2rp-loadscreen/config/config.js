@@ -10,16 +10,16 @@ Config.BackgroundSettings = {
 }
 
 Config.Title = { 
-    title : "P2RP", 
+    title : "Player 2 RP", 
     subtitle : "" 
 }
 
 Config.ServerInformation = {
-    title : "Welcome",
+    title : "Enjoy your stay!",
     subtitle : "",
     infos : [
-        { info : "HOW TO CONNECT" },
-        { info : "We hope you enjoy your stay!" },
+        { info : "Please read the rules on discord" },
+       /* { info : "We hope you enjoy your stay!" },*/
       /*  { info : "Lorem ipsum dolor sit amet consectetur. Sed eu consectetur3" }, */
     ]
 }
@@ -56,10 +56,10 @@ Config.Staff = {
 }
 
 Config.SocialMedia = [
-    {name : "DISCORD", label : "discord.gg/sbmrp", link : "https://discord.gg/sbmrp", icon : "fa-brands fa-discord", color:"#5562EA"},
-    {name : "WEBSITE", label : "www.sbmgaming.net", link : "https://sbmgaming.net", icon : "fa-solid fa-globe", color:"#9249C0"},
-    {name : "YOUTUBE", label : "@sbmrp", link : "https://youtube.com@sbmrp", icon : "fa-brands fa-youtube", color:"#9e0200"},
-    {name : "TIKTOK", label : "@sbmrp", link : "https://youtube.com@sbmrp", icon : "fa-brands fa-tiktok", color:"#9e0200"},
+    {name : "DISCORD", label : "discord.gg/p2rp", link : "https://discord.gg/p2rp", icon : "fa-brands fa-discord", color:"#5562EA"},
+    {name : "WEBSITE", label : "www.player2rp.com", link : "https://player2rp.com", icon : "fa-solid fa-globe", color:"#9249C0"},
+    {name : "YOUTUBE", label : "@p2rp", link : "https://youtube.com@p2rp", icon : "fa-brands fa-youtube", color:"#9e0200"},
+    {name : "TIKTOK", label : "@p2rp", link : "https://tiktok.com@p2rp", icon : "fa-brands fa-tiktok", color:"#9e0200"},
 ]
 
 Config.Locales = {
