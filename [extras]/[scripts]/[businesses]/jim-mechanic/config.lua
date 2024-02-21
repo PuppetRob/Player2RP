@@ -193,7 +193,7 @@ Config = {
 		OdoShowIcons = true, 		-- Enable this to allow the use of the warning icons on the odometer
 		OdoAlwaysShowIcons = true, 	-- Enable this to show the icons even when not damaged
 
-		ShowToAll = true,			-- Show Odometer to passengers aswell as driver
+		ShowToAll = false,			-- Show Odometer to passengers aswell as driver
 
 		OdoIconsToShow = {
 			["engine"] = true,
