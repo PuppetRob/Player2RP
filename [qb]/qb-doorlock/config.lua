@@ -615,7 +615,7 @@ Config.DoorList = {
 				locked = true,
 				fixText = false,
 				pickable = true,
-				authorizedJobs = { ['police'] = 0 },
+				authorizedJobs = { ['lspd'] = 0 },
 				needsAllItems = false,
 				objCoords = vec3(-627.1983, -281.7917, 35.77761),
 				distance = 1.5,
