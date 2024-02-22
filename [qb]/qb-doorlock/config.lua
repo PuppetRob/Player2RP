@@ -596,7 +596,7 @@ Config.DoorList = {
 				locked = true,
 			},
 
-			['techtwo-citymain'] = {
+ 			['techtwo-citymain'] = {
 				doorType = 'double',
 				locked = true,
 				cantUnlock = true,

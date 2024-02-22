@@ -676,7 +676,7 @@ Config.uberItems = {
 --░░░╚═╝░░░╚══════╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░╚════╝░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝
 
 Config.ResetPassword = {
-    spawnNPC = true,
+    spawnNPC = false,
     spots = {
         {
             coords = vec3(-1524.32, -409.3, 35.6),

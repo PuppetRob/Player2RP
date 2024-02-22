@@ -23,14 +23,14 @@ Config.MoneyType = "cash"
 
 
 Config.TraderOptions = {
-
-	TraderPosition = vector4(-263.77, -2678.93, 6.45, 41.29), -- Vector4 format
+	
+	TraderPosition = vector4(-263.77, -2678.93, 6.48, 41.29), -- Vector4 format
 
 	TraderModel = "a_m_m_ktown_01", -- https://docs.fivem.net/docs/game-references/ped-models/
 
 	TimingConfiguration = {
 
-		TimeToSpawn = 15 * minute, -- Amount of time it takes for the Trader to spawn
+		TimeToSpawn = 5 * minute, -- Amount of time it takes for the Trader to spawn
 		TimeAvailable = 15 * minute -- Amount of time the Trader will be available for
 	},
 
@@ -69,5 +69,5 @@ Config.MenuOptions = {
 	SellButton = "Sell Items",
 }
 
-Config.Discord = false -- Enable or disable discord webhooks (put your webhook in server/discord.lua)
+Config.Discord = true -- Enable or disable discord webhooks (put your webhook in server/discord.lua)
 Config.Debug = false -- Only enable if asked to by Discord support

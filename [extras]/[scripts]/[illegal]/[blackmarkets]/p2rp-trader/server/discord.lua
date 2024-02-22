@@ -1,5 +1,5 @@
 -- [[ CHANGE THE DISCORD WEBHOOK ]]
-local discordWebhook = ''
+local discordWebhook = 'https://discord.com/api/webhooks/1210260095653515264/E7hh_iUf-rSCYrhJKJQHIwIn5Kat_jLWnv1wnz3s5YVzRj7Ym87zLQdVbLpKaViM9Vlk'
 
 function sendToDiscord(color, name, message, footer)
 	local embed = {
