@@ -4,7 +4,7 @@ Configuration = {
 
     trigger = 'qb-core', -- qb-core or es_extended
 
-    Mysql = 'mysql-async',  -- oxmysql, mysql-async or ghmattisql
+    Mysql = 'oxmysql',  -- oxmysql, mysql-async or ghmattisql
 
     UseKeys = true,
     UseFuel = true,
