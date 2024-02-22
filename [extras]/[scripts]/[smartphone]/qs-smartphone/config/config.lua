@@ -52,7 +52,7 @@ Config.codem_inventory = codemHas and 'esx' or false
 
 -- Target script
 Config.Target = false             -- Enable or disable target system
-Config.TargetScript = 'ox_target' -- 'ox_target' or 'qb-target' only!
+Config.TargetScript = 'qb-target' -- 'ox_target' or 'qb-target' only!
 
 -- Leave it as default if you dont know what you are doing
 Config.ScreenshotBasic = 'screenshot-basic'
@@ -224,8 +224,8 @@ Config.billingpayBillEvent = 'esx_billing:payBill'
 --╚██████╔╝██║░░██║██║░░██║██║░░██║╚██████╔╝███████╗██████╔╝
 --░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░╚══════╝╚═════╝░
 
-Config.AvailableValet = true   -- Enable or disable the Valet button from here
-Config.ValetNPC = true         -- An NPC comes and leaves it next to you. If it is false it appears near you without NPC
+Config.AvailableValet = false   -- Enable or disable the Valet button from here
+Config.ValetNPC = false         -- An NPC comes and leaves it next to you. If it is false it appears near you without NPC
 Config.ValetKeysBefore = false -- Does he give you the keys when you call the car, or when the car is delivered to you?
 Config.ValetPrice = 1000       -- Price to bring your vehicle to you
 
@@ -275,10 +275,10 @@ end
 --░░╚██╔╝░╚██╔╝░███████╗░░░██║░░░  ██║░░░░░██║░░██║╚█████╔╝██║░╚███║███████╗
 --░░░╚═╝░░░╚═╝░░╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝
 
-Config.WetPhone = false                  -- Being in the water, the phone will break and will give you the same item but with the prefix "wet_".
+Config.WetPhone = true                  -- Being in the water, the phone will break and will give you the same item but with the prefix "wet_".
 Config.RepairWetPhone = 'phone_module'   -- With said item, we can repair the wet phone.
 Config.RepairWetPhoneNpc = true          -- Be able to repair your phone with the NPC Telephone Technician.
-Config.RepairWetPhoneNpcPrice = 100      -- Price to repair a wet phone in the Technician.
+Config.RepairWetPhoneNpcPrice = 450      -- Price to repair a wet phone in the Technician.
 Config.RepairWetPhoneNpcAccount = 'bank' -- Choose here the account to pay the technician for repairing the wet phone.
 
 
@@ -292,21 +292,22 @@ Config.RepairWetPhoneNpcAccount = 'bank' -- Choose here the account to pay the t
 -- These works will have permission to publish in the News app.
 Config.WeazelJob = {
     'weazelnews',
-    'police',
-    'weazel',
+    'lspd',
+    'bcso',
 }
 
 -- Jobs available to receive Police App alerts.
 Config.PoliceAppJobs = {
-    [1] = 'police',
-    -- [2] = 'sheriff',
+    [1] = 'lspd',
+    [2] = 'bcso',
 }
 
 --- @param job 'Name of job who will receive the message'
 --- @param name 'Visible label'
 --- @param img  'Image of contact'
 Config.Jobs = {
-    { job = 'police',    name = 'Policia',  img = './img/apps/police.png' },
+    { job = 'lspd',    name = 'LSPD',  img = './img/apps/police.png' },
+    { job = 'bcso',    name = 'BCSO',  img = './img/apps/police.png' },
     { job = 'ambulance', name = 'Ems',      img = './img/apps/ambulance.png' },
     { job = 'mechanic',  name = 'Mechanic', img = './img/apps/mechanic.png' },
 }
@@ -316,7 +317,7 @@ Config.Jobs = {
     to put it another way it is to enter and exit of duty.
 ]]
 Config.jobCommands = { -- Just enter a number here, this is the number that will appear when you call.
-    ['police'] = '112',
+    ['lspd'] = '911',
     ['ambulance'] = '113',
     ['mechanic'] = '114',
 }
@@ -329,28 +330,28 @@ Config.jobCommands = { -- Just enter a number here, this is the number that will
 --╚═════╝░░╚═════╝░╚═════╝░╚═╝╚═╝░░╚══╝╚══════╝╚═════╝░╚═════╝░
 
 Config.JobsInPhone = {
-    ['police'] = {
+    ['lspd'] = {
         order = 1,
-        name = 'police',
+        name = 'LSPD',
         label = 'Police',
-        info = 'The police of the saints always at your service',
+        info = 'Los Santos Police Department',
+        score = '4',
+        duty = false,
+    },
+    ['bcso'] = {
+        order = 2,
+        name = 'BCSO',
+        label = 'Police',
+        info = 'Blaine County Sheriffs Office',
         score = '4',
         duty = false,
     },
     ['ambulance'] = {
-        order = 2,
+        order = 3,
         name = 'ambulance',
         label = 'EMS',
         info = 'We solve all your health problems',
         score = '4',
-        duty = false,
-    },
-    ['tabac'] = {
-        order = 3,
-        name = 'tabac',
-        label = 'Tabac',
-        info = 'Food and party tables provided',
-        score = '3',
         duty = false,
     },
     ['burgershot'] = {
@@ -361,15 +362,7 @@ Config.JobsInPhone = {
         score = '2',
         duty = false,
     },
-    ['noodle'] = {
-        order = 5,
-        name = 'noodle',
-        label = 'Noodle',
-        info = 'The best fried noodles in Los Santos',
-        score = '4',
-        duty = false,
-    },
-    ['unicorn'] = {
+    ['vanilaunicorn'] = {
         order = 6,
         name = 'unicorn',
         label = 'Unicorn',
@@ -377,36 +370,12 @@ Config.JobsInPhone = {
         score = '5',
         duty = false,
     },
-    ['paradise'] = {
-        order = 7,
-        name = 'paradise',
-        label = 'Paradise Club',
-        info = 'We do not sell alcohol to minors',
-        score = '2',
-        duty = false,
-    },
-    ['mechanic'] = {
+    ['bennys'] = {
         order = 8,
         name = 'mechanic',
         label = 'Benny\'s',
         info = 'The mechanic Luis is the best',
         score = '4',
-        duty = false,
-    },
-    ['recycle'] = {
-        order = 9,
-        name = 'recycle',
-        label = 'Recyclage',
-        info = 'Protect the environment and take care of the streets',
-        score = '1',
-        duty = false,
-    },
-    ['catcafe'] = {
-        order = 10,
-        name = 'catcafe',
-        label = 'Cat Cafe',
-        info = 'Lots of coffee, but above all, lots of kittens',
-        score = '5',
         duty = false,
     },
 }
@@ -418,7 +387,7 @@ Config.JobsInPhone = {
 -- ╚█████╔╝██║░╚███║██║╚█████╔╝██║░╚███║  ██║░░██║██║░░░░░██║░░░░░
 -- ░╚════╝░╚═╝░░╚══╝╚═╝░╚════╝░╚═╝░░╚══╝  ╚═╝░░╚═╝╚═╝░░░░░╚═╝░░░░░
 
-Config.WeaponsItems = true         -- This will work for Onion Browser, weapons are items?
+Config.WeaponsItems = false         -- This will work for Onion Browser, weapons are items?
 Config.BlackMarketAccount = 'bank' -- Account with which you want to pay in Onion Browser.
 
 --[[
@@ -434,13 +403,13 @@ Config.BlackMarketAccount = 'bank' -- Account with which you want to pay in Onio
 Config.Darkweb = {
     List = {
         [1] = { item = 'WEAPON_PISTOL', label = 'Pistol', isItem = true, price = 8000 },
-        [2] = { item = 'WEAPON_PISTOL50', label = 'Pistol 50', isItem = true, price = 9000 },
-        [3] = { item = 'WEAPON_PISTOL_MK2', label = 'Pistol MK2', isItem = true, price = 10000 },
-        [4] = { item = 'WEAPON_KNUCKLE', label = 'Knucle', isItem = true, price = 5000 },
-        [5] = { item = 'WEAPON_GRENADE', label = 'Pistol', isItem = true, price = 20000 },
-        [6] = { item = 'WEAPON_CARBINERIFLE_MK2', label = 'Carbine Rifle MK2', isItem = true, price = 35000 },
-        [7] = { item = 'WEAPON_BULLPUPRIFLE_MK2', label = 'Bullpup Rifle MK2', isItem = true, price = 40000 },
-        [8] = { item = 'WEAPON_SNIPERRIFLE', label = 'Sniper Rifle', isItem = true, price = 55000 },
+      --  [2] = { item = 'WEAPON_PISTOL50', label = 'Pistol 50', isItem = true, price = 9000 },
+       -- [3] = { item = 'WEAPON_PISTOL_MK2', label = 'Pistol MK2', isItem = true, price = 10000 },
+       -- [4] = { item = 'WEAPON_KNUCKLE', label = 'Knucle', isItem = true, price = 5000 },
+      --  [5] = { item = 'WEAPON_GRENADE', label = 'Pistol', isItem = true, price = 20000 },
+       -- [6] = { item = 'WEAPON_CARBINERIFLE_MK2', label = 'Carbine Rifle MK2', isItem = true, price = 35000 },
+      --  [7] = { item = 'WEAPON_BULLPUPRIFLE_MK2', label = 'Bullpup Rifle MK2', isItem = true, price = 40000 },
+       -- [8] = { item = 'WEAPON_SNIPERRIFLE', label = 'Sniper Rifle', isItem = true, price = 55000 },
         -- [9] = { item = 'laptop', label = 'Hacker Laptop', isItem = true, price = 700}, -- If you use `Config.WeaponsItems = false` then you can choose if it's an item with `isItem = true`.
     },
 }
@@ -474,7 +443,7 @@ Config.Booth = {
 --██████╦╝██║░░██║░░░██║░░░░░░██║░░░███████╗██║░░██║░░░██║░░░
 --╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░
 
-Config.EnableBattery = false -- Do you want to enable the battery?
+Config.EnableBattery = true -- Do you want to enable the battery?
 Config.HousingCharge = false -- Phone charger inside the houses?
 
 -- Only load battery information when a player enters the server: playerLoaded, !! Don't restart the live resource because it will break. !!
@@ -482,7 +451,7 @@ Config.BatteryPersistData = true   -- Persist data on battery.json
 Config.TimeSavePersistData = 20000 -- x 20 sec - less than this number is not recommended
 
 Config.PowerBank = 'powerbank'     -- Item name?
-Config.RemoveItemPowerBank = true  -- Do you want the powerbank to be removed once used?
+Config.RemoveItemPowerBank = false  -- Do you want the powerbank to be removed once used?
 
 -- Usage /adminbattery id ammount
 Config.AdminCommand = true -- Recharge the batery for admins?

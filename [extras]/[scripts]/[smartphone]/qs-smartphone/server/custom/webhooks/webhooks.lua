@@ -17,13 +17,13 @@
 --- @param Important, add a webhook here, otherwise the images won't work.
 
 --- @param Set your own discord Webhook here.
-Config.Webhook = ''
+Config.Webhook = 'https://discord.com/api/webhooks/1210254018803146754/WsBmFME5ES4-nlALoAAAWX9P1iXXVkCIES-9tB8paAsTLnxaqzimIUsvgNxpCIDnggBS'
 
 --- @param Set your own discord Webhook here.
-Config.TwitterWebhook = ''
+Config.TwitterWebhook = 'https://discord.com/api/webhooks/1210253110270758943/DsEYaWVeCNOstNX4b57s08BuGtkpp4mnHSjy6cwUp-I-wTK_IdBkC6ZKlTeJ2nkQvKpt'
 
 --- @param Set your own discord Webhook here.
-Config.InstagramWebhook = ''
+Config.InstagramWebhook = 'https://discord.com/api/webhooks/1210253383940702208/THZIegHgtmt-I_c6det4Au20clgJ7GTkgQuc1nK5ipSAGz9z0qfgthGGhKPYZoEpRKuM'
 
 --- @param Set your own discord Webhook here.
 Config.YellowPagesWebhook = ''
@@ -50,14 +50,14 @@ Config.BankWebhook = ''
 
 
 -- Options
-Config.PublicWebhookFooter = 'Quasar Smartphone Logs'
+Config.PublicWebhookFooter = 'Player 2 RP'
 Config.WebhookImage = 'https://media.discordapp.net/attachments/926274292373655562/999502096430796950/xd.png?width=676&height=676'
 
 Config.Webhooks = { -- Enable or disable webhooks.
     twitter = true,
     instagram = true,
-    yellowpages = true,
-    news = true,
+    yellowpages = false,
+    news = false,
 }
 
 Config.WebhooksTranslations = { -- All webhook translations.
