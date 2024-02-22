@@ -59,7 +59,7 @@ local blips = {
    {title="Bike Shop", colour=59, id=348, x = -65.56, y = 70.73, z = 71.61, scale = 0.65},
    {title="Air Shop", colour=53, id=582, x = -1643.73, y = -3138.59, z = 13.52, scale = 0.65},
    {title="PDM", colour=61, id=225, x = -45.67, y = -1098.34, z = 26.42, scale = 0.60},
-   {title="Luxury Autos", colour=50, id=523, x = -793.79, y = -225.0, z = 37.25, scale = 0.60},
+  -- {title="Luxury Autos", colour=50, id=523, x = -793.79, y = -225.0, z = 37.25, scale = 0.60},
   -- {title="Used Vehicles", colour=19, id=225, x = 1232.43, y = 2713.6, z = 38.01, scale = 0.60},
    {title="Truck Shop", colour=69, id=477, x = 847.7, y = -3217.13, z = 5.87, scale = 0.60},
 
