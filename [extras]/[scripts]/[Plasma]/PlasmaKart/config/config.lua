@@ -3,10 +3,10 @@ aff("config.lua")
 lang = "EN"
 trad = {}
 
-FrameWork = "STANDALONE" -- QB or ESX or STANDALONE
+FrameWork = "QB" -- QB or ESX or STANDALONE
 
-UseTargetting = false      -- If you dont use the targetting system you will got instead marker on map
-Targetting = "ox_target"   -- put ox_target if you are using ox target or qb_target if you are using qb target
+UseTargetting = true      -- If you dont use the targetting system you will got instead marker on map
+Targetting = "qb_target"   -- put ox_target if you are using ox target or qb_target if you are using qb target
 -- Targetting = "qb_target"
 
 if IsDuplicityVersion() then -- Server Side
@@ -49,7 +49,7 @@ end
 MaxPlayerInSession = 10 -- Min : 1 Max : 10 If you want to go above 10 you need to define more "startPos" for each map defined below 
 
 ForcedPlate = true
-ForcedPlateNumber = "PATAMODS"
+ForcedPlateNumber = "PLAYER2"
 MaxLap = 30
 
 SpikesKey = 24         				-- The key to press to put spikes
@@ -64,7 +64,7 @@ LAPCoords = {x=0.99,y=0.16,w=0.005,h=0.0028}
 CreateMarker = {model = 3,color = {r=255,g=0,b=0,a=165}}
 -- JoinMarker = {model = 3,color = {r=0,g=255,b=0,a=165}}
 
-ShowBlips = true
+ShowBlips = false
 DefaultShop = "PlasmaKart"
 Shop = {
 
