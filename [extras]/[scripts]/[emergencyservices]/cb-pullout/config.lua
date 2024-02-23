@@ -7,12 +7,11 @@ Config.Weapon = 'weapon_nightstick' -- add any weapon you want or make it nil
 Config.IsAllowed = function()
     if Config.Framework == 'qb-core' then
         local QBCore = exports['qb-core']:GetCoreObject()
-        return QBCore.Functions.GetPlayerData().job.type == "leo"-- or PlayerData.job.name == "firefighter" then
-      --  end
+        return QBCore.Functions.GetPlayerData().job.name == "lspd" or QBCore.Functions.GetPlayerData().job.name == "bcso"
     else
         ESX = exports.es_extended:getSharedObject()
         local pdata = ESX.GetPlayerData()
-        return pdata.job.type == "leo"
+        return pdata.job.name == "police"
     end
 end
 
