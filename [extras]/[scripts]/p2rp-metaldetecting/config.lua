@@ -38,7 +38,6 @@ Config.CommonItems = {
     'goldore',
     'irontrash',
     'bullet_casing',
-    'aluminumcan',
     'steeltrash',
     'brokenknife',
     'brokendetector',
@@ -46,7 +45,6 @@ Config.CommonItems = {
     'metalscrap',
     'copper',
     'metal-bolt',
-    'dusty_usb',
     'metal-screw',
 }
 
@@ -66,7 +64,6 @@ Config.RareItems = {
     'weapon_navyrevolver',
     'robbery_red_pen',
     'electronickit', 
-    'green-card', 
 }
 
 -- metal detection zones
