@@ -7,7 +7,7 @@
 
 var enableWhitelist = true; // Enable the Whitelist/Allowlist
 var guildId = "1119261019689197659"; // Guild ID for a Discord Server, see https://faxes.zone/i/zjKnd.png
-var botToken = "MTIxMDY4NjIyMjE2NzQ0OTcxMQ.G2bf4j.vYkElW_FrU9o7xOkh_avnQg7KVPFDQYH8-ZtNM"; // This must be a Discord bot token, create a bot @ https://discord.com/developers/applications
+var botToken = "MTIxMDY4NjIyMjE2NzQ0OTcxMQ.G8xZq0.yQV_O5sD70Ri_xqJR-HwQuYQ4tzeXXw9T4x0mQ"; // This must be a Discord bot token, create a bot @ https://discord.com/developers/applications
 
 var whitelistRoles = [ // Roles by ID that are whitelisted.
     "1126191158691909704"
