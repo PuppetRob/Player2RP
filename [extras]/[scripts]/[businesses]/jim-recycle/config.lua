@@ -59,7 +59,7 @@ Config = {
 		"can",
 	},
 	DumpItems = {
-		"bottle", "can",'garbage', "walkstick", "bobross", "xboxx", "garbage", "lockpick", "atmkit", "trojan_usb",
+		"bottle", 'garbage', "walkstick", "bobross", "xboxx", "garbage", "lockpick", "atmkit", "trojan_usb",
 		"bluechip", "sandwich", "bread", "metal-bolt", "printerdocument", "weapon_navyrevolver", "diamond_ring", "goldchain", "actionfigure", 
 		"metalscrap", "iphone", "copper", "plastic", "steel", "glass", "iron", "rubber", "aluminium",
 	},
