@@ -4,7 +4,7 @@ Config.VisuallyDamageCars = true   -- true == damage car on spawn | false == no 
 Config.SharedGarages = false       -- true == take any car from any garage | false == only take car from garage stored in
 Config.ClassSystem = false         -- true == restrict vehicles by class | false == any vehicle class in any garage
 Config.FuelResource = 'p2rp-fuel' -- supports any that has a GetFuel() and SetFuel() export
-Config.Warp = false                 -- true == warp player into vehicle | false == vehicle spawns without warping
+Config.Warp = true                 -- true == warp player into vehicle | false == vehicle spawns without warping
 
 -- https://docs.fivem.net/natives/?_0x29439776AAA00A62
 Config.VehicleClass = {
