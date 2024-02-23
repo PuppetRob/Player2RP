@@ -232,7 +232,7 @@ Config.Garages = {
         label = 'Depot Lot',
         takeVehicle = vector3(401.76, -1632.57, 29.29),
         spawnPoint = {
-            vector4(396.55, -1643.93, 28.88, 321.91)
+            vector4(401.04, -1638.33, 29.29, 226.95)
         },
         showBlip = false,
         blipName = 'Depot Lot',
