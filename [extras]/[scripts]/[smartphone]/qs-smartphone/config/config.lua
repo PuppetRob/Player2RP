@@ -51,7 +51,7 @@ Config.ox_inventory = oxHas and 'esx' or false
 Config.codem_inventory = codemHas and 'esx' or false
 
 -- Target script
-Config.Target = false             -- Enable or disable target system
+Config.Target = true             -- Enable or disable target system
 Config.TargetScript = 'qb-target' -- 'ox_target' or 'qb-target' only!
 
 -- Leave it as default if you dont know what you are doing
