@@ -113,6 +113,20 @@ AddEventHandler('rahe-boosting:server:vinScratchSuccessful', function(playerId, 
     })
 end)
 
+QBCore.Functions.CreateUseableItem("boostingtablet", function(source, item)
+    TriggerClientEvent("rahe-boosting:client:openTablet", source)
+end)
+
+QBCore.Functions.CreateUseableItem("hackingdevice", function(source, item)
+    TriggerClientEvent("rahe-boosting:client:hackingDeviceUsed", source)
+end)
+
+QBCore.Functions.CreateUseableItem("gpshackingdevice", function(source, item)
+    TriggerClientEvent("rahe-boosting:client:gpsHackingDeviceUsed", source)
+end)
+
+
+
 -- Function that determines if player is a superuser (is allowed to use the admin panel).
 function isPlayerSuperUser(playerIdentifier, playerId)
     if svConfig.adminPrincipal and IsPlayerAceAllowed(playerId, 'boosting.admin') then
@@ -128,14 +142,3 @@ function isPlayerSuperUser(playerIdentifier, playerId)
     return false
 end
 
-QBCore.Functions.CreateUseableItem("boostingtablet", function(source, item)
-    TriggerClientEvent("rahe-boosting:client:openTablet", source)
-end)
-
-QBCore.Functions.CreateUseableItem("hackingdevice", function(source, item)
-    TriggerClientEvent("rahe-boosting:client:hackingDeviceUsed", source)
-end)
-
-QBCore.Functions.CreateUseableItem("gpshackingdevice", function(source, item)
-    TriggerClientEvent("rahe-boosting:client:gpsHackingDeviceUsed", source)
-end)
