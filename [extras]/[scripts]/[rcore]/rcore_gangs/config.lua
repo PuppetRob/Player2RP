@@ -80,7 +80,7 @@ Config.GangOptions = {
     robbing = false, -- Enable robbing feature from actions in gang menu
     kidnapping = true, -- Enable kidnapping feature from actions in gang menu
 
-    zipTie = '', -- Optional ziptie item used when kidnapping is enabled
+    zipTie = 'ziptie', -- Optional ziptie item used when kidnapping is enabled
     paperBag = '', -- Optional paper bag item used when kidnapping is enabled
 
     maxMembers = 8, -- Maximum number of players in a gang
