@@ -37,7 +37,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250 , IncreasePerLVL = 1,
+                Pay = 1500 , IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -125,7 +125,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -214,7 +214,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1200, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -265,7 +265,7 @@ job = {
         },
     },
     --- /// DONE \\\ ---
-    { 
+   --[[  { 
         [1] = {jobs = "Trailer Clean",img =  "./img/trailer.png",img2 =  "./img/trailer2.png",info = "You get paid to clean trailers for the city's truckers. It's pretty well paid, actually." },
           
         [2] = {      
@@ -303,7 +303,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -352,7 +352,7 @@ job = {
             },
           
         },
-    },
+    }, ]]
     --- /// DONE \\\ ---
     { 
         [1] = {jobs = "Oil Logistics",img =  "./img/oil.png",img2 =  "./img/oil2.png",info = "You have to collect the barrels of Oil from the different Oil Extraction Stations. It is an important job." },
@@ -391,7 +391,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -480,7 +480,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -567,7 +567,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -654,7 +654,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1200, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -746,7 +746,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -835,7 +835,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1200, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -922,7 +922,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -1009,7 +1009,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -1099,7 +1099,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
@@ -1188,7 +1188,7 @@ job = {
             [1] = {
                 Pay_Advanced = false,
 
-                Pay = 1250, IncreasePerLVL = 1,
+                Pay = 1500, IncreasePerLVL = 1,
 
                 PayPerLVL = {
                     [0] = 100,
