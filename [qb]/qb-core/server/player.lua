@@ -132,6 +132,13 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['jobrep']['trucker'] = PlayerData.metadata['jobrep']['trucker'] or 0
     PlayerData.metadata['jobrep']['taxi'] = PlayerData.metadata['jobrep']['taxi'] or 0
     PlayerData.metadata['jobrep']['hotdog'] = PlayerData.metadata['jobrep']['hotdog'] or 0
+    PlayerData.metadata['hunterrep'] = PlayerData.metadata['hunterrep'] or 0
+    PlayerData.metadata['hunterxp'] = PlayerData.metadata['hunterxp'] or 0
+	PlayerData.metadata['skinning'] = PlayerData.metadata['skinning'] or 0
+    PlayerData.metadata['skinningxp'] = PlayerData.metadata['skinningxp'] or 0
+    PlayerData.metadata['legendary1'] = PlayerData.metadata['legendary1'] or 0
+    PlayerData.metadata['legendary2'] = PlayerData.metadata['legendary2'] or 0
+    PlayerData.metadata['legendary3'] = PlayerData.metadata['legendary3'] or 0
     PlayerData.metadata['callsign'] = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
     PlayerData.metadata['fingerprint'] = PlayerData.metadata['fingerprint'] or QBCore.Player.CreateFingerId()
     PlayerData.metadata['walletid'] = PlayerData.metadata['walletid'] or QBCore.Player.CreateWalletId()

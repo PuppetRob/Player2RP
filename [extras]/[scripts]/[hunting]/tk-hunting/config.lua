@@ -14,14 +14,14 @@ Config.LevelFourCircles = math.random(1,3)
 Config.VehicleSpawnLocation = vector4(-700.1, 5775.46, 17.33, 61.25)
 Config.FuelScript = 'p2rp-fuel'
 Config.Vehicle = 'blazer'
-Config.InventoryScript = 'lj-inventory'
+Config.InventoryScript = 'qb-inventory'
 
 Config.RemoveRentingWeapon = false
 Config.RemoveRentingVehicle = false
 Config.RepeatableLegendaryHunts = true
 
 --Limiting Income Settings
-Config.LimitIncome = false
+Config.LimitIncome = true
 Config.IncomeLimit = 20000
 
 
@@ -33,7 +33,7 @@ Config.ShowIllegalBlip = true -- Only Shows While Hunting
 Config.IllegalHuntingZones = {
     {
         ["coords"] = vector3(-397.69, -840.19, 31.62),
-        ["Radius"] = 2000.0,
+        ["Radius"] = 4500.0,
     },
 }
 
@@ -48,7 +48,7 @@ Config.Peds = {
     },
     {
         model = 'ig_hunter',
-        coords = vector4(161.99, 6636.51, 30.56, 135.31),
+        coords = vector4(110.88, 6370.81, 31.38, 27.41),
     },
 }
 
