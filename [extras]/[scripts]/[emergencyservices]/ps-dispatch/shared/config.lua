@@ -10,16 +10,17 @@ Config.AlertTime = 5     -- Specify the duration for the alert to appear on the 
 Config.MaxCallList = 25 -- maximum dispatch calls in dispatch list
 Config.OnDutyOnly = true -- Set true if only on duty players can see the alert
 Config.Jobs = { -- Job Types that can access the dispatch menu
-    "leo",
-    "ems"
+    "lspd",
+    "ems",
+    "bcso"
 }
 
 Config.DefaultAlertsDelay = 5 -- Delay between each default alert, prevent spamming
 Config.DefaultAlerts = {
-    Speeding = true,
+    Speeding = false,
     Shooting = true,
     Autotheft = true,
-    Melee = true,
+    Melee = false,
     PlayerDowned = true,
     Explosion = true
 }
@@ -27,13 +28,13 @@ Config.DefaultAlerts = {
 Config.MinOffset = 1
 Config.MaxOffset = 120
 
-Config.PhoneRequired = true -- Set true if only can use 911/311 command when got a phone on inventory.
+Config.PhoneRequired = false -- Set true if only can use 911/311 command when got a phone on inventory.
 Config.PhoneItems = { -- Add the entire list of your phone items.
     "phone",
 }
 
 -- Locations for the Hunting Zones and No Dispatch Zones( Label: Name of Blip // Radius: Radius of the Alert and Blip)
-Config.EnableHuntingBlip = true
+Config.EnableHuntingBlip = false
 
 Config.Locations = {
     ["HuntingZones"] = {
