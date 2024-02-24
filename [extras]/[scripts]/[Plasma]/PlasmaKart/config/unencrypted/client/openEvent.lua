@@ -13,7 +13,7 @@ AddEventHandler("PlasmaKart:SpawnedKartFunction", function(kart,kartPlate)
 	
 	aff("SpawnedKartFunction")
 	
-	exports['LegacyFuel']:SetFuel(vehicle, 100.0)
+	exports['p2rp-fuel']:SetFuel(vehicle, 100.0)
 	SetEntityInvincible(vehicle,true)
 
 	SetVehicleFuelLevel(kart, 100.0)
@@ -28,7 +28,7 @@ RegisterNetEvent("PlasmaKart:ExtCpPassed")
 AddEventHandler("PlasmaKart:ExtCpPassed", function(currentShop,curCP,curLap,kart)
 	aff("ExtCpPassed")
 	
-	exports['LegacyFuel']:SetFuel(vehicle, 100.0)
+	exports['p2rp-fuel']:SetFuel(vehicle, 100.0)
 	-- SetEntityInvincible(vehicle,true)
 
 	SetVehicleFuelLevel(kart, 100.0)

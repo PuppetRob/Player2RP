@@ -12,7 +12,7 @@ Config.LevelFourSeconds = math.random(9,12)
 Config.LevelFourCircles = math.random(1,3)
 
 Config.VehicleSpawnLocation = vector4(-700.1, 5775.46, 17.33, 61.25)
-Config.FuelScript = 'LegacyFuel'
+Config.FuelScript = 'p2rp-fuel'
 Config.Vehicle = 'blazer'
 Config.InventoryScript = 'lj-inventory'
 

@@ -1,6 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
-author 'https://www.github.com/CodineDev' -- Base Refueling System: (https://github.com/InZidiuZ/LegacyFuel), other code by Codine (https://www.github.com/CodineDev).
+author 'https://www.github.com/CodineDev' -- Base Refueling System: (https://github.com/InZidiuZ/p2rp-fuel), other code by Codine (https://www.github.com/CodineDev).
 description 'cdn-fuel'
 version '2.1.9'
 
