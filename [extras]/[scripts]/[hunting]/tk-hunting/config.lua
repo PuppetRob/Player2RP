@@ -48,7 +48,7 @@ Config.Peds = {
     },
     {
         model = 'ig_hunter',
-        coords = vector4(110.88, 6370.81, 31.38, 27.41),
+        coords = vector4(110.88, 6370.81, 30.38, 27.41),
     },
 }
 
