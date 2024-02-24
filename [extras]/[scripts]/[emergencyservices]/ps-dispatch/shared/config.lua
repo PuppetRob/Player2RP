@@ -11,7 +11,8 @@ Config.MaxCallList = 25 -- maximum dispatch calls in dispatch list
 Config.OnDutyOnly = true -- Set true if only on duty players can see the alert
 Config.Jobs = { -- Job Types that can access the dispatch menu
     "lspd",
-    "ems",
+    "ambulance",
+    "firefighter",
     "bcso"
 }
 
