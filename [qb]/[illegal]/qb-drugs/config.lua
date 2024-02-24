@@ -134,41 +134,29 @@ Config = {
     MinimumDrugSalePolice = 0,
 
     DrugsPrice = {
-        ['weed_whitewidow'] = {
-            min = 15,
-            max = 24,
-        },
-        ['weed_ogkush'] = {
-            min = 15,
-            max = 28,
-        },
-        ['weed_skunk'] = {
-            min = 15,
-            max = 31,
-        },
-        ['weed_amnesia'] = {
-            min = 18,
-            max = 34,
-        },
-        ['weed_purplehaze'] = {
-            min = 18,
-            max = 37,
-        },
-        ['weed_ak47'] = {
-            min = 18,
-            max = 40,
-        },
-        ['crack_baggy'] = {
-            min = 18,
-            max = 34,
+        ['weed_bag'] = {
+            min = 60,
+            max = 60,
         },
         ['cokebaggy'] = {
-            min = 18,
-            max = 37,
+            min = 80,
+            max = 80,
         },
         ['meth'] = {
-            min = 18,
-            max = 40,
+            min = 100,
+            max = 100,
+        },
+        ['acid_hit'] = {
+            min = 110,
+            max = 110,
+        },
+        ['extascy_pill'] = {
+            min = 140,
+            max = 140,
+        },
+        ['heroin'] = {
+            min = 160,
+            max = 160,
         },
     },
 
