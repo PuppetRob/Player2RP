@@ -1187,7 +1187,7 @@ Config.VehicleColors = {
         { index = 7, label = 'Dark Grey' },
         { index = 8, label = 'Rocky Grey' },
         { index = 9, label = 'Grey Night' },
-        { index = 10, label = 'Aluminum' },
+        { index = 10, label = 'aluminium' },
         { index = 13, label = 'Matte Grey' },
         { index = 14, label = 'Light Grey' },
         { index = 17, label = 'Asphalt Grey' },
@@ -1306,7 +1306,7 @@ Config.VehicleColors = {
     silver = {
         { index = 117, label = 'Brushed Chrome' },
         { index = 118, label = 'Black Chrome' },
-        { index = 119, label = 'Brushed Aluminum' },
+        { index = 119, label = 'Brushed aluminium' },
         { index = 120, label = 'Chrome' }
     },
     gold = {

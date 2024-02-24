@@ -132,14 +132,14 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         },
         {
             id = 5,
-            header = "Aluminum Cans",
-            txt = "Trade 50 Aluminum Cans for 30 Aluminium",
+            header = "aluminium Cans",
+            txt = "Trade 50 aluminium Cans for 30 Aluminium",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
                 args = {
                     id = 5,
-                    item = 'aluminumcan'
+                    item = 'aluminiumcan'
                 }
             }
         },

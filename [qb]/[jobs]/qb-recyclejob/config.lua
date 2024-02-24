@@ -59,7 +59,7 @@ Config = {
 		[2] = "plastic",
 		[3] = "copper",
 		[4] = "iron",
-		[5] = "aluminum",
+		[5] = "aluminium",
 		[6] = "steel",
 		[7] = "glass",
 	}

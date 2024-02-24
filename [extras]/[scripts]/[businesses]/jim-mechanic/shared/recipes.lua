@@ -51,7 +51,7 @@ Crafting = {
 				["plastic"] = 1, },
 				["amount"] = 1,
 			},
-			{ ["paintcan"] = { ["aluminum"] = 1, },
+			{ ["paintcan"] = { ["aluminium"] = 1, },
 				["amount"] = 1,
 			},
 

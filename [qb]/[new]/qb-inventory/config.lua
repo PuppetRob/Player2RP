@@ -81,7 +81,7 @@ Config.CraftingItems = {
         costs = {
             ["metalscrap"] = 30,
             ["plastic"] = 45,
-            ["aluminum"] = 28,
+            ["aluminium"] = 28,
         },
         type = "item",
         slot = 3,
@@ -109,7 +109,7 @@ Config.CraftingItems = {
         costs = {
             ["metalscrap"] = 10,
             ["plastic"] = 50,
-            ["aluminum"] = 30,
+            ["aluminium"] = 30,
             ["iron"] = 17,
             ["electronickit"] = 2,
         },
@@ -125,7 +125,7 @@ Config.CraftingItems = {
         costs = {
             ["metalscrap"] = 36,
             ["steel"] = 24,
-            ["aluminum"] = 28,
+            ["aluminium"] = 28,
         },
         type = "item",
         slot = 6,
@@ -174,11 +174,11 @@ Config.CraftingItems = {
         points = 9,
     },
     [10] = {
-        name = "aluminumoxide",
+        name = "aluminiumoxide",
         amount = 50,
         info = {},
         costs = {
-            ["aluminum"] = 60,
+            ["aluminium"] = 60,
             ["glass"] = 30,
         },
         type = "item",
@@ -194,7 +194,7 @@ Config.CraftingItems = {
             ["iron"] = 33,
             ["steel"] = 44,
             ["plastic"] = 55,
-            ["aluminum"] = 22,
+            ["aluminium"] = 22,
         },
         type = "item",
         slot = 11,

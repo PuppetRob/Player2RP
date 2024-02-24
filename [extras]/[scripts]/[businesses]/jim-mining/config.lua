@@ -300,7 +300,7 @@ Crafting = {
 		{ ["silveringot"] = { ["silver_ring"] = 4 } },
 		{ ["iron"] = { ["ironore"] = 1 } },
 		{ ["steel"] = { ["ironore"] = 1, ["carbon"] = 1 } },
-		{ ["aluminum"] = { ["can"] = 2, }, ['amount'] = 3 },
+		{ ["aluminium"] = { ["can"] = 2, }, ['amount'] = 3 },
 		{ ["glass"] = { ["bottle"] = 2, }, ['amount'] = 2 },
 	},
 	GemCut = {

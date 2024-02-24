@@ -4,7 +4,7 @@ Config.Items = {
     "metalscrap",
     "copper",
     "iron",
-    "aluminum",
+    "aluminium",
     "steel",
 }
 

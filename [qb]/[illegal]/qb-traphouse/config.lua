@@ -65,8 +65,8 @@ Config.AllowedItems = {
         wait = 500,
         reward = 2,
     },
-    ['aluminum'] = {
-        name = 'aluminum',
+    ['aluminium'] = {
+        name = 'aluminium',
         wait = 500,
         reward = 2,
     },

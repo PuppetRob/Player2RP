@@ -13,7 +13,7 @@ Config.StartLoc = vector4(752.4, -1206.41, 24.76, 96.32)  -- Starting Location w
 
 Config.WheelItems = {      -- Items you get when chopping a wheel
     [1] = {
-        ["item"] = "aluminum",
+        ["item"] = "aluminium",
         ["amount"] = math.random(10, 20)
     },
     [2] = {
@@ -44,7 +44,7 @@ Config.DoorItems = {    -- Items you get when chopping a door (also includes the
         ["amount"] = math.random(10, 20)
     },
     [5] = {
-        ["item"] = "aluminum",
+        ["item"] = "aluminium",
         ["amount"] = math.random(10, 20)
     },
 }
