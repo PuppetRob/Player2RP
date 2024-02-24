@@ -39,7 +39,7 @@ Config.defaultRecipes = {
         components = {
             {item = "metalscrap", label = "Metalscrap", amount = 6, image = "https://cfx-nui-qb-inventory/html/images/metalscrap.png"},
             {item = "steel", label = "Steel", amount = 6, image = "https://cfx-nui-qb-inventory/html/images/steel.png"},
-            {item = "aluminium", label = "Aluminium", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
         }
     },
 
@@ -53,13 +53,13 @@ Config.defaultRecipes = {
         components = {
             {item = "metalscrap", label = "Metalscrap", amount = 6, image = "https://cfx-nui-qb-inventory/html/images/metalscrap.png"},
             {item = "steel", label = "Steel", amount = 6, image = "https://cfx-nui-qb-inventory/html/images/steel.png"},
-            {item = "aluminium", label = "Aluminium", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
         }
     },
 
     ["aluminium-spring"] = {
         item = "aluminium-spring",
-        label = "Aluminium Spring",
+        label = "aluminium Spring",
         image = "https://cfx-nui-qb-inventory/html/images/aluminium-spring.png", 
         isAttachment = false,
         threshold = 20,
@@ -67,7 +67,7 @@ Config.defaultRecipes = {
         components = {
             {item = "metalscrap", label = "Metalscrap", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/metalscrap.png"},
             {item = "steel", label = "Steel", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/steel.png"},
-            {item = "aluminium", label = "Aluminium", amount = 12, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 12, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
         }
     },
 
@@ -117,7 +117,7 @@ Config.defaultRecipes = {
         components = {
             {item = "metalscrap", label = "Metalscrap", amount = 12, image = "https://cfx-nui-qb-inventory/html/images/metalscrap.png"},
             {item = "steel", label = "Steel", amount = 18, image = "https://cfx-nui-qb-inventory/html/images/steel.png"},
-            {item = "aluminium", label = "Aluminium", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
         }
     },
 
@@ -172,7 +172,7 @@ Config.defaultRecipes = {
         points = 1,
         components = {
             {item = "metalscrap", label = "Metal Scrap", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/metalscrap.png"},
-            {item = "aluminium", label = "Aluminium", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
             {item = "steel_plate", label = "Steel Plate", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/steel-plate.png"},
             {item = "goldplate", label = "Gold Plate", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/goldplate.png"},
         }
@@ -186,7 +186,7 @@ Config.defaultRecipes = {
         threshold = 80,
         points = 1,
         components = {
-            {item = "aluminium", label = "Aluminium", amount = 30, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 30, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
             {item = "glass", label = "Glass", amount = 30, image = "https://cfx-nui-qb-inventory/html/images/glass.png"},
         }
     },
@@ -232,7 +232,7 @@ Config.defaultRecipes = {
             {item = "metal-bolt", label = "Metal Bolt", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/metal-bolt.png"},
             {item = "copper", label = "Copper", amount = 18, image = "https://cfx-nui-qb-inventory/html/images/copper.png"},
             {item = "rubber", label = "Rubber", amount = 12, image = "https://cfx-nui-qb-inventory/html/images/rubber.png"},
-            {item = "aluminium-spring", label = "Aluminium Spring", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/aluminium-spring.png"},
+            {item = "aluminium-spring", label = "aluminium Spring", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/aluminium-spring.png"},
             {item = "plastic", label = "Plastic", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/plastic.png"},
         }
     },
@@ -655,7 +655,7 @@ Config.defaultRecipes = {
             {item = "metal-screw", label = "Metal Screw", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/metal-screw.png"},
             {item = "steel_plate", label = "Steel Plate", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/steel-plate.png"},
             {item = "rubber", label = "Rubber", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/rubber.png"},
-            {item = "aluminium", label = "Aluminium", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
             {item = "metalscrap", label = "Metal Scrap", amount = 8, image = "https://cfx-nui-qb-inventory/html/images/metalscrap.png"},
             
         }
@@ -723,7 +723,7 @@ Config.blueprintRecipes = {
             {item = "electronickit", label = "Electronic Kit", amount = 1, image = "electronickit.png"},
             {item = "samsungphone", label = "Samsung Phone", amount = 1, image = "samsungphone.png"},
             {item = "metal-screw", label = "Metal Screw", amount = 4, image = "metal-screw.png"},
-            {item = "aluminium", label = "Aluminium", amount = 8, image = "aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 8, image = "aluminium.png"},
             {item = "goldplate", label = "Gold Plate", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/goldplate.png"},
         },
         blueprintImage = "https://cfx-nui-qb-inventory/html/images/blueprint.png" --Additional Value Required
@@ -1004,7 +1004,7 @@ Config.blueprintRecipes = {
         isAttachment = false,
         points = 1,  
         components = {
-            {item = "aluminium", label = "Aluminium", amount = 20, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 20, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
             {item = "metal-screw", label = "Metal Screw", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/metal-screw.png"},
             {item = "steel_plate", label = "Steel Plate", amount = 1, image = "https://cfx-nui-qb-inventory/html/images/steel-plate.png"},
         },
@@ -1018,7 +1018,7 @@ Config.blueprintRecipes = {
         isAttachment = false,
         points = 1,  
         components = {
-            {item = "aluminium", label = "Aluminium", amount = 20, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
+            {item = "aluminium", label = "aluminium", amount = 20, image = "https://cfx-nui-qb-inventory/html/images/aluminium.png"},
             {item = "iron", label = "Iron", amount = 20, image = "https://cfx-nui-qb-inventory/html/images/iron.png"},
             {item = "metal-bolt", label = "Metal Bolt", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/metal-bolt.png"},
             {item = "steel_plate", label = "Steel Plate", amount = 2, image = "https://cfx-nui-qb-inventory/html/images/steel-plate.png"},
