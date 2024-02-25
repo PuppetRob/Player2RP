@@ -487,15 +487,6 @@ Config.Products = {
             slot = 3,
         },
         [4] = {
-            name = "weapon_stungun",
-            price = 5500,
-            amount = 5,
-            info = {},
-            type = "item",
-            slot = 4,
-            requiresLicense = false
-        },
-        [5] = {
             name = "pistol_ammo",
             price = 450,
             amount = 100,
@@ -503,7 +494,7 @@ Config.Products = {
             type = "item",
             slot = 5,
         },
-        [6] = {
+        [5] = {
             name = "weapon_vintagepistol",
             price = 6500,
             amount = 5,
@@ -512,7 +503,7 @@ Config.Products = {
             slot = 6,
             requiresLicense = true
         },
-        [7] = {
+        [6] = {
             name = "weapon_pistol",
             price = 8500,
             amount = 5,
@@ -521,7 +512,7 @@ Config.Products = {
             slot = 7,
             requiresLicense = true
         },
-        [8] = {
+        [7] = {
             name = "weapon_snspistol",
             price = 7500,
             amount = 5,
@@ -530,7 +521,7 @@ Config.Products = {
             slot = 8,
             requiresLicense = true
         },
-        [9] = {
+        [8] = {
             name = "weapon_revolver",
             price = 8500,
             amount = 5,
@@ -539,7 +530,7 @@ Config.Products = {
             slot = 9,
             requiresLicense = true
         },
-        [10] = {
+        [9] = {
             name = "weapon_snspistol_mk2",
             price = 8000,
             amount = 5,
