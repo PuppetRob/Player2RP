@@ -39,51 +39,92 @@ Config.AuthorizedVehicles = {
 
 	-- Recruit
 	[0] = {
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	},
 
 	-- Firefighter
 	[1] = {
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	},
 
      -- Shift Leader
     [2] = {
-        ["mmladder"] = "Ladder Truck",
-        ["slrr"] = "Small Ladder Truck",
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	},
 
     -- Lieutenant
     [3] = {
-        ["mmladder"] = "Ladder Truck",
-        ["slrr"] = "Small Ladder Truck",
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	},
 
 	-- Captain
 	[4] = {
-        ["mmladder"] = "Ladder Truck",
-        ["slrr"] = "Small Ladder Truck",
-        ["bulldog"] = "Bulldog",
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	},
 	-- Assistant Chief
 	[5] = {
-        ["mmladder"] = "Ladder Truck",
-        ["slrr"] = "Small Ladder Truck",
-        ["bulldog"] = "Bulldog",
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	},
     
     -- Fire Chief
 	[6] = {
-        ["mmladder"] = "Ladder Truck",
-        ["slrr"] = "Small Ladder Truck",
-		["16fireec"] = "Fire Tesla",
-        ["bulldog"] = "Bulldog",
-        ["fdsilverado"] = "Silverado",
-        ["TCFiretruck"] = "Fire Truck",
+        ["23fambo"] = "Ambulance",
+        ["23fdems16utility"] = "16 Utility",
+        ["23fdems18suv"] = "18 SUV",
+        ["23fdems18utility"] = "18 Utility",
+        ["23fdems21suvsl"] = "21 SUV",
+        ["23fskid"] = "Rescue Truck",
+        ["21fireeng"] = "Fire Engine",
+        ["21fireladder"] = "Ladder Truck",
+        ["21firerescue"] = "Fire Rescuse",
 	}, 
 }
 

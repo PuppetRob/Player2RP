@@ -3,7 +3,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target in
 Config.MinimalDoctors = 2                                    -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1                                       -- Cooldown between doctor calls allowed, in minutes
 Config.WipeInventoryOnRespawn = false                         -- Enable or disable removing all the players items when they respawn at the hospital
-Config.Helicopter = 'polmav'                                 -- Helicopter model that players with the ambulance job can use
+Config.Helicopter = 'amrheli'                                 -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 500                                       -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 240                                       -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.ReviveInterval = 360                                  -- How long the timer is for players to revive a player in laststand
@@ -93,9 +93,56 @@ Config.Locations = {                -- Edit the various interaction points for p
 }
 
 Config.AuthorizedVehicles = { -- Grade is key, don't add same vehicle in multiple grades. Higher rank can see lower
-    [0] = {
-        ['ambulance'] = 'Ambulance'
-    }
+[0] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+},
+[1] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+},
+[2] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+},
+[3] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+},
+[4] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+},
+[5] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+},
+[6] = {
+    ['23r2ambo'] = 'Ambulance',
+    ['23rambo'] = 'Ambulance',
+    ['amr13utility'] = 'EMS Utility',
+    ['amr18suv'] = 'EMS SUV',
+    ['amr2500'] = 'EMS 250',
+}
+
 }
 
 Config.Items = { -- Grade is key, don't add same item in multiple grades. Higher rank can see lower
