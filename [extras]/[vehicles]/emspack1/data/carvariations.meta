@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2020 Ford 23fambo - GeorgieMoon -->
+<CVehicleModelInfoVariation>
+  <variationData>
+<Item>
+      <modelName>23r2ambo</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>617_23r2ambo_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="680"/>
+      <sirenSettings value="8224"/>
+    </Item>
+<Item>
+      <modelName>23r2ambo2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>617_23r2ambo_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="680"/>
+      <sirenSettings value="8225"/>
+    </Item>
+<Item>
+      <modelName>23rambo</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>614_23rambo_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="680"/>
+      <sirenSettings value="8246"/>
+    </Item>
+<Item>
+      <modelName>23rambo2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>614_23rambo_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="680"/>
+      <sirenSettings value="8297"/>
+    </Item>
+<Item>
+      <modelName>23fambo</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>616_23fambo_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="680"/>
+      <sirenSettings value="8295"/>
+    </Item>
+<Item>
+      <modelName>23fambo2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>616_23fambo_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="680"/>
+      <sirenSettings value="8296"/>
+    </Item>
+<Item>
+      <modelName>23ambostretcher</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="0"/>
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>
