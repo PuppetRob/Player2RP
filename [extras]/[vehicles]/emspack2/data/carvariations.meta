@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RedSaint Modifications LLC -->
+<CVehicleModelInfoVariation>
+  <variationData>
+<Item>
+      <modelName>23fdems21suv</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>902_23fdems21suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="5578"/>
+    </Item>
+<Item>
+      <modelName>23fdems21suvsl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>902_23fdems21suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="5579"/>
+    </Item>
+<Item>
+      <modelName>23fdems3500</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>899_23fdems3500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="739"/>
+      <sirenSettings value="5575"/>
+    </Item>
+<Item>
+      <modelName>23fdems3500sl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>899_23fdems3500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="739"/>
+      <sirenSettings value="5576"/>
+    </Item>
+<Item>
+      <modelName>23fdems2500</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>898_23fdems2500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="738"/>
+      <sirenSettings value="5573"/>
+    </Item>
+<Item>
+      <modelName>23fdems2500sl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>898_23fdems2500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="738"/>
+      <sirenSettings value="5574"/>
+    </Item>
+<Item>
+      <modelName>23fdems1500</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>897_23fdems1500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="737"/>
+      <sirenSettings value="5571"/>
+    </Item>
+<Item>
+      <modelName>23fdems1500sl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>897_23fdems1500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="737"/>
+      <sirenSettings value="5572"/>
+    </Item>
+	<Item>
+      <modelName>23fdems18suv</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>893_23fdems18suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="733"/>
+      <sirenSettings value="5861"/>
+    </Item>
+<Item>
+      <modelName>23fdems18suvsl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>893_23fdems18suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="733"/>
+      <sirenSettings value="5862"/>
+    </Item>
+<Item>
+      <modelName>23fdems18utility</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>894_23fdems18utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="732"/>
+      <sirenSettings value="5863"/>
+    </Item>
+<Item>
+      <modelName>23fdems18utilitysl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>894_23fdems18utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="732"/>
+      <sirenSettings value="5864"/>
+    </Item>
+<Item>
+      <modelName>23fdems20utility</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>895_23fdems20utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="734"/>
+      <sirenSettings value="5865"/>
+    </Item>
+<Item>
+      <modelName>23fdems20utilitysl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>895_23fdems20utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="734"/>
+      <sirenSettings value="5866"/>
+    </Item>
+<Item>
+      <modelName>23fdems16utility</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>896_23fdems16utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="735"/>
+      <sirenSettings value="5867"/>
+    </Item>
+<Item>
+      <modelName>23fdems16utilitysl</modelName>
+   <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            70
+            0
+            0
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>896_23fdems16utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="735"/>
+      <sirenSettings value="5868"/>
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>
