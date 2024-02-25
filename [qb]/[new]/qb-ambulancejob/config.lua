@@ -158,6 +158,7 @@ Config.Items = { -- Grade is key, don't add same item in multiple grades. Higher
         { name = 'weapon_stungun',       price = 0, amount = 10, info = {}, type = 'item' },
         { name = 'weapon_flashlight',       price = 0, amount = 10, info = {}, type = 'item' },
         { name = 'emsbag',                   price = 0, amount = 10, info = {}, type = 'item' },
+        { name = 'handcuffs',                   price = 0, amount = 10, info = {}, type = 'item' },
     }
 }
 
