@@ -78,6 +78,17 @@ Config.Blips = {
         offset = false,
         flash = false
     },
+    ['AtmRobbery'] = {
+        radius = 0,
+        sprite = 110,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
     ['shooting'] = {
         radius = 0,
         sprite = 110,

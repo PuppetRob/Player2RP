@@ -786,3 +786,331 @@ local function SignRobbery()
     TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
 end
 exports('SignRobbery', SignRobbery)
+
+---------------------------
+---- CUSTOM ALERTS -------
+---------------------------
+
+---------------------------
+---- SUBMARINE -------
+---------------------------
+
+local function SubmarineRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "submarinerobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z 
+        },
+        dispatchMessage = _U('submarinerobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('SubmarineRobbery', SubmarineRobbery)
+
+
+---------------------------
+---- AIRCRAFT CARRIER -------
+---------------------------
+
+local function CarrierRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "carrierrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('carrierrobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('CarrierRobbery', CarrierRobbery)
+
+---------------------------
+---- ATM ROBBERY -------
+---------------------------
+
+local function AtmRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "atmrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('atmrobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+
+exports('AtmRobbery', AtmRobbery)
+
+---------------------------
+---- TECHSTORE -------
+---------------------------
+
+local function TechStore()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "techstore", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('techstore'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('TechStore', TechStore)
+
+---------------------------
+---- AMMUNATION -------
+---------------------------
+
+local function AmmunationRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "ammunationrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('ammunationrobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('AmmunationRobbery', AmmunationRobbery)
+
+---------------------------
+---- FIB -------
+---------------------------
+
+local function FibRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "fibrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('fibrobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('FibRobbery', FibRobbery)
+
+---------------------------
+---- GUNS -------
+---------------------------
+
+local function GunRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "gunrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('gunrobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('GunRobbery', GunRobbery)
+
+---------------------------
+---- OXY -------
+---------------------------
+
+local function OxyDeal()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "oxydeal", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-13",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('oxydeal'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('OxyDeal', OxyDeal)
+
+---------------------------
+---- WEAPON HEIST -------
+---------------------------
+
+local function WeaponRobbery()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "weaponrobbery", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('weaponrobbery'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('WeaponRobbery', WeaponRobbery)
+
+---------------------------
+---- WEAPON HEIST FAIL -------
+---------------------------
+
+local function WeaponRobberyF()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "weaponrobberyf", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('weaponrobberyf'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('WeaponRobberyF', WeaponRobberyF)
+
+---------------------------
+---- BURNER PHONE -------
+---------------------------
+
+local function BurnerPhone(coords, tenCode, message, policejobs)
+
+    local currentPos = coords
+    local locationInfo = getStreetandZone(currentPos)
+    local gender = GetPedGender()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "burnerphone",
+        dispatchCode = "10-90",
+        firstStreet = locationInfo,
+        gender = gender,
+        camId = 0,
+        model = nil,
+        plate = nil,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('burnerphone'), -- message
+        job = {"leo"} -- jobs that will get the alerts
+    })
+end 
+exports('BurnerPhone', BurnerPhone)
+
