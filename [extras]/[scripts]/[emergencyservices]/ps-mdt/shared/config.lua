@@ -19,52 +19,34 @@ Config.QBBankingUse = false
 -- Set up your inventory to automatically retrieve images when a weapon is registered at a weapon shop or self-registered.
 -- If you're utilizing lj-inventory's latest version from GitHub, no further modifications are necessary. 
 -- However, if you're using a different inventory system, please refer to the "Inventory Edit | Automatic Add Weapons with images" section in ps-mdt's README.
-Config.InventoryForWeaponsImages = "lj-inventory"
+Config.InventoryForWeaponsImages = "qb-inventory"
 
 -- "p2rp-fuel", "lj-fuel", "ps-fuel"
 Config.Fuel = "ps-fuel"
 
 -- Google Docs Link
 Config.sopLink = {
-    ['police'] = '',
-    ['ambulance'] = '',
+    ['lspd'] = '',
     ['bcso'] = '',
-    ['doj'] = '',
-    ['sast'] = '',
-    ['sasp'] = '',
-    ['doc'] = '',
-    ['lssd'] = '',
-    ['sapr'] = '',
+    ['ambulance'] = '',
+    ['firefighter'] = '',
 }
 
 -- Google Docs Link
 Config.RosterLink = {
-    ['police'] = '',
-    ['ambulance'] = '',
+    ['lspd'] = '',
     ['bcso'] = '',
-    ['doj'] = '',
-    ['sast'] = '',
-    ['sasp'] = '',
-    ['doc'] = '',
-    ['lssd'] = '',
-    ['sapr'] = '',	
+    ['ambulance'] = '',
+    ['firefighter'] = '',
 }
 
 Config.PoliceJobs = {
-    ['police'] = true,
     ['lspd'] = true,
     ['bcso'] = true,
-    ['sast'] = true,
-    ['sasp'] = true,
-    ['doc'] = true,
-    ['lssd'] = true,
-    ['sapr'] = true,
-    ['pa'] = true
 }
 
 Config.AmbulanceJobs = {
-    ['ambulance'] = true,
-    ['doctor'] = true
+    ['ambulance'] = true
 }
 
 Config.DojJobs = {
@@ -76,13 +58,12 @@ Config.DojJobs = {
 -- If the impound locations are modified in qb-policejob, the changes must also be implemented here to ensure consistency.
 
 Config.ImpoundLocations = {
-    [1] = vector4(436.68, -1007.42, 27.32, 180.0),
-    [2] = vector4(-436.14, 5982.63, 31.34, 136.0),
+    [1] = vector4(-309.31, 6117.72, 31.52, 308.79),
 }
 
 -- Support for Wraith ARS 2X. 
 
-Config.UseWolfknightRadar = false
+Config.UseWolfknightRadar = true
 Config.WolfknightNotifyTime = 5000 -- How long the notification displays for in milliseconds (30000 = 30 seconds)
 Config.PlateScanForDriversLicense = false -- If true, plate scanner will check if the owner of the scanned vehicle has a drivers license
 
@@ -90,109 +71,61 @@ Config.PlateScanForDriversLicense = false -- If true, plate scanner will check i
 -- Enabling this setting will limit plate checks to only those vehicles that have been used by a player.
 
 Config.LogPerms = {
-	['ambulance'] = {
+	['lspd'] = {
 		[4] = true,
 	},
-	['police'] = {
+	['bcso'] = {
 		[4] = true,
 	},
-    ['bcso'] = {
+    ['ambulance'] = {
 		[4] = true,
 	},
-    ['sast'] = {
-		[4] = true,
-	},
-    ['sasp'] = {
-		[4] = true,
-	},
-    ['sapr'] = {
-		[4] = true,
-	},
-    ['doc'] = {
-		[4] = true,
-	},
-    ['lssd'] = {
+    ['firefighter'] = {
 		[4] = true,
 	},
 }
 
 Config.RemoveIncidentPerms = {
-	['ambulance'] = {
+	['lspd'] = {
 		[4] = true,
 	},
-	['police'] = {
+	['bcso'] = {
 		[4] = true,
 	},
-    ['bcso'] = {
+    ['ambulance'] = {
 		[4] = true,
 	},
-    ['sast'] = {
-		[4] = true,
-	},
-    ['sasp'] = {
-		[4] = true,
-	},
-    ['sapr'] = {
-		[4] = true,
-	},
-    ['doc'] = {
-		[4] = true,
-	},
-    ['lssd'] = {
+    ['firefighter'] = {
 		[4] = true,
 	},
 }
 
 Config.RemoveReportPerms = {
-	['ambulance'] = {
+	['lspd'] = {
 		[4] = true,
 	},
-	['police'] = {
+	['bcso'] = {
 		[4] = true,
 	},
-    ['bcso'] = {
+    ['ambulance'] = {
 		[4] = true,
 	},
-    ['sast'] = {
-		[4] = true,
-	},
-    ['sasp'] = {
-		[4] = true,
-	},
-    ['sapr'] = {
-		[4] = true,
-	},
-    ['doc'] = {
-		[4] = true,
-	},
-    ['lssd'] = {
+    ['firefighter'] = {
 		[4] = true,
 	},
 }
 
 Config.RemoveWeaponsPerms = {
-	['ambulance'] = {
+	['lspd'] = {
 		[4] = true,
 	},
-	['police'] = {
+	['bcso'] = {
 		[4] = true,
 	},
-    ['bcso'] = {
+    ['ambulance'] = {
 		[4] = true,
 	},
-    ['sast'] = {
-		[4] = true,
-	},
-    ['sasp'] = {
-		[4] = true,
-	},
-    ['sapr'] = {
-		[4] = true,
-	},
-    ['doc'] = {
-		[4] = true,
-	},
-    ['lssd'] = {
+    ['firefighter'] = {
 		[4] = true,
 	},
 }
