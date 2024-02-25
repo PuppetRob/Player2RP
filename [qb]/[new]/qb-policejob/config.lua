@@ -42,36 +42,28 @@ Config.Locations = {
         [2] = vector3(382.55, -1596.87, 30.05), -- BCSO Davis
         [3] = vector3(-447.4, 6015.02, 32.29), -- BCSO Paleto 
         [4] = vector3(1831.8, 3680.71, 34.34), -- BCSO Sandy 
-        [5] = vector3(1541.08, 816.47, 77.66), -- SAST HP
-        [6] = vector3(837.31, -1288.56, 28.24), -- SAST LEMESA
-        [7] = vector3(-814.51, 5390.56, 35.87), -- Game Warden
+        [5] = vector3(-814.51, 5390.56, 35.87), -- Game Warden
     },
     ["vehicle"] = {
         [1] = vector4(442.46, -986.46, 25.7, 268.01), -- LSPD MRPD 
         [2] = vector4(374.9, -1631.0, 29.29, 314.3), -- BCSO Davis
         [3] = vector4(-459.72, 6030.1, 31.49, 38.86), -- BCSO Paleto
         [4] = vector4(1822.04, 3684.57, 34.33, 115.49), -- BCSO Sandy
-        [5] = vector4(1549.86, 817.17, 77.18, 235.32), -- SAHP HP
-        [6] = vector4(863.7, -1336.41, 26.06, 100.15), -- SAHP LEMASA
-        [7] = vector4(-801.97, 5401.25, 35.86, 354.0), -- Game Warden
+        [5] = vector4(-801.97, 5401.25, 35.86, 354.0), -- Game Warden
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
         [1] = vector4(440.62, -981.27, 25.7, 87.73), -- MRPD
         [2] = vector4(379.98, -1626.91, 29.29, 313.78), -- BCSO Davis
         [3] = vector4(-475.29, 6031.22, 31.34, 232.08), -- BCSO Paleto
         [4] = vector4(1858.31, 3693.36, 33.87, 205.3), -- BCSO Sandy
-        [5] = vector4(1555.95, 816.98, 77.14, 188.61), -- SAHP HP
-        [6] = vector4(861.34, -1342.92, 26.03, 86.94), -- SAHP LEMASA
-        [7] = vector4(-799.1, 5408.81, 33.91, 26.79), -- Game Warden
+        [5] = vector4(-799.1, 5408.81, 33.91, 26.79), -- Game Warden
     },
     ["stash"] = {
         [1] = vector3(460.41, -995.93, 30.69), -- LSPD MRPD
         [2] = vector3(360.02, -1593.51, 25.45), -- BCSO Davis
         [3] = vector3(-436.57, 6009.85, 37.0), -- BCSO Paleto 
         [4] = vector3(1850.04, 3677.09, 38.93), -- BCSO Sandy
-        [5] = vector3(1537.87, 809.52, 77.65), -- SAST HP
-        [6] = vector3(838.39, -1303.35, 28.24), -- SAST LEMESA
-        [7] = vector3(-819.87, 5389.68, 35.87), -- Game Warden
+        [5] = vector3(-819.87, 5389.68, 35.87), -- Game Warden
     },
     ["impound"] = {
         [1] = vector4(-309.31, 6117.72, 31.52, 308.79), -- DAVIS
@@ -79,8 +71,6 @@ Config.Locations = {
     ["helicopter"] = {
         [1] = vector4(449.39, -981.02, 43.69, 139.29), -- LSPD MRPD
         [2] = vector4(-475.56, 5988.84, 31.34, 210.67), -- Paleto BCSO
-        [3] = vector4(1520.79, 781.53, 77.44, 351.72), -- SAST HP
-        [4] = vector4(835.72, -1408.95, 26.14, 293.98), -- SAST
     },
     ["helispawn"] = { -- The numbers [1] must match the numbers in [helicopter]
         [1] = vector4(449.16, -981.23, 43.69, 165.79), -- LSPD
@@ -91,9 +81,7 @@ Config.Locations = {
         [2] = vector3(364.56, -1603.82, 25.45), -- BCSO Davis
         [3] = vector3(-449.34, 6015.22, 37.0), -- BCSO Paleto 
         [4] = vector3(1836.99, 3682.48, 38.93), -- Sandy BCSO
-        [5] = vector3(1550.84, 841.87, 77.66), -- SAST HP
-        [6] = vector3(849.37, -1313.0, 28.24), -- SAST HP
-        [7] = vector3(-820.38, 5399.34, 35.87), -- Game Warden
+        [5] = vector3(-820.38, 5399.34, 35.87), -- Game Warden
     },
     ["fridge"] = {
         [1] = vector3(463.35, -980.21, 30.76), -- MRPD
@@ -104,27 +92,21 @@ Config.Locations = {
         [2] = vector3(356.74, -1598.27, 31.05), -- Davis BCSO
         [3] = vector3(-447.9, 6017.42, 32.29), -- Paleto BCSO
         [4] = vector3(1843.01, 3683.97, 34.33), -- Sandy  BCSO
-        [5] = vector3(1543.5, 821.42, 77.66), -- SAST HP
-        [6] = vector3(843.93, -1301.24, 28.24), -- SAST LEMESA
-        [7] = vector3(-792.24, 5387.23, 35.87), -- Game Warden  
+        [5] = vector3(-792.24, 5387.23, 35.87), -- Game Warden  
     },
     ["fingerprint"] = {
         [1] = vector3(473.15, -1007.5, 26.27), -- MRPD
         [2] = vector3(380.09, -1602.72, 25.45), -- Davis BCSO
         [3] = vector3(-452.62, 5998.02, 27.58), -- Paleto BCSO
-        [3] = vector3(1845.25, 3690.08, 34.34), -- Sandy BCSO
-        [4] = vector3(1555.07, 834.92, 77.66), -- SAST HP
-        [5] = vector3(845.2, -1294.46, 28.24), -- SAST LEMESA
-        [6] = vector3(-801.93, 5388.18, 29.31), -- Game Warden
+        [4] = vector3(1845.25, 3690.08, 34.34), -- Sandy BCSO
+        [5] = vector3(-801.93, 5388.18, 29.31), -- Game Warden
     },
     ["evidence"] = {
         [1] = vector3(448.89, -997.62, 30.69), -- LSPD MRPD
         [2] = vector3(381.34, -1608.97, 30.2), -- BSCO Davis
         [3] = vector3(-452.75, 5999.63, 37.01), -- BCSO Paleto 
         [4] = vector3(1857.42, 3679.83, 34.33), -- BCSO Sandy 
-        [5] = vector3(1547.84, 827.47, 82.13), -- SAST HP
-        [6] = vector3(856.31, -1294.63, 28.24), -- SAST LEMESA
-        [7] = vector3(-832.05, 5399.35, 35.87), -- Game Warden
+        [5] = vector3(-832.05, 5399.35, 35.87), -- Game Warden
     },
     ["stations"] = {
 --[[         [1] = {label = "LSPD MRPD", coords = vector4(441.21, -981.79, 30.69, 358.66)},
@@ -214,87 +196,59 @@ Config.CarExtras = { -- Extra options to be enabled / disabled
 Config.AuthorizedVehicles = {
     -- Garage 1 vehicles (LSPD MRPD )
     [1] = {
-        ["LSPD1"] = {label = "2018 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["LSPD2"] = {label = "2013 Taurus", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["LSPD3"] = {label = "2013 Caprice", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["LSPD5"] = {label = "2011 CVPI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["LSPD8"] = {label = "2020 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["LSPD10"] = {label = "2014 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = nil},
-        ["LSPD13"] = {label = "2018 RAM", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 15},
-        ["SHEL"] = {label = "HEAT Mustang", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = nil},
-        ["mbu2rb"] = {label = "Motorbike Unit", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = nil},
+        ["21c318suv"] = {label = "18 Generic SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c318suvk9"] = {label = "18 Generic SUV K9", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c3202500"] = {label = "Generic 250", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c314sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c316sedan"] = {label = "16 Cruiser", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c318sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c320suv"] = {label = "20 Generic SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c320utility"] = {label = "20 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c320utilityk9"] = {label = "20 Utility K9", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 1000},
+        ["c3bikeu"] = {label = "MBU", ranks = {6, 7, 8, 9}, livery = 1, price = 1000},
+        ["21c318muscle"] = {label = "Heat Mustang", ranks = {6, 7, 8, 9}, livery = 1, price = 1000},
     },
     -- Garage 2 vehicles (BCSO Davis)
     [2] = {
-        ["SPCB1"] = {label = "2018 Taurus", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB2"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB4"] = {label = "2018 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB6"] = {label = "2014 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB9"] = {label = "2016 Impala", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB10"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB11"] = {label = "2013 Caprice", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB12"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["mbu1bb"] = {label = "Motorbike Unit", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["17silvbb"] = {label = "BCSO Silverado", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["mach1bb"] = {label = "HEAT Mustang", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["broncobb"] = {label = "HEAT Bronco", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
+        ["valor11sedan"] = {label = "Vic Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor13sedan"] = {label = "13 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor13suv"] = {label = "14 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor14sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor16sedan"] = {label = "16 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor16utility"] = {label = "16 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor18sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor151500"] = {label = "Generic 150", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor162500"] = {label = "Generic 250", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valormotor"] = {label = "MBU", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
     },
     -- Garage 1 vehicles (BCSO Paleto)
     [3] = {
-        ["SPCB1"] = {label = "2018 Taurus", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB2"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB4"] = {label = "2018 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB6"] = {label = "2014 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB9"] = {label = "2016 Impala", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB10"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB11"] = {label = "2013 Caprice", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB12"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["mbu1bb"] = {label = "Motorbike Unit", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["17silvbb"] = {label = "BCSO Silverado", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["mach1bb"] = {label = "HEAT Mustang", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["broncobb"] = {label = "HEAT Bronco", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
+        ["valor11sedan"] = {label = "Vic Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor13sedan"] = {label = "13 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor13suv"] = {label = "14 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor14sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor16sedan"] = {label = "16 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor16utility"] = {label = "16 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor18sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor151500"] = {label = "Generic 150", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor162500"] = {label = "Generic 250", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valormotor"] = {label = "MBU", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
     },
     -- Garage 1 vehicles (BCSO Sandy)
     [4] = {
-        ["SPCB1"] = {label = "2018 Taurus", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB2"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB4"] = {label = "2018 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 10},
-        ["SPCB6"] = {label = "2014 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB9"] = {label = "2016 Impala", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB10"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB11"] = {label = "2013 Caprice", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["SPCB12"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["mbu1bb"] = {label = "Motorbike Unit", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["17silvbb"] = {label = "BCSO Silverado", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["mach1bb"] = {label = "HEAT Mustang", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-        ["broncobb"] = {label = "HEAT Bronco", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = nil},
-    },
-     -- Garage 1 vehicles (SAHP HP)
-    [5] = {
-        ["SPC1"] = {label = "2018 Taurus", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = 10},
-        ["SPC2"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = 10},
-        ["SPC3"] = {label = "2020 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = 10},
-        ["SPC4"] = {label = "2018 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["SPC6"] = {label = "2014 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["SPC10"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["broncorb"] = {label = "Bronco", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["mbu3rb"] = {label = "Motorbike Unit", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["poldemonrb"] = {label = "HEAT Demon", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-    },   
-     -- Garage 1 vehicles (SAHP LEMASA)
-    [6] = {
-        ["SPC1"] = {label = "2018 Taurus", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = 10},
-        ["SPC2"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = 10},
-        ["SPC3"] = {label = "2020 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = 10},
-        ["SPC4"] = {label = "2018 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["SPC6"] = {label = "2014 Charger", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["SPC10"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["broncorb"] = {label = "Bronco", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["mbu3rb"] = {label = "Motorbike Unit", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
-        ["poldemonrb"] = {label = "HEAT Demon", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8}, livery = 1, price = nil},
+        ["valor11sedan"] = {label = "Vic Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor13sedan"] = {label = "13 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor13suv"] = {label = "14 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor14sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor16sedan"] = {label = "16 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor16utility"] = {label = "16 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor18sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor151500"] = {label = "Generic 150", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valor162500"] = {label = "Generic 250", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
+        ["valormotor"] = {label = "MBU", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 1, price = 1000},
     }, 
      -- Garage 1 vehicles (Game Warden)
-    [7] = {
+    [5] = {
         ["gwf150"] = {label = "Ford F150", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 10},
         ["gwf250"] = {label = "Ford F250", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 10},
         ["em100f450"] = {label = "Ford F450", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 10},
