@@ -1,13 +1,11 @@
 -- Created by Scully | https://discord.gg/scully
 fx_version 'cerulean'
-
+lua54 'yes'
 game 'gta5'
 
-author 'Scully#5775'
+author 'https://discord.gg/scully'
 description 'very noice weapon holster'
-version '2.0'
-
-lua54 'yes'
+version '3.1.0'
 
 shared_script 'config.lua'
 
