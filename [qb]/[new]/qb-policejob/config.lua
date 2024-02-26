@@ -199,7 +199,7 @@ Config.AuthorizedVehicles = {
         ["21c318suv"] = {label = "18 Generic SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
         ["21c318suvk9"] = {label = "18 Generic SUV K9", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
         ["21c3202500"] = {label = "Generic 250", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c314sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+      --  ["21c314sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
         ["21c316sedan"] = {label = "16 Cruiser", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
         ["21c318sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
         ["21c320suv"] = {label = "20 Generic SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
