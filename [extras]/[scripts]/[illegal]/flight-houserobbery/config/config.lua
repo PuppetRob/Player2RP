@@ -120,10 +120,10 @@ Config = {
     -- Npc settings, works for both non-group work and group work
     NPCStatus = true, -- Enable/disable npc
     NpcModel = `g_m_m_chicold_01`, -- Model of the npc
-    NpcCoords = vector4(116.34, -1953.83, 19.75, 41.11), -- Coords of the npc
-    NpcTargetCoords = vector3(116.29, -1953.82, 20.75), -- Change this with the npc location
-    NpcTargetMinZ = 19.5, -- Min Z of the npc target
-    NpcTargetMaxZ = 21.5, -- Max Z of the npc target
+    NpcCoords = vector4(1719.02, 4677.12, 42.66, 90.06), -- Coords of the npc
+    NpcTargetCoords = vector3(1719.02, 4677.12, 42.66), -- Change this with the npc location
+    NpcTargetMinZ = 40.5, -- Min Z of the npc target
+    NpcTargetMaxZ = 44.5, -- Max Z of the npc target
     NpcAnimation = "WORLD_HUMAN_LEANING", -- Animation of the npc
 
     -- Skill System (If you want to use this, you need to have a skill system)
