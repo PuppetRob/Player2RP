@@ -43,7 +43,7 @@ Config.TraderOptions = {
 		-- isWeapon: True/False (Is the item a weapon e.g. pistol)
 
 		{label = "Armor Blueprint", item = "blueprint_armor", price = 25000, isWeapon = false},
-		{label = "ATM Kit Blueprint", item = "blueprint_atmkit", price = 25000, isWeapon = false},
+		{label = "Security Card", item = "seccard", price = 25000, isWeapon = false},
 		{label = "Pistol Receiver Blueprint", item = "blueprint_pistol-receiver", price = 25000, isWeapon = false},
 		{label = "Shotgun Receiver Blueprint", item = "blueprint_shotgun-receiver", price = 25000, isWeapon = false}
 

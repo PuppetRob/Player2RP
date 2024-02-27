@@ -12,7 +12,7 @@ Config['OilRigHeist'] = {
     ['requiredPoliceCount'] = 0, -- required police count for start heist
     ['dispatchJobs'] = {'lspd', 'bcso'},
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names.
-        'hack_usb',
+        'seccard',
     },
     ['nextRob'] = 7200, -- Seconds for next heist
     ['startHeist'] ={ -- Heist start coords
