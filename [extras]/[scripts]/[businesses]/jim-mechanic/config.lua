@@ -344,8 +344,11 @@ Config = {
 		Locations = {
 			{ coords = vec4(451.05, -973.19, 25.7, 180.0), prop = true, }, -- MRPD UNDERGROUND PARKING
 			{ coords = vec4(342.51, -570.98, 28.8, 70.0), prop = true, }, -- PILL BOX GARAGE
-			{ coords = vec4(-1163.01, -2009.41, 13.18, 117.71), prop = true },
-		},
+			{ coords = vec4(379.49, -1620.01, 29.29, 231.74), prop = true }, -- Davis 
+			{ coords = vec4(-792.25, 5404.4, 34.15, 2.18), prop = true }, -- Game Warden 
+			{ coords = vec4(-483.48, 6008.65, 31.27, 226.9), prop = true }, -- Paleto 
+			{ coords = vec4(1777.72, 3628.17, 34.55, 31.05), prop = true }, -- Sandy 
+			
 		CosmeticTable = { 			-- This controls what will appear in the emergency mech bench, "false" to hide it
 			["Repair" ] = true,
 			["Paints"] = true,
