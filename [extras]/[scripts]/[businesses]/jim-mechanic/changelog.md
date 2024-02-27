@@ -1,5 +1,70 @@
 # Changelog
 
+## 3.4
+
+    Fix:
+        - Typo making cars stay drivable after engine level going too low - `extras.lua`
+        - Forgot to add `createUseableItem` events for the two new items - `main.lua`
+        - A chance variables may get messed up with old ejection system - `extras.lua`
+        - Hopefully fix Repair animations ending too early - `repairs.lua`
+        - When changing the xenon colours/underglow colours the car will start so they can be shown - `xenons.lua`
+        - Players being able to skip harness progressbars - `extras.lua`
+        - Custom Tires now default to off (no more text), but can be toggled - `rims.lua`, `preview.lua`, `emergency.lua`
+        - `17mov_hud` causing esx errors on any server type if you have it installed - `extras.lua`
+        - Left over `qb-target` function, changed to jim_bridge's `createBoxTarget` - `locfunctions.lua`
+
+    Changes:
+        - Attempt to optimize GetVehicleStatus() by using statebags instead of callbacks - `damages.lua`, `functions.lua`, `functionserver.lua` `encfunctionserver.lua`
+            - Not sure if this will help but deserves testing
+        - Attempt to bring down `ms` when driving as much as possible - `extras.lua`
+            - Theres a lot of information being processed by the script
+            - When you stop the vehicle it brings down the loop speeds
+            - When you drive it speeds them up to track things better like when to eject.
+            - `preventRoll` now sets raises vehicle gravity to stop, instead of looping disable controls
+            - seatbelt/harnesseasyleave now checks if you are leaving the vehicle and forces you back to your seat
+            - To bring this down further you need to disable elements of the script
+            - Hightly recommend using the betaEjection system mentioned in previous patch notes to bring it down more
+        - Removed callback `jim-mechanic:checkCash` and now using `getPlayer().cash` from `jim_bridge` - `manualrepair.lua`, `emergency.lua`, `functionserver.lua`
+        - Lowered default antilagcooldown, you will hear them more often now - `extras.lua`
+        - Repairkits not longer require a vehicle to be owned - `functions.lua`
+        - Added new Custom tires button to toggle the text variation on wheels - `rims.lua`, `preview.lua`, `emergency.lua`
+            - This will only show if you have non-stock wheels on cars as they can't be applied without custom rims
+        - Raised wait after onPlayerLoaded to help loading of some props - `locfunctions.lua`
+        - Moved the manualRepair benches back out of the "enter location" checks, so they should always be visible - `locfunctions.lua`
+        - New/AlteredIcons
+            - Some icons have been redone and some have been replaced
+            - Optimized Item Images, can help loading speeds of inventories and menus (thank you havek) - `/.install`
+
+    New:
+        - Added when a vehicle is underwater, it becomes undriveable until a mechanic repairs the engine - `extras.lua`, `repair.lua`
+
+        - Override Option called `receiveMaterials` - `config.lua`, `performance.lua`, `damages.lua`, `functions.lua`, `recipes.lua`
+            - When removing performance parts, players recieve materials instead
+            - What they recieve is specified in the new table at bottom of `recipes.lua`
+            - By default they receive between: half the amount and the full amount
+            - You can add multiple items to be received
+            - When set to false the performance items will be recieved as the full parts again
+
+        - Complete rewrite of odometer code `drawtext.lua`, `index.html', `config.lua`,  `extras.lua`, `shared.lua`, `nos.lua` `xenons.lua`, `/html`
+        - Now a lot more customisable through the config.lua
+        - Custom font for milage to simulate an actual car dashboard
+        - Option to only show seatbelt/harness images for passengers
+        - More Icon's
+            - Door open warning, Manual Transmission, Underglow, Antilag, Fuel Tank damage
+        - Icon colours
+            - Added a customisable gradient system to gradually change the colour of damages
+            - Underglow, Headlights and NosPurge match the colour you have set on the car
+            - NosBoost lights up when its in use
+            - Seatbelt/Harness are hidable when buckled if you toggle it in config
+
+        - Brand new customisable Speedometer
+            - Comes in 3 different variations
+            - Customisable via config.lua
+
+        - Hides if the engine is off or the pause menu is open
+
+        - `Share your presets!`
+
 ## 3.3.6
 
     New:

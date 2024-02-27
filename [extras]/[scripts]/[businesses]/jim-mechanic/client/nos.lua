@@ -1,7 +1,6 @@
 if not Config.Overrides.disableNos then
 --========================================================== NOS
 --Leave alone--
-local nosColour = {}
 local soundId = GetSoundId()
 manualPurgeLoc = {}
 
@@ -317,7 +316,7 @@ RegisterCommand('+nosBoost', function()
 			end
 		end
 	end
-end)
+end, false)
 
 function forceStopNos() local Ped = PlayerPedId()
 	if GetVehiclePedIsIn(Ped, true) == 0 then

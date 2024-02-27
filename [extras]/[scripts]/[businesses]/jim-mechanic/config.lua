@@ -24,14 +24,18 @@ Config = {
 		JobLocationRequired = true, -- Are the mecahanics locked to specific locations?
 		LocationBlips = false, 		-- Enable to grab the blip locations from locations.lua
 		CosmeticsJob = true, 		-- Do vehicle cosmetics require a mechanic job role?
-		JobRoles = { "bennys", "ottos", "hayesauto", "bikemechanic", "sandymechanic", }, -- These are the job roles who can use items if RequiresJob is enabled.
+		JobRoles =  { "bennys", "ottos", "hayesauto", "bikemechanic", "sandymechanic" }, -- These are the job roles who can use items if RequiresJob is enabled.
 									-- Add your extra job roles here or just leave as "mechanic"
 									-- Example-- --JobRoles = { "mechanic", "tuner" }
 	},
 
 	Overrides = {
 		CosmeticItemRemoval = true, -- If "true" items will be removed on successful application of a mod
-									-- If "false" items will not be removed on use.
+									-- If "false" items will not be removed on use
+
+		receiveMaterials = true,	-- If true, when removing parts like engines, recieve materials instead of the full engine
+									-- This is based on material recipes in recipes.lua
+
 		updateServerDelay = 20, 	-- default 20 second database update delay from the LAST upgrade done to a vehicle
 									-- This stops overloading of server databases when many changes are happening, it adds a cooldown
 		ChameleonPaints = true, 	-- Enable this if you want to use chameleon paints (ONLY GAME BUILD 2545 AND ABOVE)
@@ -39,7 +43,7 @@ Config = {
 
 		DoorAnimations = true,		-- Enable door openning animations when repairing/fixing
 
-		disableNos = true,			-- Disable nos if you wish to use a separate script
+		disableNos = false,			-- Disable nos if you wish to use a separate script
 
 
 		disablePreviewPlate = false,-- enable this to disable temporary plate while previewing
@@ -67,13 +71,13 @@ Config = {
 		seatbeltNotify = false,		-- if true, show a notification when seatbelt is put on or off
 
 		timeOn = 3000,				-- Time for the progress bar to put on harness
-		timeOff = 2000,				-- Time for the progress bar to put on harness
+		timeOff = 2000,				-- Time for the progress bar to take off harness
 
-		minimumSpeed = 80,			-- Minimum speed for crash logic to be triggered
-		minimumSeatBeltSpeed = 130, -- Minimuim speed for ejecting with a seatbelt attached
+		minimumSpeed = 100,			-- Minimum speed for crash logic to be triggered
+		minimumSeatBeltSpeed = 125, -- Minimuim speed for ejecting with a seatbelt attached
 		minimumDamage = 15.0, 		-- Minimum body damage for ejecting a player (default 15 = .15%)
 
-		crashKill = true,			-- Set to true if you want ejecting when crashing to kill/injure
+		crashKill = false,			-- Set to true if you want ejecting when crashing to kill/injure
 
 		AltEjection = false,		-- Enabling this may make some varibles above not be used
 									-- Requires adding a couple lines to your server.cfg to activate
@@ -85,16 +89,17 @@ Config = {
 
 	},
 
-	vehFailure = { 				-- Enabling these will make allow you to no longer need qb-vehiclefailure
-									-- ONLY ENABLE IF NOT USING VEHICLEFAILURE OR ANOTHER SCRIPT TO REPLACE IT
-		damages = true,				-- Makes jim-mechanic automatically handle extra damages instead of needing an edit to vehfailure
-		repairKits = false,			-- Takes control of repairkit and advancedrepairkit
-		fixCommand = true,			-- takes control of /fix command
-		PreventRoll = false,			-- takes control of preventing rolling your car back over when upside down
+	vehFailure = { 						-- Enabling these will make allow you to no longer need qb-vehiclefailure
+										-- ONLY ENABLE IF NOT USING VEHICLEFAILURE OR ANOTHER SCRIPT TO REPLACE IT
+		damages = true,					-- Makes jim-mechanic automatically handle extra damages instead of needing an edit to vehfailure
+		repairKits = false,				-- Takes control of repairkit and advancedrepairkit
+		fixCommand = true,				-- takes control of /fix command
+		PreventRoll = true,			-- takes control of preventing rolling your car back over when upside down
+		increaseEngDamage = true,		-- enabling this adds extra damage based on what the body damage has just taken
 
 		damageLimits = {
-			petrolTank = 750.0,			-- Prevents tankHealth ever going below
-			engine = 50.0,				-- Prevents engine Damage ever going below 50
+			petrolTank = 750.0,			-- Prevents tankHealth ever going below ( if this goes too low fuel leaks and instantly destorys the engine)
+			engine = 50.0,				-- Prevents engine Damage ever going below 50.0
 			engineUndriveable = true,	-- If engine is at the above level, make it undriveable
 			body = 50.0,				-- Prevent body damage going below 50.0
 		}
@@ -132,7 +137,7 @@ Config = {
 
 	Repairs = {	--Repair Related
 		FreeRepair = false,  		-- Are repairs free? True means yes
-		StashRepair = false, 		-- Enable for repair materials to be removed from a job stash (disabled if RequiresJob = false)
+		StashRepair = true, 		-- Enable for repair materials to be removed from a job stash (disabled if RequiresJob = false)
 
 		ExtraDamages = true,		-- When enabled, it will use the built in extra damage systems (Like qb-mechanicjobs functions)
 
@@ -157,12 +162,12 @@ Config = {
 		},
 
 		RepairWheelsWithEngine = false,
-		RepairWheelsWithBody = true,
+		RepairWheelsWithBody = false,
 	},
 
 	Previews = {
 		oldOxLibMenu = true,		-- Enable this to use default context menu for previews when using ox_lib
-		PreviewPhone = true, 		-- Enable this is preview menu generates an email, False if you want to give an item
+		PreviewPhone = false, 		-- Enable this is preview menu generates an email, False if you want to give an item
 		PreviewJob = false, 		-- Enable this if you want /preview to require a Job Role
 		PreviewLocation = false, 	-- Enable this if you want to lock /preview to a job location (ignored if LocationRequired is false)
 
@@ -181,43 +186,159 @@ Config = {
 	},
 
 	StoreCraft = {
-		Crafting = true, 			-- Set true to turn on crafting features
-		StashCraft = false,  		-- Set true to grab materials from mechaincs stash for crafting
-		Stores = true, 				-- Set true to turn on shop store features
+		Crafting = false, 				-- Set true to turn on crafting features
+		StashCraft = true,  			-- Set true to grab materials from mechaincs stash for crafting
+		Stores = true, 					-- Set true to turn on shop store features
 	},
 
 	Odometer = {
-		ShowOdo = true, 			-- Wether the distance is showed in car by default
-		OdoLocation  = "bottom", 	-- Where the Odometer will show,
-										-- "left", "right", "top", "top-left", "top-right", "bottom", "bottom-left", "bottom-right"
-		OdoShowIcons = true, 		-- Enable this to allow the use of the warning icons on the odometer
-		OdoAlwaysShowIcons = true, 	-- Enable this to show the icons even when not damaged
+		ShowOdo = true, 					-- Wether the distance is showed in car by default
 
-		ShowToAll = false,			-- Show Odometer to passengers aswell as driver
+		ShowToAll = true,					-- Show Odometer to passengers aswell as driver
+		ShowPassengersAllIcons = true, 	-- Enabling this will only show passengers the buckle/harness icon
+		OdoAlwaysShowIcons = true, 			-- Enable this to show the icons even when not damaged
+		OdoShowLimit = 70,					-- If OdoAlwaysShowIcons, the damage icons only will be shown if below this percent
+
+		SeatbeltHideWhenBuckled = false, 	-- Hide seatlbelt icon when buckled
+		HarnessHideWhenBuckled = false, 	-- Hide Harness icon when buckled
+
+		showSpeedometer = true,
 
 		OdoIconsToShow = {
 			["engine"] = true,
 			["body"] = true,
 			["oil"] = true,
 			["spark"] = true,
+			["fuel"] = true,
 			["axle"] = true,
 			["battery"] = true,
 			["wheel"] = true,
 			["headlight"] = true,
-			["harness"] = true,
 			["seatbelt"] = true,
+			["harness"] = true,
+			["underglow"] = true,
+			["doors"] = true,
+			["manual"] = true,
+			["antilag"] = true,
+			["mileage"] = true,
+			["lowfuel"] = true,
+			["nos"] = true,
 		},
+
+		odoCustomisation = {
+			showHealthValues = false,								-- Always show health numbers on icons (otherwise only shows in debug mode)
+
+			screenPosition = { top = 95, left = 25 },				-- where on the screen it will appear (percentages) default bottom right
+			backgroundColor = { 0, 0, 0 },							-- the colour of the huds background
+			backgroundColorTransparency = 0.5,						-- the transparency of the huds background
+
+			backgroundBorderTransparency = 1.0,						-- background outline transparency (0.0 hides it, max 1.0)
+			backgroundBorderColor = { 0, 0, 0 },					-- background outline colour
+			backgroundBorderWidth = "0px",							-- background outline width
+
+			backgroundcornerRadius = "0.5rem",						-- background corner radius
+
+			backgroundShadowTransparency = 0.5,						-- background shadow/glow transparency (0.0 hides it, max 1.0)
+			backgroundShadow = '0px 0px 10px',						-- background shadow/glow location (0px 0px 10px adds a 10px shadow all around the box)
+			backgroundShadowColor = { 0, 0, 0 },					-- background shadow/glow colour
+
+			backgroundInnerShadowTransparency = 0.7,				-- background shadow/glow transparency (0.0 hides it, max 1.0)
+			backgroundInnerShadow = 'inset 0px 0px 10px',			-- background shadow/glow location (0px 0px 10px adds a 10px shadow all around the box)
+			backgroundInnerShadowColor = { 0, 0, 0 },				-- background shadow/glow colour
+
+			iconGlow = true,										-- Toggle icons glow
+			iconSize = 0.35,										-- How big the icons will be (attempts to scale between resolutions)
+			iconColorMax = { 0, 255, 0 },							-- The colour icons will be if full health
+			iconColorMin = { 255, 0, 0 },							-- The colour icons will be if a low health
+
+			iconBoxShadow = false,									-- Adds shadow for each image box
+			iconBoxShadowStyle = 'inset black 0px 0px 50px',		-- Fine tune the shadow here
+			iconBoxShadowCorners = "0.5rem",						-- Add rounded corners to the box
+
+			font = 'DigitalFont',
+
+			inlayTextSize = '1.4vh',								-- Text size of the text that appears over icons (by default on nos boost level)
+			inlayTextPosition = { top = "42%", left = "0.2rem" },	-- Specific placement of the text
+			inlayTextColor = { 255, 255, 255 },						-- Colour of the text
+			inlayTextGlow = '0 0 3px #000000, 0 0 5px #ffffff',		-- Specific CSS of the glow/shadow
+
+			mileagetextSize = '2.3vh',								-- Milage text size
+			mileagetextColor = { 255, 255, 255 },					-- Milage Colour
+			mileagetextGlow = '0 0 10px',							-- Glow/Shadow effect
+			mileagetextGlowColor = { 255, 255, 255 },				-- Glow/Shadow effect colour
+			mileagetextGlowTransparency = 1.0,						-- Glow/Shadow effect transparency
+		},
+
+		speedCustomisation = {
+			SpeedLocation = { top = '80%', left = '28%' },			-- Location of the whole speedometer on the screen
+
+			-- Both the Speedometer and RPM settings
+			BorderWidth = '0.2vh',									-- The semi-circle border width
+			BorderCol = { 255, 255, 255 },							-- The semi-circle border colour
+			BorderStyle = 'solid',									-- The semi-circle border tyle ('solid', 'dashed', 'dotted')
+			BorderTrans = 1.0,										-- The semi-circle border transparency
+
+			BackgroundCol = { 0, 0, 0 },							-- Background colour
+			BackgroundTrans = 0.6,									-- Background Transparency
+			BackgroundShadow = '0 0 10px',							-- Background Shadow style
+			BackgroundShadowColor = { 0, 0, 0 },					-- Background Shadow colour
+			BackgroundShadowTrans = 0.8,							-- Background Shadw Transparency
+
+			font = 'DigitalFont',
+			TextColour = 'rgba(255, 255, 255)',						-- Colour of speed text around the meter
+			TextSize = '1.0vh',
+			ColourHigh = 'rgba(255, 0, 0)',							-- Colour of text if classed as "High"
+			MarkerColourHigh = 'rgba(255, 0, 0, 1.0)',				-- Colour of marker if classed as "High", if not use BorderCol
+
+			SpeedHighlight = false,									-- Hightlight the text on the speedometer the faster you go
+			HighSpeedHighlight = true,								-- Highlight high speeds on the speedometer
+
+			ShowDigitalSpeed = false,								-- Shows digital speed numbers on the speedometer
+			digitalSpeedLoc = { top = 40, left = 17 },				-- Location of the numbers (defaults to the center)
+			digitalSpeedSize = '3vh',								-- The font size
+
+			NeedleType = 1,											-- Change between 1, 2, 3
+
+			SpeedNeedleLength = '7.0vh',							-- Speedometer Needle Length
+			SpeedNeedleWidth = '0.6vh',								-- Speedometer Needle Width
+			SpeedNeedleCol = { 255, 0, 0 },							-- Speedometer Needle Colour
+			SpeedNeedleTrans = 0.9,									-- Speedometer Needle Transparency
+			SpeedNeedleShadow = '0px 0px 5px',						-- Speedometer Needle Shadow Style
+			SpeedNeedleShadowCol = { 0, 0, 0 },						-- Speedometer Needle Shadow Colour
+			SpeedNeedleShadowTrans = 0.9,							-- Speedometer Needle Shadow Transparency
+
+			showRpmMeter = true,									-- Show RpmMeter
+			rpmMeterLocation = 'translate(8.5vh, 4.5vh)',			-- RPM Meter location in relation to the speedometer
+
+			rpmNeedleLength = '2.5vh',								-- Speedometer Needle Length
+			rpmNeedleWidth = '0.1vh',								-- Speedometer Needle Width
+			rpmNeedleCol = { 255, 0, 0 },							-- Speedometer Needle Colour
+			rpmNeedleTrans = 0.9,									-- Speedometer Needle Transparency
+			rpmNeedleShadow = '0px 0px 5px',						-- Speedometer Needle Shadow Style
+			rpmNeedleShadowCol = { 0, 0, 0 },						-- Speedometer Needle Shadow Colour
+			rpmNeedleShadowTrans = 0.9,								-- Speedometer Needle Shadow Transparency
+
+			showFuelMeter = true,									-- Show FuelMeter
+			fuelMeterLocation = 'translate(-8.5vh, 4.5vh)',			-- Fuel Meter location in relation to the speedometer
+
+			fuelNeedleLength = '2.5vh',								-- Speedometer Needle Length
+			fuelNeedleWidth = '0.1vh',								-- Speedometer Needle Width
+			fuelNeedleCol = { 255, 0, 0 },							-- Speedometer Needle Colour
+			fuelNeedleTrans = 0.9,									-- Speedometer Needle Transparency
+			fuelNeedleShadow = '0px 0px 5px',						-- Speedometer Needle Shadow Style
+			fuelNeedleShadowCol = { 0, 0, 0 },						-- Speedometer Needle Shadow Colour
+			fuelNeedleShadowTrans = 0.9,							-- Speedometer Needle Shadow Transparency
+
+		},
+
 	},
 	Emergency = {
 		requireDutyCheck = true,	-- if true, when a mechanic is online, the repair button won't show
 									-- if false, the repair option will always be available
 		Jobs = {
-			["lspd"] = 0, 
-			["bcso"] = 0, 
-			["safr"] = 0, 
+			["lspd"] = 0, -- Job and Job Grade
 			["ambulance"] = 0,
-			["mechanic"] = 0,
-			["firefighter"] = 0,
+			["bcso"] = 0,
 		},
 		LockEmergency = false,  -- Enable this to lock make only "Emergency" (Class 18) vehicles to be used with the bench
 		Locations = {
@@ -293,7 +414,7 @@ Config = {
 		repairEngine = true, 		-- Set this to true if automated repairs also repair engine (not just body)
 		repairExtras = true, 		-- Set this to true for automated repairs to also repair extra damages (if mechanicjob is available and repairEngine is true)
 
-		requireDutyCheck = true, 	-- if set to true, the repair bench will only be usable if there are no mechanics in the server ON DUTY
+		requireDutyCheck = false, 	-- if set to true, the repair bench will only be usable if there are no mechanics in the server ON DUTY
 		dutyMessage = "There is a Mechanic on duty!", -- This is the notification that pops up when a person tries to repair when a mechanic is on duty, choose what you want for it.
 
 		repairAnimate = false,		-- Better than staring at a progress bar, "damaged" parts will be removed and replaced. Making it look more authentic
@@ -345,7 +466,7 @@ Config = {
 	Discord = { -- Discord preview receipts
 		-- You will need to set custom info in each job location in locations.lua
 		-- But for the ones you don't add info to, it will default to these numbers
-		DiscordPreview = true, 	-- Set to true if you want to use discord receipts
+		DiscordPreview = false, 	-- Set to true if you want to use discord receipts
 		DiscordDefault = "", 		-- Set this to the default channel API link if one isn't set for a location
 		DiscordColour = 16753920, 	-- This is the default "decimal" number colour
 	},

@@ -364,8 +364,10 @@ end)
 if Config.vehFailure.repairKits then
 	RegisterNetEvent('jim-mechanic:vehFailure:RepairVehicle', function(data)
 		local item, full = data.client.item, data.client.full
-		local vehicle = vehChecks()
-		if #(GetEntityCoords(PlayerPedId()) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 2.0 then return end
+		local vehicle = nil
+		local Ped = PlayerPedId()
+		if not IsPedInAnyVehicle(Ped, false) then vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) end
+		if lockedCar(vehicle) then return end		if #(GetEntityCoords(PlayerPedId()) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 2.0 then return end
 		SetVehicleDoorOpen(vehicle, 4, false, false)
 		local cam = createTempCam(PlayerPedId(), vehicle)
 		if progressBar({ label = Loc[Config.Lan]["repair"].repairing, time = 10000, cancel = true, dict = 'mini@repair', anim = 'fixing_a_player', flag = 1, icon = item, cam = cam }) then
@@ -408,8 +410,17 @@ if Config.vehFailure.fixCommand then
 		for i = 0, 5 do SetVehicleTyreFixed(vehicle, i) end
 		for i = 0, 7 do FixVehicleWindow(vehicle, i) end
 		SetVehicleFuelLevel(vehicle, 100.0)
-		TriggerServerEvent("jim-mechanic:server:fixEverything", trim(GetVehicleNumberPlateText(vehicle)))
+		TriggerServerEvent("jim-mechanic:server:fixEverything", trim(GetVehicleNumberPlateText(vehicle)), ensureNetToVeh(vehicle))
 		saveStatus(vehicle)
 		pushVehicle(vehicle)
 	end)
+end
+
+function addMaterials(item)
+	for recItem, recAmount in pairs(MaterialRecieve[item]) do
+		local math = math.random(math.floor((recAmount/2)+0.5), recAmount)
+		if math ~= 0 then
+			addItem(recItem, math)
+		end
+	end
 end

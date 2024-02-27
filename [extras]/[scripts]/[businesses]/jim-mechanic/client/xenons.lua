@@ -1,5 +1,4 @@
 onPlayerLoaded(function() GetXenonColour() end)
-local xenonColour = {}
 
 function GetXenonColour()
     local newxenonColour = triggerCallback('jim-mechanic:GetXenonColour')
@@ -250,7 +249,7 @@ end)
 
 RegisterNetEvent('jim-mechanic:client:applyNeonPostion', function(data) -- Toggle Underglow Lights
 	if GetIsVehicleEngineRunning(data.vehicle) then
-		SetVehicleEngineOn(data.vehicle, true, true)
+		SetVehicleEngineOn(data.vehicle, true, true, true)
 	end
 	if data.id == -1 then
 		if not IsVehicleNeonLightEnabled(data.vehicle, 2) or not IsVehicleNeonLightEnabled(data.vehicle, 1) or not IsVehicleNeonLightEnabled(data.vehicle, 3) or not IsVehicleNeonLightEnabled(data.vehicle, 0) then
@@ -266,7 +265,7 @@ end)
 
 RegisterNetEvent('jim-mechanic:client:applyNeonColor', function(data) -- Apple Underglow Colours
 	if GetIsVehicleEngineRunning(data.vehicle) then
-		SetVehicleEngineOn(data.vehicle, true, true)
+		SetVehicleEngineOn(data.vehicle, true, true, true)
 	end
 	SetVehicleNeonLightsColour(data.vehicle, data.r, data.g, data.b)
 	updateCar(data.vehicle)
@@ -275,7 +274,7 @@ end)
 
 RegisterNetEvent('jim-mechanic:client:applyXenonColor', function(data) -- Apple Xenon Colours
 	if GetIsVehicleEngineRunning(data.vehicle) then
-		SetVehicleEngineOn(data.vehicle, true, true)
+		SetVehicleEngineOn(data.vehicle, true, true, true)
 	end
 	if data.stock then
 		ClearVehicleXenonLightsCustomColor(data.vehicle)

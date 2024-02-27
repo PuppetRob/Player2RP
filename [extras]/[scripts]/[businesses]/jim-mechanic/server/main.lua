@@ -55,8 +55,11 @@ if Config.StoreCraft.Crafting then
 			["bprooftires"] = "jim-mechanic:client:applyBulletProof",
 			["drifttires"] = "jim-mechanic:client:applyDrift",
 			["antilag"] = "jim-mechanic:client:applyAntiLag",
+			["underglow"] = "jim-mechanic:client:applyUnderglow",
+			["manual"] = "jim-mechanic:client:applyManual",
 		}) do
-			createUseableItem(k, function(source, item) TriggerClientEvent(v, source, { client = { remove = false } } ) end) end
+			createUseableItem(k, function(source, item) TriggerClientEvent(v, source, { client = { remove = false } } ) end)
+		end
 
 		if not Config.Overrides.disableNos then
 			createUseableItem("nos", function(source, item) TriggerClientEvent("jim-mechanic:client:applyNOS", source) end)

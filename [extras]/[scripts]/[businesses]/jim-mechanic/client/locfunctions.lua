@@ -18,7 +18,7 @@ onPlayerLoaded(function()
 		end
 		onDuty = false
 	end
-	Wait(3000)
+	Wait(5000)
 	makeLocs()
 end)
 
@@ -181,10 +181,8 @@ function makeLocs()
 										Prop[name] = makeProp({prop = "prop_laptop_01a", coords = vec4(b.coords.x, b.coords.y, b.coords.z+1.03, b.coords.w+180.0)}, 1, false)
 										createEntityTarget(Prop[name], options, 2.0)
 									else
-
 										Targets[name] =
-										exports['qb-target']:AddBoxZone(name, b.coords.xyz, (b.w or 0.45), (b.d or 0.4), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-0.1, maxZ=b.coords.z+0.4 },
-											{ options = options, distance = 2.0 })
+										createBoxTarget({name, b.coords.xyz, (b.w or 0.45), (b.d or 0.4), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-0.1, maxZ=b.coords.z+0.4 }}, options, 2.0)
 									end
 								end
 							end
@@ -438,7 +436,7 @@ RegisterNetEvent('jim-mechanic:client:NosRefill', function(data) local Ped = Pla
 			cash = Config.NOS.NosRefillCharge
 		end
 	else
-		cash = triggerCallback('jim-mechanic:checkCash')
+		cash = getPlayer().Cash
 	end
 	if cash >= Config.NOS.NosRefillCharge then
 		refilling = true

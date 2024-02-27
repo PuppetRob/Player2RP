@@ -738,13 +738,19 @@ local wheelType = {
 RegisterNetEvent('jim-mechanic:client:Preview:Rims:Apply', function(data) local Ped = PlayerPedId()
 	if IsPedInAnyVehicle(Ped, false) then vehicle = GetVehiclePedIsIn(Ped, false) end
 	SetVehicleWheelType(vehicle, tonumber(data.wheeltype))
-	if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), true) else SetVehicleMod(vehicle, 24, tonumber(data.mod), false) end
+	if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), GetVehicleModVariation(vehicle, 23)) else SetVehicleMod(vehicle, 24, tonumber(data.mod), false) end
 	if data.mod == -1 then TriggerEvent('jim-mechanic:client:Preview:Rims:Check', data) else TriggerEvent('jim-mechanic:client:Preview:Rims:SubMenu', data) end
+end)
+
+RegisterNetEvent('jim-mechanic:client:Preview:Rims:ApplyCustomTires', function(data) local Ped = PlayerPedId()
+	if IsPedInAnyVehicle(Ped, false) then vehicle = GetVehiclePedIsIn(Ped, false) end
+	SetVehicleMod(vehicle, 23, GetVehicleMod(vehicle, 23), not GetVehicleModVariation(vehicle, 23))
+	TriggerEvent('jim-mechanic:client:Preview:Rims:Check', data)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Preview:Rims:Check', function() local Menu, Ped = {}, PlayerPedId()
 	if IsPedInAnyVehicle(Ped, false) then	vehicle = GetVehiclePedIsIn(Ped, false) end
-	if IsThisModelABike(GetEntityModel(vehicle)) then cycle = true else cycle = false end
+	local cycle = IsThisModelABike(GetEntityModel(vehicle))
 
 	if IsCamActive(camTable[currentCam]) then
 		Menu[#Menu+1] = { icon = "fas fa-camera", header = "",
@@ -760,6 +766,16 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:Check', function() local Menu
 			txt = (GetVehicleMod(vehicle, 23) == -1) and Loc[Config.Lan]["common"].current or "",
 			onSelect = function() TriggerEvent("jim-mechanic:client:Preview:Rims:Apply", { mod = -1 , wheeltype = 0 }) end,
 		}
+		if GetVehicleMod(vehicle, 23) ~= -1 then
+			Menu[#Menu + 1] = {
+				isMenuHeader = (GetVehicleMod(vehicle, 23) == -1 and GetVehicleMod(vehicle, 24) == -1),
+				header = "Custom Tires",
+				txt = GetVehicleModVariation(vehicle, 23) and Loc[Config.Lan]["common"].installed:gsub("%!", "") or Loc[Config.Lan]["common"].notinstall,
+				onSelect = function()
+					TriggerEvent("jim-mechanic:client:Preview:Rims:ApplyCustomTires")
+				end,
+			}
+		end
 		for k, v in pairs(wheelType) do
 			Menu[#Menu+1] = { arrow = true, header = v,
 				onSelect = function() TriggerEvent("jim-mechanic:client:Preview:Rims:Choose", { wheeltype = k, bike = false }) end,
