@@ -2355,6 +2355,12 @@ underglow                   = { name = 'underglow', label = 'Underglow LEDS', we
 	["description"] = "Where are you?"
 },
 
+["basicdecrypter"] = {["name"] = "basicdecrypter", ["label"] = "Basic Decrypter", ["weight"] = 1000, ["type"] = "item", ["image"] = "basicdecrypter.png", ["unique"] = true, 	["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = ""},
+["basicdrill"] = {["name"] = "basicdrill", ["label"] = "Basic Drill", ["weight"] = 1000, ["type"] = "item", ["image"] = "basicdrill.png", ["unique"] = true, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = ""},
+["laptop_green"] = {["name"] = "laptop_green", ["label"] = "Laptop", ["weight"] = 2500, ["type"] = "item", ["image"] = "laptop_green.png", ["unique"] = true, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = ""},
+['inkedbills'] = {['name'] = 'inkedbills', ['label'] = 'Inked Money Bag', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'money-bag.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'A bag full of inked bills'},
+
+
 ['atmkit'] 				     = {['name'] = 'atmkit', 			  	['label'] = 'ATM Kit', 					['weight'] = 100, 		['type'] = 'item', 		['image'] = 'atmkit.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil, ['description'] = 'Its a thing'},
 ["explosive"] 				 	 = {["name"] = "explosive", 			    	["label"] = "Explosive", 				["weight"] = 9000, 				["type"] = "item", 				["image"] = "explosive.png", 					["unique"] = true, 	["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = "Big boom!"},
 ["seccard"] 				 	 = {["name"] = "seccard", 			    		["label"] = "Security Card", 			["weight"] = 1000, 				["type"] = "item", 				["image"] = "seccard.png", 				 		['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Security Card for something'},
