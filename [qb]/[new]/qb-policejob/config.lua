@@ -166,11 +166,11 @@ Config.GaragePedModel = "s_m_y_hwaycop_01"
 
 Config.EnableMods = false -- Enable the mods below to be applied
 Config.CarMods = { -- Mods to be enabled / disabled for vehicles
-    engine = true,
-    brakes = true,
-    gearbox = true,
+    engine = false,
+    brakes = false,
+    gearbox = false,
     armour = false,
-    turbo = true,
+    turbo = false,
 }
 Config.EnableExtras = true
 Config.CarExtras = { -- Extra options to be enabled / disabled
