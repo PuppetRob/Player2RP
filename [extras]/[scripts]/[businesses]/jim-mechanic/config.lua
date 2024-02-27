@@ -347,8 +347,9 @@ Config = {
 			{ coords = vec4(379.49, -1620.01, 29.29, 231.74), prop = true }, -- Davis 
 			{ coords = vec4(-792.25, 5404.4, 34.15, 2.18), prop = true }, -- Game Warden 
 			{ coords = vec4(-483.48, 6008.65, 31.27, 226.9), prop = true }, -- Paleto 
-			{ coords = vec4(1777.72, 3628.17, 34.55, 31.05), prop = true }, -- Sandy 
-		},
+			{ coords = vec4(1777.72, 3628.17, 34.55, 31.05), prop = true }, -- Sandy Hospital
+			{ coords = vec4(1864.2, 3701.99, 33.71, 125.09), prop = true }, -- Sandy Hospital
+		}, 
 		CosmeticTable = { 			-- This controls what will appear in the emergency mech bench, "false" to hide it
 			["Repair" ] = true,
 			["Paints"] = true,
