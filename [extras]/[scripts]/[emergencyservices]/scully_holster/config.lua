@@ -237,15 +237,15 @@ Config = {
     EnableRequirement = true, -- Set to false if you don't want certain weapons to require a trunk or bag.
     Weapons = { -- You can add whatever weapons you use on your server here, I have provided some examples:
         [`WEAPON_ASSAULTRIFLE`] = {
-            Trunk = true,
-            Bag = false
+            Trunk = false,
+            Bag = true
         },
         [`WEAPON_CARBINERIFLE`] = {
-            Trunk = true,
-            Bag = false
+            Trunk = false,
+            Bag = true
         },
         [`WEAPON_SMG`] = {
-            Trunk = true,
+            Trunk = false,
             Bag = true
         },
     },

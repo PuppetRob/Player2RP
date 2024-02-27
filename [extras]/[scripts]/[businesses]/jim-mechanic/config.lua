@@ -293,7 +293,7 @@ Config = {
 			SpeedHighlight = false,									-- Hightlight the text on the speedometer the faster you go
 			HighSpeedHighlight = true,								-- Highlight high speeds on the speedometer
 
-			ShowDigitalSpeed = false,								-- Shows digital speed numbers on the speedometer
+			ShowDigitalSpeed = true,								-- Shows digital speed numbers on the speedometer
 			digitalSpeedLoc = { top = 40, left = 17 },				-- Location of the numbers (defaults to the center)
 			digitalSpeedSize = '3vh',								-- The font size
 
