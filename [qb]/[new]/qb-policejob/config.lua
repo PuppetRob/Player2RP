@@ -196,17 +196,15 @@ Config.CarExtras = { -- Extra options to be enabled / disabled
 Config.AuthorizedVehicles = {
     -- Garage 1 vehicles (LSPD MRPD )  price = 500}
     [1] = {
-        ["21c318suv"] = {label = "18 Generic SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c318suvk9"] = {label = "18 Generic SUV K9", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c3202500"] = {label = "Generic 250", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-      --  ["21c314sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c316sedan"] = {label = "16 Cruiser", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c318sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c320suv"] = {label = "20 Generic SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c320utility"] = {label = "20 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c320utilityk9"] = {label = "20 Utility K9", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
-        ["c3bikeu"] = {label = "MBU", ranks = {6, 7, 8, 9}, livery = 1, price = 500},
-        ["21c318muscle"] = {label = "Heat Mustang", ranks = {6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar11sedan"] = {label = "2011 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar14sedan"] = {label = "2014 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar16sedan"] = {label = "2016 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar16utility"] = {label = "2016 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar18sedan"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar18suv"] = {label = "2018 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar20utility"] = {label = "2020 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar181500"] = {label = "2018 1500", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
+        ["tomar202500"] = {label = "2020 2500", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 500},
     },
     -- Garage 2 vehicles (BCSO Davis)
     [2] = {
@@ -249,10 +247,7 @@ Config.AuthorizedVehicles = {
     }, 
      -- Garage 1 vehicles (Game Warden)
     [5] = {
-        ["gwf150"] = {label = "Ford F150", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 10},
-        ["gwf250"] = {label = "Ford F250", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 10},
-        ["em100f450"] = {label = "Ford F450", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 10},
-        ["broncogw"] = {label = "Bronco", ranks = {0, 1, 2, 3, 4}, livery = 1, price = nil},
+        ["police"] = {label = "Temp Vehicle", ranks = {0, 1, 2, 3, 4}, livery = 1, price = 500},
     },
 }
 
