@@ -19,7 +19,7 @@ local function DisableVehicleExit()
 	end
 end ]]
 
---[[ RegisterCommand('*seat_belt', function()
+ RegisterCommand('*seat_belt', function() -- this one
 	local PlayerPed = PlayerPedId()
 	local PlayerVehicle = GetVehiclePedIsUsing(PlayerPed)
 	local VehicleClass = GetVehicleClass(PlayerVehicle)
@@ -37,7 +37,7 @@ end ]]
 		TriggerEvent('seatbelt:client:ToggleSeatbelt', seat_belt)
 		DisableVehicleExit()
 	end
-end, false) ]]
+end, false) 
 
 RegisterNetEvent("hudevents:leftVehicle")
 AddEventHandler('hudevents:leftVehicle', function()
@@ -109,7 +109,7 @@ AddEventHandler('hudevents:enteredVehicle', function(currentVehicle, currentSeat
 						CurrentDisplayKMH = displayKMH,
 						CurrentCarBrake = carBrakePressure,
 						CurrentNitro = nitro,						
-					--	seatbelt = seatbeltOn
+						seatbelt = seatbeltOn -- this one
 					})		
 				end
 			end
