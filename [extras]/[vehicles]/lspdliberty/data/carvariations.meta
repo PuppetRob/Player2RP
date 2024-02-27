@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CVehicleModelInfoVariation>
+  <variationData>
+<Item>
+      <modelName>23liberty18utilityk9</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+           134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>624_23liberty18utilityk9_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="246"/>
+      <sirenSettings value="7417"/>
+    </Item>
+<Item>
+      <modelName>23liberty18utilityslk9</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+           134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>624_23liberty18utilityk9_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="246"/>
+      <sirenSettings value="7457"/>
+    </Item>
+<Item>
+      <modelName>23liberty212500k9</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>625_23liberty212500k9_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="249"/>
+      <sirenSettings value="7468"/>
+    </Item>
+<Item>
+      <modelName>23liberty212500slk9</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>625_23liberty212500k9_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="249"/>
+      <sirenSettings value="7469"/>
+    </Item>
+<Item>
+      <modelName>23liberty202500</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>626_23liberty202500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="250"/>
+      <sirenSettings value="7167"/>
+    </Item>
+<Item>
+      <modelName>23liberty202500sl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>626_23liberty202500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="250"/>
+      <sirenSettings value="7571"/>
+    </Item>
+<Item>
+      <modelName>23liberty212500</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>627_23liberty212500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="249"/>
+      <sirenSettings value="7824"/>
+    </Item>
+<Item>
+      <modelName>23liberty212500sl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>627_23liberty212500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="249"/>
+      <sirenSettings value="7825"/>
+    </Item>
+<Item>
+      <modelName>23liberty181500</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>628_23liberty181500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="248"/>
+      <sirenSettings value="7882"/>
+    </Item>
+<Item>
+      <modelName>23liberty181500sl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>628_23liberty181500_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="248"/>
+      <sirenSettings value="7883"/>
+    </Item>
+<Item>
+      <modelName>23liberty11sedan</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>629_23liberty11sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="247"/>
+      <sirenSettings value="7235"/>
+    </Item>
+<Item>
+      <modelName>23liberty11sedansl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>629_23liberty11sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="247"/>
+      <sirenSettings value="7236"/>
+    </Item>
+<Item>
+      <modelName>23liberty13suv</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>630_23liberty13suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="242"/>
+      <sirenSettings value="7646"/>
+    </Item>
+<Item>
+      <modelName>23liberty13suvsl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>630_23liberty13suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="242"/>
+      <sirenSettings value="7668"/>
+    </Item>
+<Item>
+      <modelName>23liberty18utility</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+           134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>631_23liberty18utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="246"/>
+      <sirenSettings value="7262"/>
+    </Item>
+<Item>
+      <modelName>23liberty18utilitysl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+             134
+            131
+            0
+            27
+            0
+            0	
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>631_23liberty18utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="246"/>
+      <sirenSettings value="7263"/>
+    </Item>
+<Item>
+      <modelName>23liberty21suv</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>632_23liberty21suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="7853"/>
+    </Item>
+<Item>
+      <modelName>23liberty21suvsl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>632_23liberty21suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="7855"/>
+    </Item>
+<Item>
+      <modelName>23liberty18suv</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>633_23liberty18suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="245"/>
+      <sirenSettings value="7422"/>
+    </Item>
+<Item>
+      <modelName>23liberty18suvsl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>633_23liberty18suv_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="245"/>
+      <sirenSettings value="7461"/>
+    </Item>
+<Item>
+      <modelName>23liberty20utility</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>636_23liberty20utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244"/>
+      <sirenSettings value="7165"/>
+    </Item>
+<Item>
+      <modelName>23liberty20utilitysl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>636_23liberty20utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244"/>
+      <sirenSettings value="7346"/>
+    </Item>
+<Item>
+      <modelName>23liberty16utility</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>635_23liberty16utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="243"/>
+      <sirenSettings value="7287"/>
+    </Item>
+<Item>
+      <modelName>23liberty16utilitysl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>635_23liberty16utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="243"/>
+      <sirenSettings value="7874"/>
+    </Item>
+<Item>
+      <modelName>23liberty13utility</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>634_23liberty13utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="242"/>
+      <sirenSettings value="7357"/>
+    </Item>
+<Item>
+      <modelName>23liberty13utilitysl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>634_23liberty13utility_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="242"/>
+      <sirenSettings value="7975"/>
+    </Item>
+<Item>
+      <modelName>23liberty16sedan</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>639_23liberty16sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="240"/>
+      <sirenSettings value="7182"/>
+    </Item>
+<Item>
+      <modelName>23liberty16sedansl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>639_23liberty16sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="240"/>
+      <sirenSettings value="7818"/>
+    </Item>
+<Item>
+      <modelName>23liberty14sedan</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>638_23liberty14sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="241"/>
+      <sirenSettings value="7246"/>
+    </Item>
+<Item>
+      <modelName>23liberty14sedansl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>638_23liberty14sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="241"/>
+      <sirenSettings value="7254"/>
+    </Item>
+	<Item>
+      <modelName>23liberty18sedan</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>637_23liberty18sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="7278"/>
+    </Item>
+<Item>
+      <modelName>23liberty18sedansl</modelName>
+        <colors>
+        <Item>
+          <indices content="char_array">
+            134
+            131
+            0
+            27
+            0
+            0
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>637_23liberty18sedan_modkit</Item>
+        </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0"/>
+      <sirenSettings value="7279"/>
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>
