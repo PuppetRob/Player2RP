@@ -223,7 +223,7 @@ Config.AuthorizedVehicles = {
     [3] = {
         ["valor11sedan"] = {label = "Vic Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
         ["valor13sedan"] = {label = "13 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
-        ["valor13suv"] = {label = "14 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500}, livery = 0
+        ["valor13suv"] = {label = "14 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500}, 
         ["valor14sedan"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
         ["valor16sedan"] = {label = "16 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
         ["valor16utility"] = {label = "16 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
