@@ -8,28 +8,28 @@ Config['OilRigHeist'] = {
         eventName = 'esx:getSharedObject', -- If your framework using trigger event for shared object, you can set in here.
         targetScript = 'qb-target' -- Target script name (qtarget or qb-target or ox_target)
     },
-    ["dispatch"] = "default", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
+    ["dispatch"] = "ps-dispatch", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
     ['requiredPoliceCount'] = 0, -- required police count for start heist
-    ['dispatchJobs'] = {'police', 'sheriff'},
+    ['dispatchJobs'] = {'lspd', 'bcso'},
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names.
         'hack_usb',
     },
     ['nextRob'] = 7200, -- Seconds for next heist
     ['startHeist'] ={ -- Heist start coords
-        pos = vector3(346.798, 3405.46, 36.8516),
-        peds = {
-            {pos = vector3(346.798, 3405.46, 36.8516), heading = 21.85, ped = 's_m_m_highsec_01'},
-            {pos = vector3(347.701, 3406.21, 36.4559), heading = 111.78, ped = 's_m_m_highsec_02'},
-            {pos = vector3(345.771, 3405.33, 36.4573), heading = 292.42, ped = 's_m_m_fiboffice_02'}
+        pos = vector3(3470.07, 3715.53, 36.64),
+        peds = { 
+            {pos = vector3(3470.07, 3715.53, 36.64), heading = 90.0, ped = 's_m_m_highsec_01'},
+          --  {pos = vector3(347.701, 3406.21, 36.4559), heading = 111.78, ped = 's_m_m_highsec_02'},
+          --  {pos = vector3(345.771, 3405.33, 36.4573), heading = 292.42, ped = 's_m_m_fiboffice_02'}
         }
     },
     ['requiredPlayersForHeist'] = 1, -- Required players for start heist.
     ['crateSettings'] = {
-        ['crateCount'] = 3, -- Crate with items count for every heist. (Max 10)
+        ['crateCount'] = 5, -- Crate with items count for every heist. (Max 10)
         ['crateItems'] = { -- Items for every crate.
-            {itemName = 'scrap',   itemCount = function() return math.random(1, 5) end, chance = 90},
-            {itemName = 'scrap2',  itemCount = function() return math.random(1, 5) end, chance = 80},
-            {itemName = 'scrap3',  itemCount = function() return math.random(1, 5) end, chance = 70},
+            {itemName = 'goldbar',   itemCount = function() return math.random(1, 5) end, chance = 90},
+            {itemName = 'goldbar',  itemCount = function() return math.random(1, 5) end, chance = 80},
+            {itemName = 'goldbar',  itemCount = function() return math.random(1, 5) end, chance = 70},
         },
         ['lootTime'] = 5, -- Seconds
     }
