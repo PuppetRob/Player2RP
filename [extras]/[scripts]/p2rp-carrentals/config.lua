@@ -44,11 +44,10 @@ Config.rentalTimes = {
 --@description = You can add as many locations as you want, just make sure you add a comma after the last bracket. 
 Config.Locations = {
     ["rentalstations"] = {
-        [1] = { label = "Vehicle Rental", coords = vector4(-836.84, -2347.51, 14.69, 181.63), model = `cs_carbuyer`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Airport
+        [1] = { label = "Vehicle Rental", coords = vector4(-1033.74, -2739.81, 20.17, 58.56), model = `cs_carbuyer`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Airport
         [2] = { label = "Vehicle Rental", coords = vector4(1992.62, 3777.29, 32.18, 183.39), model = `cs_solomon`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Sandy
         [3] = { label = "Vehicle Rental", coords = vector4(-500.4, -254.27, 35.72, 202.41), model = `cs_movpremf_01`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Job center
         [4] = { label = "Vehicle Rental", coords = vector4(-237.14, 6201.52, 31.94, 145.16), model = `csb_jackhowitzer`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Paleto
-        [5] = { label = "Vehicle Rental", coords = vector4(-1033.74, -2739.81, 20.17, 58.56), model = `csb_jackhowitzer`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Airport
     },
 }
 
@@ -58,9 +57,9 @@ Config.Locations = {
 Config.vehicleSpawn = {
     --- Los Santos International Airport
 	[1] = { 
-		workSpawn = {
-			coords = vector3(-827.0, -2357.92, 14.57),
-			heading = 332.44,
+		workSpawn = { 
+			coords = vector3(-1034.58, -2728.73, 20.12),
+			heading = 244.45,
 		},
 	},
     -- Davis Avenue

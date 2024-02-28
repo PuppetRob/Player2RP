@@ -133,8 +133,8 @@ local blips = {
 
   {title="Boxing Gym", colour=6, id=311, x = 376.47, y = -1100.18, z = 29.44, scale = 0.55},
   {title="Beach Gym", colour=6, id=311, x = -1202.76, y = -1567.48, z = 4.87, scale = 0.55},
-                          
-  {title="Car Rentals", colour=17, id=811, x = -831.01, y = -2351.34, z = 14.57, scale = 0.65},
+
+  {title="Car Rentals", colour=17, id=811, x = -1035.22, y = -2728.06, z = 20.13, scale = 0.65},
   {title="Car Rentals", colour=17, id=811, x = 1992.62, y = 3777.29, z = 32.18, scale = 0.65},
   {title="Car Rentals", colour=17, id=811, x = -500.4, y = -254.27, z = 35.72, scale = 0.65},
   {title="Car Rentals", colour=17, id=811, x = -237.14, y = 6201.52, z = 31.94, scale = 0.65},
