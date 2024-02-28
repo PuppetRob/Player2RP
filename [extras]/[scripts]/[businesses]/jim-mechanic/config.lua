@@ -297,7 +297,7 @@ Config = {
 			digitalSpeedLoc = { top = 40, left = 17 },				-- Location of the numbers (defaults to the center)
 			digitalSpeedSize = '3vh',								-- The font size
 
-			NeedleType = 1,											-- Change between 1, 2, 3
+			NeedleType = 2,											-- Change between 1, 2, 3
 
 			SpeedNeedleLength = '7.0vh',							-- Speedometer Needle Length
 			SpeedNeedleWidth = '0.6vh',								-- Speedometer Needle Width
