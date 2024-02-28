@@ -12,11 +12,11 @@ TrainHeist = {
 
 Citizen.CreateThread(function()
     for k, v in pairs(Config['TrainHeist']['startHeist']) do
-       -- loadModel(v['ped'])
-      --  TrainHeist['startPeds'][k] = CreatePed(4, GetHashKey(v['ped']), v['pos']['x'], v['pos']['y'], v['pos']['z'] - 0.95, v['heading'], false, true)
-    --    FreezeEntityPosition(TrainHeist['startPeds'][k], true)
-    --    SetEntityInvincible(TrainHeist['startPeds'][k], true)
-    --    SetBlockingOfNonTemporaryEvents(TrainHeist['startPeds'][k], true)
+        loadModel(v['ped'])
+       TrainHeist['startPeds'][k] = CreatePed(4, GetHashKey(v['ped']), v['pos']['x'], v['pos']['y'], v['pos']['z'] - 0.95, v['heading'], false, true)
+        FreezeEntityPosition(TrainHeist['startPeds'][k], true)
+        SetEntityInvincible(TrainHeist['startPeds'][k], true)
+        SetBlockingOfNonTemporaryEvents(TrainHeist['startPeds'][k], true)
     end
 end) 
 
