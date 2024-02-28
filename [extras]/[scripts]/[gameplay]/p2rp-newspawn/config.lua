@@ -1,7 +1,7 @@
 CodeStudio = {}
 
 
-CodeStudio.useTaxi = true          --Use AI Taxi or Not?
+CodeStudio.useTaxi = false          --Use AI Taxi or Not?
 CodeStudio.SpawnPedLoc = vector3(-1044.91, -2750.2, 21.36)    --If not using AI Taxi then set player spawn location 
 
 CodeStudio.Taxi = `taxi`                                     --Taxi Model
