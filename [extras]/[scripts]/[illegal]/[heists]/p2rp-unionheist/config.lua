@@ -33,9 +33,9 @@ Config['UnionHeist'] = {
         itemName = 'black_money'
     },
     ['startHeist'] ={ -- Heist start coords
-        pos = vector3(-2961.5, 728.58, 29.44),
+        pos = vector3(1569.37, -2130.51, 78.33),
         peds = {
-            {pos = vector3(-2961.5, 728.58, 29.44), heading = 87.22, ped = 'a_m_o_soucent_01'},
+            {pos = vector3(1569.37, -2130.51, 78.33), heading = 105.94, ped = 'a_m_o_soucent_01'},
         --    {pos = vector3(304.753, -1178.8, 29.3896), heading = 56.78, ped = 's_m_m_highsec_02'},
          --   {pos = vector3(304.00, -1177.9, 29.4023), heading = 226.42, ped = 's_m_m_fiboffice_02'}
         }
