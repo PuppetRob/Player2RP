@@ -262,40 +262,40 @@ local interiors = {
         ipl = 'gabz_fleeca02_milo_',
         coords = { x = 1179.74475, y = 2706.985, z = 37.15784 },
         entitySets = {
-            { name = 'room04_cashtrolley', enable = true }, -- bags and cash trolleys
-            { name = 'room05_cashtrolley', enable = true }, -- bags and cash trolleys
+            { name = 'room04_cashtrolley', enable = false }, -- bags and cash trolleys
+            { name = 'room05_cashtrolley', enable = false }, -- bags and cash trolleys
         }
     },
     {
         ipl = 'gabz_fleeca03_milo_',
         coords = { x = 145.416824, y = -1039.277, z = 28.4378834 },
         entitySets = {
-            { name = 'room04_cashtrolley', enable = true }, -- bags and cash trolleys
-            { name = 'room05_cashtrolley', enable = true }, -- bags and cash trolleys
+            { name = 'room04_cashtrolley', enable = false }, -- bags and cash trolleys
+            { name = 'room05_cashtrolley', enable = false }, -- bags and cash trolleys
         }
     },
     {
         ipl = 'gabz_fleeca04_milo_',
         coords = { x = -1216.7616, y = -333.000763, z = 36.85084 },
         entitySets = {
-            { name = 'room04_cashtrolley', enable = true }, -- bags and cash trolleys
-            { name = 'room05_cashtrolley', enable = true }, -- bags and cash trolleys
+            { name = 'room04_cashtrolley', enable = false }, -- bags and cash trolleys
+            { name = 'room05_cashtrolley', enable = false }, -- bags and cash trolleys
         }
     },
     {
         ipl = 'gabz_fleeca05_milo_',
         coords = { x = -355.435852, y = -48.5326, z = 48.1063843 },
         entitySets = {
-            { name = 'room04_cashtrolley', enable = true }, -- bags and cash trolleys
-            { name = 'room05_cashtrolley', enable = true }, -- bags and cash trolleys
+            { name = 'room04_cashtrolley', enable = false }, -- bags and cash trolleys
+            { name = 'room05_cashtrolley', enable = false }, -- bags and cash trolleys
         }
     },
     {
         ipl = 'gabz_fleeca06_milo_',
         coords = { x = -2962.59131, y = 478.238037, z = 14.7668953 },
         entitySets = {
-            { name = 'room04_cashtrolley', enable = true }, -- bags and cash trolleys
-            { name = 'room05_cashtrolley', enable = true }, -- bags and cash trolleys
+            { name = 'room04_cashtrolley', enable = false }, -- bags and cash trolleys
+            { name = 'room05_cashtrolley', enable = false }, -- bags and cash trolleys
         }
     },
     {

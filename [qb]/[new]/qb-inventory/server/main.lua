@@ -2193,6 +2193,8 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.worth = math.random(5000, 10000)
 				elseif itemData["name"] == "fishinglure" then
 					info.uses = 1000
+				elseif itemData["name"] == "laptop_green" then
+					info.uses = 3
 				elseif itemData["name"] == "fishinglure2" then
 					info.uses = 1500
 --[[ 				elseif itemData["name"] == "labkey" then
