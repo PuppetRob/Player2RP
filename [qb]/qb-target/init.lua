@@ -119,7 +119,7 @@ Config.Peds = {
 }, 
 { -- Fast Heist
 model = `s_m_y_cop_01`,
-coords = vector4(1984.16, 3054.39, 47.22, 239.8),
+coords = vector4(173.56, 2778.94, 46.08, 180.88),
 networked = false,
 invincible = true,
 blockevents = true,

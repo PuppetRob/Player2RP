@@ -4,7 +4,7 @@ PDFFRobberyCore['config'] = {
         [1] = vector3(27.48, -626.81, 14.95)
     },
     ['heistStart'] = {
-        [1] = vector3(1984.16, 3054.39, 47.22)
+        [1] = vector3(173.56, 2778.94, 46.08)
     },
     ['heistEnd'] = {  
         [1] = vector3(3416.16, 5499.48, 25.81)
