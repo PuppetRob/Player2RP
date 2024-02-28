@@ -37,7 +37,7 @@ Config = {
         ["Safe"] = true,
     },
 
-    StressChance = 35, -- (%) Chance of gaining stress per action
+    StressChance = 20, -- (%) Chance of gaining stress per action
     Stress = { -- Set status for Stress(on/off) and stress gained per action, turn them all to false, to fully disable it
         ["LockPickIPL"] = {status = true, gain = math.random(1, 4)},
         ["PropsIPL"] = {status = true, gain = math.random(1, 5)},
@@ -50,7 +50,7 @@ Config = {
     DrawTextZoneSize = vec3(1.5, 1.5, 2), -- Size of the drawtext zone
 
     MinimumHouseRobberyPolice = 0, -- Minimum police required to initiate a house robbery
-    TimeFrame = {min = 20, max = 6}, -- Robbery time frame
+    TimeFrame = {min = 01, max = 24}, -- Robbery time frame
     AutomaticallyResetHouse = 15, -- (Minutes) How long until the house resets automatically after someone enters
 
     -- Durations
