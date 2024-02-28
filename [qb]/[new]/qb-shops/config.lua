@@ -355,7 +355,7 @@ Config.Products = {
             slot = 7,
         },
         [8] = {
-            name = "scale",
+            name = "drug_scales",
             price = 2500,
             amount = 5,
             info = {},
