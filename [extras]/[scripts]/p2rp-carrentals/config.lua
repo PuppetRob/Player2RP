@@ -48,6 +48,7 @@ Config.Locations = {
         [2] = { label = "Vehicle Rental", coords = vector4(1992.62, 3777.29, 32.18, 183.39), model = `cs_solomon`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Sandy
         [3] = { label = "Vehicle Rental", coords = vector4(-500.4, -254.27, 35.72, 202.41), model = `cs_movpremf_01`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Job center
         [4] = { label = "Vehicle Rental", coords = vector4(-237.14, 6201.52, 31.94, 145.16), model = `csb_jackhowitzer`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Paleto
+        [5] = { label = "Vehicle Rental", coords = vector4(-1033.74, -2739.81, 20.17, 58.56), model = `csb_jackhowitzer`, scenario = "WORLD_HUMAN_CLIPBOARD"}, -- Airport
     },
 }
 
