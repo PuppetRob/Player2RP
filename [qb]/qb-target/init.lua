@@ -116,6 +116,21 @@ Config.Peds = {
 		},
 		distance = 2.5
 	}
+}, 
+{ -- Fast Heist
+model = `s_m_y_cop_01`,
+coords = vector4(1984.16, 3054.39, 47.22, 239.8),
+networked = false,
+invincible = true,
+blockevents = true,
+target = {
+	options = {
+		{
+			label = "Fast and Furious Heist",
+		},
+	},
+	distance = 2.5
+}
 },
 	{ -- Paleto Pawn
 	   model = `a_m_m_indian_01`,

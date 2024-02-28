@@ -1,8 +1,8 @@
 PDFFRobberyCore = {}
 PDFFRobberyCore['config'] = {
     ['reward'] = {
-        ['min'] = 15000,
-        ['max'] = 25000
+        ['min'] = 55000,
+        ['max'] = 75000
     },
     ['nextRob'] = {
         ['seconds'] = 3600,
