@@ -70,7 +70,7 @@ AK4Y.StarterItems = {
     {item = "driver_license", amount = 1},
     {item = "water_bottle", amount = 5},
     {item = "twerks_candy", amount = 5},
-  --  {item = "giftbox", amount = 1},
+    {item = "giftbox", amount = 1},
 
 
     -- {item = "water", amount = 3},
