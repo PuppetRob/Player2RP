@@ -24,11 +24,11 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.PawnItems = {
     [1] = {
         item = 'goldchain',
-        price = math.random(50,100)
+        price = math.random(150,200)
     },
     [2] = {
         item = "diamond_ring",
-        price = math.random(125, 145)
+        price = math.random(150, 300)
     },
     [3] = {
         item = "rolex",
@@ -985,6 +985,10 @@ Config.PawnItems = {
     [223] = {
         item = "robbery_hdd_01",
         price = math.random(5000, 6000)
+    },
+    [224] = {
+        item = "atmkkit",
+        price = math.random(180, 450)
     }
 }
 
