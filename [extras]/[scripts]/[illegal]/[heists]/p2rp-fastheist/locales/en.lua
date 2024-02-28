@@ -1,5 +1,0 @@
-Locales = {
-    Test = {
-        test = 'test'
-    }
-}
