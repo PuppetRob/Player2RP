@@ -1,0 +1,5 @@
+Locales = {
+    Test = {
+        test = 'test'
+    }
+}
