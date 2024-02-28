@@ -21,10 +21,10 @@ Config['PacificHeist'] = {
         local random = math.random(1, 3)
         return Config['PacificHeist']['rewardItems'][random]['itemName'], 5
     end,
-    ['trollyMoneyReward'] = 5000, -- This is the amount of money per roll
+    ['trollyMoneyReward'] = 3000, -- This is the amount of money per roll
     ['stackRewards'] = { -- This is stacks rewards. (not trolly) You can just change count(after =).
-        gold = 10,
-        money = 15000
+        gold = 3,
+        money = 5000
     },
     -- ['black_money'] = false, -- If change true, all moneys will convert to black
     ['startHeist'] ={ -- heist start coords
