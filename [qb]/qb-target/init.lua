@@ -102,6 +102,21 @@ Config.GlobalPlayerOptions = {
 }
 
 Config.Peds = {
+	{ -- Train Heist
+	model = `s_m_m_gentransport`,
+	coords = vector4(894.04, -1137.7, 25.94, 270.63),
+	networked = false,
+	invincible = true,
+	blockevents = true,
+	target = {
+		options = {
+			{
+				label = "Train Heist",
+			},
+		},
+		distance = 2.5
+	}
+},
 	{ -- Paleto Pawn
 	   model = `a_m_m_indian_01`,
 	   coords = vector4(-310.22, 6185.74, 31.56, 42.9),
