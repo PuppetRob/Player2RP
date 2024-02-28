@@ -23,10 +23,10 @@ function AddItem(src, data)
         exports['lj-inventory']:AddItem(src, data.item, data.amount, data.slot, data.info)
     elseif Config.Inventory == "qb" then
         exports['qb-inventory']:AddItem(src, data.item, data.amount, data.slot, data.info)
-    elseif Config.Inventory == "ox" then 
+--[[     elseif Config.Inventory == "ox" then 
         exports['ps-inventory']:(src, data.item, data.amount, data.slot, data.info)
     elseif Config.Inventory == "ps" then 
-        exports.ox_inventory:AddItem(src, data.item, data.amount, data.info, data.slot)
+        exports.ox_inventory:AddItem(src, data.item, data.amount, data.info, data.slot) ]]
     elseif Config.Inventory == "custom" then
         -- ADD YOUR CUSTOM INVENTORY EXPORT/EVENT
     end
@@ -37,10 +37,10 @@ function RemoveItem(src, data)
         exports['lj-inventory']:RemoveItem(src, data.item, data.amount, data.slot)
     elseif Config.Inventory == "qb" then
         exports['qb-inventory']:RemoveItem(src, data.item, data.amount, data.slot)
-    elseif Config.Inventory == "ox" then 
+--[[     elseif Config.Inventory == "ox" then 
         exports.ox_inventory:RemoveItem(src, data.item, data.amount, data.info, data.slot)
     elseif Config.Inventory == "ps" then
-        exports['ps-inventory']:RemoveItem(src, data.item, data.amount, data.slot)
+        exports['ps-inventory']:RemoveItem(src, data.item, data.amount, data.slot) ]]
     elseif Config.Inventory == "custom" then
         -- ADD YOUR CUSTOM INVENTORY EXPORT/EVENT
     end
