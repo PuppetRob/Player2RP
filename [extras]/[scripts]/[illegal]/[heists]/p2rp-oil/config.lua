@@ -27,9 +27,9 @@ Config['OilRigHeist'] = {
     ['crateSettings'] = {
         ['crateCount'] = 5, -- Crate with items count for every heist. (Max 10)
         ['crateItems'] = { -- Items for every crate.
-            {itemName = 'goldbar',   itemCount = function() return math.random(1, 5) end, chance = 90},
-            {itemName = 'goldbar',  itemCount = function() return math.random(1, 5) end, chance = 80},
-            {itemName = 'goldbar',  itemCount = function() return math.random(1, 5) end, chance = 70},
+            {itemName = 'goldbar',   itemCount = function() return math.random(5, 15) end, chance = 90},
+            {itemName = 'goldbar',  itemCount = function() return math.random(5, 15) end, chance = 80},
+            {itemName = 'goldbar',  itemCount = function() return math.random(5, 15) end, chance = 70},
         },
         ['lootTime'] = 5, -- Seconds
     }
