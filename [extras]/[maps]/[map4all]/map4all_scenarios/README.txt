@@ -1,2 +1,0 @@
-This resource prevents pedestrian and vehicle NPCs from conflicting or in any way interfering with our assets.
-Disclaimer: You cannot stream sp_manifest.ymt in another resource, it will conflict with ours.
