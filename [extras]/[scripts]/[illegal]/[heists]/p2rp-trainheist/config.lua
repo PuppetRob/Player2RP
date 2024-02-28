@@ -15,7 +15,7 @@ Config['TrainHeist'] = {
     ['startHeist'] ={ -- heist start coords
         pos = vector3(894.28, -1137.81, 25.94),
          peds = {
-            {pos = vector3(894.28, -1137.81, 25.94), heading = 271.5, ped = 's_m_m_dockwork_01'},
+            {pos = vector3(894.28, -1137.81, 25.94), heading = 271.5, ped = 's_m_m_autoshop_02'},
          }
     },
     ['guardPeds'] = { -- guard ped list (you can add new)
