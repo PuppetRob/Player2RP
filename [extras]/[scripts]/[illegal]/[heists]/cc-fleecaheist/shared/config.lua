@@ -8,7 +8,7 @@ Config.GeneralCooldown = 45 -- Minutes before any bank can be robbed again, afte
 Config.BankCooldown = 60 -- Minutes before the individual bank can be robbed again, after it has just been robbed (This is also the reset timer, so when timer is done, the bank gets reset) (Start when camera is hacked)
 
 Config.Doorlock = "qb" -- qb / ox
-Config.Inventory = "lj" -- qb / ox / lj / ps / custom (Add code in server/open.lua)
+Config.Inventory = "qb" -- qb / ox / lj / ps / custom (Add code in server/open.lua)
 
 Config.CoreName = "qb-core" -- Change the name of the core, if you've renamed qb-core
 Config.TargetName = "qb-target" -- Change the name of target, if you've renamed qb-target
