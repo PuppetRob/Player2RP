@@ -4,7 +4,7 @@ CreateThread(function()
     end
     lib = exports.loaf_lib:GetLib()
 
-    local blipCoords = Config.BossActions
+--[[     local blipCoords = Config.BossActions
     if Config.Teleport then 
         blipCoords = Config.Teleport[1].xyz
     end
@@ -14,7 +14,7 @@ CreateThread(function()
         color = 13,
         scale = 0.75,
         label = Strings["blip"]
-    })
+    }) ]]
 
     if Config.Command then
         RegisterCommand(Config.Command, JobMenu)
