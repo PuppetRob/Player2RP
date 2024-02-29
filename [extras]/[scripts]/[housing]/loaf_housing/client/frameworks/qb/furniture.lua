@@ -58,9 +58,9 @@ CreateThread(function()
                                 }
                             }
                         })
-
-                        if not dialog or not cache.spawnedFurniture[tonumber(dialog.id)] then
-                            return
+                        
+                        if not dialog or not cache.spawnedFurniture[tonumber(dialog.id)] then 
+                            return 
                         end
                         PlacedFurnitureMenu(tonumber(dialog.id))
                     end,
@@ -97,17 +97,11 @@ CreateThread(function()
                 params = {
                     event = function()
                         StartLoading(Strings["selling_furniture"])
-                        if cache.sellingFurniture then
-                            return
-                        end
-
-                        cache.sellingFurniture = true
                         lib.TriggerCallbackSync("loaf_housing:sell_furniture", object, 1)
-                        cache.sellingFurniture = false
                         Wait(400)
                         StopLoading()
                         SellFurnitureMenu()
-                    end,
+                    end, 
                     isAction = true
                 }
             },
@@ -116,17 +110,11 @@ CreateThread(function()
                 params = {
                     event = function()
                         StartLoading(Strings["selling_furniture"])
-                        if cache.sellingFurniture then
-                            return
-                        end
-
-                        cache.sellingFurniture = true
                         lib.TriggerCallbackSync("loaf_housing:sell_furniture", object, amount)
-                        cache.sellingFurniture = false
                         Wait(400)
                         StopLoading()
                         SellFurnitureMenu()
-                    end,
+                    end, 
                     isAction = true
                 }
             }
@@ -136,7 +124,7 @@ CreateThread(function()
         StartLoading(Strings["fetching_furniture"])
         local furniture = lib.TriggerCallbackSync("loaf_housing:get_furniture")
         StopLoading()
-
+        
         local elements = {
             {
                 header = Strings["your_furniture"],

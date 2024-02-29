@@ -64,7 +64,7 @@ function HouseMenuHandler(data)
     local stringId = tostring(propertyId)
     if action == "use" then
         if cache.busy then return end
-
+        
         if cache.ownedHouses[stringId] then
             OwnPropertyMenu(propertyId)
         elseif cache.houses[stringId] and Houses[propertyId].unique then
@@ -93,7 +93,7 @@ function RefreshGarageMarkers()
         local keys = exports.loaf_keysystem:GetKeys()
         for _, v in pairs(keys) do
             local _, _, propertyId = v.key_id:find("housing_key_(.*)_")
-            if propertyId then
+            if propertyId then 
                 garageAccess[propertyId] = true
             end
         end
@@ -250,7 +250,7 @@ function ReloadBlips(reloadMarkers)
                 if location.marker then
                     lib.RemoveMarker(location.marker)
                 end
-
+                
                 if cache.ownedHouses[tostring(id)] or cache.houses[tostring(id)] then
                     local owner = (cache.ownedHouses[tostring(id)] and cache.ownedHouses[tostring(id)].owner) or cache.houses[tostring(id)].owner
                     local uniqueId = (cache.ownedHouses[tostring(id)] and cache.ownedHouses[tostring(id)].id) or cache.houses[tostring(id)].id
@@ -272,7 +272,7 @@ function ReloadBlips(reloadMarkers)
             end
         end
 
-        if not reloadMarkers then
+        if not reloadMarkers then 
             reloadMarkers = Config.Target
         end
 
@@ -298,32 +298,3 @@ function ReloadBlips(reloadMarkers)
         RefreshGarageMarkers()
     end
 end
-
-CreateThread(function()
-    if Config.BlipCommand?.Enabled then
-        RegisterCommand(Config.BlipCommand.Command, function(_, args)
-            if args[1] ~= "0" and args[1] ~= "1" then
-                return
-            end
-
-            local enabled = args[1] == "1"
-
-            Config.Blip.forSale.enabled = enabled
-            Config.Blip.ownedOther = enabled
-
-            ReloadBlips()
-        end, false)
-
-        TriggerEvent("chat:addSuggestion", "/" .. Config.BlipCommand.Command, Strings["blip_command"], {
-            { name = Strings["blip_command_arg"], help = Strings["blip_command_arg_help"] }
-        })
-    end
-end)
-
-AddEventHandler("onResourceStop", function(resourceName)
-    if resourceName == GetCurrentResourceName() then
-        if Config.BlipCommand?.Enabled then
-            TriggerEvent("chat:removeSuggestion", Config.BlipCommand.Command)
-        end
-    end
-end)

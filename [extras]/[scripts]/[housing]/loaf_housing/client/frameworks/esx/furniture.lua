@@ -33,8 +33,8 @@ CreateThread(function()
                 elements = elements
             }, function(data, menu)
                 menu.close()
-                if not data.current.object then
-                    return
+                if not data.current.object then 
+                    return 
                 end
                 Furnish(data.current.object)
             end, CloseMenuHandler)
@@ -117,8 +117,8 @@ CreateThread(function()
                 elements = elements
             }, function(data, menu)
                 local data = data.current
-                if not data.object then
-                    return menu.close()
+                if not data.object then 
+                    return menu.close() 
                 end
                 ESX.UI.Menu.Open("default", GetCurrentResourceName(), "sell_one_multiple", {
                     title = data.label,
@@ -135,17 +135,11 @@ CreateThread(function()
                     }
                 }, function(data2, menu2)
                     StartLoading(Strings["selling_furniture"])
-
-                    local amount = data2.current.value == "sell_one" and 1 or data.amount
-
-                    if cache.sellingFurniture then
-                        return
+                    if data2.current.value == "sell_one" then
+                        lib.TriggerCallbackSync("loaf_housing:sell_furniture", data.object, 1)
+                    elseif data2.current.value == "sell_all" then
+                        lib.TriggerCallbackSync("loaf_housing:sell_furniture", data.object, data.amount)
                     end
-
-                    cache.sellingFurniture = true
-                    lib.TriggerCallbackSync("loaf_housing:sell_furniture", data.object, amount)
-                    cache.sellingFurniture = false
-
                     Wait(400)
                     StopLoading()
                     menu.close()

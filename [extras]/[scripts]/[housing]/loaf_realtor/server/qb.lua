@@ -21,18 +21,10 @@ CreateThread(function()
 
         return hasJob, isBoss, canCreate
     end
-
+    
     function RemoveSocietyMoney(price)
         if GetResourceState("qb-management") == "started" then
-            local success, res = pcall(function()
-                return exports["qb-management"]:RemoveMoney(Config.JobName, price)
-            end)
-
-            if success then
-                return res
-            else
-                return exports["qb-banking"]:RemoveMoney(Config.JobName, price)
-            end
+            return exports["qb-management"]:RemoveMoney(Config.JobName, price)
         elseif GetResourceState("qb-bossmenu") == "started" then
             local accounts = json.decode(LoadResourceFile("qb-bossmenu", "./accounts.json"))
 

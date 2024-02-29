@@ -10,7 +10,7 @@ if Config.FurnishCommand.Enabled then
         if not allowedFurnish and Config.Furnish == "key" then
             allowedFurnish = exports.loaf_keysystem:HasKey(GetKeyName(instance.property, instance.id))
         end
-
+        
         if allowedFurnish then
             SelectFurnitureMenu()
         end
@@ -50,7 +50,7 @@ function StorageMenuHandler(data)
                     return
                 end
             end
-
+            
             exports.ox_inventory:setStashTarget(propertyId .. "_" .. uniqueId .. "_" .. furnitureId, owner)
         end
     end
@@ -156,7 +156,7 @@ local weatherSyncScripts = {
 }
 RegisterNetEvent("loaf_housing:weather_sync", function()
     if not cache.shell then -- we only need to set the weather & time when inside a shell, mlo & ipl already looks good with all weather & time
-        return
+        return 
     end
 
     local previousWind = GetWindSpeed()
@@ -173,14 +173,12 @@ RegisterNetEvent("loaf_housing:weather_sync", function()
     end
 
     while cache.inInstance do
-        if hasWeathersync then
-            Wait(500)
-        else
-            Wait(0)
+        Wait(250)
+        if not hasWeathersync then
             SetWeather()
         end
     end
-
+    
     Wait(1000)
     SetWindSpeed(previousWind)
 
@@ -214,7 +212,7 @@ function Furnish(item)
         if attached ~= nil then
             FreezeEntityPosition(attached, true)
             table.insert(attachments, attached)
-
+    
             AttachEntityToEntity(attached, object, 0, attachment.offset.xyz, vector3(0.0, 0.0, attachment.offset.w), false, false, false, false, 2, true)
         else
             Notify(Strings["couldnt_load"]:format(attachment.object))
@@ -258,7 +256,7 @@ function Furnish(item)
         end
 
         if pressDelay <= GetGameTimer() then
-            if IsDisabledControlPressed(0, 44) then -- q (decrease speed)
+            if IsDisabledControlPressed(0, 44) then -- q (decrease speed) 
                 speed = speed - 0.1
                 if speed < 0.1 then speed = 0.1 end
                 pressDelay = GetGameTimer() + 100
@@ -268,7 +266,7 @@ function Furnish(item)
             end
         end
 
-        if
+        if 
             IsDisabledControlPressed(0, 175) or
             IsDisabledControlPressed(0, 174) or
             IsDisabledControlPressed(0, 173) or
@@ -280,7 +278,7 @@ function Furnish(item)
         end
 
         -- move up / down
-        if IsDisabledControlPressed(0, 15) then -- scroll up
+        if IsDisabledControlPressed(0, 15) then -- scroll up 
             SetEntityCoordsNoOffset(object, GetEntityCoords(object) + vec3(0.0, 0.0, 0.01 * speed))
         elseif IsDisabledControlPressed(0, 14) then -- scrol down
             SetEntityCoordsNoOffset(object, GetEntityCoords(object) - vec3(0.0, 0.0, 0.01 * speed))
@@ -300,7 +298,7 @@ function Furnish(item)
 
         SetEntityRotation(object, rotation.x, 0.0, rotation.z, 2, true)
 
-        -- heading
+        -- heading 
         if IsDisabledControlPressed(0, 24) then -- mouse left
             if IsDisabledControlPressed(0, 21) then
                 if pressDelay <= GetGameTimer() then
@@ -392,7 +390,7 @@ function ManagePlacedFurniture()
         Wait(0)
 
         for i, v in pairs(cache.spawnedFurniture or {}) do
-            Draw3DTextSlow(i, v.coords.x, v.coords.y, v.coords.z)
+            Draw3DText(i, v.coords + vector3(0.0, 0.0, 0.75))
         end
     end
 end
@@ -451,7 +449,7 @@ AddStateBagChangeHandler("instance", nil, function(bagName, key, value)
     local instance = value
     local currentInstance = LocalPlayer.state.instance
     local shouldConceal = (instance and instance ~= currentInstance) or false
-
+    
     print(("1 shouldConceal: %s, source: %i"):format(shouldConceal, source))
     NetworkConcealPlayer(playerId, shouldConceal)
 end)
@@ -468,17 +466,17 @@ RegisterNetEvent("loaf_housing:enter_instance", function(data)
 
     if data.shell then
         local shell = Shells[data.shell]
-        if not shell then
+        if not shell then 
             ExitInstance()
             return print("^1SHELL "..data.shell.." DOES NOT EXIST")
         end
         local shell_model = lib.LoadModel(shell.object)
-        if not shell_model.success then
+        if not shell_model.success then 
             ExitInstance()
             Notify(Strings["couldnt_load"]:format(data.shell))
             return
         end
-
+        
         cache.shell = CreateObject(shell_model.model, data.coords.xyz, false, false, false)
         SetEntityHeading(cache.shell, 0.0)
         FreezeEntityPosition(cache.shell, true)
@@ -507,7 +505,7 @@ RegisterNetEvent("loaf_housing:enter_instance", function(data)
     SetEntityInvincible(PlayerPedId(), true)
 
     DoScreenFadeOut(750)
-    while not IsScreenFadedOut() do
+    while not IsScreenFadedOut() do 
         Wait(0)
     end
 
@@ -558,11 +556,11 @@ RegisterNetEvent("loaf_housing:enter_instance", function(data)
     SetEntityInvincible(PlayerPedId(), true)
 
     ExitInstance()
-
+    
     CloseMenu()
 
     DoScreenFadeOut(750)
-    while not IsScreenFadedOut() do
+    while not IsScreenFadedOut() do 
         Wait(0)
     end
 

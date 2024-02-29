@@ -36,21 +36,16 @@ local unlocked = {}
 function SetDoorLocked(propertyId, uniqueId, locked)
     local houseData = Houses[propertyId]
     if houseData.interiortype == "walkin" then
-        GlobalState["loaf_housing_"..propertyId.."_1"] = not locked
+        -- unlock the first door
+        GlobalState["loaf_housing_"..propertyId.."_1"] = true
         return
     end
     unlocked[tostring(propertyId.."_"..uniqueId)] = locked == false
 end
-exports("SetDoorLocked", SetDoorLocked)
 
 function IsDoorLocked(propertyId, uniqueId)
-    local houseData = Houses[propertyId]
-    if houseData.interiortype == "walkin" then
-        return not GlobalState["loaf_housing_"..propertyId.."_1"]
-    end
     return not unlocked[tostring(propertyId.."_"..uniqueId)]
 end
-exports("IsDoorLocked", IsDoorLocked)
 
 lib.RegisterCallback("loaf_housing:get_locked", function(source, cb, propertyId, uniqueId)
     if type(propertyId) == "number" and type(uniqueId) == "string" then
@@ -82,7 +77,7 @@ function DoesPlayerOwnProperty(source, propertyid)
 end
 
 function BackupHouse(owner, propertyid, cb)
-    if not Config.BackupRemovedHouse then
+    if not Config.BackupRemovedHouse then 
         if cb then cb() end
         return
     end
@@ -92,7 +87,7 @@ function BackupHouse(owner, propertyid, cb)
         ["@propertyid"] = propertyid
     }, function(res)
         if not res or not res[1] then return end
-
+        
         local insert, values = "", ""
         for k, v in pairs(res[1]) do
             insert = insert .. "`"..k.."`"
@@ -101,12 +96,12 @@ function BackupHouse(owner, propertyid, cb)
             elseif type(v) == "number" then
                 values = values .. v
             end
-            if next(res[1], k) then
+            if next(res[1], k) then 
                 insert = insert .. ", "
                 values = values .. ", "
             end
         end
-
+        
         local backup = ("-- BACKUP FOR IDENTIFIER %s, PROPERTY #%i, UNIQUE PROPERTY ID %s\n"):format(owner, propertyid, res[1].id)
         backup = backup .. ("INSERT INTO `loaf_properties` (%s) VALUES (%s);"):format(insert, values)
         if res[1].rent then
@@ -157,7 +152,7 @@ function RemoveProperty(identifier, propertyId, cb)
             ["@propertyid"] = propertyId
         }, function(id)
             if not id then return cb(false) end
-
+    
             local instanceid = GetInstance(propertyId, id)
             if instanceid then DeleteInstance(instanceid) end
 
@@ -221,7 +216,7 @@ end)
 
 function RegisterStash(propertyId, uniqueId, furnitureId, slots, weight, owner)
     local inventoryId = propertyId .. "_" .. uniqueId .. "_" .. furnitureId
-    -- print(("Registered stash for owner %s, inventory id: %s"):format(owner, inventoryId))
+    print(("Registered stash for owner %s, inventory id: %s"):format(owner, inventoryId))
     if Config.Inventory == "ox" then
         exports.ox_inventory:RegisterStash(inventoryId, Strings["inventory"], slots, weight, owner)
     elseif Config.Inventory == "modfreakz" then
@@ -233,22 +228,22 @@ end
 
 lib.RegisterCallback("loaf_housing:give_key", function(source, cb, propertyId, playerId)
     local owns, i = DoesPlayerOwnProperty(source, propertyId)
-    if not owns then
-        return cb(false, "dont_own")
+    if not owns then 
+        return cb(false, "dont_own") 
     end
 
-    if not GetIdentifier(playerId) then
-        return cb(false, "not_online")
+    if not GetIdentifier(playerId) then 
+        return cb(false, "not_online") 
     end
-
+    
     GiveKey(playerId, propertyId, boughtHouses[i].id)
     cb(true)
 end)
 
 lib.RegisterCallback("loaf_housing:get_key_holders", function(source, cb, propertyId)
     local owns, i = DoesPlayerOwnProperty(source, propertyId)
-    if not owns then
-        return cb({})
+    if not owns then 
+        return cb({}) 
     end
 
     local uniqueId = boughtHouses[i].id
@@ -273,7 +268,7 @@ lib.RegisterCallback("loaf_housing:get_key_holders", function(source, cb, proper
                     name = result[1].firstname .. " " .. result[1].lastname
                 end
             end
-
+        
             table.insert(keyHolders, {
                 identifier = v.identifier,
                 name = name
@@ -285,8 +280,8 @@ end)
 
 lib.RegisterCallback("loaf_housing:remove_key_holder", function(source, cb, propertyId, identifier)
     local owns, i = DoesPlayerOwnProperty(source, propertyId)
-    if not owns then
-        return cb(false, "dont_own")
+    if not owns then 
+        return cb(false, "dont_own") 
     end
 
     local uniqueId = boughtHouses[i].id
@@ -307,7 +302,7 @@ end)
 
 --- VERSION CHECK ---
 CreateThread(function()
-    PerformHttpRequest("https://loaf-scripts.com/versions/", function(err, text, headers)
+    PerformHttpRequest("https://loaf-scripts.com/versions/", function(err, text, headers) 
         print(text or "^3[WARNING]^0 Error checking script version, the website did not respond. (This is not an error on your end)")
     end, "POST", json.encode({
         resource = "housing",

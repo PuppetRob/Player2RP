@@ -10,8 +10,10 @@ Strings = {
     -- MARKERS
     ["manage_house"] = "Open house menu (#%i)",
     ["manage_apart"] = "Open apartment menu (#%i)",
-
+    
     -- PURCHASE HOUSE MENU
+    ["purchase_house"] = "Purchase house #%i for $%i?",
+
     ["purchase_rent_house"] = "Do you want to purchase or rent the house?",
     ["purchase_rent_apart"] = "Do you want to purchase or rent the apartment?",
     ["purchase"] = "Purchase ($%i)",
@@ -88,7 +90,7 @@ Strings = {
     ["lockpick_door"] = "Lockpick the door",
     ["breach_door"] = "Breach the door",
 
-    -- ENTER / PURCHASE / LOCKPICK
+    -- ENTER / PURCHASE / LOCKPICK 
     ["house_menu"] = "House menu (#%i)",
     ["apart_menu"] = "Apartment menu (#%i)",
 
@@ -285,17 +287,13 @@ Purchase ~b~%s~s~ for ~g~$%s~s~?
     ["unlocked"] = "Unlocked",
     ["lock_door"] = "Lock the door",
     ["unlock_door"] = "Unlock the door",
-
+    
     ["spawn_apart"] = "Apartment #%i",
     ["spawn_house"] = "House #%i",
 
     ["contact_realtor"] = "Contact a realtor to purchase this property",
     ["property_price"] = "The property costs $%i",
     ["property_rent"] = "The rent is $%i",
-
-    ["blip_command"] = "Toggle blips on / off",
-    ["blip_command_arg"] = "Enabled 1 / 0",
-    ["blip_command_arg_help"] = "Whether or not to show blips. 1 or 0",
 
     -- LOGS
     ["LOG_backed_up"] = "Backed up %s's property (#%i, id %s).\n\nFile location: %s",

@@ -47,7 +47,7 @@ Categories = {
         lockpick = 3,
         label = "Lowtier apartment"
     },
-
+    
     -- unused shells for realtor job
     ["labs"] = {
         label = "Labs",
@@ -492,7 +492,7 @@ local packs = {
             object = `highendmotel_shell`,
             category = "misc",
             doorOffset = vector3(3.204941, 3.354507, -1.511139),
-            doorHeading = 181.53
+            doorHeading = 181.53 
         },
         ["Furnished motel 3"] = {
             object = `standardmotel_shell`,
@@ -581,7 +581,6 @@ local packs = {
             doorHeading = 178.74
         }
     },
-
     ["September Update - 2022"] = {
         ["Gun workshop 1"] = {
             object = `gunworkshop_k4mb1`,
@@ -632,217 +631,7 @@ local packs = {
             doorHeading = 2.248637
         },
     },
-    ["January Update - 2023"] = {
-        ["Basement 1"] = {
-            object = `k4mb1_basement1_shell`,
-            category = "misc",
-            doorOffset = vector3(-4.372070, -4.802490, 0.612473),
-            doorHeading = 91.410950
-        },
-        ["Basement 2"] = {
-            object = `k4mb1_basement2_shell`,
-            category = "misc",
-            doorOffset = vector3(-4.498779, -4.910400, 0.612457),
-            doorHeading = 89.163231
-        },
-        ["Basement 3"] = {
-            object = `k4mb1_basement3_shell`,
-            category = "misc",
-            doorOffset = vector3(-4.398193, -4.843506, 0.612511),
-            doorHeading = 90.561913
-        },
-        ["Basement 4"] = {
-            object = `k4mb1_basement4_shell`,
-            category = "misc",
-            doorOffset = vector3(-4.385010, -4.960449, 0.612457),
-            doorHeading = 93.816368
-        },
-        ["Basement 5"] = {
-            object = `k4mb1_basement5_shell`,
-            category = "misc",
-            doorOffset = vector3(-4.334961, -4.923584, 0.612450),
-            doorHeading = 92.106110
-        },
-        ["Casino Hotel"] = {
-            object = `k4mb1_casinohotel_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(-3.288086, -0.086426, -1.569328),
-            doorHeading = 267.567230
-        },
-        ["Midtier house 6"] = {
-            object = `k4mb1_house1_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(-3.058594, -4.667480, -1.450981),
-            doorHeading = 0.705269
-        },
-        ["Highend house 12"] = {
-            object = `k4mb1_house2_shell`,
-            category = "highend_house",
-            doorOffset = vector3(-8.718262, 1.017334, -4.166702),
-            doorHeading = 269.314667
-        },
-        ["Highend house 13"] = {
-            object = `k4mb1_house3_shell`,
-            category = "highend_house",
-            doorOffset = vector3(8.774414, -7.811768, -3.778282),
-            doorHeading = 0.474911
-        },
-        ["Midtier house 7"] = {
-            object = `k4mb1_house4_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(-2.249268, -2.806152, -2.976952),
-            doorHeading = 358.454926
-        }
-    },
-    ["April Update - 2023"] = {
-        ["Furnished Office 1"] = {
-            object = `k4mb1_furnishedoffice1_shell`,
-            category = "misc",
-            doorOffset = vector3(3.713135, -2.029297, -1.909401),
-            doorHeading = 91.910851
-        },
-        ["Furnished Office 2"] = {
-            object = `k4mb1_furnishedoffice2_shell`,
-            category = "misc",
-            doorOffset = vector3(4.399902, 3.886230, -1.736137),
-            doorHeading = 178.683426
-        },
-        ["Furnished Office 3"] = {
-            object = `k4mb1_furnishedoffice3_shell`,
-            category = "misc",
-            doorOffset = vector3(-0.265472, 5.904297, -1.684807),
-            doorHeading = 89.185913
-        },
-        ["Furnished Office 4"] = {
-            object = `k4mb1_furnishedoffice4_shell`,
-            category = "misc",
-            doorOffset = vector3(8.936890, -2.246582, -2.536263),
-            doorHeading = 89.461838
-        },
-        ["Furnished Office 5"] = {
-            object = `k4mb1_furnishedoffice5_shell`,
-            category = "misc",
-            doorOffset = vector3(3.218018, -13.781738, -4.063980),
-            doorHeading = 358.388367
-        },
-        ["Hood House 1"] = {
-            object = `k4mb1_hoodhouse1_shell`,
-            category = "lowtier_house",
-            doorOffset = vector3(-2.416107, -7.321289, 0.010063),
-            doorHeading = 95.944260
-        },
-        ["Laundry Counterfeit"] = {
-            object = `k4mb1_laundry_shell`,
-            category = "misc",
-            doorOffset = vector3(10.476929, -6.032227, -3.376228),
-            doorHeading = 7.849342
-        },
-        ["Paleto House 1"] = {
-            object = `k4mb1_palhouse1_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(-0.728302, 5.693848, -2.653419),
-            doorHeading = 91.016617
-        },
-        ["Sandy House 1"] = {
-            object = `k4mb1_sandyhouse1_shell`,
-            category = "shittier_house",
-            doorOffset = vector3(1.540070, -4.918457, -0.904404),
-            doorHeading = 1.173642
-        },
-        ["Starter House Empty 1"] = {
-            object = `kambi_emptyhouse1`,
-            category = "lowtier_house",
-            doorOffset = vector3(-0.844818, -2.274414, 0.009979),
-            doorHeading = 275.349762
-        },
-        ["Starter House Furnished 1"] = {
-            object = `kambi_furnishedhouse1`,
-            category = "lowtier_house",
-            doorOffset = vector3(-0.803162, -2.606934, 0.009964),
-            doorHeading = 267.923523
-        }
-    },
-    ["December Update - 2023"] = {
-        ["Trap House 1"] = {
-            object = `k4mb1_trap_shell`,
-            category = "shittier_house",
-            doorOffset = vector3(-7.117432, -1.424805, -1.241943),
-            doorHeading = 177.190689
-        },
-        ["Trap house 2"] = {
-            object = `k4mb1_trap2_shell`,
-            category = "shittier_house",
-            doorOffset = vector3(-7.070068, -1.371704, -1.241776),
-            doorHeading = 184.854538
-        },
-        ["Motel 4"] = {
-            object = `k4mb1_motel1_shell`,
-            category = "lowtier_apartment",
-            doorOffset = vector3(-0.176758, -0.051270, 0.004852),
-            doorHeading = 274.066528
-        },
-        ["Motel 5"] = {
-            object = `k4mb1_motel2_shell`,
-            category = "lowtier_apartment",
-            doorOffset = vector3(-0.213867, -0.002319, 0.005203),
-            doorHeading = 273.717468
-        },
-        ["Loft 1"] = {
-            object = `k4mb1_loft1_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(6.720459, -2.945801, 0.005234),
-            doorHeading = 93.966095
-        },
-        ["Loft 2"] = {
-            object = `k4mb1_loft2_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(8.669678, 1.055176, 0.004974),
-            doorHeading = 89.600037
-        },
-        ["Loft 3"] = {
-            object = `k4mb1_loft3_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(5.802734, -0.348389, 0.004929),
-            doorHeading = 93.083038
-        },
-        ["Luxury apartment 2"] = {
-            object = `k4mb1_apa1_shell`,
-            category = "highend_apartment",
-            doorOffset = vector3(-20.667236, -2.443481, 0.804993),
-            doorHeading = 275.450989
-        },
-        ["Luxury apartment 3"] = {
-            object = `k4mb1_apa2_shell`,
-            category = "highend_apartment",
-            doorOffset = vector3(-20.855225, -2.500977, 0.804565),
-            doorHeading = 273.860840
-        },
-        ["Luxury apartment 4"] = {
-            object = `k4mb1_apa3_shell`,
-            category = "highend_apartment",
-            doorOffset = vector3(-20.707031, -2.486816, 0.804596),
-            doorHeading = 270.773590
-        },
-        ["Classic house 4"] = {
-            object = `k4mb1_classic4_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(4.735840, -2.002197, -4.374207),
-            doorHeading = 93.003036
-        },
-        ["Classic house 5"] = {
-            object = `k4mb1_classic5_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(4.720703, -2.208862, -4.374298),
-            doorHeading = 90.465919
-        },
-        ["Classic house 6"] = {
-            object = `k4mb1_classic6_shell`,
-            category = "midtier_house",
-            doorOffset = vector3(4.785400, -2.146118, -4.374298),
-            doorHeading = 92.156052
-        }
-    },
-
+    
     -- Max Creations shells
     ["Max Luxury Furnished V1"] = {
         ["Luxury Furnished 1"] = {
@@ -911,23 +700,15 @@ local packs = {
 }
 
 for pack, bought in pairs(Config.ShellPacks) do
-    if not bought then
-        goto continue
-    end
-
-    if not packs[pack] then
-        print(("^1[ERROR] ^7You've added the pack %s to the config, but it doesn't exist in shells.lua"):format(pack))
-    end
-
-    print(("Loading pack ^3%s^0"):format(pack))
-
-    for shell, shellData in pairs(packs[pack]) do
-        if not Shells[shell] then
-            Shells[shell] = shellData
-            -- print(("Added shell ^4%s^0 from pack ^3%s^0"):format(shell, pack))
+    if bought then
+        print(("Loading pack ^3%s^0"):format(pack))
+        for shell, shellData in pairs(packs[pack]) do
+            if not Shells[shell] then
+                Shells[shell] = shellData
+                print(("Added shell ^4%s^0 from pack ^3%s^0"):format(shell, pack))
+            end
         end
     end
-    ::continue::
 end
 
 -- insert all started shells into categories

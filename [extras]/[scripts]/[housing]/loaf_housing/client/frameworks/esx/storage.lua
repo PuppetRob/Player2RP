@@ -69,22 +69,22 @@ CreateThread(function()
             elements = elements
         }, function(data, menu)
             local value = data.current.value
-            if not value then
-                return
+            if not value then 
+                return 
             end
 
             if itemOrWeapon == "items" then
                 local amount = GetAmount(action)
-                if amount <= 0 then
-                    return
+                if amount <= 0 then 
+                    return 
                 end
 
-                if (action == "withdraw" and value.amount < amount) or (action == "deposit" and value.count < amount) then
-                    return Notify(Strings[action == "withdraw" and "storage_not_enough" or "dont_have"])
+                if (action == "withdraw" and value.amount < amount) or (action == "deposit" and value.count < amount) then 
+                    return Notify(Strings[action == "withdraw" and "storage_not_enough" or "dont_have"]) 
                 end
 
                 lib.TriggerCallback("loaf_housing:"..action.."_item", function(success)
-                    if success then
+                    if success then 
                         if cache.inInstance then
                             cache.currentInstance.furniture = success
                         end
@@ -94,7 +94,7 @@ CreateThread(function()
                 end, propertyId, uniqueId, furnitureId, (action == "withdraw" and value.item) or value.name, amount)
             elseif itemOrWeapon == "weapons" then
                 lib.TriggerCallback("loaf_housing:"..action.."_weapon", function(success)
-                    if success then
+                    if success then 
                         if cache.inInstance then
                             cache.currentInstance.furniture = success
                         end
@@ -140,12 +140,12 @@ CreateThread(function()
             local value = data.current.value
             if value == "cash" or value == "dirty" then
                 local amount = GetAmount(action)
-                if amount <= 0 then
-                    return
+                if amount <= 0 then 
+                    return 
                 end
 
                 lib.TriggerCallback("loaf_housing:"..action.."_money", function(success)
-                    if success then
+                    if success then 
                         if cache.inInstance then
                             cache.currentInstance.furniture = success
                         end
@@ -178,11 +178,11 @@ CreateThread(function()
             return
         elseif Config.Inventory == "qs" then
             inventoryId = inventoryId:gsub("-", "_")
-            TriggerServerEvent("inventory:server:OpenInventory", "stash", inventoryId)
-            TriggerEvent("inventory:client:SetCurrentStash", inventoryId)
+            TriggerServerEvent ("inventory:server:OpenInventory", "stash", inventoryId)
+            TriggerEvent ("inventory:client:SetCurrentStash", inventoryId)
             return
         end
-
+        
         ESX.UI.Menu.Open("default", GetCurrentResourceName(), "deposit_withdraw", {
             title = Strings["deposit_withdraw"],
             align = cache.menuAlign,
@@ -208,7 +208,7 @@ CreateThread(function()
             align = cache.menuAlign,
             elements = {
                 {
-                    label = Strings["equip_outfit"],
+                    label = Strings["equip_outfit"], 
                     value = "equip"
                 },
                 {
@@ -221,8 +221,8 @@ CreateThread(function()
                 lib.TriggerCallback("loaf_housing:get_outfit", function(outfit)
                     if not outfit then return end
 
-                    if GetResourceState("illenium-appearance") == "started" then
-                        TriggerEvent("illenium-appearance:setOutfit", outfit)
+                    if GetResourceState("qb-clothing") == "started" then
+                        TriggerEvent("qb-clothing:setOutfit", outfit)
                     else
                         TriggerEvent("skinchanger:getSkin", function(skin)
                             TriggerEvent("skinchanger:loadClothes", skin, outfit)
@@ -243,7 +243,7 @@ CreateThread(function()
                 elements = {
                     {label = Strings["no"]},
                     {
-                        label = Strings["yes"],
+                        label = Strings["yes"], 
                         delete = true
                     }
                 }
@@ -293,7 +293,7 @@ CreateThread(function()
         if not locations or not locations[furnitureId] then
             hasWardrobe = Config.Wardrobe
             hasStorage = true
-        else
+        else 
             hasWardrobe = locations[furnitureId].wardrobe
             hasStorage = locations[furnitureId].storage
         end

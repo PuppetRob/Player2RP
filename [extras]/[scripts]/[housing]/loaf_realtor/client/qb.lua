@@ -628,7 +628,7 @@ CreateThread(function()
         TriggerServerEvent("loaf_realtor:bill_house", serverId, tonumber(dialog.id))
     end
 
-    local function TransferProperty(serverId)
+     local function TransferProperty(serverId)
         local dialog = exports["qb-input"]:ShowInput({
             header = Strings["transfer_property"],
             submitText = Strings["transfer"],
@@ -660,7 +660,7 @@ CreateThread(function()
         end
 
         TriggerServerEvent("loaf_realtor:transfer_property", serverId, propertyId, false, shellId)
-    end
+    end 
 
     local function RentProperty(serverId)
         local dialog = exports["qb-input"]:ShowInput({

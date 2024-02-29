@@ -1,21 +1,14 @@
 CreateThread(function()
-    if Config.Framework ~= "esx" then
-        return
+    if Config.Framework ~= "esx" then return end
+    
+    local ESX
+    while ESX == nil do 
+        TriggerEvent("esx:getSharedObject", function(obj) 
+            ESX = obj 
+        end)
+        Wait(500)
     end
-
-    local export, ESX = pcall(function()
-        return exports.es_extended:getSharedObject()
-    end)
-    if not export then
-        while not ESX do
-            TriggerEvent("esx:getSharedObject", function(obj)
-                ESX = obj
-            end)
-            Wait(500)
-        end
-    end
-
-    while not ESX.GetPlayerData()?.job do
+    while not ESX.GetPlayerData() or not ESX.GetPlayerData().job do
         Wait(500)
     end
 

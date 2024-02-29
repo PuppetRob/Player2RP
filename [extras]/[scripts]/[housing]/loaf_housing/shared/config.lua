@@ -9,31 +9,17 @@ Config = {
     Framework = "qb", --[[
         Valid options:
             * esx       - ESX v1.1, v1.2, v1 final, esx legacy, overextended
-            * qb        - qbcore
+            * qb        - qbcore 
     --]]
-
-    Inventory = "auto", --[[
-        default - default housing, esx: menu based, qb-core: default qb-inventory
-        ox - ox_inventory (free): https://github.com/overextended/ox_inventory
-        chezza - chezza inventory (paid): https://store.chezza.dev/package/4770357
-        modfreakz - modfreakz inventory (paid): https://modit.store/products/mf-inventory
-        qs - quasar inventory (paid)
-    ]]
-
-    DefaultWeight = 25000, -- default inventory weight if not specified in furniture.lua
-    DefaultSlots = 50, -- default inventory slots if not specified in furniture.lua
-
-    QBExports = false, -- add support for showing houses in qb-phone etc?
+    QBExports = true, -- add support for showing houses in qb-phone etc?
     NYServer = false, -- set to true if you have the liberty city map
-
-    AutoDelete = 45, -- if a property has not been entered for this many days, it will be deleted
-
+    
     SpawnAboveHouse = true, --[[
-        should the shell be spawned above the house/apartment?
-        pros:
-            no real limit on the amount of shells that can be spawned
+        should the shell be spawned above the house/apartment? 
+        pros: 
+            no real limit on the amount of shells that can be spawned 
             it will look like the player is at the correct location at the map
-        cons:
+        cons: 
             depending on your voice script, players may hear each other
     --]]
     ShellOffset = vector3(0.0, 0.0, 2000.0), -- offset from ground that the shell will be spawned at
@@ -50,16 +36,11 @@ Config = {
     FurnitureStoreLight = true,
 
     PreviewProperty = true, -- allow players to preview the house/apartment before purchasing it?
-    SelectShell = true, -- allow players to choose the shell when purchasing?
+    SelectShell = false, -- allow players to choose the shell when purchasing?
 
     FurnishCommand = {
         Enabled = true,
         Command = "furnish"
-    },
-
-    BlipCommand = {
-        Enabled = true,
-        Command = "houseblips"
     },
 
     Key = {
@@ -72,7 +53,7 @@ Config = {
     PropertyResell = 0.8, -- the % you get back of the original price when selling a property, 1 = 100%
 
     FurnitureStore = {
-        Entrance = vector4(2747.54, 3472.87, 55.67, 250.0),
+        Entrance = vector4(28.96, -1770.04, 29.61, 238.82),
         Interior = vector3(45.34, -1771.77, 29.4),
         Camera = vector3(45.11, -1764.03, 34.0),
         CameraRotation = vector3(-30.72, 0.0, -178.3),
@@ -81,27 +62,35 @@ Config = {
     },
 
     Lockpicking = {
-        Enabled = true,
+        Enabled = false,
         Police = { -- the jobs that will get notified when someone lockpicks a house
-            "lspd",
-            "bcso"
+            "police"
         },
-        MinimumPolice = 3,
+        MinimumPolice = 1,
     },
 
     PoliceRaid = {
         Enabled = true,
         Jobs = {
             -- ["job name"] = minimum grade to breach door,
-            ["lspd"] = 3,
-            ["bcso"] = 3,
+            ["police"] = 1,
         },
     },
+
+    Inventory = "default", --[[
+        default - default housing, esx: menu based, qb-core: default qb-inventory
+        ox - ox_inventory (free): https://github.com/overextended/ox_inventory
+        chezza - chezza inventory (paid): https://store.chezza.dev/package/4770357
+        modfreakz - modfreakz inventory (paid): https://modit.store/products/mf-inventory
+        qs - quasar inventory (paid)
+    ]]
+    DefaultWeight = 50000, -- default inventory weight if not specified in furniture.lua
+    DefaultSlots = 50, -- default inventory slots if not specified in furniture.lua
 
     RequireKeyStorage = true, -- require user to have a key to access the storage?
     Wardrobe = true, -- allow people to change outfits?
 
-    Garage = false, -- enable garages? Requires a supported garage script, such as cd_garage or loaf_garage
+    Garage = true, -- enable garages? REQUIRES https://store.loaf-scripts.com/package/4310876 
     AllowGarageKey = true, -- allow people to access the house garage if they have a key?
 
     Realtor = { -- REQUIRES https://store.loaf-scripts.com/package/4457135
@@ -131,7 +120,7 @@ Config = {
         ["Modern Housing V2"] = false, -- purchase here: https://www.k4mb1maps.com/package/5043818
         ["Deluxe Housing V2"] = false, -- purchase here: https://www.k4mb1maps.com/package/5043817
         ["Highend Housing V2"] = false, -- purchase here: https://www.k4mb1maps.com/package/5043819
-
+    
         -- misc k4mb1 shells
         ["Highend Lab Shells"] = false, -- purchase here: https://www.k4mb1maps.com/package/4698329
         ["Lab Shells Pack"] = false, -- purchase here: https://www.k4mb1maps.com/package/4672285
@@ -144,9 +133,6 @@ Config = {
 
         -- subscription shells, purchase here: https://www.k4mb1maps.com/package/5107241
         ["September Update - 2022"] = false,
-        ["January Update - 2023"] = false,
-        ["April Update - 2023"] = false,
-        ["December Update - 2023"] = false,
 
         -- Max Creations shells
         ["Max Luxury Furnished V1"] = false, -- purchase here: https://maxcreationsstore.tebex.io/package/4935687
@@ -170,7 +156,7 @@ Config = {
             enabled = true,
             sprite = 40,
             color = 2,
-            scale = 0.6
+            scale = 1.0
         },
         ownedOther = { -- if another player owns the house
             enabled = false,
@@ -179,10 +165,10 @@ Config = {
             scale = 0.75
         },
         furnitureStore = {
-            enabled = false,
-            sprite = 605,
-            color = 0,
-            scale = 0.6
+            enabled = true,
+            sprite = 86,
+            color = 56,
+            scale = 0.55
         },
     },
 

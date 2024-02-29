@@ -1,6 +1,6 @@
 Strings = {
     ["keybind"] = "Realtor job menu",
-
+    
     ["enter"] = "Enter the building",
     ["exit"] = "Exit the building",
 

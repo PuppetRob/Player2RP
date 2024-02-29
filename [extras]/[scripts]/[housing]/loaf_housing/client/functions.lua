@@ -47,10 +47,10 @@ CreateThread(function()
                 if not res then return end
                 local propertyId, uniqueId = res.propertyid, res.id
                 local houseData = Houses[propertyId]
-
+    
                 local entered = EnterProperty(propertyId, uniqueId)
                 if not entered then
-                    SetTimeout(1500, function() -- wait for esx to tp
+                    SetTimeout(1500, function() -- wait for esx to tp 
                         DoScreenFadeOut(0)
                         Teleport(houseData.entrance - vector4(0.0, 0.0, 1.0, 0.0))
                         DoScreenFadeIn(500)
@@ -69,7 +69,7 @@ CreateThread(function()
             Wait(500)
             RefreshGarageMarkers()
         end)
-
+        
         RegisterNetEvent("loaf_keysystem:remove_key", function()
             Wait(500)
             RefreshGarageMarkers()
@@ -87,7 +87,7 @@ function GetKeyName(propertyId, uniqueId)
 end
 
 function EnterProperty(propertyId, uniqueId)
-    if not propertyId or not uniqueId then
+    if not propertyId or not uniqueId then 
         return false, "provide propertyId & uniqueId"
     end
 
@@ -116,7 +116,7 @@ exports("EnterProperty", EnterProperty)
 
 function DrawEntityBox(entity)
     local min, max = GetModelDimensions(GetEntityModel(entity))
-
+    
     local pad = 0.001
     local box = {
         -- Bottom
@@ -173,7 +173,7 @@ function DrawEntityBox(entity)
         {box[5], box[4], box[1]}
     }
 
-
+    
     for k, v in pairs(lines) do
 		DrawLine(v[1].x, v[1].y, v[1].z, v[2].x, v[2].y, v[2].z, 255, 255, 255, 255)
 	end
@@ -190,9 +190,9 @@ function GetPlayers()
             local playerPed = GetPlayerPed(player)
             if #(GetEntityCoords(PlayerPedId()) - GetEntityCoords(playerPed)) <= 5.0 then
                 local foundName, startedSearch, name = false, GetGameTimer(), GetPlayerName(player) .. " | " .. GetPlayerServerId(player)
-
-                if Config.UseRPName then
-                    name = lib.TriggerCallbackSync("loaf_keysystem:get_name", GetPlayerServerId(player)) or name
+                
+                if Config.UseRPName then 
+                    name = lib.TriggerCallbackSync("loaf_keysystem:get_name", GetPlayerServerId(player)) or name 
                 end
 
                 found[#found+1] = {
@@ -250,37 +250,13 @@ function SetWeather()
     SetWindSpeed(0.0)
 end
 
-function Draw3DTextSlow(text, x, y, z)
-    local onScreen, x, y = GetScreenCoordFromWorldCoord(x, y, z)
-
-    if not onScreen then
-        return
-    end
-
-    BeginTextCommandDisplayText("STRING")
-    AddTextComponentSubstringPlayerName(text)
-    SetTextScale(0.35, 0.35)
-    SetTextCentre(true)
-    SetTextFont(4)
-    EndTextCommandDisplayText(x, y)
-
-    BeginTextCommandGetWidth("STRING")
-    AddTextComponentSubstringPlayerName(text)
-    SetTextScale(0.35, 0.35)
-    SetTextFont(4)
-
-    local height = GetRenderedCharacterHeight(0.35, 4) * 1.2
-
-    DrawRect(0.0, height/2, EndTextCommandGetWidth(true) + 0.0015, height, 45, 45, 45, 150)
-end
-
 function Draw3DText(text, coords)
-    SetDrawOrigin(coords.x, coords.y, coords.z)
+    SetDrawOrigin(coords)
 
     BeginTextCommandDisplayText("STRING")
     AddTextComponentSubstringPlayerName(text)
     SetTextScale(0.35, 0.35)
-    SetTextCentre(true)
+    SetTextCentre(1)
     SetTextFont(4)
     EndTextCommandDisplayText(0.0, 0.0)
 
@@ -291,7 +267,7 @@ function Draw3DText(text, coords)
 
     local height = GetRenderedCharacterHeight(0.35, 4) * 1.2
 
-    DrawRect(0.0, height/2, EndTextCommandGetWidth(true) + 0.0015, height, 45, 45, 45, 150)
+    DrawRect(0.0, height/2, EndTextCommandGetWidth(1) + 0.0015, height, 45, 45, 45, 150)
 
     ClearDrawOrigin()
 end
@@ -347,7 +323,7 @@ function RemoveKeyHolder(propertyId, identifier)
     if not house then
         return false, "dont_own"
     end
-
+    
     return lib.TriggerCallbackSync("loaf_housing:remove_key_holder", propertyId, identifier)
 end
 exports("RemoveKeyHolder", RemoveKeyHolder)

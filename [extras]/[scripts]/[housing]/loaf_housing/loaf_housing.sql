@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS `loaf_properties` (
     `furniture` LONGTEXT,
     `id` VARCHAR(10),
     `rent` VARCHAR(100),
-    `last_entered` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`owner`, `propertyid`)
 );
 

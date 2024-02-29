@@ -14,7 +14,7 @@ CreateThread(function()
     local function SetStorage(propertyId, uniqueId, furnitureId, storage)
         local instance = GetInstance(propertyId, uniqueId)
         local furniture = GetHouseFurniture(propertyId, uniqueId)
-
+        
         if instance then
             instances[instance].furniture[furnitureId] = storage
             furniture = instances[instance].furniture
@@ -61,7 +61,7 @@ CreateThread(function()
                 v.label = label
             end
         end
-        if not inStorage then
+        if not inStorage then 
             table.insert(currentStorage.items, {
                 label = label,
                 item = item,
@@ -82,7 +82,7 @@ CreateThread(function()
             text = Strings["LOG_deposit"]:format(amount, label)
         })
     end)
-
+    
     lib.RegisterCallback("loaf_housing:withdraw_item", function(source, cb, propertyId, uniqueId, furnitureId, item, amount)
         local currentStorage = GetHouseFurniture(propertyId, uniqueId)
         if not currentStorage or not currentStorage[furnitureId] or not currentStorage[furnitureId].items or amount <= 0 then
@@ -107,9 +107,9 @@ CreateThread(function()
             return cb(false)
         end
 
-        if not GiveItem(source, item, amount) then
+        if not GiveItem(source, item, amount) then 
             Notify(source, Strings["cant_carry"])
-            return cb(false)
+            return cb(false) 
         end
 
         data.amount = data.amount - amount
@@ -142,10 +142,10 @@ CreateThread(function()
         local weaponData = GetWeaponData(source, weapon)
         if not weaponData then
             Notify(source, Strings["dont_have_weapon"])
-            return cb(false)
+            return cb(false) 
         end
-
-        if not RemoveWeapon(source, weaponData.name) then
+        
+        if not RemoveWeapon(source, weaponData.name) then 
             Notify(source, Strings["dont_have_weapon"])
             return cb(false)
         end

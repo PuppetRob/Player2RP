@@ -62,7 +62,7 @@ CreateThread(function()
         local propertyId, playerName, playerId = table.unpack(data)
         local houseData = Houses[propertyId]
         local houseApart = (houseData.type == "house" and "house" or "apart")
-
+        
         exports["qb-menu"]:openMenu({
             {
                 header = Strings["confirm_transfer_"..houseApart]:format(propertyId, playerName, playerId),
@@ -141,7 +141,7 @@ CreateThread(function()
                     event = function()
                         StartLoading(Strings["selling_"..houseApart])
                         local success, reason = lib.TriggerCallbackSync("loaf_housing:sell_property", propertyId)
-                        if success then
+                        if success then 
                             Notify(Strings["sold_"..houseApart]:format(FormatNumber(price)))
                         end
                         StopLoading()
@@ -190,14 +190,14 @@ CreateThread(function()
                 args = propertyId,
             }
         })
-        table.insert(elements, {
+--[[         table.insert(elements, {
             header = Strings["transfer_"..houseApart],
             params = {
                 event = TransferProperty,
                 args = propertyId,
                 isAction = true
             }
-        })
+        }) ]]
         if ownedData.rent then
             table.insert(elements, {
                 header = Strings["manage_rent"],

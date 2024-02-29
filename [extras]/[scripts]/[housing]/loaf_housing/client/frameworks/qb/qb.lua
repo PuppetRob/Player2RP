@@ -52,8 +52,8 @@ CreateThread(function()
         for src, _ in pairs(knocking) do
             src = tonumber(src)
             local name = GetPlayerName(src)
-            if Config.UseRPName then
-                name = lib.TriggerCallbackSync("loaf_keysystem:get_name", src) or name
+            if Config.UseRPName then 
+                name = lib.TriggerCallbackSync("loaf_keysystem:get_name", src) or name 
             end
 
             table.insert(elements, {
@@ -104,12 +104,12 @@ CreateThread(function()
         end
         if allowedFurnish then
             if cache.currentInstance.interior then
-                if cache.currentInstance.interior.disableFurnishing then
-                    allowedFurnish = false
+                if cache.currentInstance.interior.disableFurnishing then 
+                    allowedFurnish = false 
                 end
             elseif cache.currentInstance.shell then
-                if Shells[cache.currentInstance.shell].disableFurnishing then
-                    allowedFurnish = false
+                if Shells[cache.currentInstance.shell].disableFurnishing then 
+                    allowedFurnish = false 
                 end
             end
         end
@@ -162,7 +162,7 @@ CreateThread(function()
                 isAction = true
             }
         })
-
+        
         exports["qb-menu"]:openMenu(elements)
     end
 
@@ -301,7 +301,7 @@ CreateThread(function()
                     args = propertyId,
                     isAction = true
                 }
-            })
+            })            
         end
 
         exports["qb-menu"]:openMenu(elements)

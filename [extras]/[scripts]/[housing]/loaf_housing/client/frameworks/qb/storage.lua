@@ -7,37 +7,13 @@ CreateThread(function()
         TriggerEvent("qb-clothing:client:openOutfitMenu")
     end
 
-    local function OpenStorage(propertyId, uniqueId, furnitureId, owner)
-        local inventoryId = propertyId .. "_" .. uniqueId .. "_" .. furnitureId
-
-        local slots, maxWeight = Config.DefaultSlots or 50, Config.DefaultWeight or 25000
-        if cache.inInstance then
-            local _, _, furnitureData = FindFurniture(cache.currentInstance.furniture[furnitureId]?.item)
-            if furnitureData then
-                slots, maxWeight = furnitureData.storageSlots or slots, furnitureData.storageWeight or maxWeight
-            end
-        end
-
-        if Config.Inventory == "default" or Config.Inventory == "qs" then
-            inventoryId = inventoryId:gsub("-", "_")
-            TriggerServerEvent("inventory:server:OpenInventory", "stash", inventoryId, {
-                maxweight = maxWeight,
-                slots = slots
-            })
-            TriggerEvent("inventory:client:SetCurrentStash", inventoryId)
-            TriggerEvent("InteractSound_CL:PlayOnOne", "StashOpen", 0.4)
-        elseif Config.Inventory == "ox" then
-            exports.ox_inventory:openInventory("stash", {id = inventoryId, owner = owner})
-        end
-    end
-
     function ChooseStorageMenu(propertyId, uniqueId, furnitureId, owner)
         if Config.RequireKeyStorage then
             if not exports.loaf_keysystem:HasKey(GetKeyName(propertyId, uniqueId)) then
                 return Notify(Strings["need_key_storage"])
             end
         end
-
+        
         local houseData = Houses[propertyId]
 
         local hasWardrobe, hasStorage
@@ -50,7 +26,7 @@ CreateThread(function()
         if not locations or not locations[furnitureId] then
             hasWardrobe = Config.Wardrobe
             hasStorage = true
-        else
+        else 
             hasWardrobe = locations[furnitureId].wardrobe
             hasStorage = locations[furnitureId].storage
         end
@@ -58,8 +34,19 @@ CreateThread(function()
         local inventoryId = propertyId .. "_" .. uniqueId .. "_" .. furnitureId
         inventoryId = inventoryId:gsub("-", "_")
 
+        local slots, maxWeight = Config.DefaultSlots or 50, Config.DefaultWeight or 25000
+        if cache.inInstance then
+            local _, _, furnitureData = FindFurniture(cache.currentInstance.furniture[furnitureId]?.item)
+            slots, maxWeight = furnitureData?.storageSlots or slots, furnitureData?.storageWeight or maxWeight            
+        end
+
         if not hasWardrobe then
-            OpenStorage(propertyId, uniqueId, furnitureId, owner)
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", inventoryId, {
+                maxweight = maxWeight,
+                slots = slots
+            })
+            TriggerEvent("InteractSound_CL:PlayOnOne", "StashOpen", 0.4)
+            TriggerEvent("inventory:client:SetCurrentStash", inventoryId)
             return
         elseif not hasStorage then
             OpenWardrobe()
@@ -75,7 +62,12 @@ CreateThread(function()
                 header = Strings["storage"],
                 params = {
                     event = function()
-                        OpenStorage(propertyId, uniqueId, furnitureId, owner)
+                        TriggerServerEvent("inventory:server:OpenInventory", "stash", inventoryId, {
+                            maxweight = maxWeight,
+                            slots = slots
+                        })
+                        TriggerEvent("InteractSound_CL:PlayOnOne", "StashOpen", 0.4)
+                        TriggerEvent("inventory:client:SetCurrentStash", inventoryId)
                     end,
                     isAction = true
                 }

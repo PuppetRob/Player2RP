@@ -69,9 +69,9 @@ CreateThread(function()
     function HasMoney(source, amount)
         local qPlayer = QBCore.Functions.GetPlayer(source)
         if not qPlayer then return false end
-        if qPlayer.Functions.GetMoney("cash") >= amount then
+        if qPlayer.Functions.GetMoney("cash") >= amount then 
             return true, "cash"
-        elseif qPlayer.Functions.GetMoney("bank") >= amount then
+        elseif qPlayer.Functions.GetMoney("bank") >= amount then 
             return true, "bank"
         end
 
@@ -91,7 +91,7 @@ CreateThread(function()
 
         local hasMoney, account = HasMoney(source, amount)
         if not hasMoney then return false end
-
+        
         qPlayer.Functions.RemoveMoney(account, amount, "loaf-housing")
         return true
     end
@@ -244,7 +244,7 @@ CreateThread(function()
                 local key = v.key_id:gsub("housing_key_", "")
                 local propertyId, uniqueId = string.gmatch(key, "(.+)_(.+)")()
                 propertyId = tonumber(propertyId)
-
+                
                 table.insert(houseKeys, {
                     HouseData = QBHouses[propertyId]
                 })
@@ -299,7 +299,7 @@ CreateThread(function()
                     adress = Houses[v.propertyid].label
                 })
             end
-
+            
             TriggerClientEvent("qb-houses:client:setHouseConfig", source, QBHouses)
             Wait(300)
             cb(houses)
@@ -312,7 +312,7 @@ CreateThread(function()
                 ["@propertyId"] = propertyId,
                 ["@citizenid"] = citizenid
             })
-
+        
             if uniqueId then
                 return true
             end

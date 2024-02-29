@@ -4,15 +4,11 @@ lua54 "yes"
 
 description "Housing script for FiveM."
 author "Loaf Scripts#7785"
-version "2.2.0"
+version "2.1.7"
 
-shared_script {
-    "shared/*.lua",
-    "escrow/detector.lua"
-}
+shared_script "shared/*.lua"
 server_script {
-    "@oxmysql/lib/MySQL.lua",
-  --  "@mysql-async/lib/MySQL.lua",
+    "@mysql-async/lib/MySQL.lua",
     "server/frameworks/*.lua",
     "server/*.lua",
     "escrow/server.lua"

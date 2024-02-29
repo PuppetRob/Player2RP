@@ -4,7 +4,7 @@ local nearbyMarkers, insideMarkers = {}, {}
 -- ADD MARKER
 function functions.AddMarker(markerData, onEnter, onExit, onPress)    
     local markerId = functions.GenerateUniqueKey(markers)
-
+    
     markerData.id = markerId
 
     markerData.type = markerData.type or 1
@@ -65,29 +65,24 @@ CreateThread(function()
         local newNearby = {}
         local selfCoords = GetEntityCoords(PlayerPedId())
 
-        if #(lastCoords - selfCoords) <= 5.0 and lastAmount == amountMarkers then
-            goto continue
-        end
+        if #(lastCoords - selfCoords) > 5.0 or lastAmount ~= amountMarkers then
+            lastCoords = selfCoords
+            lastAmount = amountMarkers
 
-        lastCoords = selfCoords
-        lastAmount = amountMarkers
+            -- local startTime = GetGameTimer()
+            local _markers = markers
+            if next(_markers) then
+                for markerId, markerData in pairs(_markers) do
+                    if markerData and #(selfCoords - markerData.data.coords) <= (Config.DrawDistance or 150.0) then
+                        newNearby[#newNearby + 1] = markerId
+                    end
+                    Wait(0) -- better performance. remove to draw markers faster
+                end
+                -- print(string.format("Looping through all %i markers took %.5fs\nYou are nearby %i markers.", amountMarkers, (GetGameTimer() - startTime) / 1000, #newNearby))
 
-        local _markers = markers
-        if not next(_markers) then
-            goto continue
-        end
-
-        -- local startTime = GetGameTimer()
-        for markerId, markerData in pairs(_markers) do
-            if markerData and #(selfCoords - markerData.data.coords) <= (Config.DrawDistance or 150.0) then
-                newNearby[#newNearby + 1] = markerId
+                nearbyMarkers = newNearby
             end
         end
-        -- print(string.format("Looping through %i markers took %ims\nYou are nearby %i markers.", amountMarkers, GetGameTimer() - startTime, #newNearby))
-
-        nearbyMarkers = newNearby
-
-        ::continue::
     end
 end)
 
@@ -96,17 +91,15 @@ CreateThread(function()
     local lastChecked = 0
     while true do
         Wait(500)
-
+        
         while #nearbyMarkers > 0 do
             Wait(0)
-            local pPed = PlayerPedId()
+            local selfCoords = GetEntityCoords(PlayerPedId())
 
             local shouldCheck = lastChecked < (GetGameTimer() - 250)
             if shouldCheck then
                 lastChecked = GetGameTimer()
             end
-
-            local newInside = {}
             for _, markerId in pairs(nearbyMarkers) do
                 if not markers[markerId] then
                     goto continue
@@ -114,72 +107,54 @@ CreateThread(function()
 
                 local markerData = markers[markerId].data
                 DrawMarker(
-                    markerData.type,
-                    markerData.coords.x,
-                    markerData.coords.y,
-                    markerData.coords.z,
-
-                    markerData.dir.x,
-                    markerData.dir.y,
-                    markerData.dir.z,
-
-                    markerData.rot.x,
-                    markerData.rot.y,
-                    markerData.rot.z,
-
-                    markerData.scale.x,
-                    markerData.scale.y,
-                    markerData.scale.z,
-
-                    markerData.r,
-                    markerData.g,
-                    markerData.b,
-                    markerData.alpha,
----@diagnostic disable-next-line: param-type-mismatch
-                    false, false, 2, false, nil, nil, false
+                    markerData.type, 
+                    markerData.coords, 
+                    markerData.dir, 
+                    markerData.rot, 
+                    markerData.scale, 
+                    markerData.r, 
+                    markerData.g, 
+                    markerData.b, 
+                    markerData.alpha, 
+                    false, false, 2, nil, nil, false
                 )
+                
+                if shouldCheck then
+                    local bottomLeft = vector3(markerData.coords.x - markerData.scale.x/2, markerData.coords.y - markerData.scale.y/2, markerData.coords.z - markerData.scale.z)
+                    local topRight = vector3(markerData.coords.x + markerData.scale.x/2, markerData.coords.y + markerData.scale.y/2, markerData.coords.z + 1.5)
+                    local insideMarker = IsEntityInArea(PlayerPedId(), bottomLeft, topRight, false, true, 0)
 
-                if not shouldCheck then
-                    goto continue
-                end
-
-                local bottomLeft = vector3(markerData.coords.x - markerData.scale.x/2, markerData.coords.y - markerData.scale.y/2, markerData.coords.z - markerData.scale.z)
-                local topRight = vector3(markerData.coords.x + markerData.scale.x/2, markerData.coords.y + markerData.scale.y/2, markerData.coords.z + 1.5)
-                local insideMarker = IsEntityInArea(pPed, bottomLeft.x, bottomLeft.y, bottomLeft.z, topRight.x, topRight.y, topRight.z, false, true, 0)
-
-                if insideMarker then
-                    newInside[markerId] = true
-                    if not insideMarkers[markerId] then
+                    if insideMarker then
+                        if not insideMarkers[markerId] then
+                            insideMarkers[markerId] = true
+                            if markerData.text then
+                                functions.DrawHelpText(markerData.text, markerData.coords + vector3(0.0, 0.0, 1.0), markerData.key)
+                            end
+                            if markers[markerId].callbacks.onEnter then
+                                markers[markerId].callbacks.onEnter(markerData.callbackData.enter, markerData)
+                            end
+                        end
+                    elseif insideMarkers[markerId] then
+                        insideMarkers[markerId] = false
                         if markerData.text then
-                            functions.DrawHelpText(markerData.text, markerData.coords + vector3(0.0, 0.0, 1.0), markerData.key)
+                            functions.HideHelpText()
                         end
-                        if markers[markerId].callbacks.onEnter then
-                            markers[markerId].callbacks.onEnter(markerData.callbackData.enter, markerData)
+                        if markers[markerId].callbacks.onExit then
+                            markers[markerId].callbacks.onExit(markerData.callbackData.exit, markerData)
                         end
-                    end
-                elseif not insideMarker and insideMarkers[markerId] then
-                    if markerData.text then
-                        functions.HideHelpText()
-                    end
-                    if markers[markerId].callbacks.onExit then
-                        markers[markerId].callbacks.onExit(markerData.callbackData.exit, markerData)
                     end
                 end
 
                 ::continue::
             end
-            if shouldCheck then
-                insideMarkers = newInside
-            end
         end
-
         insideMarkers = {}
     end
 end)
 
 RegisterNetEvent("loaf_lib:releasedKey", function(keyName)
     for markerId, inside in pairs(insideMarkers) do
-        if not inside then
+        if not inside then 
             goto continue
         end
 
@@ -188,7 +163,7 @@ RegisterNetEvent("loaf_lib:releasedKey", function(keyName)
             goto continue
         end
 
-        if markerData and markerData.callbacks.onPress then
+        if markerData and markerData.callbacks.onPress then 
             TriggerEvent("loaf_lib:usedMarker", markerId)
         end
 
@@ -202,19 +177,16 @@ RegisterNetEvent("loaf_lib:usedMarker", function(markerId)
 end)
 
 AddEventHandler("onResourceStop", function(resourceName)
-    if resourceName == GetCurrentResourceName() then
-        return
-    end
-
-    local markersRemoved = 0
-    for markerId, markerData in pairs(markers) do
-        if markerData.creator == resourceName then
-            functions.RemoveMarker(markerId)
-            markersRemoved += 1
+    if resourceName ~= GetCurrentResourceName() then
+        local markersRemoved = 0
+        for markerId, markerData in pairs(markers) do
+            if markerData.creator == resourceName then
+                functions.RemoveMarker(markerId)
+                markersRemoved += 1
+            end
         end
-    end
-
-    if markersRemoved > 0 then
-        print(string.format("Removed %i marker%s due to resource %s stopping.", markersRemoved, markersRemoved > 1 and "s" or "", resourceName))
+        if markersRemoved > 0 then
+            print(string.format("Removed %i marker%s due to resource %s stopping.", markersRemoved, markersRemoved > 1 and "s" or "", resourceName))
+        end
     end
 end)

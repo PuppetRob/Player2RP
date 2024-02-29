@@ -18,7 +18,7 @@ CreateThread(function()
                         TaskAchieveHeading(0, Houses[propertyId].entrance.w - 180.0, 1500)
                         TaskPlayAnim(0, LoadDict("timetable@jimmy@doorknock@"), "knockdoor_idle", 8.0, -8.0, -1, 0, 0, false, false, false)
                         CloseSequenceTask(sequenceId)
-
+                        
                         TaskPerformSequence(PlayerPedId(), sequenceId)
                         while not IsEntityPlayingAnim(PlayerPedId(), "timetable@jimmy@doorknock@", "knockdoor_idle", 3) do
                             Wait(0)
@@ -65,7 +65,7 @@ CreateThread(function()
         if not exists then
             return Notify(Strings[houseApart.."_not_exist"]:format(dialog.id))
         end
-
+        
         local entered, reason = EnterProperty(propertyId, dialog.id)
         if reason == "no_access" then
             KnockMenu(propertyId, dialog.id)
@@ -146,7 +146,7 @@ CreateThread(function()
             else
                 label = Strings["purchase"]:format(houseData.price)
             end
-
+            
             table.insert(elements, {
                 header = Strings["purchase_rent"],
                 params = {
@@ -167,7 +167,7 @@ CreateThread(function()
                 }
             })
         end
-        if cache.canBreach then
+        if cache.canBreach then 
             table.insert(elements, {
                 header = Strings["breach_door"],
                 params = {
@@ -199,7 +199,7 @@ CreateThread(function()
                     params = {
                         event = function()
                             EnterProperty(propertyId, uniqueId)
-                        end,
+                        end, 
                         isAction = true
                     }
                 })
@@ -225,7 +225,7 @@ CreateThread(function()
                     }
                 })
             end
-            if cache.canBreach then
+            if cache.canBreach then 
                 table.insert(elements, {
                     header = Strings["breach_door"],
                     params = {

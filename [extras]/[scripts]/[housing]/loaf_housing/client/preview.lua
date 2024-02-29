@@ -1,5 +1,5 @@
 CreateThread(function()
-    if not Config.PreviewProperty then
+    if not Config.PreviewProperty then 
         return
     end
 
@@ -30,8 +30,8 @@ CreateThread(function()
 
     function PreviewProperty(propertyId)
         local propertyData = Houses[propertyId]
-        if cache.busy or cache.inInstance or not propertyData then
-            return
+        if cache.busy or cache.inInstance or not propertyData then 
+            return 
         end
 
         if not lib.TriggerCallbackSync("loaf_housing:preview_property", propertyId) then
@@ -41,7 +41,7 @@ CreateThread(function()
         local previousCoords, previousHeading = GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId())
 
         CloseMenu()
-
+        
         cache.inInstance = true
 
         local maxShells, currentShell, doorPosition = 0
@@ -85,7 +85,7 @@ CreateThread(function()
 
         while cache.inInstance do
             local txt = Strings["previewing_nohelp"]
-
+            
             if maxShells > 1 then
                 txt = Strings["previewing"]:format(currentShell, maxShells, Categories[propertyData.category].shells[currentShell])
 
@@ -109,7 +109,7 @@ CreateThread(function()
             if IsDisabledControlJustReleased(0, 194) then -- backspace
                 cache.inInstance = false
             end
-
+            
             AddTextEntry(GetCurrentResourceName() .. "preview", txt)
             BeginTextCommandDisplayHelp(GetCurrentResourceName() .. "preview")
             EndTextCommandDisplayHelp(0, 0, 0, -1)
@@ -117,7 +117,7 @@ CreateThread(function()
             if #(GetEntityCoords(PlayerPedId()) - doorPosition) > 100.0 then
                 SetEntityCoords(PlayerPedId(), doorPosition)
             end
-
+            
             Wait(0)
         end
 
@@ -134,7 +134,7 @@ CreateThread(function()
             DeleteEntity(cache.shell)
         end
         cache.shell = nil
-
+        
         Teleport(propertyData.entrance - vector4(0.0, 0.0, 1.0, 0.0))
         DoScreenFadeIn(500)
     end

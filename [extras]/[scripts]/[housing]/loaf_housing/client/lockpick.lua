@@ -1,12 +1,12 @@
 function Lockpick(propertyId, uniqueId)
     CloseMenu()
-
+    
     local lockpicks = lib.TriggerCallbackSync("loaf_housing:get_lockpicks")
-    if lockpicks == 0 then
+    if lockpicks == 0 then 
         Notify(Strings["no_lockpicks"])
-        return false
-    end
-
+        return false 
+    end    
+    
     if not Config.Lockpicking.Enabled then return end
     local exists = lib.TriggerCallbackSync("loaf_housing:house_exists", propertyId, uniqueId)
     local houseData = Houses[propertyId]
@@ -90,7 +90,7 @@ function Lockpick(propertyId, uniqueId)
             elseif IsControlPressed(0, 174) then
                 rotation = rotation + speed
                 if rotation >= 360.0 then rotation = 0.0 end
-            end
+            end 
         end
 
         if IsControlJustPressed(0, 191) then
@@ -140,7 +140,7 @@ RegisterNetEvent("loaf_housing:lockpick_alert", function(coords, uniqueId)
     SetBlipSprite(blip, 1)
     SetBlipColour(blip, 6)
     SetBlipRoute(blip, true)
-
+    
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(Strings["robbery"]:format(uniqueId))
     EndTextCommandSetBlipName(blip)
@@ -148,4 +148,4 @@ RegisterNetEvent("loaf_housing:lockpick_alert", function(coords, uniqueId)
     Wait(5 * 60 * 1000) -- 5 min, then delete blip
     SetBlipRoute(blip, false)
     RemoveBlip(blip)
-end)
+end) 

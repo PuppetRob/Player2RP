@@ -1,26 +1,24 @@
 CreateThread(function()
-    if Config.Framework ~= "esx" then
-        return
-    end
-
-    local export, ESX = pcall(function()
-        return exports.es_extended:getSharedObject()
-    end)
-    if not export then
-        while not ESX do
-            TriggerEvent("esx:getSharedObject", function(obj)
-                ESX = obj
-            end)
-            Wait(500)
-        end
-    end
-
-    while not ESX.GetPlayerData()?.job do
+    if Config.Framework ~= "esx" then return end
+    while not NetworkIsSessionStarted() do
         Wait(500)
     end
 
-    lib = exports["loaf_lib"]:GetLib()
+    local ESX
+    while not ESX do
+        TriggerEvent('esx:getSharedObject', function(esx)
+            ESX = esx 
+        end)
+        Wait(500)
+        print("waiting for esx to load")
+    end
+    while not ESX.GetPlayerData().job do -- support for multicharacter
+        Wait(500)
+        print("waiting for esx job to load")
+    end
 
+    lib = exports["loaf_lib"]:GetLib()
+    
     local keys = lib.TriggerCallbackSync("loaf_keysystem:fetch_keys")
     printf("fetched all keys: %s", json.encode(keys, {indent=true}))
     for i, v in pairs(keys) do
@@ -56,7 +54,6 @@ CreateThread(function()
             cache.keyUsages[key.key_id](key) 
         end
     end
-
     function KeyActions.transfer(uniqueId)
         local key = GetKey(uniqueId)
         if not key then return end
@@ -100,7 +97,6 @@ CreateThread(function()
             end, CloseMenuHandler)
         end, CloseMenuHandler)
     end
-
     function KeyActions.delete(uniqueId)
         local key = GetKey(uniqueId)
         if not key then return end

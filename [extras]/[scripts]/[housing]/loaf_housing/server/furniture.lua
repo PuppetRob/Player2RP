@@ -45,7 +45,7 @@ CreateThread(function()
             Notify(source, Strings["no_money"])
             return cb(false)
         end
-
+        
         MySQL.Async.fetchScalar("SELECT `amount` FROM `loaf_furniture` WHERE `identifier`=@identifier AND `object`=@object", {
             ["@identifier"] = GetIdentifier(source),
             ["@object"] = furnitureData.object
@@ -135,7 +135,7 @@ CreateThread(function()
             ["@owner"] = instanceData.owner,
             ["@propertyid"] = instanceData.property
         }, function(currFurniture)
-            if not currFurniture or not json.decode(currFurniture) then
+            if not currFurniture or not json.decode(currFurniture) then 
                 currFurniture = {}
             else
                 currFurniture = json.decode(currFurniture)

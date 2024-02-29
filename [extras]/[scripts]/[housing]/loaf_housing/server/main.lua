@@ -16,7 +16,7 @@ CreateThread(function()
         local found, uniqueId = false
         while not found do
             uniqueId = ("%s%s-%i%i%i%i"):format(
-                string.char(math.random(65, 90)),
+                string.char(math.random(65, 90)), 
                 string.char(math.random(65, 90)),
                 math.random(0, 9),
                 math.random(0, 9),
@@ -51,10 +51,10 @@ CreateThread(function()
 
     function GiveKey(source, propertyId, uniqueId)
         exports.loaf_keysystem:GenerateKey(
-            source,
-            GetKeyName(propertyId, uniqueId),
-            Strings["key_label"]:format(Houses[propertyId].label, propertyId, uniqueId),
-            "server",
+            source, 
+            GetKeyName(propertyId, uniqueId), 
+            Strings["key_label"]:format(Houses[propertyId].label, propertyId, uniqueId), 
+            "server", 
             "loaf_housing:used_key"
         )
     end
@@ -86,7 +86,7 @@ CreateThread(function()
         if not instance then
             return Notify(src, Strings["noone_home"])
         end
-
+        
         for _, guest in pairs(instances[instance].guests) do
             Notify(guest, Strings["someone_knocking"])
         end
@@ -134,8 +134,8 @@ CreateThread(function()
     RegisterNetEvent("loaf_housing:breach_door", function(propertyId, uniqueId)
         local src = source
 
-        if IsInInstance(src) or not CanBreach(src) then
-            return
+        if IsInInstance(src) or not CanBreach(src) then 
+            return 
         end
 
         local houseData = Houses[propertyId]
@@ -154,19 +154,19 @@ CreateThread(function()
 
     lib.RegisterCallback("loaf_housing:enter_property", function(source, cb, propertyId, uniqueId)
         if IsInInstance(source) then return cb(false, "in_instance") end
-
+    
         local owns, i = DoesPlayerOwnProperty(source, propertyId)
-        if
-            (owns and boughtHouses[i].id == uniqueId)
-            or
-            (not IsDoorLocked(propertyId, uniqueId) or exports.loaf_keysystem:HasKey(source, GetKeyName(propertyId, uniqueId)))
+        if 
+            (owns and boughtHouses[i].id == uniqueId) 
+            or 
+            (not IsDoorLocked(propertyId, uniqueId) or exports.loaf_keysystem:HasKey(source, GetKeyName(propertyId, uniqueId))) 
         then
             -- check mlo etc
             local propertyData = GetPropertyData(propertyId, uniqueId)
             if not propertyData then return cb(false, "no_property") end
-
+    
             local housedata = Houses[propertyId]
-
+            
             if housedata.interiortype == "shell" or housedata.interiortype == "interior" then
                 local instanceid = GetInstance(propertyId, uniqueId)
                 if instanceid then
@@ -174,7 +174,7 @@ CreateThread(function()
                     cb(true)
                     return
                 end
-
+                
                 local instance = CreateInstance(source, propertyId, uniqueId)
                 if instance then
                     EnterInstance(source, instance)
@@ -192,8 +192,8 @@ CreateThread(function()
 
     RegisterNetEvent("loaf_housing:exit_property", function(instanceid)
         local src = source
-        if not instanceid or not instances[instanceid] then
-            return
+        if not instanceid or not instances[instanceid] then 
+            return 
         end
         ExitInstance(src, instanceid)
     end)
@@ -204,8 +204,6 @@ CreateThread(function()
         local key = data.key_id:gsub("housing_key_", "")
         local propertyidString, uniqueId = string.gmatch(key, "(.+)_(.+)")()
         local propertyid = tonumber(propertyidString)
-
-        if not Houses[propertyid] then return end
 
         local propertyData, houseApart = Houses[propertyid], (Houses[propertyid].type == "house" and "house" or "apart")
 
@@ -225,14 +223,6 @@ CreateThread(function()
             if Config.Key.DistanceCheck and dist > Config.Key.Distance then
                 return Notify(src, Strings["not_nearby"])
             end
-
-            if Config.AutoDelete then
-                MySQL.Async.execute("UPDATE `loaf_properties` SET `last_entered` = NOW() WHERE `propertyid`=@propertyId AND `id`=@id", {
-                    ["@propertyId"] = propertyid,
-                    ["@id"] = uniqueId
-                })
-            end
-
             GlobalState["loaf_housing_"..propertyidString.."_"..closestDoor] = not GlobalState["loaf_housing_"..propertyidString.."_"..closestDoor]
             Notify(src, Strings[not GlobalState["loaf_housing_"..propertyidString.."_"..closestDoor] and "locked_"..houseApart or "unlocked_"..houseApart])
         else
@@ -348,11 +338,11 @@ CreateThread(function()
     exports("GiveProperty", GiveProperty)
 
     lib.RegisterCallback("loaf_housing:purchase_property", function(source, cb, propertyId, purchaseOrRent, shellId)
-        if not type(propertyId) == "number" or not Houses[propertyId] then
-            return cb(false, "not_config")
+        if not type(propertyId) == "number" or not Houses[propertyId] then 
+            return cb(false, "not_config") 
         end
-        if GetAmountProperties(source) >= Config.MaxProperties then
-            return cb(false, "max_properties")
+        if GetAmountProperties(source) >= Config.MaxProperties then 
+            return cb(false, "max_properties") 
         end
 
         -- check if the player already owns the property
@@ -379,8 +369,8 @@ CreateThread(function()
                 return cb(false, "no_money")
             end
         else
-            if not housedata.price then
-                return cb(false, "not_purchasable")
+            if not housedata.price then 
+                return cb(false, "not_purchasable") 
             end
             if not PayMoney(source, housedata.price) then
                 return cb(false, "no_money")
@@ -393,7 +383,7 @@ CreateThread(function()
     lib.RegisterCallback("loaf_housing:sell_property", function(source, cb, propertyId)
         local owns, i = DoesPlayerOwnProperty(source, propertyId)
         if not owns then return cb(false, "dont_own") end
-
+        
         local price = math.floor((Houses[propertyId] and Houses[propertyId].price or 0) * Config.PropertyResell or 1)
         RemoveProperty(GetIdentifier(source), propertyId, function(sold)
             if not sold then return cb(false) end
@@ -414,7 +404,7 @@ CreateThread(function()
     function TransferProperty(source, cb, propertyId, transferTo)
         local owns, i = DoesPlayerOwnProperty(source, propertyId)
         if not owns then return cb(false, "dont_own") end
-
+        
         if not GetIdentifier(transferTo) then return cb(false, "not_online") end
 
         local otherOwns = DoesPlayerOwnProperty(transferTo, propertyId)
@@ -470,26 +460,6 @@ CreateThread(function()
             Notify(src, Strings["lockpicked"])
             SetDoorLocked(propertyId, uniqueId, false)
             lockpicking[tostring(src)] = nil
-        end)
-    end
-
-    if Config.AutoDelete then
-        Wait(10000)
-        CreateThread(function()
-            -- delete all houses that have not been entered in Config.AutoDelete days, check every hour
-            while true do
-                MySQL.Async.fetchAll("SELECT `owner`, `propertyid` FROM `loaf_properties` WHERE `last_entered` < DATE_SUB(NOW(), INTERVAL @days DAY)", {
-                    ["@days"] = Config.AutoDelete
-                }, function(inactiveHouses)
-                    for _, v in pairs(inactiveHouses) do
-                        RemoveProperty(v.owner, v.propertyid)
-                    end
-
-                    print(("^2[INFO]^7 Deleted %s house%s that have not been entered in %s days."):format(#inactiveHouses, #inactiveHouses == 1 and "" or "s", Config.AutoDelete))
-                end)
-
-                Wait(60 * 60 * 1000)
-            end
         end)
     end
 end)

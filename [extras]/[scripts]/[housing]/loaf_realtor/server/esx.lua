@@ -3,14 +3,10 @@ CreateThread(function()
         return
     end
 
-    local export, ESX = pcall(function()
-        return exports.es_extended:getSharedObject()
+    local ESX
+    TriggerEvent("esx:getSharedObject", function(esx)
+        ESX = esx
     end)
-    if not export then
-        TriggerEvent("esx:getSharedObject", function(obj)
-            ESX = obj
-        end)
-    end
 
     TriggerEvent("esx_society:registerSociety", 
         Config.JobName, 

@@ -20,7 +20,7 @@ local interactableFurniture = {
             if GetEntityHeading(chair) >= 180.0 then
                 return vector3(0.0, 0.0, GetEntityHeading(chair) - 179.9)
             end
-
+            
             return vector3(0.0, 0.0, GetEntityHeading(chair) + 179.9)
         end,
         anim = {"mini@strip_club@lap_dance_2g@ld_2g_reach", "ld_2g_sit_idle"}
@@ -28,7 +28,7 @@ local interactableFurniture = {
 }
 
 local busy
-local function UseFurniture(data)
+local function UseFurniture(data) 
     if busy then
         return
     end
@@ -44,15 +44,15 @@ local function UseFurniture(data)
     else
         anim, dict = table.unpack(furnitureData.anim)
     end
-
+    
     lib.LoadAnimDict(dict)
-    local rotation
+    local rotation 
     if type(furnitureData.rotation) == "vector3" then
         rotation = furnitureData.rotation
     else
         rotation = furnitureData.rotation(object)
     end
-
+        
     local scene = NetworkCreateSynchronisedScene(offset, rotation, 2, false, true, 1065353216, 0, 1.3)
     NetworkAddPedToSynchronisedScene(PlayerPedId(), scene, anim, dict, 1.5, -4.0, 1, 1, 1148846080, 0)
     NetworkStartSynchronisedScene(scene)

@@ -1,67 +1,59 @@
 function functions.LoadAnimDict(dict)
-    if not DoesAnimDictExist(dict) then
-        return { success=false, error="Anim dict " .. dict ..  " does not exist." }
-    end
+    if DoesAnimDictExist(dict) then
+        local timer = GetGameTimer() + 20000
 
-    local timer = GetGameTimer() + 5000
-
-    RequestAnimDict(dict)
-    while not HasAnimDictLoaded(dict) do
-        Wait(0)
-        if timer < GetGameTimer() then
-            return { success=false, error="Loading anim dict timed out." }
+        RequestAnimDict(dict)
+        while not HasAnimDictLoaded(dict) do 
+            Wait(50)
+            if timer < GetGameTimer() then
+                return {success=false, error="Loading anim dict timed out."}
+            end
         end
-    end
 
-    return { success=true, dict=dict }
+        return {success=true, dict=dict}
+    end
+    return {success=false, error="Anim dict " .. dict ..  " does not exist."}
 end
 
 function functions.LoadModel(model)
     model = type(model) == "string" and GetHashKey(model) or model
 
-    if not IsModelInCdimage(model) then
-        return { success=false, error="Model " .. model .. " does not exist (not in cd image)." }
-    end
+    if IsModelInCdimage(model) then
+        local timer = GetGameTimer() + 20000
 
-    local timer = GetGameTimer() + 5000
-
-    RequestModel(model)
-    while not HasModelLoaded(model) do
-        Wait(0)
-        if timer < GetGameTimer() then
-            return { success=false, error="Loading model timed out." }
+        RequestModel(model)
+        while not HasModelLoaded(model) do 
+            Wait(50)
+            if timer < GetGameTimer() then
+                return {success=false, error="Loading model timed out."}
+            end
         end
-    end
 
-    return { success=true, model=model }
+        return {success=true, model=model}
+    end
+    return {success=false, error="Model " .. model .. " does not exist (not in cd image)."}
 end
 
 function functions.CopyText(text)
-    if not text or type(text) ~= "string" then
-        return { success=false, error="No text to copy was specified." }
+    if text and type(text) == "string" then
+        SendNUIMessage({
+            type = "copy_text",
+            content = text
+        })
+        return {success=true}
     end
-
-    SendNUIMessage({
-        type = "copy_text",
-        content = text
-    })
-    return { success=true }
+    return {success=false, error="No text to copy was specified."}
 end
 
----@diagnostic disable-next-line: duplicate-set-field
+
 function functions.GenerateString(length)
     local id = ""
-    for _ = 1, length or 7 do
-        local char = math.random(1, 2) == 1 and string.char(math.random(97, 122)) or tostring(math.random(0, 9))
-        if math.random(1, 2) == 1 then
-            char = string.upper(char)
-        end
-        id = id .. char
+    for i = 1, length or 15 do
+        id = id .. (math.random(1, 2) == 1 and string.char(math.random(97, 122)) or tostring(math.random(0,9)))
     end
     return id
 end
 
----@diagnostic disable-next-line: duplicate-set-field
 function functions.GenerateUniqueKey(t, length)
     local id = functions.GenerateString(length)
 

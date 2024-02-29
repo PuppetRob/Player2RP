@@ -43,10 +43,10 @@ local function DrawLockedState()
                 if #(GetEntityCoords(PlayerPedId()) - doorData.coords.xyz) <= 10.0 then
                     local doorObj = GetClosestObjectOfType(doorData.coords.xyz, 4.0, doorData.object)
                     local doorCoords = GetEntityCoords(doorObj)
-
+                    
                     if #(GetEntityCoords(playerPed) - doorCoords) <= 3.0 then
                         local stringId = tostring(property)
-                        local uniqueId, locked, text, hasKey
+                        local uniqueId, locked, text, hasKey 
 
                         local function RefreshDoor()
                             uniqueId = cache.ownedHouses[stringId]?.id or cache.houses[stringId]?.id or false
@@ -110,7 +110,7 @@ function RefreshHouseDoors()
             end
         end
     end
-
+    
     propertiesWithDoors = {}
     for property, propertyData in pairs(Houses) do
         if propertyData.interiortype == "walkin" then

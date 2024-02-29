@@ -35,7 +35,7 @@ CreateThread(function()
         end
 
         Houses = data
-
+        
         TriggerEvent("loaf_housing:update")
         TriggerClientEvent("loaf_housing:set_houses", -1, Houses)
     end)

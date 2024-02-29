@@ -3,7 +3,7 @@ RegisterNetEvent("loaf_housing:furniture_store", function(coords)
         if Config.FurnitureStoreLight then
             DrawLightWithRange(coords, 255, 255, 255, 50.0, 25.0)
         end
-
+        
         DisableAllControlActions(0)
         DisableAllControlActions(1)
         DisableAllControlActions(2)
@@ -20,7 +20,7 @@ function BrowseFurniture()
     local cam = CreateCam("DEFAULT_SCRIPTED_Camera", 1)
     SetCamCoord(cam, Config.FurnitureStore.Camera)
     RenderScriptCams(1, 0, 0, 1, 1)
-    SetCamActive(cam, true)
+    SetCamActive(cam, true) 
     SetCamFov(cam, 50.0)
     FreezeEntityPosition(PlayerPedId(), true)
     SetFocusPosAndVel(Config.FurnitureStore.Interior, 0.0, 0.0, 0.0)
@@ -59,7 +59,7 @@ function BrowseFurniture()
         local furnitureData = Furniture[currentCategory].furniture[currentObject]
 
         if DoesEntityExist(furnitureObject) then
-            DeleteEntity(furnitureObject)
+            DeleteEntity(furnitureObject) 
         end
         if furnitureAttachments then
             for _, entity in pairs(furnitureAttachments) do
@@ -67,7 +67,7 @@ function BrowseFurniture()
             end
             furnitureAttachments = nil
         end
-
+        
         local object = SpawnFurniture(furnitureData.object, Config.FurnitureStore.Interior)
         if object == nil then
             Notify(Strings["couldnt_load"]:format(furnitureData.object))
@@ -82,8 +82,8 @@ function BrowseFurniture()
             TriggerEvent("loaf_housing:furniture_store", GetOffsetFromEntityInWorldCoords(furnitureObject, 0.0, -5.0, 2.0))
         end
 
-        if not furnitureData.attached then
-            return
+        if not furnitureData.attached then 
+            return 
         end
 
         furnitureAttachments = {}
@@ -93,14 +93,14 @@ function BrowseFurniture()
             if attached ~= nil then
                 FreezeEntityPosition(attached, true)
                 table.insert(furnitureAttachments, attached)
-
+            
                 AttachEntityToEntity(attached, furnitureObject, 0, attachment.offset.xyz, vector3(0.0, 0.0, attachment.offset.w), false, false, false, false, 2, true)
             end
         end
     end
 
     CreateFurniture()
-
+    
     while true do
         if pressDelay <= GetGameTimer() then
             if IsDisabledControlPressed(0, 299) then -- down arrow
@@ -139,7 +139,7 @@ function BrowseFurniture()
                 CreateFurniture()
             end
         end
-
+        
         if IsDisabledControlPressed(0, 34) then -- A
             SetEntityHeading(furnitureObject, GetEntityHeading(furnitureObject) - 1.0)
         elseif IsDisabledControlPressed(0, 35) then -- D
@@ -166,7 +166,7 @@ function BrowseFurniture()
 
         if IsDisabledControlJustReleased(0, 191) then -- enter
             Wait(50)
-
+            
             local furnitureData = Furniture[currentCategory].furniture[currentObject]
             ShowHelpText(true)
 
@@ -273,7 +273,7 @@ function SpawnFurniture(ogModel, coords)
 
     DoScreenFadeOut(250)
     Wait(500)
-
+    
     local shouldRemove = false
 
     if not IsIplActive("apa_v_mp_h_01_a") then

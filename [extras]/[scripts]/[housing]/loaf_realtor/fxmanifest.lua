@@ -8,7 +8,6 @@ version "2.0.5"
 
 shared_script "shared/*.lua"
 server_script {
-    "@oxmysql/lib/MySQL.lua",
     "@mysql-async/lib/MySQL.lua",
     "server/*.lua"
 }
