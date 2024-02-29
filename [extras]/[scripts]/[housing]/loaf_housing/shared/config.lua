@@ -161,7 +161,7 @@ Config = {
 
     Blip = {--https://docs.fivem.net/docs/game-references/blips/
         forSale = { -- if no one owns the house
-            enabled = true,
+            enabled = false,
             sprite = 350,
             color = 0,
             scale = 0.5
@@ -179,7 +179,7 @@ Config = {
             scale = 0.75
         },
         furnitureStore = {
-            enabled = true,
+            enabled = false,
             sprite = 605,
             color = 0,
             scale = 0.6

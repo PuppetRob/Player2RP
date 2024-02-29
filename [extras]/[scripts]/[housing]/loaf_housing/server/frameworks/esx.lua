@@ -209,7 +209,7 @@ CreateThread(function()
 
     -- wardrobe
     lib.RegisterCallback("loaf_housing:get_outfits", function(source, cb)
-        if GetResourceState("fivem-appearance") == "started" then
+        if GetResourceState("illenium-appearance") == "started" then
             MySQL.Async.fetchAll("SELECT `id`, `name` FROM `outfits` WHERE `identifier`=@identifier", {
                 ["@identifier"] = GetIdentifier(source)
             }, function(result)
@@ -235,7 +235,7 @@ CreateThread(function()
     end)
 
     lib.RegisterCallback("loaf_housing:get_outfit", function(source, cb, id)
-        if GetResourceState("fivem-appearance") == "started" then
+        if GetResourceState("illenium-appearance") == "started" then
             MySQL.Async.fetchAll("SELECT `ped`, `components`, `props` FROM `outfits` WHERE `id`=@id", {
                 ["@id"] = id
             }, function(result)
@@ -261,7 +261,7 @@ CreateThread(function()
         local identifier = GetIdentifier(source)
         if not identifier then return cb({}) end
 
-        if GetResourceState("fivem-appearance") == "started" then
+        if GetResourceState("illenium-appearance") == "started" then
             MySQL.Async.execute("DELETE FROM `outfits` WHERE `id`=@id AND `identifier`=@identifier", {
                 ["@id"] = id,
                 ["@identifier"] = identifier

@@ -221,8 +221,8 @@ CreateThread(function()
                 lib.TriggerCallback("loaf_housing:get_outfit", function(outfit)
                     if not outfit then return end
 
-                    if GetResourceState("fivem-appearance") == "started" then
-                        TriggerEvent("fivem-appearance:setOutfit", outfit)
+                    if GetResourceState("illenium-appearance") == "started" then
+                        TriggerEvent("illenium-appearance:setOutfit", outfit)
                     else
                         TriggerEvent("skinchanger:getSkin", function(skin)
                             TriggerEvent("skinchanger:loadClothes", skin, outfit)
