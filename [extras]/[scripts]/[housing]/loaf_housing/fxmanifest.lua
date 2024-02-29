@@ -11,7 +11,8 @@ shared_script {
     "escrow/detector.lua"
 }
 server_script {
-    "@mysql-async/lib/MySQL.lua",
+    "@oxmysql/lib/MySQL.lua",
+  --  "@mysql-async/lib/MySQL.lua",
     "server/frameworks/*.lua",
     "server/*.lua",
     "escrow/server.lua"
