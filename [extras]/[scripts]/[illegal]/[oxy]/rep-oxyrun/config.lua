@@ -1,5 +1,5 @@
 Config = {}
-Config.MinCops = 0
+Config.MinCops = 1
 Config.Framework = 'qb-core' -- Type exports[Config.Framework]:GetCoreObject()
 Config.Target = 'qb-target'-- ox-target will auto conv, don't change
 Config.OxInventory = false

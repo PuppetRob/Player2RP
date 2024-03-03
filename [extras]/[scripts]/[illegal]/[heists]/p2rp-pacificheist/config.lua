@@ -1,7 +1,7 @@
 Config = {}
 
 Config['PacificHeist'] = {
-    ['requiredPoliceCount'] = 0, -- Required police count for start heist
+    ['requiredPoliceCount'] = 8, -- Required police count for start heist
     ['nextRob'] = 7200, -- Seconds for next heist
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names
         'drill',

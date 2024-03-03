@@ -4,7 +4,7 @@ Config.requiredItem = "advancedlockpick" -- required item to start stealing, set
 Config.DebugPoly = false -- for debug purpose
 Config.policeCall = true -- set to false if you don't want to notify police 
 Config.boxDistance = 1.5 -- distance from box
-Config.requiredCopsCount = 0 -- required cops count to start stealing
+Config.requiredCopsCount = 2 -- required cops count to start stealing
 Config.searchTime = 5000 -- searchTime before getting items
 Config.cooldownTimer = 1000 * 60 * 60 -- 1000 = 1s // box cooldown
 

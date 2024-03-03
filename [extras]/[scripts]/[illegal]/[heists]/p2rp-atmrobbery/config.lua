@@ -1,7 +1,7 @@
 Config = {}
 
 -- Police Settings:
-Config.RequiredPolice = 0				-- Required Police online to rob an ATM.
+Config.RequiredPolice = 4				-- Required Police online to rob an ATM.
 
 Config.OnlyNight = true      -- `true` will allow Players to Rob ATMS only during Night
 

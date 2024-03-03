@@ -7,7 +7,7 @@ Config['UnionHeist'] = {
         scriptName = 'qb-core' -- Only for QB users.
     },
     ['setjobForPolice'] = 'leo', -- Setjob for check police count and police alert
-    ['requiredPoliceCount'] = 0, -- Required police count for start heist
+    ['requiredPoliceCount'] = 6, -- Required police count for start heist
     ['nextRob'] = 12000, -- Seconds for next heist
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names.
         'c4_bomb',

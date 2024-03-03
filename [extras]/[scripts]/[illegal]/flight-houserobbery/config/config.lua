@@ -49,7 +49,7 @@ Config = {
     Drawtext = "QB", -- OLDQB for qb-drawtext, QB for new qbcore drawtext, OX for ox_lib
     DrawTextZoneSize = vec3(1.5, 1.5, 2), -- Size of the drawtext zone
 
-    MinimumHouseRobberyPolice = 0, -- Minimum police required to initiate a house robbery
+    MinimumHouseRobberyPolice = 1, -- Minimum police required to initiate a house robbery
     TimeFrame = {min = 01, max = 24}, -- Robbery time frame
     AutomaticallyResetHouse = 15, -- (Minutes) How long until the house resets automatically after someone enters
 

@@ -31,7 +31,7 @@ Config.ServerStartCooldownTime = 30 -- Server Start Specific Cooldown (Time Is I
 
 --Police & Dispatch Settings
 Config.Police = {
-    PoliceJobs = {"lspd", "sast", "bcso"}, -- Name of the police jobs| Can support multiple jobs
+    PoliceJobs = {"lspd", "bcso"}, -- Name of the police jobs| Can support multiple jobs
     Dispatch = "ps-dispatch", -- "qb-policejob" = qb-policeJob | "cd" = Code Design's Dispatch | "core" = Core Dispatch | "ESX" = ESX
     CallCopsChance = 100, --Chance for the police to be called when using a burnerphone without a VPN.
     TenCode = "911", -- 10-code used for the robbery call (CD Dispatch + Core Dispatch)

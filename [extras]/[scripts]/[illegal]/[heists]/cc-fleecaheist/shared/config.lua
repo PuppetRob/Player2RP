@@ -1,7 +1,7 @@
 Config = {}
 
 Config.PoliceJobs = {"lspd", "bcso"}
-Config.MinPolice = 0
+Config.MinPolice = 4
 Config.VaultTimer = 2 -- Minutes before vault opens after hack
 Config.FirstCooldown = 0 -- Minutes before a bank can be robbed, when the resource starts
 Config.GeneralCooldown = 45 -- Minutes before any bank can be robbed again, after one has been robbed

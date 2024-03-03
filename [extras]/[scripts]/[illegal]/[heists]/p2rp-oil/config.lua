@@ -9,7 +9,7 @@ Config['OilRigHeist'] = {
         targetScript = 'qb-target' -- Target script name (qtarget or qb-target or ox_target)
     },
     ["dispatch"] = "ps-dispatch", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
-    ['requiredPoliceCount'] = 0, -- required police count for start heist
+    ['requiredPoliceCount'] = 6, -- required police count for start heist
     ['dispatchJobs'] = {'lspd', 'bcso'},
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names.
         'seccard',

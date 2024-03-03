@@ -4,7 +4,7 @@ Config.LogsImage = "https://cdn.discordapp.com/attachments/926465631770005514/96
 
 Config.WebHook = "https://discord.com/api/webhooks/960218826815979610/XoZQIu9DCQIDzxBZ76uUf4zDoabyFGRfWc7UM_CxrgOBId2mFCT1qzY6zU-XzNkIkW19"
 
-Config.RequiredPolice = 0 -- Needed cops to start the mission
+Config.RequiredPolice = 3 -- Needed cops to start the mission
 
 Config.PoliceJob = 'leo' -- Police job
 

@@ -9,7 +9,7 @@ PDFFRobberyCore['config'] = {
     },
 
     ['requiredPoliceCount'] = {
-        ['number'] = 0,
+        ['number'] = 5,
     },
     ['Locales'] = {
         ['wait_forrobbery'] = 'You have to wait',
