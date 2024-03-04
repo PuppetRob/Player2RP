@@ -34,7 +34,7 @@ Config = {
 	DistCheck = false, -- Require the vehicle to be near by to remove it
 
 	Locations = {
-		{ 	zoneEnable = true,
+		--[[ { 	zoneEnable = true,
 			job = "bennys",
 			garage = { 
 				spawn = vec4(-182.74, -1317.61, 30.63, 357.23),  -- Where the car will spawn
@@ -50,6 +50,6 @@ Config = {
 					["burrito3"] = { },
 				},
 			},
-		},
+		}, ]]
 	},
 }
