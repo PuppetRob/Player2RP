@@ -491,7 +491,7 @@ function createBoxTarget(data, opts, dist)
         local options = { options = opts, distance = dist }
         local target = exports[QBTargetExport]:AddBoxZone(data[1], data[2], data[3], data[4], data[5], options)
         boxTargets[#boxTargets+1] = target
-        return target
+        return data[1]
     else
         local tempText = ""
         local keyTable = { 38, 29, 303, }
@@ -540,7 +540,7 @@ function createCircleTarget(data, opts, dist)
         local target = exports[QBTargetExport]:AddCircleZone(data[1], data[2], data[3], data[4], options)
 
         circleTargets[#circleTargets+1] = target
-        return target
+        return data[1]
     else
         local tempText = ""
         local keyTable = { 38, 29, 303, }
@@ -1291,6 +1291,9 @@ function sendPhoneMail(data) local phoneResource = ""
 
     elseif GetResourceState("qb-phone"):find("start") then phoneResource = "qb-phone"
         TriggerServerEvent('qb-phone:server:sendNewMail', data)
+
+    elseif GetResourceState("jpr-phonesystem"):find("start") then phoneResource = "jpr-phonesystem"
+        TriggerServerEvent(GetCurrentResourceName()..":jpr:SendMail", data)
     end
 
     if phoneResource ~= "" then if Config.System.Debug then print("^6Bridge^7[^3"..phoneResource.."^7]: ^2Sending mail to player") end
@@ -1321,6 +1324,19 @@ RegisterNetEvent(GetCurrentResourceName()..":yflip:SendMail", function(data)
         content = data.message,
         actions = data.buttons,
     }, 'source', src)
+end)
+
+RegisterNetEvent(GetCurrentResourceName()..":jpr:SendMail", function(data)
+    local QBCore = exports['qb-core']:GetCoreObject()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    TriggerEvent('jpr-phonesystem:server:sendEmail', {
+        Assunto = data.subject, -- Subject
+        Conteudo = data.message, -- Content
+        Enviado = data.sender, -- Submitted by
+        Destinatario = Player.PlayerData.citizenid, -- Target
+        Event = {},
+    })
 end)
 
 function registerCommand(command, options)
@@ -1362,4 +1378,18 @@ function registerStash(name, label, slots, weight)
         exports[QSInv]:RegisterStash(name, slots or 50, weight or 4000000)
     end
 end
+
+-- duiList callback here because it wouldnt load in functions.lua
+
+if IsDuplicityVersion() then
+    createCallback(GetCurrentResourceName()..":Server:duiList", function(source, cb)
+        if GetResourceState(OXLibExport):find("start") then
+            return duiList
+        else
+            cb(duiList)
+        end
+    end)
+end
+
+
 -- IN NO WAY PERFECT --
