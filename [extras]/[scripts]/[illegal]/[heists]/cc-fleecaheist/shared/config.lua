@@ -2,9 +2,9 @@ Config = {}
 
 Config.PoliceJobs = {"lspd", "bcso"}
 Config.MinPolice = 4
-Config.VaultTimer = 2 -- Minutes before vault opens after hack
+Config.VaultTimer = 3 -- Minutes before vault opens after hack
 Config.FirstCooldown = 0 -- Minutes before a bank can be robbed, when the resource starts
-Config.GeneralCooldown = 45 -- Minutes before any bank can be robbed again, after one has been robbed
+Config.GeneralCooldown = 90 -- Minutes before any bank can be robbed again, after one has been robbed
 Config.BankCooldown = 60 -- Minutes before the individual bank can be robbed again, after it has just been robbed (This is also the reset timer, so when timer is done, the bank gets reset) (Start when camera is hacked)
 
 Config.Doorlock = "qb" -- qb / ox
@@ -165,7 +165,7 @@ Config.Banks = {
             [1] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -192,7 +192,7 @@ Config.Banks = {
             [2] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -219,7 +219,7 @@ Config.Banks = {
             [3] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -246,7 +246,7 @@ Config.Banks = {
             [4] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -273,7 +273,7 @@ Config.Banks = {
             [5] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -485,7 +485,7 @@ Config.Banks = {
             [1] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -512,7 +512,7 @@ Config.Banks = {
             [2] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -539,7 +539,7 @@ Config.Banks = {
             [3] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -566,7 +566,7 @@ Config.Banks = {
             [4] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -593,7 +593,7 @@ Config.Banks = {
             [5] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -812,7 +812,7 @@ Config.Banks = {
             [1] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -839,7 +839,7 @@ Config.Banks = {
             [2] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -866,7 +866,7 @@ Config.Banks = {
             [3] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -893,7 +893,7 @@ Config.Banks = {
             [4] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -920,7 +920,7 @@ Config.Banks = {
             [5] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1139,7 +1139,7 @@ Config.Banks = {
             [1] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1166,7 +1166,7 @@ Config.Banks = {
             [2] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1193,7 +1193,7 @@ Config.Banks = {
             [3] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1220,7 +1220,7 @@ Config.Banks = {
             [4] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1247,7 +1247,7 @@ Config.Banks = {
             [5] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1466,7 +1466,7 @@ Config.Banks = {
             [1] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1493,7 +1493,7 @@ Config.Banks = {
             [2] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1520,7 +1520,7 @@ Config.Banks = {
             [3] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1547,7 +1547,7 @@ Config.Banks = {
             [4] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1574,7 +1574,7 @@ Config.Banks = {
             [5] = {
                 ['busy'] = false,
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1792,7 +1792,7 @@ Config.Banks = {
         ['lockers'] = {
             [1] = {
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1819,7 +1819,7 @@ Config.Banks = {
             },
             [2] = {
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1846,7 +1846,7 @@ Config.Banks = {
             },
             [3] = {
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1873,7 +1873,7 @@ Config.Banks = {
             },
             [4] = {
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
@@ -1900,7 +1900,7 @@ Config.Banks = {
             },
             [5] = {
                 ['drillitem'] = {
-                    ['item'] = "drill",
+                    ['item'] = "basicdrill",
                     ['shouldremove'] = {
                         ['remove'] = false, -- false = Don't remove item, all the options under don't matter when false
                         ['type'] = "fail", -- Can be "fail", "success" or "both". 
