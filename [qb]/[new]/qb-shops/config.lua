@@ -828,14 +828,22 @@ Config.Products = {
             type = 'item',
             slot = 6,
         },
-        [7] = {
+        [7] = { 
             name = 'deliverylist',
             price = 350,
             amount = 5,
             info = {},
             type = 'item',
-            slot = 6,
+            slot = 7,
         },
+        [8] = { 
+            name = 'basicdecrypter',
+            price = 1250,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 8,
+    },
     },
     ["illegalpharmacy"] = {
         [1] = {
@@ -986,7 +994,7 @@ Config.Products = {
             type = "item", 
             slot = 5,
           },
-          [6] = {
+          [6] = { 
             name = "powerbank", 
             price = 850, 
             amount = 5, 
@@ -994,6 +1002,14 @@ Config.Products = {
             type = "item", 
             slot = 6,
           },
+          [7] = { 
+            name = "laptop_green", 
+            price = 2000, 
+            amount = 5, 
+            info = {}, 
+            type = "item", 
+            slot = 7,
+        },
     },
     ["pharmacy"] = {
         [1] = {

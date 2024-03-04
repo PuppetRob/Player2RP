@@ -41,7 +41,7 @@ Config.TraderOptions = {
 		-- Item: What the item is called in the database
 		-- Price: How much the item cost to buy
 		-- isWeapon: True/False (Is the item a weapon e.g. pistol)
-
+		
 		{label = "Armor Blueprint", item = "blueprint_armor", price = 25000, isWeapon = false},
 		{label = "Security Card", item = "seccard", price = 25000, isWeapon = false},
 		{label = "Pistol Receiver Blueprint", item = "blueprint_pistol-receiver", price = 25000, isWeapon = false},
