@@ -222,7 +222,7 @@ Config = {
 			["antilag"] = true,
 			["mileage"] = true,
 			["lowfuel"] = true,
-			["nos"] = true,
+			["nos"] = false,
 		},
 
 		odoCustomisation = {
