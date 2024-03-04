@@ -338,30 +338,6 @@ Config.Products = {
             type = "item",
             slot = 5,
         }, 
-        [6] = {
-            name = "weed_skunk_seed",
-            price = 10,
-            amount = 100,
-            info = {},
-            type = "item",
-            slot = 6,
-        },
-        [7] = {
-            name = "weed_ak47_seed",
-            price = 10,
-            amount = 100,
-            info = {},
-            type = "item",
-            slot = 7,
-        },
-        [8] = {
-            name = "drug_scales",
-            price = 2500,
-            amount = 5,
-            info = {},
-            type = "item",
-            slot = 8,
-        },
     },
     ["leisureshop"] = {
         [1] = {

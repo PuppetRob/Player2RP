@@ -146,6 +146,20 @@ Config = {
 				['pescatore'] = 100,
 			},
 		},
+		['whitewidow'] = {
+			enable = true,
+			locations = { 
+				[1] = vec4(192.81, -239.03, 54.07, 154.43),
+			},
+			--ped = "S_M_Y_Chef_01",
+			prop = "prop_vend_snak_01",
+			itemlist = {
+				--Food
+				['drug_scales'] = 2500,
+				['weed_ak47_seed'] = 10,
+				['weed_skunk_seed'] = 10,
+			},
+		},
 		--[[ ['popsdiner'] = {
 			enable = true,
 			locations = {

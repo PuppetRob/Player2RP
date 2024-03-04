@@ -54,6 +54,9 @@ Config = {
 			{ name = "gummymould", price = 0, amount = 50, info = {}, type = "item", slot = 14, },
 			{ name = "bong", price = 0, amount = 50, info = {}, type = "item", slot = 15, },
 			{ name = "lighter", price = 0, amount = 50, info = {}, type = "item", slot = 16, },
+			{ name = "drug_scales", price = 1500, amount = 5, info = {}, type = "item", slot = 17, },
+			{ name = "weed_ak47_seed", price = 5, amount = 250, info = {}, type = "item", slot = 18, },
+			{ name = "weed_skunk_seed", price = 5, amount = 250, info = {}, type = "item", slot = 19, },
 		},
 	},
 
