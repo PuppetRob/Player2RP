@@ -954,7 +954,7 @@ Config.Products = {
           },
           [9] = {
             name = "gold_phone", 
-            price = 2200,
+            price = 25000,
             amount = 10,
             info = {}, 
             type = "item", 
