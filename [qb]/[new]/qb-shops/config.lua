@@ -828,6 +828,14 @@ Config.Products = {
             type = 'item',
             slot = 6,
         },
+        [7] = {
+            name = 'deliverylist',
+            price = 350,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 6,
+        },
     },
     ["illegalpharmacy"] = {
         [1] = {
