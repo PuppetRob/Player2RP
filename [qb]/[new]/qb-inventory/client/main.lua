@@ -1057,7 +1057,7 @@ end)
 
 
     --qb-target
-    RegisterNetEvent("inventory:client:Crafting", function(dropId)
+--[[     RegisterNetEvent("inventory:client:Crafting", function(dropId)
         local crafting = {}
         crafting.label = "Crafting"
         crafting.items = GetThresholdItems()
@@ -1096,4 +1096,4 @@ end)
                 },
             },
         distance = 1.0
-    })
+    }) ]]
