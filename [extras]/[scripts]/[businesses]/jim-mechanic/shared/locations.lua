@@ -39,7 +39,7 @@ Config.Locations[#Config.Locations+1] = { --[[ GABZ BENNYS ]]--
 	garage = {
 		spawn = vec4(-182.74, -1317.61, 30.63, 357.23),
 		out = vec4(-190.62, -1311.57, 31.3, 0.0),
-		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		list = { "towtruck", "panto" },
 		prop = true
 	},
 	payments = {
@@ -98,7 +98,7 @@ Config.Locations[#Config.Locations+1] = { -- [[ BIKE MECHANIC]] --
 	garage = {
 		spawn = vec4(1165.92, 2642.87, 37.23, 358.2),
 		out = vec4(1170.25, 2645.6, 37.81, 88.15),
-		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		list = { "towtruck", "panto" },
 		prop = true,
 	},
 	payments = {
@@ -157,7 +157,7 @@ Config.Locations[#Config.Locations+1] = { -- [[SANDY MECHANIC]] --
 	garage = {
 		spawn = vec4(1165.92, 2642.87, 37.23, 358.2),
 		out = vec4(1170.25, 2645.6, 37.81, 88.15),
-		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		list = { "towtruck", "panto" },
 		prop = true,
 	},
 	payments = {
@@ -217,7 +217,7 @@ Config.Locations[#Config.Locations+1] = { --[[ OTTOS AUTOS ]]--
 	garage = {
 		spawn = vec4(826.59, -793.63, 26.21, 84.34),
 		out = vec4(824.3, -801.2, 26.37, 0.65),
-		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		list = { "towtruck", "panto" },
 		prop = true
 	},
 	payments = {
@@ -275,7 +275,7 @@ Config.Locations[#Config.Locations+1] = { --[[ HAYES AUTOS ]]--
 	garage = {
 		spawn = vec4(-1379.84, -451.82, 34.44, 124.0),
 		out = vec4(-1401.57, -451.19, 34.48, 212.71),
-		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" }
+		list = { "towtruck", "panto" },
 	},
 	payments = {
 		img = "https://static.wikia.nocookie.net/gtawiki/images/0/0c/HayesAutoBodyShop-GTAV-Logo.png",
