@@ -608,12 +608,20 @@ Config.Products = {
             slot = 5,
         },
         [6] = {
+            name = "weapon_knife",
+            price = 1250,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 6,
+        },
+        [7] = {
             name = 'weapon_musket',
             price = 7500,
             amount = 10,
             info = {},
             type = 'item',
-            slot = 6,
+            slot = 7,
             requiresLicense = true
         },
     },
