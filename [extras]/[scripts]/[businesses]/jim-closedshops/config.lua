@@ -11,10 +11,10 @@ Config = {
 	Notify = "qb",
 	ProgressBar = "qb", -- set to "ox" if using ox_lib progressbar
 
-	Renewed = true, -- If "false" use qb-management, if "true" use Renewed-Banking
+	Renewed = false, -- If "false" use qb-management, if "true" use Renewed-Banking
 
 	Shops = {
-		['beanmachine'] = {
+		--[[ ['beanmachine'] = {
 			enable = true,
 			locations = {
 				[1] = vec4(114.78, -1035.18, 29.34, 70.0), -- Gabz Legion
@@ -123,7 +123,7 @@ Config = {
 				['nplate'] = 100,
 				['wings'] = 100,
 			},
-		},
+		}, ]]
 		['pizzathis'] = {
 			enable = true,
 			locations = {
@@ -146,7 +146,7 @@ Config = {
 				['pescatore'] = 100,
 			},
 		},
-		['popsdiner'] = {
+		--[[ ['popsdiner'] = {
 			enable = true,
 			locations = {
 				[1] = vec4(1577.99, 6458.41, 25.32, 157.0),
@@ -242,7 +242,7 @@ Config = {
 				['tbcroissant'] = 100,
 				['tbchoccroiss'] = 100,
 			},
-		},
+		}, ]]
 	},
 }
 
