@@ -1,5 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
------------ / alcohol
+--[[ ----------- / alcohol
 
 for k, _ in pairs(Config.Consumables.alcohol) do
     QBCore.Functions.CreateUseableItem(k, function(source, item)
@@ -25,7 +25,7 @@ for k, _ in pairs(Config.Consumables.drink) do
         TriggerClientEvent('consumables:client:Drink', source, item.name)
     end)
 end
-
+ ]]
 ----------- / Custom
 for k, _ in pairs(Config.Consumables.custom) do
     QBCore.Functions.CreateUseableItem(k, function(source, item)
@@ -42,7 +42,7 @@ local function createItem(name, type)
         TriggerClientEvent('consumables:client:' .. type, source, item.name)
     end)
 end
------------ / Drug
+--[[ ----------- / Drug
 
 QBCore.Functions.CreateUseableItem('joint', function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
@@ -69,7 +69,7 @@ end)
 QBCore.Functions.CreateUseableItem('meth', function(source)
     TriggerClientEvent('consumables:client:meth', source)
 end)
-
+ ]]
 ----------- / Tools
 
 QBCore.Functions.CreateUseableItem('armor', function(source)
