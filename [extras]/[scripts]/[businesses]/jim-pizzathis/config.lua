@@ -12,7 +12,7 @@ Config = {
 	Notify = "qb",
 	ProgressBar = "qb",
 
-	JimConsumables = false, -- Enable this to disable this scripts control of food/drink items
+	JimConsumables = true, -- Enable this to disable this scripts control of food/drink items
 	JimShop = false, -- If true shops will open in jim-shops
 
 	craftCam = true,		-- Disable this to stop crafting cameras
