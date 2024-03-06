@@ -45,18 +45,18 @@ Config = {
 		["ecola"] = { 		emote = "ecola", 		canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(25,50), }},
 		["ecolalight"] = { 		emote = "ecola", 		canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(25,50), }},
 
-		["bolognese"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["calamari"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["meatball"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["alla"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["pescatore"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["bolognese"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["calamari"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["meatball"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["alla"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["pescatore"] = { 			emote = "foodbowl", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
 
-		["vegetariana"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["capricciosa"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["diavola"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["marinara"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["margherita"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
-		["prosciuttio"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 10, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["vegetariana"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["capricciosa"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["diavola"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["marinara"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["margherita"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
+		["prosciuttio"] = { 			emote = "pizza", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(10, 25), heal = 5, armor = 0, type = "food", stats = { hunger = math.random(75,100), }},
 
 
 
