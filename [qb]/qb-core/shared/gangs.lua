@@ -5,21 +5,21 @@ QBShared.Gangs = {
         label = 'Angels of Death',
         grades = {
             ['0'] = { name = 'Recruit' },
-            ['1'] = { name = 'Enforcer' },
-            ['2'] = { name = 'Shot Caller' },
+            ['1'] = { name = 'Member' },
+            ['2'] = { name = 'Enforcer' },
             ['3'] = { name = 'Boss', isboss = true },
         },
     },
---[[     ballas = {
-        label = 'Ballas',
+     thefamily = {
+        label = 'The Family',
         grades = {
             ['0'] = { name = 'Recruit' },
-            ['1'] = { name = 'Enforcer' },
-            ['2'] = { name = 'Shot Caller' },
+            ['1'] = { name = 'Capos' },
+            ['2'] = { name = 'Under Boss' },
             ['3'] = { name = 'Boss', isboss = true },
         },
     },
-    vagos = {
+ --[[   vagos = {
         label = 'Vagos',
         grades = {
             ['0'] = { name = 'Recruit' },
