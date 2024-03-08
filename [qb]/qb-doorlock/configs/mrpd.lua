@@ -3,7 +3,7 @@
 
 -- Front doors
 table.insert(Config.DoorList, {
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = false,
 	lockpick = true,
 	doors = {
@@ -26,7 +26,7 @@ table.insert(Config.DoorList, {
 
 -- North doors
 table.insert(Config.DoorList, {
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	doors = {
 		{
@@ -48,7 +48,7 @@ table.insert(Config.DoorList, {
 
 -- South doors
 table.insert(Config.DoorList, {
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	doors = {
 		{
@@ -75,7 +75,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(441.13, -977.93, 30.82319),
 	locked = true,
 	objHeading = 0,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -87,7 +87,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(440.5201, -986.2335, 30.82319),
 	locked = true,
 	objHeading = 180,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 		['offpolice'] = 0,
@@ -101,7 +101,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(464.1591, -974.6656, 26.3707),
 	locked = true,
 	objHeading = 269.78,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 		['offpolice'] = 0,
@@ -115,7 +115,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(464.1566, -997.5093, 26.3707),
 	locked = true,
 	objHeading = 89.87,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 		['offpolice'] = 0,
@@ -171,7 +171,7 @@ table.insert(Config.DoorList, {
 
 -- Back doors
 table.insert(Config.DoorList, {
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	doors = {
 		{
@@ -198,7 +198,7 @@ table.insert(Config.DoorList, {
 	locked = true,
 	fixText = true,
 	objHeading = 180,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -209,7 +209,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(476.6157, -1008.875, 26.48005),
 	objHeading = 270,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -229,7 +229,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(481.0084, -1004.118, 26.48005),
 	objHeading = 180,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -249,7 +249,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(477.9126, -1012.189, 26.48005),
 	objHeading = 0,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -269,7 +269,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(480.9128, -1012.189, 26.48005),
 	objHeading = 0,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -289,7 +289,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(483.9127, -1012.189, 26.48005),
 	objHeading = 0,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -309,7 +309,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(486.9131, -1012.189, 26.48005),
 	objHeading = 0,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -329,7 +329,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(484.1764, -1007.734, 26.48005),
 	objHeading = 180,
 	objHash = -53345114, -- gabz_mrpd_cells_door
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	audioLock = {
 		['file'] = 'metal-locker.ogg',
@@ -351,7 +351,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(479.06, -1003.173, 26.4065),
 	locked = true,
 	objHeading = 90,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -364,7 +364,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(482.6694, -983.9868, 26.40548),
 	locked = true,
 	objHeading = 270,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -377,7 +377,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(482.6701, -987.5792, 26.40548),
 	locked = true,
 	objHeading = 270,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -390,7 +390,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(482.6699, -992.2991, 26.40548),
 	locked = true,
 	objHeading = 270,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -403,7 +403,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(482.6703, -995.7285, 26.40548),
 	locked = true,
 	objHeading = 270,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -416,7 +416,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(475.8323, -990.4839, 26.40548),
 	locked = true,
 	objHeading = 134.7,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -429,7 +429,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(479.7507, -999.629, 30.78927),
 	locked = true,
 	objHeading = 90,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -442,7 +442,7 @@ table.insert(Config.DoorList, {
 	objCoords = vector3(487.4378, -1000.189, 30.78697),
 	locked = true,
 	objHeading = 181.28,
-	maxDistance = 4,
+	maxDistance = 2,
 	authorizedJobs = {
 		['lspd'] = 0,
 	}
@@ -450,7 +450,7 @@ table.insert(Config.DoorList, {
 
 -- Shooting range
 table.insert(Config.DoorList, {
-	maxDistance = 4,
+	maxDistance = 2,
 	locked = true,
 	doors = {
 		{
@@ -475,7 +475,7 @@ table.insert(Config.DoorList, {
 	objHeading = 90.000465393066,
 	slides = false,
 	garage = false,
-	maxDistance = 4,
+	maxDistance = 2,
 	fixText = true,
 	objHash = -692649124, -- gabz_mrpd_door_03
 	locked = true,
