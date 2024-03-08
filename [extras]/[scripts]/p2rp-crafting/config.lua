@@ -71,7 +71,7 @@ Config.defaultRecipes = {
         }
     },
 
-    ["empty_weed_bag-bag"] = {
+    ["empty_weed_bag"] = {
         item = "empty_weed_bag",
         label = "Drug Baggy",
         image = "https://cfx-nui-qb-inventory/html/images/plastic-bag.png", 
