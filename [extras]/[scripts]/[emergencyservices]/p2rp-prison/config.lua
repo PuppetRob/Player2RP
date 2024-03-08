@@ -45,24 +45,24 @@ Config.XPCategories = { -- Registered XP Types for Pickle's XP.
 Config.Default = {
     permissions = { -- Permissions settings for jailing, unjailing, and other things.
         jail = {
-            jobs = {["lspd"] = 0, ["bcso"] = 0, ["sast"] = 0}, -- ["job_name"] = rank_number, ["job_name2"] = rank_number2,
+            jobs = {["lspd"] = 0, ["bcso"] = 0}, -- ["job_name"] = rank_number, ["job_name2"] = rank_number2,
             groups = {"admin", "god"} -- "group1", "group2"
         },
         unjail = {
-            jobs = {["lspd"] = 0, ["bcso"] = 0, ["sast"] = 0},
+            jobs = {["lspd"] = 0, ["bcso"] = 0},
             groups = {"admin", "god"}
         },
         alert = {
-            jobs = {["lspd"] = 0, ["bcso"] = 0, ["sast"] = 0},
+            jobs = {["lspd"] = 0, ["bcso"] = 0},
             groups = {"admin", "god"}
         },
     },
     outfit = { -- Prisoner outfits to set when in jail. Please change this according to your server's clothing numbers.
         male = {
-            ['arms'] = 0,
+            ['arms'] = 1,
             ['tshirt_1'] = 15, 
             ['tshirt_2'] = 0,
-            ['torso_1'] = 536, 
+            ['torso_1'] = 613, 
             ['torso_2'] = 0,
             ['bproof_1'] = 0,
             ['bproof_2'] = 0,
@@ -70,7 +70,7 @@ Config.Default = {
             ['decals_2'] = 0,
             ['chain_1'] = 0,
             ['chain_2'] = 0,
-            ['pants_1'] = 193, 
+            ['pants_1'] = 211, 
             ['pants_2'] = 0,
             ['shoes_1'] = 98, 
             ['shoes_2'] = 0,
