@@ -15,7 +15,7 @@ Config = {
 
 	RenewedBanking = false, -- Enable if using Renewed-Banking false if using QB-Management
 
-	ApGov = true, -- Toggle support for AP-Goverment Tax
+	ApGov = false, -- Toggle support for AP-Goverment Tax
 
 	List = true, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
 	PaymentRadius = 15, -- This is how far the playerlist will check for nearby players (based on the person charging)
