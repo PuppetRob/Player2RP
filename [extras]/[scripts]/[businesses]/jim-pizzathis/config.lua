@@ -51,13 +51,12 @@ Config = {
 	},
 	DrinkItems = {
 		label = "Drinks Store",
-		slots = 5,
+		slots = 3,
 		items = {
-			{ name = "vodka", price = 0, amount = 50, info = {}, type = "item", slot = 1, },
-			{ name = "sprunk", price = 0, amount = 50, info = {}, type = "item", slot = 2, },
-			{ name = "sprunklight", price = 0, amount = 50, info = {}, type = "item", slot = 3, },
-			{ name = "ecola", price = 0, amount = 50, info = {}, type = "item", slot = 4, },
-			{ name = "ecolalight", price = 0, amount = 50, info = {}, type = "item", slot = 5, },
+			{ name = "water_bottle", price = 0, amount = 50, info = {}, type = "item", slot = 1, },
+			{ name = "coffee", price = 0, amount = 50, info = {}, type = "item", slot = 2, },
+			{ name = "kurkakola", price = 0, amount = 50, info = {}, type = "item", slot = 3, },
+
 		}
 	},
 	WineItems = {
