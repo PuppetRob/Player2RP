@@ -406,7 +406,7 @@ Config = {
 	},
 
 	ManualRepairs = { -- Player vehicle repair config
-		ManualRepairCost = 5000, 	-- Set this to a high amount to get people to talk to mechanics rather than use automated systems
+		ManualRepairCost = 1500, 	-- Set this to a high amount to get people to talk to mechanics rather than use automated systems
 		ManualRepairCostBased = false, 	-- Set this to true if you want the cost to ALWAYS be the amount set at "ManualRepairCost"
 									-- Set this to false if you want it to "ManualRepairCost" to be the max and cost is calculated by damage
 
