@@ -1,9 +1,9 @@
 Config = Config or {}
 
 Config.UsingPsHousing = false
-Config.UsingDefaultQBApartments = true
+Config.UsingDefaultQBApartments = false
 Config.OnlyShowOnDuty = true
-Config.UseCQCMugshot = true
+Config.UseCQCMugshot = false
 
 -- Front, Back Side. Use 4 for both sides, we recommend leaving at 1 for default.
 Config.MugPhotos = 1
@@ -14,7 +14,7 @@ Config.BillVariation = true
 
 -- If set to false (default) = The fine amount is just being removed from the player's bank account
 -- If set to true = The fine amount is beeing added to the society account after being removed from the player's bank account
-Config.QBBankingUse = false
+Config.QBBankingUse = true
 
 -- Set up your inventory to automatically retrieve images when a weapon is registered at a weapon shop or self-registered.
 -- If you're utilizing lj-inventory's latest version from GitHub, no further modifications are necessary. 
@@ -22,7 +22,7 @@ Config.QBBankingUse = false
 Config.InventoryForWeaponsImages = "qb-inventory"
 
 -- "p2rp-fuel", "lj-fuel", "ps-fuel"
-Config.Fuel = "ps-fuel"
+Config.Fuel = "p2rp-fuel"
 
 -- Google Docs Link
 Config.sopLink = {
@@ -46,7 +46,8 @@ Config.PoliceJobs = {
 }
 
 Config.AmbulanceJobs = {
-    ['ambulance'] = true
+    ['ambulance'] = true,
+    ['firefighter'] = true,
 }
 
 Config.DojJobs = {
