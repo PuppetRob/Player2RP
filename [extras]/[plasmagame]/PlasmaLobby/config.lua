@@ -47,7 +47,7 @@ HashToPlasmaWeapon = {
 print("Lst Gun : "..tostring(#LstGun))
 Maps = {
 	["Patoche"] = { -- first map  -- PLASMAGAME
-	["resourceName"] = "patoche_plasmagame",
+	["resourceName"] = "sub_patoche_plasmagame",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
@@ -68,7 +68,7 @@ Maps = {
 	},
 
 	["Patochemap2"] = { -- Dust2 remake -- PLASMAGAME DLC
-	["resourceName"] = "patoche_plasmagame_dlc",
+	["resourceName"] = "sub_patoche_plasmagame_dlc",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
@@ -87,7 +87,7 @@ Maps = {
 	},
 
 	["Patochemap3"] = { -- DUST1 remake -- PLASMAGAME DLC
-	["resourceName"] = "patoche_plasmagame_dlc",
+	["resourceName"] = "sub_patoche_plasmagame_dlc",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = false, -- Is Team Death Match available on this map ?
@@ -106,7 +106,7 @@ Maps = {
 	},
 
 	["Patochemap4"] = { --AZTEC -- PLASMAGAME
-	["resourceName"] = "patoche_plasmagame",
+	["resourceName"] = "sub_patoche_plasmagame",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
@@ -124,7 +124,7 @@ Maps = {
 	},
 
 	["Patochemap5"] = { -- MAP central hole -- PLASMAGAME DLC
-	["resourceName"] = "patoche_plasmagame_dlc",
+	["resourceName"] = "sub_patoche_plasmagame_dlc",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
@@ -143,7 +143,7 @@ Maps = {
 
     
 	["Patochemap6"] = { -- DLC02 map 6 -- PLASMAGAME DLC 02
-	["resourceName"] = "patoche_plasmagame_dlc_02",
+	["resourceName"] = "sub_patoche_plasmagame_dlc_02",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
@@ -162,7 +162,7 @@ Maps = {
 
         
 	["Patochemap7"] = { -- DLC02 map 67 -- PLASMAGAME DLC 02
-	["resourceName"] = "patoche_plasmagame_dlc_02",
+	["resourceName"] = "sub_patoche_plasmagame_dlc_02",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
@@ -181,7 +181,7 @@ Maps = {
 
          
 	["Patochemap8"] = { -- container map -- PLASMAGAME
-	["resourceName"] = "patoche_plasmagame",
+	["resourceName"] = "sub_patoche_plasmagame",
 	["Available"] = true,
 	["Capture The Orbs"] = true, -- Is Capture the Flag available on this map ?
 	["Team DeathMatch"] = true, -- Is Team Death Match available on this map ?
