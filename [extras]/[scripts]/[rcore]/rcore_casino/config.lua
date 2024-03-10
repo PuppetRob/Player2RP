@@ -170,7 +170,7 @@ Config = {
     ]]
 
     -- Job
-    BossGrade = 2, -- the max grade (boss) for the casino job
+    BossGrade = 4, -- the max grade (boss) for the casino job
     BossName = "boss",
     JobName = "casino", -- id of the job (not a title, I guess, don't change it)
 
