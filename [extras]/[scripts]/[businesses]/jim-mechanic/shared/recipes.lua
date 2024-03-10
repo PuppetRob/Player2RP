@@ -289,7 +289,7 @@ Stores = {
 			{ name = "paintcan", price = 50, amount = 50, info = {}, type = "item", },
 			{ name = "tint_supplies", price = 300, amount = 50, info = {}, type = "item", },
 			{ name = "underglow_controller", price = 50, amount = 50, info = {}, type = "item", },
-			{ name = "cleaningkit", price = 20, amount = 0, info = {}, type = "item", },
+			{ name = "cleaningkit", price = 20, amount = 50, info = {}, type = "item", },
 		},
 	},
 	PerformItems = {
