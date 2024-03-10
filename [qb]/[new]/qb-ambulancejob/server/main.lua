@@ -197,8 +197,8 @@ RegisterNetEvent('hospital:server:RevivePlayer', function(playerId, isOldMan)
 		if Player.PlayerData.job.name == 'ambulance' or QBCore.Functions.HasItem(src, 'firstaid', 1) then
 			if oldMan then
 				if Player.Functions.RemoveMoney('cash', 5000, 'revived-player') then
-					Player.Functions.RemoveItem('firstaid', 1)
-					TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['firstaid'], 'remove')
+				--	Player.Functions.RemoveItem('firstaid', 1)
+				--	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['firstaid'], 'remove')
 					TriggerClientEvent('hospital:client:Revive', Patient.PlayerData.source)
 				else
 					TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_enough_money'), 'error')
