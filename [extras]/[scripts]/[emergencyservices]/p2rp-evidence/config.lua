@@ -245,21 +245,28 @@ Config.DrugTesting = {
     UsingQBSR = true, -- set to true if you are using basic qb-smallresources, if not you will need to specify an event trigger or edit your consumables resource
     DefaultPositiveTime = 2, -- number, in hours, that a player remains positive for a drug test (does not extend past script reset)
     Drugs = { -- these are DRUG TYPES that show up on your drug test, avoid adding too many as they will make the drug test results cluttered and oversized
-        ['weed'] = {
-            label = 'Marijuana'
+        ['weed_bag'] = {
+            label = 'Weed'
         },
-        ['oxycodone'] = {
-            label = 'Oxycodone',
-        },
-        ['ecstacy'] = {
-            label = "Ecstacy",
-        },
-        ['cocaine'] = {
+        ['cokebaggy'] = {
             label = 'Cocaine',
         },
         ['meth'] = {
             label = 'Methamphetamine',
         },
+        ['acid_hit'] = {
+            label = 'LSD',
+        },
+        ['extascy_pill'] = {
+            label = "Ecstacy",
+        },
+        ['heroin'] = {
+            label = "Heroin",
+        },
+        ['oxycodone'] = {
+            label = 'Oxycodone',
+        },
+ 
     },
     EventTriggers = {
         --[1] = {event = 'consumables:server:useMeth', type = 'server', drugType = 'meth', positiveTime = 4},
