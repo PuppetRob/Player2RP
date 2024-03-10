@@ -16,7 +16,10 @@ function consoleDisplay(text)
 end
 
 -- You can modify this to use your own Notification system
-function notification(msg,typeOfNotif)
+
+
+
+ function notification(msg,typeOfNotif)
 	exports['okokNotify']:Alert('Title', 'Message', Time, 'type', playSound)
 	if typeOfNotif == "success" then
 		SetNotificationTextEntry("STRING")
@@ -33,7 +36,7 @@ function notification(msg,typeOfNotif)
 		AddTextComponentString("~r~"..msg)
 		DrawNotification(true, false)
 	end
-end
+end 
 
 -- You can modify this to use your own Notification system
 function UPPERnotification(msg)

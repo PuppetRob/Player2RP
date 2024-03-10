@@ -9,7 +9,7 @@ MaxRound = 10
 GunName = "WEAPON_PLASMAP" --The Gun used in game. You can have weird issue if you use classic GTA Weapon, I recommend to use modded ADDON (no replace) gun.
 GunDamage = 10.0 -- The damage that the gun Deal. You have to put here the damage that the gun deal, its used to heal player after taking a shot.
 
-ShowBlips = true
+ShowBlips = false
 
 UseThirdEye = true      -- Use targetting system instead of marker
 WhichThirdEye = "qb"     -- Which targetting system "ox" or "qb" (only OX_target and QB-Target are available, but you can edit target.lua file to add your own targetting system)
