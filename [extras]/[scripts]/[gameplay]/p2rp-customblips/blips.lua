@@ -50,7 +50,7 @@ local blips = {
 
    {title="Towing", colour=55, id=477, x = -217.66, y = -1168.29, z = 23.04, scale = 0.45},
 
-  -- {title="Plasma Game", colour=2, id=429, x = -1084.7562255859, y = -1280.9090576172, z = 5.6599960327148, scale = 0.60},
+   {title="Plasma Game", colour=2, id=429, x = -1084.7562255859, y = -1280.9090576172, z = 5.6599960327148, scale = 0.60},
    {title="Skateboard Shop", colour=61, id=577, x = -1122.74, y = -1439.45, z = 5.23, scale = 0.65},
    {title="Surfing", colour=3, id=483, x = -1507.33, y = -1396.08, z = 1.44, scale = 0.65},
    {title="Art Gallery", colour=64, id=269, x = -411.25, y = 26.55, z = 46.23, scale = 0.65},
