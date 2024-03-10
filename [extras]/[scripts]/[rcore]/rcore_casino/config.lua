@@ -46,7 +46,7 @@ Config = {
     RestrictControls = true, -- don't jump, don't attack inside the Casino
 
     -- Bar
-    BarShowSnacks = true, -- disable, if you want to see only drinks in the bartender menu
+    BarShowSnacks = false, -- disable, if you want to see only drinks in the bartender menu
 
     -- Inside Track
     IT_STARTING_SOON_TIME = 0, -- *starting soon screen* duration; def: 0
@@ -78,9 +78,9 @@ Config = {
     LUCKY_WHEEL_ENABLED = true, -- set to false, if you don't want to use Lucky Wheel
     LUCKY_WHEEL_FREE_DRINKS_FOR = (60 * 60 * 24), -- when someone spins "Free Drinks" at the Lucky Wheel, how long they get free drinks for. def: 24 hours (60 * 60 * 24)
     LUCKY_WHEEL_COOLDOWN = (60 * 60 * 24), -- how long players have to wait for their next spin. def: 24 hours (60 * 60 * 24)
-    LUCKY_WHEEL_VEHICLE_ALTERNATIVE = "Money9", -- if player spins Vehicle, but there is no avaiable podium vehicle at the moment, spin to this item. Def: "Money50K" (the second biggest price)
+    LUCKY_WHEEL_VEHICLE_ALTERNATIVE = "Money50K", -- if player spins Vehicle, but there is no avaiable podium vehicle at the moment, spin to this item. Def: "Money50K" (the second biggest price)
     LUCKY_WHEEL_CAR_WINABLE = true, -- true: players can win the car, false: car is just a decoration
-    LUCKY_WHEEL_PAY_TO_SPIN = 0, -- set price for the spin (chips), set 0 for free spins, or set to existing inventory name, for example LUCKY_WHEEL_PAY_TO_SPIN = "wheel_ticket" to pay with an inventory item
+    LUCKY_WHEEL_PAY_TO_SPIN = 2500, -- set price for the spin (chips), set 0 for free spins, or set to existing inventory name, for example LUCKY_WHEEL_PAY_TO_SPIN = "wheel_ticket" to pay with an inventory item
     LUCKY_WHEEL_CAR_ONE_WINNER = true, -- set to true, if only one player can win the podium vehicle. the vehicle will disapear from the podium after someone wins it.
 
     -- Blackjack
@@ -202,7 +202,7 @@ Framework = {
     -- ⚠️ For Standalone version docs visit https://documentation.rcore.cz/paid-resources/rcore_casino/standalone-version
     -- ⚠️ For Custom framework version docs visit https://documentation.rcore.cz/paid-resources/rcore_casino/custom-framework
 
-    Active = 5, -- Choose 1 for ESX, 2 for QBCore, 3 for Standalone, 4 for Custom, 5 for auto detect
+    Active = 2, -- Choose 1 for ESX, 2 for QBCore, 3 for Standalone, 4 for Custom, 5 for auto detect
     -- Please follow the installation tutorial: --
     -- https://documentation.rcore.cz/paid-resources/rcore_casino
 
