@@ -925,6 +925,22 @@ Config.GangZones['VESP'] = {
     }
 } 
 
+Config.GangZones['MIRR'] = {
+    name = 'MIRR',
+    label = 'Mirror Park',
+    neighbors = {
+        'EAST_V',
+        'LMESA'
+    },
+    parts = {
+        { x1 = 869.70, y1 = -820.90, x2 = 1391.07, y2 = -282.32 },
+    },
+    drugPreference = {
+        CATEGORY_LOW = 1.0,
+        CATEGORY_MED = 0.15,
+        CATEGORY_HIGH = 0.05
+    }
+}
 
 -- Sandy
 Config.GangZones['SANDY'] = {
