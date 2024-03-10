@@ -276,12 +276,13 @@ Config.DrugTesting = {
             event = 'jim-consumables:server:toggleItem', 
             drugArgPos = 2,
             drugArgValue = { -- add additional drug items here
-                ['joint'] = 'weed',
+                ['weed_bag'] = 'weed',
                 ['cokebaggy'] = 'cocaine',
-                ['crackbaggy'] = 'cocaine',
-                ['xtcbaggy'] = 'ecstacy',
-                ['oxy'] = 'oxycodone',
                 ['meth'] = 'meth',
+                ['acid_hit'] = 'lsd',
+                ['extascy_pill'] = 'ecstacy',
+                ['heroin'] = 'heroin',
+                ['oxy'] = 'oxycodone',
             }
         },    
     }
