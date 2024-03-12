@@ -837,15 +837,15 @@ QBShared.Items = {
         -- Process from Sassafras | vector4(1144.33, -1658.97, 36.61, 296.29)
         ["safarole"] 	     = {["name"] = "safarole", 			["label"] = "Safarole", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "safarole.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   		["combinable"] = nil,   ["description"] = "Safarole"},
         -- Fields - Barrels vector4(-172.48, 6169.23, 31.21, 352.11)
-        ["ephedrine"] 		 = {["name"] = "ephedrine", 		["label"] = "Ephedrine", 			["weight"] = 250, 		["type"] = "item", 		["image"] = "ephedrine.png", 		["unique"] = true, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Chemical used in the production of MDMA."},
+        ["ephedrine"] 		 = {["name"] = "ephedrine", 		["label"] = "Ephedrine", 			["weight"] = 250, 		["type"] = "item", 		["image"] = "ephedrine.png", 		["unique"] = false, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Chemical used in the production of MDMA."},
         -- Heist HumanLabs
-        ["amphetamine"] 	 = {["name"] = "amphetamine", 		["label"] = "Amphetamine", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "amphetamine.png", 		["unique"] = true, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Amphetamine."},
+        ["amphetamine"] 	 = {["name"] = "amphetamine", 		["label"] = "Amphetamine", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "amphetamine.png", 		["unique"] = false, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Amphetamine."},
         -- Process from Safarole/Ephedrine/Amphetamine | vector4(1978.71, -2607.87, 3.55, 318.17)
-        ["adderall"] 	 = {["name"] = "adderall", 		["label"] = "Adderall", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "adderall.png", 		["unique"] = true, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Medication used to treat ADHD."},
+        ["adderall"] 	 = {["name"] = "adderall", 		["label"] = "Adderall", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "adderall.png", 		["unique"] = false, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Medication used to treat ADHD."},
         -- Process from Safarole/Ephedrine/Amphetamine | vector4(1978.71, -2607.87, 3.55, 318.17)
-        ["mdma"] 			 = {["name"] = "mdma", 			   ["label"] = "MDMA", 					["weight"] = 500, 		["type"] = "item", 		["image"] = "mdma.png", 			["unique"] = true, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "MDMA."},
+        ["mdma"] 			 = {["name"] = "mdma", 			   ["label"] = "MDMA", 					["weight"] = 500, 		["type"] = "item", 		["image"] = "mdma.png", 			["unique"] = false, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "MDMA."},
         -- Final Product | Pill Press vector4(1443.02, -2229.52, 61.66, 177.59)
-        ["ecstasy_pill"] 	 = {["name"] = "ecstasy_pill", 	   ["label"] = "Ecstasy", 				["weight"] = 200, 		["type"] = "item", 		["image"] = "ecstasy_pill.png", 	["unique"] = true, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Extacsy Pill."},
+        ["ecstasy_pill"] 	 = {["name"] = "ecstasy_pill", 	   ["label"] = "Ecstasy", 				["weight"] = 200, 		["type"] = "item", 		["image"] = "ecstasy_pill.png", 	["unique"] = false, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Extacsy Pill."},
         
         -- // Drugs HEROIN
         ["syringe"] 	     = {["name"] = "syringe", 		["label"] = "Empty Syringe", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "syringe.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   		["combinable"] = nil,   ["description"] = "An Empty Syringe"},
