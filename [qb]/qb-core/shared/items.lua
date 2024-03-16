@@ -2503,5 +2503,16 @@ underglow                   = { name = 'underglow', label = 'Underglow LEDS', we
     ['yogamat_blue'] 				 	 = {['name'] = 'yogamat_blue', 			  	  	['label'] = 'Blue Yoga Mat', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'yogamat_blue.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Did somebody say Yoga?'},
     ['yogamat_black'] 				 	 = {['name'] = 'yogamat_black', 			  	  	['label'] = 'Black Yoga Mat', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'yogamat_black.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Did somebody say Yoga?'},
     
-
+    ['bountytablet'] = {
+        ["name"]        = "bountytablet", 
+        ["label"]       = "Bounty Tablet", 
+        ["weight"]      = 500, 
+        ["type"]        = "item",
+        ["image"]       = "bountytablet.png", 
+        ["unique"]      = true,
+        ["useable"]     = true,
+        ["shouldClose"] = true,
+        ["combinable"]  = nil,
+        ["description"] = "A tablet used by bounty hunters to see current contracts for their office",
+      },
 }
