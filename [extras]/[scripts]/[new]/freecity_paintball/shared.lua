@@ -15,7 +15,7 @@ Config.spawnPed = true -- Spawns a ped on startLocation.
 Config.targetPed = {
     name = 'paintballPed',
     skin = `a_m_y_motox_02`, -- https://wiki.altv.mp/wiki/GTA:Ped_Models
-    location = vector3(-1581.23, -1039.59, 13.28),
+    location = vector3(-1581.23, -1039.59, 12.28),
     heading = 233.159149,
     scenario = 'WORLD_HUMAN_GUARD_STAND' -- https://wiki.rage.mp/index.php?title=Scenarios / false for no ped scenario
 }
