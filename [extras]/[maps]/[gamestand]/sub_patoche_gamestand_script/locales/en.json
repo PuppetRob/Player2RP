@@ -1,0 +1,13 @@
+{
+    "language": "English",
+    "playMenu": "[E] - Launch game at this stand",
+    "noEnoughMoney": "You don't have enough money.",
+    "leftGame": "You have left the stand.",
+    "endGame": "Game finished!",
+    "countDown": "Game started - remaining time: ",
+    "chinUpWin": "You have win the chalenge you receive $",
+    "chinUpLoose": "You loose the chalenge!",
+    "chinUpAlreadyWin": "You already have win this game. You need to wait %s minutes before retry.",
+    "alreadyInUse": "This stand is already in use.",
+    "alreadyInGame": "You are already in a stand."
+}

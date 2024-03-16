@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fwClipSetManager>
+    <clipSets>
+    <Item type="fwClipSet" key="tw_anim@weapons@rifle@lo@dbshot_str">
+      <fallbackId />
+      <clipDictionaryName>tw_anim@weapons@rifle@lo@dbshot_str</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+    <Item type="fwClipSet" key="tw_anim@weapons@first_person@aim_rng@generic@shotgun@dbshot@str">
+      <fallbackId>weapons@first_person@aim_rng@generic@assault_rifle@shared@core</fallbackId>
+      <clipDictionaryName>tw_anim@weapons@first_person@aim_rng@generic@shotgun@dbshot@str</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags>
+        <Item>UseAdditives</Item>
+      </moveNetworkFlags>
+    </Item>
+    </clipSets>
+    <clipDictionaryMetadatas>
+    <Item key="tw_anim@weapons@rifle@lo@dbshot_str">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Weapons</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+    <Item key="tw_anim@weapons@first_person@aim_rng@generic@shotgun@dbshot@str">
+      <streamingPolicy>SP_SINGLEPLAYER_RESIDENT SP_MULTIPLAYER_RESIDENT</streamingPolicy>
+      <memoryGroup>MG_Weapons</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+    </clipDictionaryMetadatas>
+</fwClipSetManager>

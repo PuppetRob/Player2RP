@@ -1,0 +1,13 @@
+{
+    "language": "Français",
+    "playMenu": "[E] - Lancer le jeu à ce stand",
+    "noEnoughMoney": "Vous n'avez pas assez d'argent.",
+    "leftGame": "Vous avez quitté le stand.",
+    "endGame": "Jeu terminé!",
+    "countDown": "Jeu lancé - temps restant: ",
+    "chinUpWin": "Vous avez gagné le défi, vous recevez $",
+    "chinUpLoose": "Vous avez perdu le défi!",
+    "chinUpAlreadyWin": "Vous avez déjà gagné ce jeu. Vous devez attendre %s minutes avant de réessayer.",
+    "alreadyInUse": "Ce stand est déjà utilisé.",
+    "alreadyInGame": "Vous êtes déjà dans un stand."
+}
