@@ -337,7 +337,7 @@ RegisterNetEvent('jim-mechanic:client:applyUnderglow', function(data) local canE
 	if not enforceRestriction("perform") then return end
 	local vehicle = vehChecks() local above = isVehicleLift(vehicle)
 	if DoesEntityExist(vehicle) then
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
 		if not enforceClassRestriction(searchCar(vehicle).class) then return end
 		local plate = trim(GetVehicleNumberPlateText(vehicle))

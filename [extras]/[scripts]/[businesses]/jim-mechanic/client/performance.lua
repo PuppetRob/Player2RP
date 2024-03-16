@@ -10,7 +10,7 @@ RegisterNetEvent('jim-mechanic:client:applyArmour', function(data) local Ped = P
 	local above = isVehicleLift(vehicle)
 	if not DoesEntityExist(vehicle) then return end
 
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 
 	local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
@@ -69,7 +69,7 @@ RegisterNetEvent('jim-mechanic:client:applyTurbo', function(data) local Ped = Pl
 	local above = isVehicleLift(vehicle)
 	if not DoesEntityExist(vehicle) then return end
 
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 
 	local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
@@ -133,7 +133,7 @@ RegisterNetEvent('jim-mechanic:client:applyBrakes', function(data) local Ped = P
 	local above = isVehicleLift(vehicle)
 	if not DoesEntityExist(vehicle) then return end
 
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 
 	local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
@@ -200,7 +200,7 @@ RegisterNetEvent('jim-mechanic:client:applySuspension', function(data) local Ped
 	local above = isVehicleLift(vehicle)
 	if not DoesEntityExist(vehicle) then return end
 
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 
 	local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
@@ -274,7 +274,7 @@ RegisterNetEvent('jim-mechanic:client:applyTransmission', function(data) local P
 	local above = isVehicleLift(vehicle)
 	if not DoesEntityExist(vehicle) then return end
 
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 
 	local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
@@ -348,7 +348,7 @@ RegisterNetEvent('jim-mechanic:client:applyEngine', function(data) local Ped = P
 	local above = isVehicleLift(vehicle)
 	if not DoesEntityExist(vehicle) then return end
 
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 
 	local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
@@ -388,7 +388,7 @@ RegisterNetEvent('jim-mechanic:client:applyEngine', function(data) local Ped = P
 			end
 		end
 	else
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local item = Items["engine"..(currentEngine+1)]
 		if progressBar({label = Loc[Config.Lan]["common"].removing..item.label, time = math.random(7000,10000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, icon = "engine"..currentEngine+1, cam = cam }) then
 			if (GetVehicleMod(vehicle, 11) ~= currentEngine) then emptyHands(Ped) TriggerServerEvent("jim-mechanic:server:DupeWarn", "engine"..(currentEngine+1)) return end
@@ -433,7 +433,7 @@ RegisterNetEvent('jim-mechanic:client:applyDrift', function(data) local Ped = Pl
 			SetVehicleModKit(vehicle, 0)
 			propHoldCoolDown("screwdriver") Wait(10)
 			if remove == false then
-				local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+				local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 				if progressBar({label = Loc[Config.Lan]["common"].installing..item.label, time = math.random(7000,10000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, cam = cam }) then
 					qblog("`drifttires - "..item.label.."` changed [**"..trim(GetVehicleNumberPlateText(vehicle)).."**]")
 					for i = 0, 4 do SetVehicleTyreFixed(vehicle, i) end
@@ -454,7 +454,7 @@ RegisterNetEvent('jim-mechanic:client:applyDrift', function(data) local Ped = Pl
 					triggerNotify(nil, item.label..Loc[Config.Lan]["common"].instfail, "error")
 				end
 			else
-				local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+				local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 				if progressBar({label = Loc[Config.Lan]["common"].removing..item.label, time = math.random(7000,10000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, cam = cam }) then SetVehicleModKit(vehicle, 0)
 					if GetDriftTyresEnabled(vehicle) == false then TriggerServerEvent("jim-mechanic:server:DupeWarn", "drifttires") emptyHands(playerPed) return end
 					qblog("`drifttires - "..Items["drifttires"].label.."` changed [**"..trim(GetVehicleNumberPlateText(vehicle)).."**]")
@@ -484,7 +484,7 @@ RegisterNetEvent('jim-mechanic:client:applyBulletProof', function(data) local Pe
 	if not Checks() then return end
 	local vehicle = vehChecks() local above = isVehicleLift(vehicle)
 	if DoesEntityExist(vehicle) then
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if not enforceClassRestriction(searchCar(vehicle).class) then return end
 		if not above and not lookAtWheel(vehicle) then return end
 		local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
@@ -545,7 +545,7 @@ RegisterNetEvent('jim-mechanic:client:applyHarness', function(data) local canEff
 	if Config.Harness.JobOnly then if not Checks() then return end end
 	local vehicle = vehChecks() local above = isVehicleLift(vehicle)
 	if DoesEntityExist(vehicle) then
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
 		if not enforceClassRestriction(searchCar(vehicle).class) then return end
 		local plate = trim(GetVehicleNumberPlateText(vehicle))
@@ -595,7 +595,7 @@ RegisterNetEvent('jim-mechanic:client:applyAntiLag', function(data) local Ped = 
 	if not Checks() then return end
 	local vehicle = vehChecks() local above = isVehicleLift(vehicle)
 	if DoesEntityExist(vehicle) then
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
 		if not enforceClassRestriction(searchCar(vehicle).class) then return end
 		local plate = trim(GetVehicleNumberPlateText(vehicle))
@@ -651,7 +651,7 @@ RegisterNetEvent('jim-mechanic:client:applyManual', function(data) local canEffe
 			triggerNotify(nil, Loc[Config.Lan].common["cant"], "error")
 			return
 		end
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }
 		if not enforceClassRestriction(searchCar(vehicle).class) then return end
 		local plate = trim(GetVehicleNumberPlateText(vehicle))

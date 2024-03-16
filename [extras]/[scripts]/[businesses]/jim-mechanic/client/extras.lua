@@ -14,7 +14,7 @@ RegisterNetEvent("jim-mechanic:client:CarWax", function(data) local Ped = Player
 	local vehicle
 	if not IsPedInAnyVehicle(Ped, false) then vehicle = getClosest(GetEntityCoords(Ped)) end
 	local plate = trim(GetVehicleNumberPlateText(vehicle))
-    local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+    local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 3.0, 0.0, 1.0), GetEntityCoords(vehicle))
 	startTempCam(cam)
 	propHoldCoolDown("sponge")
 	while cleaning do
@@ -154,9 +154,9 @@ RegisterNetEvent("jim-mechanic:flipvehicle", function() local Ped = PlayerPedId(
 	local vehicle = getClosest(coords) pushVehicle(vehicle)
 	if DoesEntityExist(vehicle) then
 		lookEnt(vehicle)
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		startTempCam(cam)
-		if progressBar({label = Loc[Config.Lan]["extras"].flipping, time = 12000, cancel = true, dict = "missfinale_c2ig_11", anim = "pushcar_offcliff_f", flag = 32 }) then
+		if progressBar({label = Loc[Config.Lan]["extras"].flipping, time = 12000, cancel = true, dict = "missfinale_c2ig_11", anim = "pushcar_offcliff_f", flag = 8 }) then
 			stopTempCam()
 			qblog("used `/flipvehicle`")
 			local vehiclecoords = GetEntityCoords(vehicle)
@@ -270,7 +270,6 @@ RegisterNetEvent("jim-mechanic:Client:EnteredVehicle", function()
 	local isStopped = IsVehicleStopped(veh)
 	local getGravity = 	GetVehicleGravityAmount(veh)
 	if veh == 0 or IsThisModelABicycle(model) or IsThisModelATrain(model) then return end -- if bicycle or train, end here
-
 	if Config.System.Debug then
 		print("^5Debug^7: ^3EnteredVehicle^7: ^2Player has entered vehicle ^7- ^4Seat^7: ^1"..seat .."^7")
 	end
@@ -301,12 +300,12 @@ RegisterNetEvent("jim-mechanic:Client:EnteredVehicle", function()
 
 	-- LOOP TO CHECK FOR CRASHES AND WETHER TO EJECT
 	CreateThread(function()
-		if vehIsIn == veh and ShowOdo then ExecuteCommand("showodohud") end
+		if vehIsIn == veh and GetIsVehicleEngineRunning(veh) and ShowOdo then ExecuteCommand("showodohud") end
 
 		CreateThread(function()
-			while vehIsIn == veh and Config.Odometer.showSpeedometer and ShowOdo do
+			while vehIsIn == veh and DoesEntityExist(veh) and Config.Odometer.showSpeedometer and ShowOdo do
 				updateSpeedometer(veh, model)
-				Wait(isStopped and 250 or 150)
+				Wait(isStopped and 250 or 140)
 			end
 		end)
 
@@ -317,7 +316,7 @@ RegisterNetEvent("jim-mechanic:Client:EnteredVehicle", function()
 				isStopped = IsVehicleStopped(veh)
 				-- delay loop when car is stopped
 				SetPedHelmet(Ped, false)
-				if ShowOdo then
+				if ShowOdo and DoesEntityExist(veh) then
 					if IsPauseMenuActive() or not GetIsVehicleEngineRunning(veh) and pauseMenuCheck == false then
 						ExecuteCommand("hideodohud")
 						pauseMenuCheck = true
@@ -446,14 +445,10 @@ RegisterNetEvent("jim-mechanic:Client:EnteredVehicle", function()
 					HandleAntiLag(veh)
 				end
 				if Config.vehFailure.damageLimits then -- ported vehfailure damage limits to prevent fires and such
-					HandleVehicleDamageLimits(veh)
+					HandleVehicleDamageLimits(veh, model)
 				end
-				if Config.vehFailure.PreventRoll then -- vehiclefailure added loops
-					if IsEntityUpsidedown(veh) and not IsEntityInAir(veh) then
-						SetVehicleGravityAmount(veh, getGravity * 5)
-					else
-						SetVehicleGravityAmount(veh, getGravity)
-					end
+				if Config.vehFailure.PreventRoll and DoesEntityExist(veh) then
+					SetVehicleGravityAmount(veh, IsEntityUpsidedown(veh) and not IsEntityInAir(veh) and (getGravity * 5) or getGravity)
 				end
 				Wait(100)
 			end
@@ -479,7 +474,7 @@ function HandleAntiLag(veh)
     end
 end
 
-function HandleVehicleDamageLimits(veh)
+function HandleVehicleDamageLimits(veh, model)
     local damageLimits = Config.vehFailure.damageLimits
 
     -- Petrol Tank Health Limits
@@ -504,7 +499,8 @@ function HandleVehicleDamageLimits(veh)
     end
 
     -- Handle Vehicle Submersion
-    if GetEntitySubmergedLevel(veh) >= 0.95 then
+	local isBoat = IsThisModelABoat(model) or IsThisModelAJetski(model)
+    if GetEntitySubmergedLevel(veh) >= 0.95 and not isBoat then
 		SetVehicleEngineHealth(veh, 40.0)
 		SetVehicleBodyHealth(veh, 60.0)
 		SetVehicleDoorBroken(veh, 1, true)
@@ -572,7 +568,7 @@ if Config.Harness.HarnessControl == true then
 		CreateThread(function()
 			local Ped = PlayerPedId()
 			local veh = GetVehiclePedIsIn(Ped, false)
-			while (seatbeltOn or harnessOn) do
+			while (seatbeltOn or harnessOn) and DoesEntityExist(veh) do
 				local attemptingToExit = not IsPedInAnyVehicle(Ped, true) or IsPedJumpingOutOfVehicle(Ped) -- Check if the ped is in the process of exiting the vehicle
 				if (harnessOn and not Config.Harness.harnessEasyLeave) or (seatbeltOn and not Config.Harness.seatbeltEasyLeave) then
 					if attemptingToExit then
@@ -583,6 +579,7 @@ if Config.Harness.HarnessControl == true then
 				end
 				Wait(100)
 			end
+			TriggerEvent("codem-blackhudv2:seatbelt:toggle", false)
 			if GetResourceState("esx_hud"):find("start") and GetResourceState("es_extended"):find("start") then exports["esx_hud"]:SeatbeltState(false) end
 			destroyHarness()
 		end)
@@ -633,6 +630,7 @@ if Config.Harness.HarnessControl == true then
 						if seatbeltOn then SeatBeltLoop() end
 						--Drop your hud seatbelt event here:
 						TriggerEvent("seatbelt:client:ToggleSeatbelt")
+						TriggerEvent("codem-blackhudv2:seatbelt:toggle", seatbeltOn)
 						if GetResourceState("esx_hud"):find("start") and GetResourceState("es_extended"):find("start") then exports["esx_hud"]:SeatbeltState(seatbeltOn) end
 						TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 5.0, seatbeltOn and "carbuckle" or "carunbuckle", 0.25)
 						if Config.Harness.seatbeltNotify then triggerNotify(nil, "Seatbelt "..(seatbeltOn and "on" or "off"), "success") end

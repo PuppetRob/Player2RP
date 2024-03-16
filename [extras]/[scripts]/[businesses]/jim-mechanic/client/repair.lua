@@ -30,7 +30,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 	end
 	--Specific Actions/Animations
 	if data.part == "engine" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 		if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 1.5 then
 			TaskGoStraightToCoord(Ped, GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")), 1.0, -1, GetEntityHeading(Ped), 0)
@@ -40,10 +40,10 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		Wait(100)
 		SetEntityHeading(Ped, GetEntityHeading(Ped)-180.0)
 	elseif data.part == "body" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 	elseif data.part == "oil" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 		if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 1.5 then
 			TaskGoStraightToCoord(Ped, GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")), 1.0, -1, GetEntityHeading(Ped), 0)
@@ -51,7 +51,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		end
 		lookEnt(GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")))
 	elseif data.part == "wheels" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local coord = nil
 		for _, v in pairs({"wheel_lf", "wheel_rf", "wheel_lm1", "wheel_rm1", "wheel_lm2", "wheel_rm2", "wheel_lm3", "wheel_rm3", "wheel_lr", "wheel_rr"}) do
 			if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, v))) <= 1.5 then
@@ -61,7 +61,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		end
 		lookEnt(coord)
 	elseif data.part == "battery" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 		if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 1.5 then
 			TaskGoStraightToCoord(Ped, GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")), 1.0, -1, GetEntityHeading(Ped), 0)
@@ -83,7 +83,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		Wait(100)
 		SetEntityHeading(Ped, GetEntityHeading(PlayerPedId())-180.0)
 	else
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		lookEnt(vehicle)
 	end
 

@@ -1,5 +1,29 @@
 # Changelog
 
+## 3.4.2
+
+    Fix:
+        - Current Gear Text location is now better placed - `index.html`
+        - Support for planes and helicopters - `drawtext.lua`, `index.html`
+            - Replaces info on the rpm meter with altitude
+        - Refactored some of the js code - `index.html`
+        - Boats and JetSki's getting waterlogged - `extras.lua`
+        - Prop staying stuck in hand longer when it should when applying drift tire colours - `cosmetics.lua`
+
+    Changes:
+        - Changed angles of a lot of custom cameras
+            - they now start at the top of the vehicle and face the player, instead of the other way round
+            - `cosmetics.lua`, `damages.lua`, `extras.lua`, `nos.lua`, `performance.lua`, `repair.lua`, `rims.lua`, `functions.lua`
+
+## 3.4.1
+
+    Fix:
+        - Hopefully fixed stuttering fade in/out of the hud - `extras.lua`, `index.html`
+        - Fix SetGravity Spam when deleting vehicles - `extras.lua`
+        - Fix harness/seatbelt spam if you delete a vehicle while seatbelt is on - `extras.lua`
+        - Made speedometer not show in planes and helis and it doesn't fully support it for now - `extras.lua`
+        - Added scaling options to the speedometer, the markers should place and scale accordingly now - `index.html`, `drawtext.lua`, `config.lua`
+
 ## 3.4
 
     Fix:

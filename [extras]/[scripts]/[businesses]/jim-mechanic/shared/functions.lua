@@ -367,9 +367,10 @@ if Config.vehFailure.repairKits then
 		local vehicle = nil
 		local Ped = PlayerPedId()
 		if not IsPedInAnyVehicle(Ped, false) then vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) end
-		if lockedCar(vehicle) then return end		if #(GetEntityCoords(PlayerPedId()) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 2.0 then return end
+		if lockedCar(vehicle) then return end
+		if #(GetEntityCoords(PlayerPedId()) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 2.0 then return end
 		SetVehicleDoorOpen(vehicle, 4, false, false)
-		local cam = createTempCam(PlayerPedId(), vehicle)
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if progressBar({ label = Loc[Config.Lan]["repair"].repairing, time = 10000, cancel = true, dict = 'mini@repair', anim = 'fixing_a_player', flag = 1, icon = item, cam = cam }) then
 			if full then
 				SetVehicleEngineHealth(vehicle, 1000.0)

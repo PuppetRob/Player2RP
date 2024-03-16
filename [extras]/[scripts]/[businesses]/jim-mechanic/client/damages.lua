@@ -86,7 +86,7 @@ RegisterNetEvent('jim-mechanic:client:applyExtraPart', function(data) local Ped 
     if not enforceRestriction("perform") then return end
     if not Checks() then return end
     local vehicle = vehChecks() local above = isVehicleLift(vehicle)
-    local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+    local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
     if DoesEntityExist(vehicle) then
         local emote = { anim = above and "idle_b" or "fixing_a_ped", dict = above and "amb@prop_human_movie_bulb@idle_a" or "mini@repair", flag = above and 1 or 16 }

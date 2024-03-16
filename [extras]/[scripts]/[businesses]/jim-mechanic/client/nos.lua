@@ -81,7 +81,7 @@ RegisterNetEvent('jim-mechanic:client:applyNOS', function() local Ped = PlayerPe
 	if not IsPedInAnyVehicle(Ped, false) then vehicle = getClosest(coords) pushVehicle(vehicle) end
 	if lockedCar(vehicle) then return end
 	if DoesEntityExist(vehicle) then
-		local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local above = isVehicleLift(vehicle)
 		if not IsToggleModOn(vehicle, 18) then triggerNotify(nil, Loc[Config.Lan]["nos"].notinstalled, "error") return end
 		if not lookAtEngine(vehicle) then return end

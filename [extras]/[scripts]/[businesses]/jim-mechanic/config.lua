@@ -36,14 +36,14 @@ Config = {
 		receiveMaterials = true,	-- If true, when removing parts like engines, recieve materials instead of the full engine
 									-- This is based on material recipes in recipes.lua
 
-		updateServerDelay = 20, 	-- default 20 second database update delay from the LAST upgrade done to a vehicle
+		updateServerDelay = 15, 	-- default 20 second database update delay from the LAST upgrade done to a vehicle
 									-- This stops overloading of server databases when many changes are happening, it adds a cooldown
 		ChameleonPaints = true, 	-- Enable this if you want to use chameleon paints (ONLY GAME BUILD 2545 AND ABOVE)
 		WaxFeatures = true, 		-- Enable this if you want to use Car Wax Features
 
 		DoorAnimations = true,		-- Enable door openning animations when repairing/fixing
 
-		disableNos = false,			-- Disable nos if you wish to use a separate script
+		disableNos = true,			-- Disable nos if you wish to use a separate script
 
 
 		disablePreviewPlate = false,-- enable this to disable temporary plate while previewing
@@ -73,8 +73,8 @@ Config = {
 		timeOn = 3000,				-- Time for the progress bar to put on harness
 		timeOff = 2000,				-- Time for the progress bar to take off harness
 
-		minimumSpeed = 100,			-- Minimum speed for crash logic to be triggered
-		minimumSeatBeltSpeed = 125, -- Minimuim speed for ejecting with a seatbelt attached
+		minimumSpeed = 90,			-- Minimum speed for crash logic to be triggered
+		minimumSeatBeltSpeed = 120, -- Minimuim speed for ejecting with a seatbelt attached
 		minimumDamage = 15.0, 		-- Minimum body damage for ejecting a player (default 15 = .15%)
 
 		crashKill = false,			-- Set to true if you want ejecting when crashing to kill/injure
@@ -187,7 +187,7 @@ Config = {
 
 	StoreCraft = {
 		Crafting = false, 				-- Set true to turn on crafting features
-		StashCraft = true,  			-- Set true to grab materials from mechaincs stash for crafting
+		StashCraft = false,  			-- Set true to grab materials from mechaincs stash for crafting
 		Stores = true, 					-- Set true to turn on shop store features
 	},
 
@@ -246,7 +246,7 @@ Config = {
 			backgroundInnerShadow = 'inset 0px 0px 10px',			-- background shadow/glow location (0px 0px 10px adds a 10px shadow all around the box)
 			backgroundInnerShadowColor = { 0, 0, 0 },				-- background shadow/glow colour
 
-			iconGlow = true,										-- Toggle icons glow
+			iconGlow = false,										-- Toggle icons glow
 			iconSize = 0.35,										-- How big the icons will be (attempts to scale between resolutions)
 			iconColorMax = { 0, 255, 0 },							-- The colour icons will be if full health
 			iconColorMin = { 255, 0, 0 },							-- The colour icons will be if a low health
@@ -271,9 +271,10 @@ Config = {
 
 		speedCustomisation = {
 			SpeedLocation = { top = '80%', left = '88%' },			-- Location of the whole speedometer on the screen
+			SpeedSize = '14vh',
 
 			-- Both the Speedometer and RPM settings
-			BorderWidth = '0.2vh',									-- The semi-circle border width
+			BorderWidth = '0.15vh',									-- The semi-circle border width
 			BorderCol = { 255, 255, 255 },							-- The semi-circle border colour
 			BorderStyle = 'solid',									-- The semi-circle border tyle ('solid', 'dashed', 'dotted')
 			BorderTrans = 1.0,										-- The semi-circle border transparency
@@ -286,9 +287,12 @@ Config = {
 
 			font = 'DigitalFont',
 			TextColour = 'rgba(255, 255, 255)',						-- Colour of speed text around the meter
-			TextSize = '1.0vh',
-			ColourHigh = 'rgba(255, 0, 0)',							-- Colour of text if classed as "High"
-			MarkerColourHigh = 'rgba(255, 0, 0, 1.0)',				-- Colour of marker if classed as "High", if not use BorderCol
+			TextSize = '1.0vh',										-- Size of text around the meter
+			ColourHigh = 'rgba(255, 0, 0)',							-- Colour the text should be if classed as "High"
+
+			MarkerColour = {255, 255, 255},				-- Colour of text if classed as "High"
+			MarkerColourHigh = {255, 0, 0},				-- Colour of marker if classed as "High", if not use BorderCol
+			MarkerTrans = 1.0,
 
 			SpeedHighlight = false,									-- Hightlight the text on the speedometer the faster you go
 			HighSpeedHighlight = true,								-- Highlight high speeds on the speedometer
@@ -309,10 +313,10 @@ Config = {
 
 			showRpmMeter = true,									-- Show RpmMeter
 			rpmMeterLocation = 'translate(8.5vh, 4.5vh)',			-- RPM Meter location in relation to the speedometer
-
+			rpmMeterSize = '5vh',
 			rpmNeedleLength = '2.5vh',								-- Speedometer Needle Length
 			rpmNeedleWidth = '0.1vh',								-- Speedometer Needle Width
-			rpmNeedleCol = { 255, 0, 0 },							-- Speedometer Needle Colour
+			rpmNeedleCol = { 255, 0, 0 },								-- Speedometer Needle Colour
 			rpmNeedleTrans = 0.9,									-- Speedometer Needle Transparency
 			rpmNeedleShadow = '0px 0px 5px',						-- Speedometer Needle Shadow Style
 			rpmNeedleShadowCol = { 0, 0, 0 },						-- Speedometer Needle Shadow Colour
@@ -320,10 +324,11 @@ Config = {
 
 			showFuelMeter = true,									-- Show FuelMeter
 			fuelMeterLocation = 'translate(-8.5vh, 4.5vh)',			-- Fuel Meter location in relation to the speedometer
+			fuelMeterSize = '5vh',
 
 			fuelNeedleLength = '2.5vh',								-- Speedometer Needle Length
 			fuelNeedleWidth = '0.1vh',								-- Speedometer Needle Width
-			fuelNeedleCol = { 255, 0, 0 },							-- Speedometer Needle Colour
+			fuelNeedleCol = { 255, 0, 0 },								-- Speedometer Needle Colour
 			fuelNeedleTrans = 0.9,									-- Speedometer Needle Transparency
 			fuelNeedleShadow = '0px 0px 5px',						-- Speedometer Needle Shadow Style
 			fuelNeedleShadowCol = { 0, 0, 0 },						-- Speedometer Needle Shadow Colour
@@ -349,7 +354,7 @@ Config = {
 			{ coords = vec4(-483.48, 6008.65, 31.27, 226.9), prop = true }, -- Paleto 
 			{ coords = vec4(1777.72, 3628.17, 34.55, 31.05), prop = true }, -- Sandy Hospital
 			{ coords = vec4(1864.2, 3701.99, 33.71, 125.09), prop = true }, -- Sandy Hospital
-		}, 
+		},
 		CosmeticTable = { 			-- This controls what will appear in the emergency mech bench, "false" to hide it
 			["Repair" ] = true,
 			["Paints"] = true,
@@ -418,7 +423,7 @@ Config = {
 		repairEngine = true, 		-- Set this to true if automated repairs also repair engine (not just body)
 		repairExtras = true, 		-- Set this to true for automated repairs to also repair extra damages (if mechanicjob is available and repairEngine is true)
 
-		requireDutyCheck = false, 	-- if set to true, the repair bench will only be usable if there are no mechanics in the server ON DUTY
+		requireDutyCheck = true, 	-- if set to true, the repair bench will only be usable if there are no mechanics in the server ON DUTY
 		dutyMessage = "There is a Mechanic on duty!", -- This is the notification that pops up when a person tries to repair when a mechanic is on duty, choose what you want for it.
 
 		repairAnimate = false,		-- Better than staring at a progress bar, "damaged" parts will be removed and replaced. Making it look more authentic
@@ -458,7 +463,7 @@ Config = {
 
 		EnableScreen = true, 		-- True adds screen effects while boosting
 
-		skillcheck = "qb-skillbar", -- When adding Nos to a vehicle there are three script options available
+		skillcheck = "ps-ui", -- When adding Nos to a vehicle there are three script options available
 									-- "qb-skillbar" "qb-lock" "ps-ui" "ox_lib"
 
 		explosiveFail = true, 		-- Better not fail that skill check. (1 in 10 chance of explosion)
@@ -470,7 +475,7 @@ Config = {
 	Discord = { -- Discord preview receipts
 		-- You will need to set custom info in each job location in locations.lua
 		-- But for the ones you don't add info to, it will default to these numbers
-		DiscordPreview = false, 	-- Set to true if you want to use discord receipts
+		DiscordPreview = true, 	-- Set to true if you want to use discord receipts
 		DiscordDefault = "", 		-- Set this to the default channel API link if one isn't set for a location
 		DiscordColour = 16753920, 	-- This is the default "decimal" number colour
 	},

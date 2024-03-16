@@ -226,16 +226,18 @@ function updateSpeedometer(vehicle, model)
             local gear = GetVehicleCurrentGear(vehicle)
             local maxSpeed = math.ceil(math.floor(GetVehicleHandlingFloat(vehicle, "CHandlingData", "fInitialDriveMaxFlatVel") - (Config.System.distkph and -40 or 20)) / 10) * 10
             local cus = Config.Odometer.speedCustomisation
+            local plane = IsThisModelAPlane(model) or IsThisModelAHeli(model)
             SendNUIMessage({
                 updateSpeedometer = true,
                 speed = speed > math.floor(maxSpeed*0.95) and math.random(math.floor((maxSpeed*0.95)), maxSpeed) or speed,
                 maxSpeed = maxSpeed, -- Fetch max speed from handling
-                rpm = rpm > 0.95 and math.random(95, 100) / 100 or rpm,
+                rpm = plane and math.ceil(GetEntityCoords(vehicle).z * 0.5) or (rpm > 0.95 and math.random(95, 100) / 100 or rpm),
                 gear = gear ~= 0 and gear or "R",
                 maxGear = GetVehicleHighGear(vehicle),
                 fuel = not isElectric(model) and GetVehicleFuelLevel(vehicle) or 100,
 
                 SpeedLocation = cus.SpeedLocation,
+                SpeedSize = cus.SpeedSize,
                 BorderWidth = cus.BorderWidth,
                 BorderCol = 'rgba('..cus.BorderCol[1]..', '..cus.BorderCol[2]..', '..cus.BorderCol[3]..', '..cus.BorderTrans..')',
                 BorderTrans = cus.BorderTrans,
@@ -250,6 +252,7 @@ function updateSpeedometer(vehicle, model)
                 font = cus.font,
                 ColourHigh = cus.ColourHigh,
 
+                isPlane = plane,
                 isElectric = isElectric(model),
                 showFuelMeter = cus.showFuelMeter,
                 showRpmMeter = cus.showRpmMeter,
@@ -258,7 +261,8 @@ function updateSpeedometer(vehicle, model)
                 digitalSpeedLoc = cus.digitalSpeedLoc,
                 digitalSpeedSize = cus.digitalSpeedSize,
 
-                MarkerColourHigh = cus.MarkerColourHigh,
+                MarkerColour = 'rgba('..cus.MarkerColour[1]..', '..cus.MarkerColour[2]..', '..cus.MarkerColour[3]..', '..cus.MarkerTrans..')',
+                MarkerColourHigh = 'rgba('..cus.MarkerColourHigh[1]..', '..cus.MarkerColourHigh[2]..', '..cus.MarkerColourHigh[3]..', '..cus.MarkerTrans..')',
 
                 NeedleType = cus.NeedleType,
 
@@ -269,7 +273,7 @@ function updateSpeedometer(vehicle, model)
                 SpeedNeedleShadowCol = 'rgba('..cus.SpeedNeedleShadowCol[1]..', '..cus.SpeedNeedleShadowCol[2]..', '..cus.SpeedNeedleShadowCol[3]..', '..cus.SpeedNeedleShadowTrans..')',
 
                 rpmMeterLocation = cus.rpmMeterLocation,
-
+                rpmMeterSize = cus.rpmMeterSize,
                 rpmNeedleLength = cus.rpmNeedleLength,
                 rpmNeedleWidth = cus.rpmNeedleWidth,
                 rpmNeedleCol = 'rgba('..cus.rpmNeedleCol[1]..', '..cus.rpmNeedleCol[2]..', '..cus.rpmNeedleCol[3]..', '..cus.rpmNeedleTrans..')',
@@ -277,7 +281,7 @@ function updateSpeedometer(vehicle, model)
                 rpmNeedleShadowCol = 'rgba('..cus.rpmNeedleShadowCol[1]..', '..cus.rpmNeedleShadowCol[2]..', '..cus.rpmNeedleShadowCol[3]..', '..cus.rpmNeedleShadowTrans..')',
 
                 fuelMeterLocation = cus.fuelMeterLocation,
-
+                fuelMeterSize = cus.fuelMeterSize,
                 fuelNeedleLength = cus.fuelNeedleLength,
                 fuelNeedleWidth = cus.fuelNeedleWidth,
                 fuelNeedleCol = 'rgba('..cus.fuelNeedleCol[1]..', '..cus.fuelNeedleCol[2]..', '..cus.fuelNeedleCol[3]..', '..cus.fuelNeedleTrans..')',

@@ -13,7 +13,7 @@ RegisterNetEvent('jim-mechanic:client:Rims:Apply', function(data)
 	local vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) local above = isVehicleLift(vehicle)
 	if not above and not lookAtWheel(vehicle) then return end
 	local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 	if progressBar({label = Loc[Config.Lan]["common"].installing..item.label, time = math.random(3000,5000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, cam = cam }) then SetVehicleModKit(vehicle, 0)
 		SetVehicleWheelType(vehicle, tonumber(data.wheeltype))
 		if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), GetVehicleModVariation(vehicle, 23))
@@ -37,7 +37,7 @@ RegisterNetEvent('jim-mechanic:client:Rims:ApplyCustomTires', function()
 	local vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) local above = isVehicleLift(vehicle)
 	if not above and not lookAtWheel(vehicle) then return end
 	local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 	if progressBar({label = Loc[Config.Lan]["common"].installing..item.label, time = math.random(3000,5000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, cam = cam }) then
 		SetVehicleModKit(vehicle, 0)
 		SetVehicleMod(vehicle, 23, GetVehicleMod(vehicle, 23), not GetVehicleModVariation(vehicle, 23))
