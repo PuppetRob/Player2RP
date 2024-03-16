@@ -121,6 +121,8 @@ local blips = {
  -- {title="Cat Cafe", colour=8, id=89, x = -581.27, y = -1062.66, z = 22.35, scale = 0.45},
  -- {title="Cyber Bar", colour=27, id=484, x = 334.65, y = -910.12, z = 29.26, scale = 0.65},
   {title="Toy Store", colour=34, id=680, x = 388.43, y = -760.57, z = 29.65, scale = 0.60},
+
+  {title="Event Studio", colour=50, id=135, x = -258.7, y = 232.85, z = 92.07, scale = 0.60},
  -- {title="Burger Shot", colour=59, id=106, x = -1183.84, y = -884.05, z = 13.8, scale = 0.50},
 
   --{title="Up n Atom", colour=28, id=76, x = 86.16, y = 281.24, z = 110.21, scale = 0.50},
