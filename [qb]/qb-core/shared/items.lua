@@ -2498,6 +2498,10 @@ underglow                   = { name = 'underglow', label = 'Underglow LEDS', we
     ["rifle-stock"]              ={["name"] = "rifle-stock",        ["label"] = "Rifle Stock",        ["weight"] = 1000,        ["type"] = "item",        ["image"] = "blueprint.png",        ["unique"] = true,        ["useable"] = true,        ["shouldClose"] = true,        ["combinable"] = nil,        ["description"]    = "A stock for a Rifle. Not much use without the rest."},
     ["rifle-trigger"]              ={["name"] = "rifle-trigger",        ["label"] = "Rifle Trigger",        ["weight"] = 1000,        ["type"] = "item",        ["image"] = "blueprint.png",        ["unique"] = true,        ["useable"] = true,        ["shouldClose"] = true,        ["combinable"] = nil,        ["description"]    = "A trigger for a Rifle. If only the rest was still attached."},
     
-
+    ['yogamat_pro'] 				 	 = {['name'] = 'yogamat_pro', 			  	  	['label'] = 'ProLaps Yoga Mat', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'yogamat_pro.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Did somebody say Yoga?'},
+    ['yogamat_red'] 				 	 = {['name'] = 'yogamat_red', 			  	  	['label'] = 'Red Yoga Mat', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'yogamat_red.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Did somebody say Yoga?'},
+    ['yogamat_blue'] 				 	 = {['name'] = 'yogamat_blue', 			  	  	['label'] = 'Blue Yoga Mat', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'yogamat_blue.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Did somebody say Yoga?'},
+    ['yogamat_black'] 				 	 = {['name'] = 'yogamat_black', 			  	  	['label'] = 'Black Yoga Mat', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'yogamat_black.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Did somebody say Yoga?'},
+    
 
 }
