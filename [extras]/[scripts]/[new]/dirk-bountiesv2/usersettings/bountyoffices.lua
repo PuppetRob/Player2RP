@@ -6,16 +6,16 @@ Config.BountyOffices = {
     PayAccount = "bank", --## Account to pay the bounty to or take the bounty from
     Clerk = {
       Ped  = "s_m_m_highsec_01", --## Ped model of the clerk
-      Pos  = vector4(451.73, -976.08, 30.69, 107.68),   --## Position of the clerk
+      Pos  = vector4(450.33, -977.83, 30.69, 225.19),   --## Position of the clerk
       Blip = {Scale = 0.75, Sprite = 189, Color = 3, Display = 4, Close = true}, 
     },
 
 
     --## If you want a boss menu for this office, set Enabled to true and set the position of the boss menu
     BossMenu = {
-      Enabled  = true, 
+      Enabled  = false, 
       Position = vector4(441.13, -975.76, 30.69, 229.17), --## Position of the boss menu
-      Job      = {name = "police", bossRank = 4}, --## Job associated to access the boss menu
+      Job      = {name = "lspd", bossRank = 4}, --## Job associated to access the boss menu
     },
 
     BountyTablet = {
@@ -44,7 +44,8 @@ Config.BountyOffices = {
       Access       = {
         Public = false,             --## OPTIONAL : If true anyone can create a bounty
         Jobs   = {                 --## OPTIONAL : Jobs that can create a bounty              
-          police = 0, 
+          lspd = 5, 
+          bcso = 5, 
         },
         -- CustomCheck = function()
         --   return true --## Return true if you want to allow the player to buy the tablet
@@ -57,7 +58,7 @@ Config.BountyOffices = {
     PayAccount = "cash", --## Account to pay the bounty to or take the bounty from
     Clerk = {
       Ped  = "a_m_m_eastsa_02", --## Ped model of the clerk
-      Pos  = vector4(447.95, -973.22, 30.69, 180.16),   --## Position of the clerk
+      Pos  = vector4(1214.87, -493.4, 67.16, 97.24),   --## Position of the clerk
     },
 
     BountyTablet = {

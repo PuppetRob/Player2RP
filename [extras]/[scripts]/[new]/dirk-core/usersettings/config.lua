@@ -5,7 +5,7 @@ Config = {
   AutoAddItems        = true,     --## QBCore will automatically add these to the shared.lua if using an upto date version. ESX will add items to the table you configure below
   ItemsDatabaseName   = "items",  --## ESX Users this will usually just be items its for autoadding items
   --## JOB EVENTS
-  PoliceJobs          = {police = true, lspd = true},
+  PoliceJobs          = {bcso = true, lspd = true},
   --## LANGUAGE FOR SCRIPTS
   Language            = "ENG",    --## "ENG", "ESP", "POR", "FRA", "NLD", "DAN", "SWE", "DEU", "ARA", "HIN"  --## SOME SCRIPTS MAY NOT HAVE TRANSLATIONS FOR ALL THESE LANGUAGES
   DrawDebug           = false,
@@ -76,7 +76,7 @@ Config = {
     FuelSystem      = {
       ['ox_fuel']      = false,
       ['ps-fuel']      = false,
-      ['cdn_fuel']     = false,
+      ['cdn_fuel']     = p2rp-fuel,
       ['Renewed-Fuel'] = false,
       ['legacyfuel']   = false,
     }
