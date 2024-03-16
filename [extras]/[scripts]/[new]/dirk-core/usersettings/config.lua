@@ -76,7 +76,7 @@ Config = {
     FuelSystem      = {
       ['ox_fuel']      = false,
       ['ps-fuel']      = false,
-      ['cdn_fuel']     = p2rp-fuel,
+      ['cdn_fuel']     = "p2rp-fuel",
       ['Renewed-Fuel'] = false,
       ['legacyfuel']   = false,
     }
