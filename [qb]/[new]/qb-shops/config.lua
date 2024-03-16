@@ -198,6 +198,14 @@ Config.Products = {
             type = "item",
             slot = 12,
         },
+        [13] = {
+            name = "spray_remover",
+            price = 100,
+            amount = 75,
+            info = {},
+            type = "item",
+            slot = 13,
+        },
     },
     ["hardware2"] = {
         [1] = {
