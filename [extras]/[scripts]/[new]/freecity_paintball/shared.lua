@@ -8,19 +8,19 @@ Config.FrameworkTriggers = { --You can change the qb events (IF NEEDED).
     resource_name = 'qb-core'
 }
 
-Config.startLoc = vector3(167.4236, -981.2729, 29.09188) -- location to spawn back after being killed
+Config.startLoc = vector3(-1578.95, -1042.49, 13.02) -- location to spawn back after being killed
 
 Config.spawnPed = true -- Spawns a ped on startLocation.
 
 Config.targetPed = {
     name = 'paintballPed',
     skin = `a_m_y_motox_02`, -- https://wiki.altv.mp/wiki/GTA:Ped_Models
-    location = vector3(167.4236, -981.2729, 29.09188),
-    heading = 139.159149,
+    location = vector3(-1581.23, -1039.59, 13.28),
+    heading = 233.159149,
     scenario = 'WORLD_HUMAN_GUARD_STAND' -- https://wiki.rage.mp/index.php?title=Scenarios / false for no ped scenario
 }
 
-Config.spawnMarker = true -- Put this at false if you are using any type of targeting system
+Config.spawnMarker = false -- Put this at false if you are using any type of targeting system
 
 Config.usePolyZones = true -- If enabled, polyzones are created on shared-client.lua and the config:cmdLeavePaintball checks if player is inside the polyzone and tps him back to the lobby zone.
 
@@ -45,7 +45,7 @@ Config.lobbyStartTime = 120 -- (SECONDS) Checks to see how much time has passed 
 --
 --   Needs to have Config.spawnPed = true
 
-Config.useTargetSystem = false
+Config.useTargetSystem = true
 Config.targetType = 'qb-target'
 
 --    __  __          _____  _  ________ _____
@@ -77,12 +77,12 @@ Config.marker = {
 --
 
 Config.targetBlip = {
-    location = vector3(167.4236, -981.2729, 29.09188),
+    location = vector3(-1581.28, -1040.33, 13.12),
     interactDistance = 3,
     interactKey = 'E',
     sprite = 160,
     display = 4,
-    scale = 0.8,
+    scale = 0.6,
     colour = 5,
     label = 'Paintball'}
 
@@ -149,6 +149,120 @@ Config.Arenas = {
         }, 
         radius = 60
     },
+    ['waterandpower'] = {
+        name = 'Water and Power',
+        location = vector3(679.26, 125.5, 95.12),
+        blueteam = {
+            vector3(675.68, 179.26, 80.75),
+             vector3(674.92, 178.36, 80.75),
+             vector3(676.33, 178.14, 80.75),
+            vector3(3094.67, -4794.19, 6.08),
+            vector3(3064.93, -4793.94, 6.07), 
+        }, 
+        redteam = {
+            vector3(703.87, 93.79, 80.75),
+             vector3(3044.33, -4649.41, 6.08),
+            vector3(3074.01, -4646.69, 6.07),
+            vector3(3079.02, -4643.25, 6.07),
+            vector3(3081.39, -4652.83, 6.07), 
+        }, 
+        radius = 60
+    }, 
+    ['construction'] = {
+        name = 'Construction',
+        location = vector3(-154.93, -978.06, 254.13),
+        blueteam = {
+            vector3(-154.17, -944.91, 254.13),
+            vector3(3055.57, -4789.67, 6.07),
+            vector3(3073.96, -4802.02, 6.08),
+            vector3(3094.67, -4794.19, 6.08),
+            vector3(3064.93, -4793.94, 6.07),
+        }, 
+        redteam = {
+            vector3(-152.23, -943.56, 269.14),
+            vector3(3044.33, -4649.41, 6.08),
+            vector3(3074.01, -4646.69, 6.07),
+            vector3(3079.02, -4643.25, 6.07),
+            vector3(3081.39, -4652.83, 6.07), 
+        }, 
+        radius = 60
+    }, 
+    ['meatpacking'] = {
+        name = 'Meatpacking',
+        location = vector3(-82.32, 6233.59, 31.1),
+        blueteam = {
+            vector3(-71.67, 6260.45, 31.09),
+             vector3(3055.57, -4789.67, 6.07),
+            vector3(3073.96, -4802.02, 6.08),
+            vector3(3094.67, -4794.19, 6.08),
+            vector3(3064.93, -4793.94, 6.07), 
+        }, 
+        redteam = {
+            vector3(-137.96, 6157.65, 31.21),
+            vector3(3044.33, -4649.41, 6.08),
+            vector3(3074.01, -4646.69, 6.07),
+            vector3(3079.02, -4643.25, 6.07),
+            vector3(3081.39, -4652.83, 6.07), 
+        }, 
+        radius = 60
+    },
+    ['yacht'] = {
+        name = 'The Yacht',
+        location = vector3(-2054.62, -1028.49, 2.59),
+        blueteam = {
+            vector3(-2118.95, -1004.5, 7.94),
+            vector3(-2120.55, -1008.91, 7.95),
+            vector3(-2109.94, -1010.42, 8.97),
+            vector3(-2087.62, -1020.47, 8.97),
+            vector3(-2106.18, -1012.41, 5.89),
+        }, 
+        redteam = {
+            vector3(-2029.84, -1041.31, 2.57),
+            vector3(-2026.19, -1031.0, 2.57),
+            vector3(-2040.12, -1037.57, 2.58),
+            vector3(-2044.93, -1027.44, 2.58),
+            vector3(-2056.74, -1033.89, 3.01),
+        }, 
+        radius = 40
+    }, 
+    ['shipping'] = {
+        name = 'Shipping Container',
+        location = vector3(1238.65, -2985.69, 9.32),
+        blueteam = {
+            vector3(1244.4, -3039.9, 14.3),
+            vector3(1237.3, -3045.65, 14.3),
+            vector3(1233.69, -3038.18, 14.3),
+            vector3(1236.89, -3030.25, 13.78),
+            vector3(1244.57, -3034.13, 9.34),
+        }, 
+        redteam = {
+            vector3(1247.85, -2884.52, 9.32),
+            vector3(1241.49, -2882.75, 9.32),
+            vector3(1233.16, -2884.54, 9.32),
+            vector3(1234.21, -2892.97, 17.33),
+            vector3(1245.99, -2905.25, 25.33),
+        }, 
+        radius = 60
+    },
+    ['beach'] = {
+        name = 'Beach',
+        location = vector3(-1100.51, -1631.58, 4.4),
+        blueteam = {
+            vector3(-1128.47, -1591.06, 4.35),
+            vector3(3055.57, -4789.67, 6.07),
+            vector3(3073.96, -4802.02, 6.08),
+            vector3(3094.67, -4794.19, 6.08),
+            vector3(3064.93, -4793.94, 6.07), 
+        }, 
+        redteam = {
+            vector3(-1069.68, -1671.92, 4.47),
+             vector3(3044.33, -4649.41, 6.08),
+            vector3(3074.01, -4646.69, 6.07),
+            vector3(3079.02, -4643.25, 6.07),
+            vector3(3081.39, -4652.83, 6.07), 
+        }, 
+        radius = 40
+    },  
     ['officeroom'] = {
         name = 'officeroom',
         location = vector3(366.3301, 4846.624, -62.59954),

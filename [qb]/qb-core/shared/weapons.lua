@@ -148,4 +148,11 @@ QBShared.Weapons = {
 	-- Animals
 	[`weapon_animal`]                = { name = 'weapon_animal', label = 'Animal', weapontype = 'Animals', ammotype = nil, damagereason = 'Mauled' },
 	[`weapon_cougar`]                = { name = 'weapon_cougar', label = 'Cougar', weapontype = 'Animals', ammotype = nil, damagereason = 'Mauled' },
+
+	-- // Custom Weapons \\ --
+
+	[`weapon_pepperspray`] 				 = {['name'] = 'weapon_pepperspray', 		['label'] = 'Pepper Spray', 				['ammotype'] = 'ammo_pepperspray', 	['damagereason'] = 'Melee killed / Sprayed / Gassed'},
+	[`weapon_lesslethal`] 				 = {['name'] = 'weapon_lesslethal', 		['label'] = 'Beanbag Shotgun', 				['ammotype'] = 'AMMO_SHOTGUN', 		['damagereason'] = 'Melee killed / Sprayed / Gassed'},
+	[`weapon_paintgun`]                  = {['name'] = 'weapon_paintgun',     		['label'] = 'Paintball Gun',             ['ammotype'] = 'AMMO_PISTOL',    ['damagereason'] = 'Splattered with paint'},
+
 }
