@@ -1036,7 +1036,7 @@ Config.Locations = {
 
     -- // Custom SHops \\ --
 
-    ["247supermarket5"] = {
+    ["247supermarket11"] = {
         ["label"] = "24/7 Supermarket",
         ["coords"] = vector4(377.63, -1787.13, 29.52, 322.99),
         ["ped"] = 'mp_m_shopkeep_01',
