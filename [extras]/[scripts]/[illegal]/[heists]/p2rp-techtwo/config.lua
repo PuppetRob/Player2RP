@@ -16,7 +16,7 @@ Config.IstoreHours = { -- Store Hours
 
 Config.Cooldown = 5 * (60 * 2000) -- where x is minutes ie. x * (60 * 2000) \\ For door auto lock function
 Config.Timeout = 5 * (60 * 2000) -- where x is minutes ie. x * (60 * 2000) \\ For case smashing cooldown
-Config.RequiredCops = 3
+Config.RequiredCops = 2
 
 Config.DoorItem = 'thermite' -- item to remove\check for when placing a charge
 Config.ThermiteSettings = {

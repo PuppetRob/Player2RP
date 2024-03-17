@@ -1,9 +1,9 @@
 Config = {}
 
 -- Police Settings:
-Config.RequiredPolice = 4				-- Required Police online to rob an ATM.
+Config.RequiredPolice = 3				-- Required Police online to rob an ATM.
 
-Config.OnlyNight = true      -- `true` will allow Players to Rob ATMS only during Night
+Config.OnlyNight = false      -- `true` will allow Players to Rob ATMS only during Night
 
 -- Reward Settings:
 Config.MinReward = 8000					-- Set minimum payout
