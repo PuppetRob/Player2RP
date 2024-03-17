@@ -136,7 +136,7 @@ svConfig = {
             rewardCashMax = 37500,
             rewardCryptoMin = 500,
             rewardCryptoMax = 700,
-            experiencePerJob = 8,
+            experiencePerJob = 10,
             bonusExperienceMultiplier = 4,
             bonusExperienceMinimumMembers = 4,
             tuningChance = 25,
@@ -255,38 +255,31 @@ svConfig = {
                 [1] = 'harness'
             }
         }
-       --[[  ['nos'] = {
-            cashRequired = 1000,
+       ['blueprint_electronickit'] = {
+            cashRequired = 2500,
             cryptoRequired = 200,
             availablePerRestart = 5,
             isSoldOut = false,
-            title = "Nitrous oxide",
-            description = "When you need that extra bit of boost.",
-            iconFile = 'nitrous-oxide.png',
+            title = "Electronic Kit Blueprint",
+            description = "Electronic Kit Blueprint",
+            iconFile = 'blueprint.png',
             receiveItemIds = {
-                [1] = 'nitrous'
+                [1] = 'blueprint_electronickit'
             }
         },
-        ['spart'] = {
+        ['blueprint_syphoningkit'] = {
             cashRequired = 640,
             cryptoRequired = 130,
             availablePerRestart = 5,
             isSoldOut = false,
-            title = "Spare parts crate (S)",
-            description = "Consists of different spare parts for S class vehicles.",
-            iconFile = 'pallet-of-boxes.png',
+            title = "Blueprint Syphoningkit",
+            description = "Blueprint Syphoningkit",
+            iconFile = 'blueprint.png',
             receiveItemIds = {
-                [1] = 'transmission_part_s',
-                [2] = 'electronics_part_s',
-                [3] = 'radiator_part_s',
-                [4] = 'clutch_part_s',
-                [5] = 'brakes_part_s',
-                [6] = 'axle_part_s',
-                [7] = 'fuel_injector_part_s',
-                [8] = 'tire_part_s',
+                [1] = 'blueprint_syphoningkit',
             }
-        },
-        ['apart'] = {
+        }
+      --[[    ['apart'] = {
             cashRequired = 400,
             cryptoRequired = 80,
             availablePerRestart = 5,
