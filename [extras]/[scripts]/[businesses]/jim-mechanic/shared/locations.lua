@@ -77,33 +77,33 @@ Config.Locations[#Config.Locations+1] = { -- [[ BIKE MECHANIC]] --
 	},
 	autoClock = { enter = true, exit = true, },
 	stash = {
-		{ coords = vec4(1180.85, 2635.0, 37.75, 90.0), w = 1.6, d = 0.6 },
+		{ coords = vec4(2526.82, 4109.25, 38.58, 246.87), w = 1.6, d = 0.6 },
 	},
 	store = {
-		{ coords = vec4(1171.64, 2635.84, 37.78, 45.0), w = 0.6, d = 0.5 },
+		{ coords = vec4(2530.87, 4121.88, 38.58, 338.24), w = 0.6, d = 0.5 },
 	},
 	crafting = {
-		{ coords = vec4(1176.69, 2635.44, 37.75, 270.0), w = 3.2, d = 1.0 },
+		{ coords = vec4(2516.34, 4111.69, 38.58, 56.76), w = 3.2, d = 1.0 },
 	},
 	clockin = {
-		{ coords = vec4(1183.89, 2635.29, 37.78, 185.0), prop = true, },
+		{ coords = vec4(2522.05, 4107.4, 38.58, 161.55), prop = true, },
 	},
 	manualRepair = {
-		{ coords = vec4(1162.75, 2622.96, 38.0, 1.32), prop = true, },
+		{ coords = vec4(2530.33, 4114.88, 38.58, 62.1), prop = true, },
 	},
 	carLift = {
 		{ coords = vec4(1174.78, 2644.54, 37.75, 180.0), },
 		{ coords = vec4(1182.22, 2644.75, 37.75, 180.0) },
 	},
 	garage = {
-		spawn = vec4(1165.92, 2642.87, 37.23, 358.2),
-		out = vec4(1170.25, 2645.6, 37.81, 88.15),
+		spawn = vec4(2521.6, 4126.99, 38.63, 61.72),
+		out = vec4(2524.91, 4128.87, 38.63, 63.54),
 		list = { "towtruck", "panto" },
 		prop = true,
 	},
 	payments = {
 		img = "https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png",
-		{ coords = vec4(1179.39, 2635.17, 37.75, 176.0), prop = true, },
+		{ coords = vec4(2524.28, 4106.13, 39.67, 329.12), prop = true, },
 	},
 	Restrictions = {
 		Vehicle = { "Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-road", "Industrial", "Utility", "Vans", "Cycles", "Service", "Emergency", "Commercial", },
