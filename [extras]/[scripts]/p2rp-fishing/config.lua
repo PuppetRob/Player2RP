@@ -19,7 +19,7 @@ Config.Phone = "qb" -- (quasar) (renewed) (gks) (qb) Whatever phone script you a
 Config.FishingKey = 47 -- Key press to start fishing. Key id's can be found here: https://docs.fivem.net/docs/game-references/controls/
 Config.FishingKeyText = "G" -- Key text to show up on draw text
 ----------
-Config.PugSlingScript = true -- Make this true if you are also using my sling script here: https://pug-scripts.tebex.io/package/5202185
+Config.PugSlingScript = false -- Make this true if you are also using my sling script here: https://pug-scripts.tebex.io/package/5202185
 Config.BoatRequired = false -- toggle this to false if you want to allow people to fish without being on a boat
 Config.LockedZones = false -- Make this true if you do NOT want players to fish anywhere and make them only be able to fish in the zones created at Config.LockedLocationFishingZone
 Config.LockInventory = false -- Make this true if you want players inventory to be locked every time they use a fishing rod and unlocked when they are done catching the fish
