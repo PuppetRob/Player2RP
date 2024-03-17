@@ -136,27 +136,27 @@ Config = {
     DrugsPrice = {
         ['weed_bag'] = {
             min = 70,
-            max = 90,
+            max = 80,
         },
         ['cokebaggy'] = {
-            min = 90,
-            max = 110,
+            min = 80,
+            max = 100,
         },
         ['meth'] = {
-            min = 110,
-            max = 130,
+            min = 100,
+            max = 120,
         },
         ['acid_hit'] = {
-            min = 130,
-            max = 150,
+            min = 120,
+            max = 140,
+        },
+        ['heroin'] = {
+            min = 140,
+            max = 160,
         },
         ['extascy_pill'] = {
             min = 160,
             max = 180,
-        },
-        ['heroin'] = {
-            min = 180,
-            max = 200,
         },
     },
 
