@@ -163,7 +163,7 @@ svConfig = {
             rewardCashMax = 3500,
             rewardCryptoMin = 60,
             rewardCryptoMax = 90,
-            experiencePerJob = 3,
+            experiencePerJob = 5,
             bonusExperienceMultiplier = 4,
             bonusExperienceMinimumMembers = 3,
             tuningChance = 25,
@@ -190,7 +190,7 @@ svConfig = {
             rewardCashMax = 2300,
             rewardCryptoMin = 6,
             rewardCryptoMax = 9,
-            experiencePerJob = 2,
+            experiencePerJob = 4,
             bonusExperienceMultiplier = 3,
             bonusExperienceMinimumMembers = 2,
             tuningChance = 25,
@@ -254,8 +254,8 @@ svConfig = {
             receiveItemIds = {
                 [1] = 'harness'
             }
-        },
-        ['nos'] = {
+        }
+       --[[  ['nos'] = {
             cashRequired = 1000,
             cryptoRequired = 200,
             availablePerRestart = 5,
@@ -340,7 +340,7 @@ svConfig = {
             receiveItemIds = {
                 [1] = 'repairkit'
             }
-        }
+        } ]]
     }
 }
 
