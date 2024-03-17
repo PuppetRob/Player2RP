@@ -24,18 +24,18 @@ Config = {
 
     Shops = {
         {
-            name = 'Peir Pet Shop', -- Name of the shop
+            name = 'Pier Pet Shop', -- Name of the shop
             id = 'shop_1', -- ID of the shop, it's used to get what shop is opened | needs to be DIFFERENT for each shop
             price = 20000, -- Price of the Shop
             inGameBuy = false,
 
             model = 'a_f_m_soucent_02',
-            blip = {use = true, size = 0.7, sprite = 442, color = 48},
-            coords = vector4(-1822.89, -1144.59, 12.75, 319.81),
+            blip = {use = false, size = 0.7, sprite = 442, color = 48},
+            coords = vector4(-1823.09, -1137.91, 13.75, 314.36),
             petPosition = { ['left/right'] = -8.0,  ['forward/backward'] = 1.4,  ['up/down'] = -0.98, ['heading'] = 270 },
 
-            managementCoords = vector3(-1822.95, -1137.97, 12.75),
-            managementMarkers = {use = true, marker = 20, bobUpAndDown = false, rotate = true, size = {0.3, 0.2, 0.2}, rgb = {15, 100, 210}},
+            managementCoords = vector3(-1823.44, -1144.34, 13.75),
+            managementMarkers = {use = false, marker = 20, bobUpAndDown = false, rotate = true, size = {0.3, 0.2, 0.2}, rgb = {15, 100, 210}},
 
             jobVehicleModel = 'speedo',
             jobVehicleSpawn = vector4(-1767.34, -1150.85, 13.07, 320.55),
