@@ -56,6 +56,25 @@ QBShared.Jobs = {
 		},
 	},
 
+	highwaypatrol = {
+		label = 'Highway Patrol',
+		type = 'leo',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = { name = 'HP Cadet', payment = 1200 },
+            ['1'] = { name = 'HP Trooper', payment = 1200 },
+            ['2'] = { name = 'HP Master Trooper', payment = 1400 },
+            ['3'] = { name = 'HP Sergeant', payment = 1600 },
+            ['4'] = { name = 'HP Master Sergeant', payment = 1800 },
+            ['5'] = { name = 'HP Lieutenant', payment = 2000 },
+            ['6'] = { name = 'HP Captain', payment = 2200 },
+            ['7'] = { name = 'HP Major', payment = 2400 },
+            ['8'] = { name = 'HP Lieutenant Colonel', payment = 3200, isboss = true },
+            ['9'] = { name = 'HP Police Commissioner', isboss = true, bankAuth = true, payment = 3400 },
+		},
+	},
+
 	sast = {
 		label = 'San Andreas State Troopers',
 		type = 'leo',
