@@ -71,14 +71,16 @@ Config.SharedKeys = { -- Share keys amongst employees. Employees can lock/unlock
 
 -- These vehicles cannot be jacked
 Config.ImmuneVehicles = {
+
+}
+
+-- These vehicles will never lock
+Config.NoLockVehicles = {
     'surfboard',
     'veto',
     'veto2',
     'cutter'
 }
-
--- These vehicles will never lock
-Config.NoLockVehicles = {}
 
 -- These weapons cannot be used for carjacking
 Config.NoCarjackWeapons = {
