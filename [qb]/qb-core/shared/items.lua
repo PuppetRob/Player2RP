@@ -2515,4 +2515,8 @@ underglow                   = { name = 'underglow', label = 'Underglow LEDS', we
         ["combinable"]  = nil,
         ["description"] = "A tablet used by bounty hunters to see current contracts for their office",
       },
+
+      ['pet_water'] 			 		 = {['name'] = 'pet_water', 						['label'] = 'Pet Water', 						['weight'] = 1, 		['type'] = 'item', 		['image'] = 'pet_water.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pet Water'},
+      ['pet_food'] 			 			 = {['name'] = 'pet_food', 							['label'] = 'Pet Food', 						['weight'] = 1, 		['type'] = 'item', 		['image'] = 'pet_food.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pet Food'},
+      ['pet_medikit'] 					 = {['name'] = 'pet_medikit', 						['label'] = 'Pet Medikit', 						['weight'] = 1, 		['type'] = 'item', 		['image'] = 'pet_medikit.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pet Medikit'},
 }

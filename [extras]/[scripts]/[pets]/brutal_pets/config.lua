@@ -86,16 +86,16 @@ Config = {
     -- IMPORTANT!!!!  Download the K9 dog model from here: https://forum.cfx.re/uploads/short-url/jG6S1jPCPgG48VqBghwuxrkyl9z.rar
     Pets = {
         -- The first pet's job have to be false (Jobs = false)
-        [1] = {label = 'Husky', model = 'A_C_Husky', type = 'BigDogs', basicPrice = 500, maxAmount = 25, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
-        [2] = {label = 'Rottweiler', model = 'A_C_Rottweiler', type = 'BigDogs', basicPrice = 4000, maxAmount = 25, Skin = {4, 2}, Collar = {3, 3}, Jobs = false},
-        [3] = {label = 'Retriever', model = 'A_C_Retriever', type = 'BigDogs', basicPrice = 500, maxAmount = 25, Skin = {0, 3}, Collar = {3, 0}, Jobs = false},
-        [4] = {label = 'Westy', model = 'A_C_Westy', type = 'SmallDogs', basicPrice = 500, maxAmount = 25, Skin = {4, 2}, Collar = {3, 5}, Jobs = false},
-        [5] = {label = 'Pug', model = 'A_C_Pug', type = 'SmallDogs', basicPrice = 500, maxAmount = 25, Skin = {4, 3}, Collar = {3, 5}, Jobs = false},
-        [6] = {label = 'Poodle', model = 'A_C_Poodle', type = 'SmallDogs', basicPrice = 500, maxAmount = 25, Skin = {0, 0}, Collar = {3, 0}, Jobs = false},
-        [7] = {label = 'Panther', model = 'A_C_Panther', type = 'BigCat', basicPrice = 500, maxAmount = 25, Skin = {0, 0}, Collar = {3, 0}, Jobs = false},
-        [8] = {label = 'Lion', model = 'A_C_MtLion', type = 'BigCat', basicPrice = 500, maxAmount = 25, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
-        [9] = {label = 'Cat', model = 'A_C_Cat_01', type = 'SmallCat', basicPrice = 500, maxAmount = 25, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
-        [10] = {label = 'K9 Dog', model = 'A_C_shepherd', type = 'PoliceDogs', basicPrice = 500, maxAmount = 25, Skin = {0, 2}, Collar = {3, 3}, Jobs = {'lspd', 'bcso'}},
+        [1] = {label = 'Husky', model = 'A_C_Husky', type = 'BigDogs', basicPrice = 1800, maxAmount = 20, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
+        [2] = {label = 'Rottweiler', model = 'A_C_Rottweiler', type = 'BigDogs', basicPrice = 1800, maxAmount = 20, Skin = {4, 2}, Collar = {3, 3}, Jobs = false},
+        [3] = {label = 'Retriever', model = 'A_C_Retriever', type = 'BigDogs', basicPrice = 1800, maxAmount = 20, Skin = {0, 3}, Collar = {3, 0}, Jobs = false},
+        [4] = {label = 'Westy', model = 'A_C_Westy', type = 'SmallDogs', basicPrice = 1800, maxAmount = 20, Skin = {4, 2}, Collar = {3, 5}, Jobs = false},
+        [5] = {label = 'Pug', model = 'A_C_Pug', type = 'SmallDogs', basicPrice = 1800, maxAmount = 20, Skin = {4, 3}, Collar = {3, 5}, Jobs = false},
+        [6] = {label = 'Poodle', model = 'A_C_Poodle', type = 'SmallDogs', basicPrice = 1800, maxAmount = 20, Skin = {0, 0}, Collar = {3, 0}, Jobs = false},
+        [7] = {label = 'Panther', model = 'A_C_Panther', type = 'BigCat', basicPrice = 1800, maxAmount = 20, Skin = {0, 0}, Collar = {3, 0}, Jobs = false},
+        [8] = {label = 'Lion', model = 'A_C_MtLion', type = 'BigCat', basicPrice = 1800, maxAmount = 20, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
+        [9] = {label = 'Cat', model = 'A_C_Cat_01', type = 'SmallCat', basicPrice = 1800, maxAmount = 20, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
+        [10] = {label = 'K9 Dog', model = 'A_C_shepherd', type = 'PoliceDogs', basicPrice = 500, maxAmount = 20, Skin = {0, 2}, Collar = {3, 3}, Jobs = {'lspd', 'bcso'}},
 
         -- WOULD YOU LIKE MORE PETS?
         -- 'BRUTAL' - code 15% discount: https://future.tebex.io/
