@@ -761,7 +761,7 @@ RegisterCommand('inventory', function()
                     slots = 2
                 elseif vehicleClass == 8 then -- Motorbikes
                     maxweight = 10000
-                    slots = 1
+                    slots = 2
                 elseif vehicleClass == 9 then -- Offroad
                     maxweight = 80000
                     slots = 12
