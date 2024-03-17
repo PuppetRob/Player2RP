@@ -5,7 +5,7 @@ Config.OldQBCore = false
 Config.CoreFolderName = "qb-core" 
 
 Config.Printer = {
-    [1] = {coords = vector3(-42.3, -1749.29, 29.42), heading = 320.32, model = "v_med_cor_photocopy", z_offset = -1.0, count = 50, capacity = 100},
+    [1] = {coords = vector3(-557.43, -193.28, 38.23), heading = 222.32, model = "v_med_cor_photocopy", z_offset = -1.0, count = 50, capacity = 100},
 }
 -- Add new coord and heading 
 -- model (spawn machine prop name, should be nil if you dont want to spawn the prop)
