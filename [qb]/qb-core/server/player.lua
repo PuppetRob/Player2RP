@@ -132,6 +132,7 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['jobrep']['trucker'] = PlayerData.metadata['jobrep']['trucker'] or 0
     PlayerData.metadata['jobrep']['taxi'] = PlayerData.metadata['jobrep']['taxi'] or 0
     PlayerData.metadata['jobrep']['hotdog'] = PlayerData.metadata['jobrep']['hotdog'] or 0
+    PlayerData.metadata['fishingrep'] = PlayerData.metadata['fishingrep'] or 0
     PlayerData.metadata['hunterrep'] = PlayerData.metadata['hunterrep'] or 0
     PlayerData.metadata['hunterxp'] = PlayerData.metadata['hunterxp'] or 0
 	PlayerData.metadata['skinning'] = PlayerData.metadata['skinning'] or 0
