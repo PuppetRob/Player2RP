@@ -10,7 +10,7 @@ Config['OilRigHeist'] = {
     },
     ["dispatch"] = "ps-dispatch", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
     ['requiredPoliceCount'] = 6, -- required police count for start heist
-    ['dispatchJobs'] = {'lspd', 'bcso'},
+    ['dispatchJobs'] = {'lspd', 'bcso', 'highywaypatrol'},
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names.
         'seccard',
     },

@@ -19,7 +19,7 @@ end)
 RegisterNetEvent("p2rp-bodycam:openBoy")
 AddEventHandler("p2rp-bodycam:openBoy", function (item, h,m,s)
     local Player = QBCore.Functions.GetPlayerData()
-    if PlayerJob.name == "lspd" or PlayerJob.name == 'sast' or PlayerJob.name == 'bcso' then
+    if PlayerJob.name == "lspd" or PlayerJob.name == 'sast' or PlayerJob.name == 'bcso' or PlayerJob.name == 'highwaypatrol' then
         if Player.charinfo.gender == "0" then
             gender = Config.Gender2
         else

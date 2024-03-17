@@ -91,7 +91,7 @@ Config.MayorOptions = {
 	}
 }
 
-Config.GovernmentJobs = {'judge', 'lspd','bcso', 'ambulance', 'firefigther', 'cityhall'} -- Set the jobs that are not ownable here.
+Config.GovernmentJobs = {'judge', 'lspd','bcso', 'ambulance', 'firefigther', 'cityhall', 'highwaypatrol'} -- Set the jobs that are not ownable here.
 
 Config.Tax = {
 	MayorControl = {

@@ -49,6 +49,7 @@ Config.EmergencyServicesDiscount = {
         "sapr",
         "ambulance",
         "firefighter",
+		"highwaypatrol",
     }
 }
 Config.Core = 'qb-core' -- Change this to your core resources (Ex: 'qbx-core' | 'qb-core'), must be qb based!

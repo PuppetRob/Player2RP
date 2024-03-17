@@ -43,6 +43,7 @@ Config.Locations = {
         [3] = vector3(-447.4, 6015.02, 32.29), -- BCSO Paleto 
         [4] = vector3(1831.8, 3680.71, 34.34), -- BCSO Sandy 
         [5] = vector3(-814.51, 5390.56, 35.87), -- Game Warden
+        [6] = vector3(1541.06, 816.64, 77.66), -- HP
     },
     ["vehicle"] = {
         [1] = vector4(442.46, -986.46, 25.7, 268.01), -- LSPD MRPD 
@@ -50,6 +51,7 @@ Config.Locations = {
         [3] = vector4(-459.72, 6030.1, 31.49, 38.86), -- BCSO Paleto
         [4] = vector4(1822.04, 3684.57, 34.33, 115.49), -- BCSO Sandy
         [5] = vector4(-801.97, 5401.25, 35.86, 354.0), -- Game Warden
+        [6] = vector4(1549.98, 817.2, 77.18, 237.32), -- HP
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
         [1] = vector4(440.62, -981.27, 25.7, 87.73), -- MRPD
@@ -57,6 +59,7 @@ Config.Locations = {
         [3] = vector4(-475.29, 6031.22, 31.34, 232.08), -- BCSO Paleto
         [4] = vector4(1858.31, 3693.36, 33.87, 205.3), -- BCSO Sandy
         [5] = vector4(-799.1, 5408.81, 33.91, 26.79), -- Game Warden
+        [6] = vector4(1553.33, 812.64, 77.07, 193.63), -- HP
     },
     ["stash"] = {
         [1] = vector3(460.41, -995.93, 30.69), -- LSPD MRPD
@@ -64,6 +67,7 @@ Config.Locations = {
         [3] = vector3(-436.57, 6009.85, 37.0), -- BCSO Paleto 
         [4] = vector3(1850.04, 3677.09, 38.93), -- BCSO Sandy
         [5] = vector3(-819.87, 5389.68, 35.87), -- Game Warden
+        [6] = vector3(1539.45, 811.55, 77.66), -- HP
     },
     ["impound"] = {
         [1] = vector4(-309.31, 6117.72, 31.52, 308.79), -- DAVIS
@@ -82,6 +86,7 @@ Config.Locations = {
         [3] = vector3(-449.34, 6015.22, 37.0), -- BCSO Paleto 
         [4] = vector3(1836.99, 3682.48, 38.93), -- Sandy BCSO
         [5] = vector3(-820.38, 5399.34, 35.87), -- Game Warden
+        [6] = vector3(1550.61, 842.05, 77.66), -- HP
     },
     ["fridge"] = {
         [1] = vector3(463.35, -980.21, 30.76), -- MRPD
@@ -100,6 +105,7 @@ Config.Locations = {
         [3] = vector3(-452.62, 5998.02, 27.58), -- Paleto BCSO
         [4] = vector3(1845.25, 3690.08, 34.34), -- Sandy BCSO
         [5] = vector3(-801.93, 5388.18, 29.31), -- Game Warden
+        [6] = vector3(1555.78, 836.42, 77.66), -- HP
     },
     ["evidence"] = {
         [1] = vector3(448.89, -997.62, 30.69), -- LSPD MRPD
@@ -107,6 +113,7 @@ Config.Locations = {
         [3] = vector3(-452.75, 5999.63, 37.01), -- BCSO Paleto 
         [4] = vector3(1857.42, 3679.83, 34.33), -- BCSO Sandy 
         [5] = vector3(-832.05, 5399.35, 35.87), -- Game Warden
+        [6] = vector3(1547.52, 826.74, 82.13), -- HP
     },
     ["stations"] = {
 --[[         [1] = {label = "LSPD MRPD", coords = vector4(441.21, -981.79, 30.69, 358.66)},
@@ -248,6 +255,17 @@ Config.AuthorizedVehicles = {
      -- Garage 1 vehicles (Game Warden)
     [5] = {
         ["police"] = {label = "Temp Vehicle", ranks = {0, 1, 2, 3, 4}, livery = 0, price = 500},
+    },
+    [6] = {
+        ["hp1"] = {label = "Vic Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp2"] = {label = "13 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp3"] = {label = "14 SUV", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp4"] = {label = "14 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp5"] = {label = "16 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp6"] = {label = "16 Utility", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp7"] = {label = "18 Sedan", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["hp8"] = {label = "Generic 150", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
+        ["sahpmoto"] = {label = "MBU", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, livery = 0, price = 500},
     },
 }
 

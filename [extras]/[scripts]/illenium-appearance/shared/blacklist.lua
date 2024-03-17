@@ -7,7 +7,7 @@ Config.Blacklist = {
             lowerBody = {
                 {
                     drawables = { 4, 32, 52, 117, 201 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 24 },
@@ -27,7 +27,7 @@ Config.Blacklist = {
                 },
                 {
                     drawables = { 181 },
-                    jobs = {"lspd", "bcso", "firefighter", "ambulance"}
+                    jobs = {"lspd", "bcso", "firefighter", "ambulance", "highwaypatrol"}
                 },
                 {
                     drawables = { 247 },
@@ -37,7 +37,7 @@ Config.Blacklist = {
             bags = {
                 {
                     drawables = { 33, 35, 36, 58, 59, 66, 69, 74 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 34, 39, 52 },
@@ -72,7 +72,7 @@ Config.Blacklist = {
             scarfAndChains = {
                 {
                     drawables = { 2, 5, 6, 8, 42, 43, 110, 111, 178, 181, 182, 183, 196, 197, 198 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 45, 175},
@@ -86,7 +86,7 @@ Config.Blacklist = {
             shirts = {
                 {
                     drawables = { 37, 38, 39, 40, 42, 43, 44, 49, 53, 55, 56, 57, 58, 87, 104, 105, 106, 112, 116, 122, 130, 131 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 65, 66, 67, 71, 72, 113 },
@@ -112,7 +112,7 @@ Config.Blacklist = {
             bodyArmor = {
                 {
                     drawables = { 7, 10, 11, 18, 19, 21, 22, 26, 28, 31, 32, 33, 34, 74, 81, 86, 89, 100, 101, 107, 108, 109, 110, 111, 114, 126, 131 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 16, 24, 92, 93, 95, 96, 97, 98, 99, 115, 117, 127, 128, 129, 130, 132 },
@@ -148,11 +148,11 @@ Config.Blacklist = {
                 },
                 {
                     drawables = { 60 },
-                    jobs = {"lspd", "bcso", "ambulance"}
+                    jobs = {"lspd", "bcso", "ambulance", "highwaypatrol"}
                 },
                 {
                     drawables = { 118, 120, 121 },
-                    jobs = {"lspd", "bcso", "ambulance", "firefighter"}
+                    jobs = {"lspd", "bcso", "ambulance", "firefighter", "highwaypatrol"}
                 },
                 {
                     drawables = { 135 },
@@ -162,7 +162,7 @@ Config.Blacklist = {
             decals = {
                 {
                     drawables = { 1, 2, 3, 10, 11, 42, 43, 44, 45, 179, 180, 181, 182, 183, 185, 190, 192 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 5, 8, 12, 13, 15 },
@@ -231,7 +231,7 @@ Config.Blacklist = {
             hats = {
                 {
                     drawables = { 6, 7, 17, 79, 84, 238, 239 },
-                    jobs = {"lspd", "bcso"}
+                    jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
                     drawables = { 16, 48, 83, 237},

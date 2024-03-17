@@ -5,7 +5,7 @@
 table.insert(Config.DoorList, {
 	lockpick = false,
 	objHash = -952356348, -- v_ilev_cf_officedoor
-	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['sast']=0 },
+	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['highwaypatrol']=0 },
 	maxDistance = 4,
 	audioRemote = false,
 	fixText = false,
@@ -24,7 +24,7 @@ table.insert(Config.DoorList, {
 table.insert(Config.DoorList, {
 	lockpick = false,
 	objHash = 97297972, -- v_ilev_gc_door04
-	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['sast']=0 },
+	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['highwaypatrol']=0 },
 	maxDistance = 4,
 	audioRemote = false,
 	fixText = false,
@@ -43,7 +43,7 @@ table.insert(Config.DoorList, {
 table.insert(Config.DoorList, {
 	lockpick = false,
 	objHash = 1286535678, -- prop_facgate_07b
-	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['sast']=0 },
+	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['highwaypatrol']=0 },
 	maxDistance = 9.0,
 	audioRemote = false,
 	fixText = false,
@@ -62,7 +62,7 @@ table.insert(Config.DoorList, {
 table.insert(Config.DoorList, {
 	slides = true,
 	objHeading = 180.00001525878, 
-	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['sast']=0 },
+	authorizedJobs = { ['bcso']=0, ['lspd']=0, ['highwaypatrol']=0 },
 	garage = false,
 	maxDistance = 9.0,
 	audioRemote = false,

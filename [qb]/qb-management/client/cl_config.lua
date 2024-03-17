@@ -10,6 +10,9 @@ Config.BossMenus = {
     ['bcso'] = {
         vector3(359.4, -1590.24, 31.05),
     },
+    ['highwaypatrol'] = {
+        vector3(1539.3, 815.71, 82.13),
+    },
     ['ambulance'] = {
         vector3(353.23, -586.98, 47.32),
     },
@@ -27,6 +30,9 @@ Config.BossMenuZones = {
     },
     ['bcso'] = {
         { coords = vector3(359.4, -1590.24, 31.05), length = 1.35, width = 1.45, heading = 351.0, minZ = 30.00, maxZ = 31.73 }, 
+    },
+    ['highwaypatrol'] = {
+        { coords = vector3(1539.3, 815.71, 82.13), length = 1.35, width = 1.45, heading = 351.0, minZ = 80.00, maxZ = 84.73 }, 
     },
     ['ambulance'] = {
         { coords = vector3(353.23, -586.98, 47.32), length = 1.2, width = 0.6, heading = 341.0, minZ = 44.13, maxZ = 48.73 },

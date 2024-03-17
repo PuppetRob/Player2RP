@@ -80,7 +80,7 @@ local blips = {
   {title="Sandy BCSO", colour=38, id=60, x = 1853.72, y = 3686.15, z = 34.28, scale = 0.65},
   {title="Davis BCSO", colour=38, id=60, x = 372.07, y = -1600.59, z = 30.05, scale = 0.65},
   {title="Paleto BCSO", colour=38, id=60, x = -451.54, y = 6014.25, z = 44.01, scale = 0.65},
-  --{title="SAST HP", colour=38, id=60, x =  1541.14, y = 817.28, z = 77.66, scale = 0.65},
+  {title="SAST HP", colour=38, id=60, x =  1541.14, y = 817.28, z = 77.66, scale = 0.65},
  -- {title="SAST LeMesa", colour=38, id=60, x = 830.53, y = -1290.07, z = 28.24, scale = 0.65},
   {title="LSPD MRPD", colour=38, id=60, x = 439.12, y = -982.06, z = 30.69, scale = 0.65},
   {title="Park Rangers", colour=25, id=60, x = -813.93, y = 5394.53, z = 35.87, scale = 0.65},

@@ -344,6 +344,7 @@ Config = {
 			["lspd"] = 0, -- Job and Job Grade
 			["ambulance"] = 0,
 			["bcso"] = 0,
+			["highwaypatrol"] = 0,
 		},
 		LockEmergency = false,  -- Enable this to lock make only "Emergency" (Class 18) vehicles to be used with the bench
 		Locations = {

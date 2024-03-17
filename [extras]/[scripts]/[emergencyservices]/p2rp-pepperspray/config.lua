@@ -47,7 +47,7 @@ Config = {
                 'lspd',
                 'bcso',
                 'sast',
-                'hp'
+                'highwaypatrol'
             },
 
             sprayQuantity = 500, -- Quantity of spray
@@ -111,6 +111,7 @@ Config = {
             'lspd',
             'bcso',
             'sast',
+			'highwaypatrol',
             'firefighter'
         },
 

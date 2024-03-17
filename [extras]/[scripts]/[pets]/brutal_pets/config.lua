@@ -95,7 +95,7 @@ Config = {
         [7] = {label = 'Panther', model = 'A_C_Panther', type = 'BigCat', basicPrice = 11500, maxAmount = 5, Skin = {0, 0}, Collar = {3, 0}, Jobs = false},
         [8] = {label = 'Lion', model = 'A_C_MtLion', type = 'BigCat', basicPrice = 25000, maxAmount = 5, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
         [9] = {label = 'Cat', model = 'A_C_Cat_01', type = 'SmallCat', basicPrice = 750, maxAmount = 20, Skin = {0, 2}, Collar = {3, 0}, Jobs = false},
-        [10] = {label = 'K9 Dog', model = 'A_C_shepherd', type = 'PoliceDogs', basicPrice = 500, maxAmount = 20, Skin = {0, 2}, Collar = {3, 3}, Jobs = {'lspd', 'bcso'}},
+        [10] = {label = 'K9 Dog', model = 'A_C_shepherd', type = 'PoliceDogs', basicPrice = 500, maxAmount = 20, Skin = {0, 2}, Collar = {3, 3}, Jobs = {'lspd', 'bcso', 'highwaypatrol'}},
 
         -- WOULD YOU LIKE MORE PETS?
         -- 'BRUTAL' - code 15% discount: https://future.tebex.io/

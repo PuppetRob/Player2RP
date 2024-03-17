@@ -799,6 +799,135 @@ Config.JobInteractions = {
             }
         }
     },
+    ["highwaypatrol"] = {
+        {
+            id = 'emergencybutton',
+            title = 'Emergency button',
+            icon = 'bell',
+            type = 'client',
+            event = 'ps-dispatch:client:officerdown',
+            shouldClose = true
+        }, {
+            id = 'checkvehstatus',
+            title = 'Check Tune Status',
+            icon = 'info-circle',
+            type = 'client',
+            event = 'qb-tunerchip:client:TuneStatus',
+            shouldClose = true
+        }, {
+            id = 'resethouse',
+            title = 'Reset house lock',
+            icon = 'key',
+            type = 'client',
+            event = 'qb-houses:client:ResetHouse',
+            shouldClose = true
+        }, {
+            id = 'takedriverlicense',
+            title = 'Revoke Drivers License',
+            icon = 'id-card',
+            type = 'client',
+            event = 'police:client:SeizeDriverLicense',
+            shouldClose = true
+        },{
+            id = 'policeinteraction',
+            title = 'Police Actions',
+            icon = 'tasks',
+            items = {
+                {
+                    id = 'statuscheck',
+                    title = 'Check Health Status',
+                    icon = 'heartbeat',
+                    type = 'client',
+                    event = 'hospital:client:CheckStatus',
+                    shouldClose = true
+                }, {
+                    id = 'checkstatus',
+                    title = 'Check status',
+                    icon = 'question',
+                    type = 'client',
+                    event = 'police:client:CheckStatus',
+                    shouldClose = true
+                }, {
+                    id = 'escort',
+                    title = 'Escort',
+                    icon = 'user-friends',
+                    type = 'client',
+                    event = 'police:client:EscortPlayer',
+                    shouldClose = true
+                }, {
+                    id = 'searchplayer',
+                    title = 'Search',
+                    icon = 'search',
+                    type = 'client',
+                    event = 'police:client:SearchPlayer',
+                    shouldClose = true
+                }, {
+                    id = 'jailplayer',
+                    title = 'Jail',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'police:client:JailPlayer',
+                    shouldClose = true
+                }
+            }
+        }, {
+            id = 'policeobjects',
+            title = 'Objects',
+            icon = 'road',
+            items = {
+                {
+                    id = 'spawnpion',
+                    title = 'Cone',
+                    icon = 'exclamation-triangle',
+                    type = 'client',
+                    event = 'police:client:spawnCone',
+                    shouldClose = false
+                }, {
+                    id = 'spawnhek',
+                    title = 'Gate',
+                    icon = 'torii-gate',
+                    type = 'client',
+                    event = 'police:client:spawnBarrier',
+                    shouldClose = false
+                }, {
+                    id = 'spawnschotten',
+                    title = 'Speed Limit Sign',
+                    icon = 'sign',
+                    type = 'client',
+                    event = 'police:client:spawnRoadSign',
+                    shouldClose = false
+                }, {
+                    id = 'spawntent',
+                    title = 'Tent',
+                    icon = 'campground',
+                    type = 'client',
+                    event = 'police:client:spawnTent',
+                    shouldClose = false
+                }, {
+                    id = 'spawnverlichting',
+                    title = 'Lighting',
+                    icon = 'lightbulb',
+                    type = 'client',
+                    event = 'police:client:spawnLight',
+                    shouldClose = false
+                }, {
+                    id = 'spikestrip',
+                    title = 'Spike Strips',
+                    icon = 'caret-up',
+                    type = 'client',
+                    event = 'police:client:SpawnSpikeStrip',
+                    shouldClose = false
+                }, {
+                    id = 'deleteobject',
+                    title = 'Remove object',
+                    icon = 'trash',
+                    type = 'client',
+                    event = 'police:client:deleteObject',
+                    shouldClose = false
+                }
+            }
+        }
+    },
     ["bcso"] = {
         {
             id = 'emergencybutton',

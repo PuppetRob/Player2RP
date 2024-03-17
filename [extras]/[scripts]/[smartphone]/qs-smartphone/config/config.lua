@@ -294,12 +294,14 @@ Config.WeazelJob = {
     'weazelnews',
     'lspd',
     'bcso',
+	'highwaypatrol',
 }
 
 -- Jobs available to receive Police App alerts.
 Config.PoliceAppJobs = {
     [1] = 'lspd',
     [2] = 'bcso',
+	[3] = 'highwaypatrol',
 }
 
 --- @param job 'Name of job who will receive the message'
@@ -308,6 +310,7 @@ Config.PoliceAppJobs = {
 Config.Jobs = {
     { job = 'lspd',    name = 'LSPD',  img = './img/apps/police.png' },
     { job = 'bcso',    name = 'BCSO',  img = './img/apps/police.png' },
+	{ job = 'highwaypatrol',    name = 'Highway Patrol',  img = './img/apps/police.png' },
     { job = 'ambulance', name = 'Ems',      img = './img/apps/ambulance.png' },
     { job = 'mechanic',  name = 'Mechanic', img = './img/apps/mechanic.png' },
 }
@@ -346,8 +349,17 @@ Config.JobsInPhone = {
         score = '4',
         duty = false,
     },
-    ['ambulance'] = {
+    ['highwaypatrol'] = {
         order = 3,
+        name = 'HP',
+        label = 'Police',
+        info = 'Highway Patrol',
+        score = '4',
+        duty = false,
+    },
+	
+    ['ambulance'] = {
+        order = 4,
         name = 'ambulance',
         label = 'EMS',
         info = 'We solve all your health problems',
@@ -355,7 +367,7 @@ Config.JobsInPhone = {
         duty = false,
     },
     ['burgershot'] = {
-        order = 4,
+        order = 5,
         name = 'burgershot',
         label = 'Burgershot',
         info = '100% vegan burgers, I\'m kidding...',
@@ -371,7 +383,7 @@ Config.JobsInPhone = {
         duty = false,
     },
     ['bennys'] = {
-        order = 8,
+        order = 7,
         name = 'mechanic',
         label = 'Benny\'s',
         info = 'The mechanic Luis is the best',

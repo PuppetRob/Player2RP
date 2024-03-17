@@ -45,15 +45,15 @@ Config.XPCategories = { -- Registered XP Types for Pickle's XP.
 Config.Default = {
     permissions = { -- Permissions settings for jailing, unjailing, and other things.
         jail = {
-            jobs = {["lspd"] = 0, ["bcso"] = 0}, -- ["job_name"] = rank_number, ["job_name2"] = rank_number2,
+            jobs = {["lspd"] = 0, ["bcso"] = 0, ["highwaypatrol"] = 0}, -- ["job_name"] = rank_number, ["job_name2"] = rank_number2,
             groups = {"admin", "god"} -- "group1", "group2"
         },
         unjail = {
-            jobs = {["lspd"] = 0, ["bcso"] = 0},
+            jobs = {["lspd"] = 0, ["bcso"] = 0, ["highwaypatrol"] = 0},
             groups = {"admin", "god"}
         },
         alert = {
-            jobs = {["lspd"] = 0, ["bcso"] = 0},
+            jobs = {["lspd"] = 0, ["bcso"] = 0, ["highwaypatrol"] = 0},
             groups = {"admin", "god"}
         },
     },

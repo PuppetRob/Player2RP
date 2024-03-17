@@ -9,7 +9,7 @@ Config.Item = 'ied'
 -- 5 (Detonate Immediately After the vehicle is entered)
 Config.DetonationType = 2
 
-Config.PoliceJob = 'lspd', 'bcso', 'sast', 'firefighter', 'ambulance'
+Config.PoliceJob = 'lspd', 'bcso', 'sast', 'firefighter', 'ambulance', 'highwaypatrol'
 
 Config.JobDisarm = true -- True for police only to disarm/False for everyone to disarm
 Config.JobInspect = true -- True for police only to inspect/False for everyone to inspect

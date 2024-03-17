@@ -30,6 +30,7 @@ Config.sopLink = {
     ['bcso'] = '',
     ['ambulance'] = '',
     ['firefighter'] = '',
+	['highwaypatrol'] = '',
 }
 
 -- Google Docs Link
@@ -38,11 +39,13 @@ Config.RosterLink = {
     ['bcso'] = '',
     ['ambulance'] = '',
     ['firefighter'] = '',
+	['highwaypatrol'] = '',
 }
 
 Config.PoliceJobs = {
     ['lspd'] = true,
     ['bcso'] = true,
+	['highwaypatrol'] = true,
 }
 
 Config.AmbulanceJobs = {
@@ -84,6 +87,10 @@ Config.LogPerms = {
     ['firefighter'] = {
 		[4] = true,
 	},
+    ['highwaypatrol'] = {
+		[4] = true,
+	},
+	
 }
 
 Config.RemoveIncidentPerms = {
@@ -97,6 +104,9 @@ Config.RemoveIncidentPerms = {
 		[4] = true,
 	},
     ['firefighter'] = {
+		[4] = true,
+	},
+    ['highwaypatrol'] = {
 		[4] = true,
 	},
 }
@@ -114,6 +124,9 @@ Config.RemoveReportPerms = {
     ['firefighter'] = {
 		[4] = true,
 	},
+    ['highwaypatrol'] = {
+		[4] = true,
+	},
 }
 
 Config.RemoveWeaponsPerms = {
@@ -127,6 +140,9 @@ Config.RemoveWeaponsPerms = {
 		[4] = true,
 	},
     ['firefighter'] = {
+		[4] = true,
+	},
+    ['highwaypatrol'] = {
 		[4] = true,
 	},
 }

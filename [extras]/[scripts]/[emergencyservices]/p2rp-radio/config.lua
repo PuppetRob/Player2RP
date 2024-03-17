@@ -20,7 +20,7 @@ Config.UseItemName = "radio" -- Item name to open radio
 Config.UseRadioKey = 'false' -- Use radio key to open radio, if you want to disable this set it to false (command should be enabled if you want to use keybind)
 
 Config.UseRanges = false
-Config.DisableRangesForJobs = { 'lspd', 'bcso', 'sast', 'ambulance', 'firefighter', 'sapr' } -- disable ranges for custom jobs, example: { 'police', 'ambulance' }, used only for ESX and QB
+Config.DisableRangesForJobs = { 'lspd', 'bcso', 'sast', 'ambulance', 'firefighter', 'sapr', 'highwaypatrol' } -- disable ranges for custom jobs, example: { 'police', 'ambulance' }, used only for ESX and QB
 Config.disableAutoSpectateModeDetection = false -- If disabled, ranges wont take effect on person who is spectating
 Config.UsePMADefaultRadioEffect = false -- Use default radio effect for normal range
 Config.DefaultRadioFilter = {
@@ -134,6 +134,7 @@ Config.WhitelistedAccess = {
         ['sast'] = true,
         ['sapr'] = true,
         ['firefighter'] = true,
+		['highwaypatrol'] = true,
         ['ambulance'] = true
     }
 }

@@ -1,6 +1,6 @@
 Config = {}
 
-Config.PoliceJobs = {"lspd", "bcso"}
+Config.PoliceJobs = {"lspd", "bcso", "highwaypatrol"}
 Config.MinPolice = 4
 Config.VaultTimer = 3 -- Minutes before vault opens after hack
 Config.FirstCooldown = 0 -- Minutes before a bank can be robbed, when the resource starts
