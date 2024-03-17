@@ -742,43 +742,43 @@ RegisterCommand('inventory', function()
                     maxweight = 30000
                     slots = 6
                 elseif vehicleClass == 2 then -- SUVs
-                    maxweight = 18000
+                    maxweight = 100000
                     slots = 16
                 elseif vehicleClass == 3 then -- Coupes
                     maxweight = 20000
                     slots = 4
                 elseif vehicleClass == 4 then -- Muscle
-                    maxweight = 30000
+                    maxweight = 60000
                     slots = 6
                 elseif vehicleClass == 5 then -- Sports Classics
                     maxweight = 20000
                     slots = 4
                 elseif vehicleClass == 6 then -- Sports
-                    maxweight = 20000
+                    maxweight = 30000
                     slots = 4
                 elseif vehicleClass == 7 then -- Super
-                    maxweight = 20000
+                    maxweight = 10000
                     slots = 2
                 elseif vehicleClass == 8 then -- Motorbikes
                     maxweight = 10000
                     slots = 1
                 elseif vehicleClass == 9 then -- Offroad
-                    maxweight = 24000
-                    slots = 20
+                    maxweight = 80000
+                    slots = 12
                 elseif vehicleClass == 12 then -- Vans
-                    maxweight = 24000
+                    maxweight = 120000
                     slots = 20
                 elseif vehicleClass == 13 then -- Cycles
                     maxweight = 0
                     slots = 0
                 elseif vehicleClass == 14 then -- Boats
-                    maxweight = 12000
+                    maxweight = 80000
                     slots = 12
                 elseif vehicleClass == 15 then -- Helicopters
                     maxweight = 60000
                     slots = 6
                 elseif vehicleClass == 16 then -- Planes
-                    maxweight = 12000
+                    maxweight = 120000
                     slots = 16
                 else
                     maxweight = 60000
