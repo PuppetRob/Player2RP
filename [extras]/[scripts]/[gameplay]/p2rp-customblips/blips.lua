@@ -130,7 +130,7 @@ local blips = {
 
  -- {title="Koi Restaurant", colour=26, id=674, x = -1035.06, y = -1482.78, z = 4.55, scale = 0.65},
  -- {title="Pearls", colour=77, id=267, x = -1825.66, y = -1198.94, z = 14.31, scale = 0.55},
- -- {title="Pet Shop", colour=17, id=273, x = -1786.71, y = -1159.27, z = 13.47, scale = 0.65},
+  {title="Pet Shop", colour=17, id=273, x = -1786.71, y = -1159.27, z = 13.47, scale = 0.65},
  -- {title="Ice Cream Shop", colour=61, id=499, x = -1766.38, y = -1133.64, z = 13.02, scale = 0.55},
 
   {title="Boxing Gym", colour=6, id=311, x = 376.47, y = -1100.18, z = 29.44, scale = 0.55},

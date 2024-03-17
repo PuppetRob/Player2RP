@@ -30,7 +30,7 @@ Config = {
             inGameBuy = false,
 
             model = 'a_f_m_soucent_02',
-            blip = {use = true, size = 0.65, sprite = 442, color = 48},
+            blip = {use = false, size = 0.65, sprite = 442, color = 48},
             coords = vector4(-1823.09, -1137.91, 13.75, 314.36),
             petPosition = { ['left/right'] = -8.0,  ['forward/backward'] = 1.4,  ['up/down'] = -0.98, ['heading'] = 270 },
 
