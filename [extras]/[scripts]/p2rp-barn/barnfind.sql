@@ -14,8 +14,8 @@
 
 
 -- Dumping database structure for realisticlifev2
-CREATE DATABASE IF NOT EXISTS `waverpdev` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `waverpdev`;
+CREATE DATABASE IF NOT EXISTS `QBCoreFramework_D13F64` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `QBCoreFramework_D13F64`;
 
 -- Dumping structure for table realisticlifev2.barnfind
 CREATE TABLE IF NOT EXISTS `barnfind` (
