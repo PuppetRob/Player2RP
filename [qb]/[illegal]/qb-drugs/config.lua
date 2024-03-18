@@ -128,9 +128,9 @@ Config = {
     },
 
     -- Selling Config
-    SuccessChance = 80,
-    ScamChance = 10,
-    RobberyChance = 10,
+    SuccessChance = 5,
+    ScamChance = 5,
+    RobberyChance = 90,
     MinimumDrugSalePolice = 0,
 
     DrugsPrice = {
