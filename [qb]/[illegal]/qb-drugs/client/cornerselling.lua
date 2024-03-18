@@ -67,7 +67,7 @@ local function RobberyPed()
                     end
                 }
             },
-            distance = 2.5,
+            distance = 3.5,
         })
         CreateThread(function()
             while stealingPed do
