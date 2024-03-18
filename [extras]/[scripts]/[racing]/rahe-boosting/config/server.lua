@@ -254,7 +254,7 @@ svConfig = {
             receiveItemIds = {
                 [1] = 'harness'
             }
-        }
+        },
        ['blueprint_electronickit'] = {
             cashRequired = 2500,
             cryptoRequired = 200,
