@@ -30,7 +30,8 @@ end
 local function PoliceCall()
     local random = math.random(1, 100)
     if random <= Config.PoliceCallChance then
-        TriggerServerEvent('police:server:policeAlert', 'Drug sale in progress')
+        exports['ps-dispatch']:DrugSale()
+        -- TriggerServerEvent('police:server:policeAlert', 'Drug sale in progress')
     end
 end
 
@@ -66,7 +67,7 @@ local function RobberyPed()
                     end
                 }
             },
-            distance = 1.5,
+            distance = 2.5,
         })
         CreateThread(function()
             while stealingPed do
