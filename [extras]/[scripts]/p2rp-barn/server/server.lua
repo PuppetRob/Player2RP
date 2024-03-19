@@ -41,7 +41,7 @@ AddEventHandler('oneofone:server:winner', function()
         TriggerClientEvent('oneofone:client:waypoint', source)
         local WinnerPerson = QBCore.Functions.GetPlayer(source)
         local WinnerCitid = WinnerPerson.PlayerData.citizenid
-        MySQL.Async.insert("INSERT INTO `barnfind` (`owner`, `model`, `copper`, `aluminum`, `steel`, `plastic`, `glass`, `rubber`) VALUES ('"..WinnerCitid.."', '"..Config.VehicleName.."', '"..Config.VehicleCost.copper.."', '"..Config.VehicleCost.aluminum.."', '"..Config.VehicleCost.steel.."', '"..Config.VehicleCost.plastic.."', '"..Config.VehicleCost.glass.."', '"..Config.VehicleCost.rubber.."')")
+        MySQL.Async.insert("INSERT INTO `barnfind` (`owner`, `model`, `copper`, `aluminium`, `steel`, `plastic`, `glass`, `rubber`) VALUES ('"..WinnerCitid.."', '"..Config.VehicleName.."', '"..Config.VehicleCost.copper.."', '"..Config.VehicleCost.aluminium.."', '"..Config.VehicleCost.steel.."', '"..Config.VehicleCost.plastic.."', '"..Config.VehicleCost.glass.."', '"..Config.VehicleCost.rubber.."')")
     end
     if source ~= Config.Winner then
         print('ban this pleb')      --ADD YOUR BAN FUNCTION HERE  
@@ -89,12 +89,12 @@ RegisterCommand("check", function(source, args, raw)
             MySQL.Async.fetchAll("SELECT * FROM `barnfind` WHERE `owner` = '"..Config.WinnerCid.."'", function(ex)
                 if ex[1] ~= nil then
                     if ex[1]['owner'] == SCid.PlayerData.citizenid then
-                        if ex[1]['copper'] == 0 and ex[1]['aluminum'] == 0 and ex[1]['steel'] == 0 and ex[1]['plastic'] == 0 and ex[1]['glass'] == 0 and ex[1]['rubber'] == 0 then
+                        if ex[1]['copper'] == 0 and ex[1]['aluminium'] == 0 and ex[1]['steel'] == 0 and ex[1]['plastic'] == 0 and ex[1]['glass'] == 0 and ex[1]['rubber'] == 0 then
                             Config.Bop = true
                             TriggerClientEvent('oneofone:client:claim', -1, Config.Winner, false)
                             MySQL.Async.execute("DELETE FROM `barnfind` WHERE `owner` = '"..Config.WinnerCid.."'")
                         else
-                            TriggerClientEvent('QBCore:Notify', source, "<b>Resources Needed:</b><br><b>Copper</b> : "..ex[1]['copper'].."<br><b>Aluminum</b> : "..ex[1]['aluminum'].."<br><b>Steel</b> : "..ex[1]['steel'].."<br><b>Plastic</b> : "..ex[1]['plastic'].."<br><b>Glass</b> : "..ex[1]['glass'].."<br><b>Rubber</b> : "..ex[1]['rubber'].."")
+                            TriggerClientEvent('QBCore:Notify', source, "<b>Resources Needed:</b><br><b>Copper</b> : "..ex[1]['copper'].."<br><b>aluminium</b> : "..ex[1]['aluminium'].."<br><b>Steel</b> : "..ex[1]['steel'].."<br><b>Plastic</b> : "..ex[1]['plastic'].."<br><b>Glass</b> : "..ex[1]['glass'].."<br><b>Rubber</b> : "..ex[1]['rubber'].."")
                         end    
                     end
                 end
@@ -141,7 +141,7 @@ RegisterCommand("copper", function(source, args, raw)
     end
 end)
 
-RegisterCommand("aluminum", function(source, args, raw)
+RegisterCommand("aluminium", function(source, args, raw)
     local SCid = QBCore.Functions.GetPlayer(source)
     if SCid.PlayerData.citizenid == Config.WinnerCid then
         local ploc = GetEntityCoords(GetPlayerPed(source), false)
@@ -150,27 +150,27 @@ RegisterCommand("aluminum", function(source, args, raw)
             MySQL.Async.fetchAll("SELECT * FROM `barnfind` WHERE `owner` = '"..Config.WinnerCid.."'", function(ex)
                 if ex[1] ~= nil then
                     if ex[1]['owner'] == SCid.PlayerData.citizenid then
-                        if SCid.Functions.GetItemByName('aluminum') ~= nil then
-                            local amountofc = SCid.Functions.GetItemByName('aluminum').amount
+                        if SCid.Functions.GetItemByName('aluminium') ~= nil then
+                            local amountofc = SCid.Functions.GetItemByName('aluminium').amount
                             local amounttouse = tonumber(args[1])
                             if amounttouse == nil or type(amounttouse) ~= 'number' then
                                 print('invalid input')
                             else
                                 if amounttouse > amountofc then
-                                    TriggerClientEvent('QBCore:Notify', source, "You Don't Have Enough Aluminum!", 'error')
+                                    TriggerClientEvent('QBCore:Notify', source, "You Don't Have Enough aluminium!", 'error')
                                 else
-                                    if amounttouse > ex[1]['aluminum'] then
-                                        TriggerClientEvent('QBCore:Notify', source, "The Car Doesn't Need This Much Aluminum!", 'error')
+                                    if amounttouse > ex[1]['aluminium'] then
+                                        TriggerClientEvent('QBCore:Notify', source, "The Car Doesn't Need This Much aluminium!", 'error')
                                     else
-                                        local RemoveFromDataBase = (ex[1]['aluminum'] - amounttouse)
-                                        TriggerClientEvent('QBCore:Notify', source, "You Applied "..amounttouse.." Aluminum!")
-                                        SCid.Functions.RemoveItem('aluminum', amounttouse, SCid.Functions.GetItemByName('aluminum').slot)
-                                        MySQL.Async.execute( "UPDATE `barnfind` SET `aluminum` = '"..RemoveFromDataBase.."' WHERE `owner` = '"..Config.WinnerCid.."'")
+                                        local RemoveFromDataBase = (ex[1]['aluminium'] - amounttouse)
+                                        TriggerClientEvent('QBCore:Notify', source, "You Applied "..amounttouse.." aluminium!")
+                                        SCid.Functions.RemoveItem('aluminium', amounttouse, SCid.Functions.GetItemByName('aluminium').slot)
+                                        MySQL.Async.execute( "UPDATE `barnfind` SET `aluminium` = '"..RemoveFromDataBase.."' WHERE `owner` = '"..Config.WinnerCid.."'")
                                     end
                                 end
                             end
                         else
-                            TriggerClientEvent('QBCore:Notify', source, "You Don't Have Enough Aluminum!", 'error')
+                            TriggerClientEvent('QBCore:Notify', source, "You Don't Have Enough aluminium!", 'error')
                         end
                     end
                 end

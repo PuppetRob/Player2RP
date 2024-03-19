@@ -11,7 +11,7 @@ Config = {
 
     VehicleCost = {
         copper = 100,
-        aluminum = 100,
+        aluminium = 100,
         steel = 100,
         plastic = 100,
         glass = 100,

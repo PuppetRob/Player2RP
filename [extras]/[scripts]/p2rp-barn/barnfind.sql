@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `barnfind` (
   `owner` varchar(250) DEFAULT NULL,
   `model` varchar(250) DEFAULT NULL,
   `copper` int(11) DEFAULT NULL,
-  `aluminum` int(11) DEFAULT NULL,
+  `aluminium` int(11) DEFAULT NULL,
   `steel` int(11) DEFAULT NULL,
   `plastic` int(11) DEFAULT NULL,
   `glass` int(11) DEFAULT NULL,
