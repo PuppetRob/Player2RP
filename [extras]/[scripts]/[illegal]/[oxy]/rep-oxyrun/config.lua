@@ -1,12 +1,12 @@
 
 Config = {}
-Config.MinCops = 0
+Config.MinCops = 1
 Config.Framework = 'qb-core' -- Type exports[Config.Framework]:GetCoreObject()
 Config.Target = 'qb-target'-- ox-target will auto conv, don't change
 Config.OxInventory = false
 Config.UseTalkNPC = false
 Config.ItemNeeded = 'deliverylist'
-Config.CallCopsChance = 50
+Config.CallCopsChance = 35
 Config.Time = 60 -- mins
 -- Ped Spawns
 Config.Boss = {
