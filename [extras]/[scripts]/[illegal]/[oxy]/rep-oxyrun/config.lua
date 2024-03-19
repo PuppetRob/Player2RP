@@ -6,7 +6,7 @@ Config.Target = 'qb-target'-- ox-target will auto conv, don't change
 Config.OxInventory = false
 Config.UseTalkNPC = false
 Config.ItemNeeded = 'deliverylist'
-Config.CallCopsChance = 25
+Config.CallCopsChance = 50
 Config.Time = 60 -- mins
 -- Ped Spawns
 Config.Boss = {
@@ -92,12 +92,12 @@ Config.MinTimeWaitingForCustomers = 10 -- s
 -- Rewards
 Config.Reward = true
 Config.ItemsReward = "oxy"
-Config.MaxItemReward = 4
+Config.MaxItemReward = 5
 Config.MinItemReward = 2
 
 Config.LuckyReward = true
-Config.LuckyRewardItem = "meth"
-Config.LuckyRewardChance = 10
+Config.LuckyRewardItem = "extascy_pill"
+Config.LuckyRewardChance = 20
 Config.MinLuckyRewardItems = 10
 Config.MaxLuckyRewardItems = 30
 
@@ -109,7 +109,7 @@ Config.MaxJobRewardItem = 3000
 -- If you wanna clean markedbills, just put Config.BandsItem = 'markedbills'. Note that item.info is not recognized. (Markedbills value is no use)
 
 -- Bands 
-Config.CleanBands = true
+Config.CleanBands = false
 Config.BandsItem = 'bands'
 Config.MinBandsPayout = 450
 Config.MaxBandsPayout = 550
@@ -118,7 +118,7 @@ Config.MaxBandsToClean = 20
 Config.MinBandsToClean = 10
 
 -- Rolls
-Config.CleanRolls = true
+Config.CleanRolls = false
 Config.RollsItem = 'rolls'
 Config.MaxRollsToCleanPayout = 100
 Config.MinRollsToCleanPayout = 45
