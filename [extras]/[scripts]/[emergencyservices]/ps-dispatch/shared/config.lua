@@ -89,7 +89,7 @@ Config.Blips = {
         offset = false,
         flash = false
     },
-    ['AtmRobbery'] = {
+    ['atmrobbery'] = {
         radius = 0,
         sprite = 110,
         color = 1,
@@ -454,6 +454,78 @@ Config.Blips = {
         sound = 'Lose_1st',
         sound2 = 'GTAO_FM_Events_Soundset',
         offset = true,
+        flash = false
+    },
+
+    -- CUSTOM ALERTS
+    ['techstore'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['ammunationrobbery'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['fibrobbery'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['gunrobbery'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['burnerphone'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['oxydeal'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['oxydeal'] = {
+        radius = 0,
+        sprite = 486,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
         flash = false
     }
 }
