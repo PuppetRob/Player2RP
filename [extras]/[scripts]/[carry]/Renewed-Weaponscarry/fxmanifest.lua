@@ -1,19 +1,13 @@
 fx_version 'cerulean'
-use_experimental_fxv2_oal 'yes'
-lua54 'yes'
-
 game 'gta5'
 
-author 'Renewed Scripts | FjamZoo'
-description 'Renewed Weaponscarry'
-version '2.5.1'
+author 'Renewed Scripts'
+description 'Renewed Weapons and Carry script allow you to give your players weapons on their back and carry items all in 1 resource with ultra low performance hit between 0.00 and 0.01'
+version '1.0.0'
 
-shared_scripts {
-    '@ox_lib/init.lua',
-    'init.lua'
+lua54 'yes'
+
+client_scripts {
+    'client/*.lua'
 }
 
-files {
-    'data/*.lua',
-    'modules/*.lua',
-}
