@@ -42,8 +42,8 @@ Config.CooldownTime = 30 --Time in minutes to place a call (if Config.SharedCool
 Config.LocalCooldown = true -- When true, the cooldown is unique to the player who orders. (Multiple people can order at the same time)
 Config.SharedCooldown = true -- All Types of burnerphone share the same cooldown. (Works both for local and global cooldowns)
 
-Config.MinWait = 30 --Min Wait Time before receiving the drop location after ordering an item (Seconds)
-Config.MaxWait = 60 --Max Wait Time before receiving the drop location after ordering an item (Seconds)
+Config.MinWait = 10 --Min Wait Time before receiving the drop location after ordering an item (Seconds)
+Config.MaxWait = 30 --Max Wait Time before receiving the drop location after ordering an item (Seconds)
 
 -- Phone Battery Configuration
 Config.Battery = {
@@ -78,8 +78,26 @@ Config.Burnerphones = {
             -- You can chose which prop is used for the pickup for each item, simply enter an item hash in the prop section.
             -- Item Hashs can be found here : https://gta-objects.xyz/objects
             -- You can chose the emote played when searching the item (From DPEmotes).
-            [1] = {item = 'lockpick', qty = {min = 1, max = 1}, weight = 50, prop = "prop_cs_package_01", emote = "mechanic4"},
-           -- [2] = {item = 'cloth', qty = {min = 1, max = 1}, weight = 50, prop = "prop_pizza_box_01", emote = "mechanic4"},
+            [1] = {item = 'advancedlockpick', qty = {min = 1, max = 5}, weight = 10, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [2] = {item = 'c4_bomb', qty = {min = 1, max = 1}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [3] = {item = 'thermite', qty = {min = 1, max = 1}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [4] = {item = 'blueprint_pistol-receiver', qty = {min = 1, max = 1}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [5] = {item = 'blueprint_shotgun-receiver', qty = {min = 1, max = 1}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [6] = {item = 'blueprint_smg-receiver', qty = {min = 1, max = 1}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [7] = {item = 'blueprint_weapon_assaultsmg', qty = {min = 1, max = 1}, weight = 2, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [8] = {item = 'blueprint_rifle-receiver', qty = {min = 1, max = 1}, weight = 2, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [9] = {item = 'redchip', qty = {min = 1, max = 2}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [10] = {item = 'greenchip', qty = {min = 1, max = 2}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [11] = {item = 'bluechip', qty = {min = 1, max = 2}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [12] = {item = 'weed_bag', qty = {min = 1, max = 50}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [13] = {item = 'coke-bag', qty = {min = 1, max = 50}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [14] = {item = 'meth', qty = {min = 1, max = 50}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [15] = {item = 'acid_hit', qty = {min = 1, max = 50}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [16] = {item = 'recyclablematerial', qty = {min = 1, max = 20}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [17] = {item = 'bottle', qty = {min = 1, max = 20}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [18] = {item = 'can', qty = {min = 1, max = 20}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [19] = {item = 'blueprint_weapon_ak47', qty = {min = 1, max = 1}, weight = 1, prop = "prop_cs_package_01", emote = "mechanic4"},
+            [20] = {item = 'armor', qty = {min = 1, max = 2}, weight = 5, prop = "prop_cs_package_01", emote = "mechanic4"},
         }
     },
 }
