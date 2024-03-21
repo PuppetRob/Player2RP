@@ -20,7 +20,7 @@ if Config.Framework == "qb-core" then
     end
 
     lib.callback.register("flight-houserobbery:getOnlinePoliceCountQB", function(source)
-        local jobs = {"police", "statepolice", "fib"}
+        local jobs = {"lspd", "bcso", "highwaypatrol"}
         local CurrentCops = 0
         for k, v in pairs(jobs) do
             local players = QBCore.Functions.GetPlayers()
