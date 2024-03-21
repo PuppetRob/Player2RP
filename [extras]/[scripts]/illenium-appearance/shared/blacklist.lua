@@ -6,223 +6,223 @@ Config.Blacklist = {
             upperBody = {},
             lowerBody = {
                 {
-                    drawables = { 4, 32, 52, 117, 201 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 24 },
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 29 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 19, 43, 44, 120, 180, 213 },
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 179 },
+                    drawables = { },
                     jobs = {"firefighter", "ambulance"}
                 },
                 {
-                    drawables = { 181 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "firefighter", "ambulance", "highwaypatrol"}
                 },
                 {
-                    drawables = { 247 },
+                    drawables = { },
                     jobs = {"sapr"}
                 }
             },
             bags = {
                 {
-                    drawables = { 33, 35, 36, 58, 59, 66, 69, 74 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 34, 39, 52 },
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 53, 54, 60, 117, 118, 119 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 55 },
+                    drawables = { },
                     jobs = {"highwaypatrol"}
                 },
                 {
-                    drawables = { 31, 32 },
+                    drawables = { },
                     jobs = {"sast"}
                 },
                 {
-                    drawables = { 125 },
+                    drawables = { },
                     jobs = {"sapr"}
                 },
                 {
-                    drawables = { 111 },
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 37, 38, 70, 71, 115 },
+                    drawables = { },
                     jobs = {"ambulance"}
                 }
             },
             shoes = {},
             scarfAndChains = {
                 {
-                    drawables = { 2, 5, 6, 8, 42, 43, 110, 111, 178, 181, 182, 183, 196, 197, 198 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 45, 175},
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 126, 127, 189, 194, 201 },
+                    drawables = { },
                     jobs = {"ambulance"}
                 }
             },
             shirts = {
                 {
-                    drawables = { 37, 38, 39, 40, 42, 43, 44, 49, 53, 55, 56, 57, 58, 87, 104, 105, 106, 112, 116, 122, 130, 131 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 65, 66, 67, 71, 72, 113 },
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 114, 115 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 61, 62, 199, 200, 201, 202, 203, 204, 205, 206},
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 20, 54, 88 },
+                    drawables = { },
                     jobs = {"ambulance"}
                 },
                 {
-                    drawables = { 129, 153, 154, 155 },
+                    drawables = { },
                     jobs = {"firefighter", "ambulance"}
                 }
             },
             bodyArmor = {
                 {
-                    drawables = { 7, 10, 11, 18, 19, 21, 22, 26, 28, 31, 32, 33, 34, 74, 81, 86, 89, 100, 101, 107, 108, 109, 110, 111, 114, 126, 131 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 16, 24, 92, 93, 95, 96, 97, 98, 99, 115, 117, 127, 128, 129, 130, 132 },
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 17, 23, 25, 27, 77, 78, 79, 80, 82, 90, 104, 113, 116, 119 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 12 },
+                    drawables = { },
                     jobs = {"highwaypatrol"}
                 },
                 {
-                    drawables = { 70, 71, 72, 73, 75, 76, 112, 113, 133 },
+                    drawables = { },
                     jobs = {"sast"}
                 },
                 {
-                    drawables = { 137, 138, 139, 140 },
+                    drawables = { },
                     jobs = {"sapr"}
                 },
                 {
-                    drawables = { 58, 59, 61, 62, 63, 64, 65, 66 },
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 67, 68, 69, 123 },
+                    drawables = { },
                     jobs = {"ambulance"}
                 },
                 {
-                    drawables = { 1, 2, 13, 14, 29 },
+                    drawables = { },
                     jobs = {"ambulance", "firefighter"}
                 },
                 {
-                    drawables = { 60 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "ambulance", "highwaypatrol"}
                 },
                 {
-                    drawables = { 118, 120, 121 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "ambulance", "firefighter", "highwaypatrol"}
                 },
                 {
-                    drawables = { 135 },
+                    drawables = { },
                     gangs = {"aod"}
                 },
             },
             decals = {
                 {
-                    drawables = { 1, 2, 3, 10, 11, 42, 43, 44, 45, 179, 180, 181, 182, 183, 185, 190, 192 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 5, 8, 12, 13, 15 },
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 4, 6, 9, 184, 186, 191, 193 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 7, 188, 189 },
+                    drawables = { },
                     jobs = {"highwaypatrol"}
                 },
                 {
-                    drawables = { 198 },
+                    drawables = { },
                     jobs = {"sapr"}
                 },
                 {
-                    drawables = { 57, 78, 174},
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 26, 58, 59, 178 },
+                    drawables = { },
                     jobs = {"ambulance"}
                 }
             },
             jackets = {
                 {
-                    drawables = { 570, 597, 664 },
+                    drawables = { },
                 },
                 {
-                    drawables = { 2, 65, 81, 92, 93, 101, 102, 108, 111, 159, 160 },
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 17, 94, 99, 100, 156, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 609 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 74, 75, 77, 80, 118, 314, 315, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 584, 608, },
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 249, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528 },
+                    drawables = { },
                     jobs = {"ambulance"}
                 },
                 {
-                    drawables = { 31, 32, 103, 154, 166, 183 },
+                    drawables = { },
                     jobs = {"highwaypatrol"}
                 },
                 {
-                    drawables = { 606, 683, 684, 685, 686, 687, 688, 689 },
+                    drawables = { },
                     jobs = {"sapr"}
                 },
                 {
-                    drawables = { 110, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 549, 541 },
+                    drawables = { },
                     jobs = {"sast"}
                 },
                 {
-                    drawables = { 682, 669, 586, 585  },
+                    drawables = { },
                     gangs = {"aod"}
                 }
             }
@@ -230,35 +230,35 @@ Config.Blacklist = {
         props = {
             hats = {
                 {
-                    drawables = { 6, 7, 17, 79, 84, 238, 239 },
+                    drawables = { },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
                 {
-                    drawables = { 16, 48, 83, 237},
+                    drawables = { },
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 8, 10, 13, 33, 211, 212, 213, 214, 225, 228 },
+                    drawables = { },
                     jobs = {"bcso"}
                 },
                 {
-                    drawables = { 221, 230 },
+                    drawables = { },
                     jobs = {"highwaypatrol"}
                 },
                 {
-                    drawables = { 243 },
+                    drawables = { },
                     jobs = {"sapr"}
                 },
                 {
-                    drawables = { 206, 207, 208, 209, 210, 240, 241 },
+                    drawables = { },
                     jobs = {"sast"}
                 },
                 {
-                    drawables = { 45, 137, 138, 196, 197, 198, 199, 202, 227 },
+                    drawables = { },
                     jobs = {"firefighter"}
                 },
                 {
-                    drawables = { 111, 122, 203, 204},
+                    drawables = { },
                     jobs = {"ambulance"}
                 }
             },
