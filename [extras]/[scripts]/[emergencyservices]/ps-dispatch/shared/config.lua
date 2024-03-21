@@ -74,7 +74,9 @@ Config.WeaponWhitelist = {
 	"WEAPON_NEEDLER2_RED",
 	"WEAPON_RAYSHOTGUN_BLUE",
 	"WEAPON_RAYSHOTGUN_RED",
-    "WEAPON_PAINTGUN"
+    "WEAPON_PAINTGUN", 
+    "weapon_pepperspray",
+    "weapon_lesslethal"
 }
 
 Config.Blips = {

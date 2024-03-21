@@ -484,7 +484,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
         },
         [18] = {
-            name = "dnatestkit",
+            name = "weapon_lesslethal",
             price = 0,
             amount = 50,
             info = {},
