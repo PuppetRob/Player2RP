@@ -186,7 +186,7 @@ QBCore.Functions.CreateCallback('p2rp-jewellery:server:GetCops', function(source
   local src = source
 	local amount = 0
   for _, v in pairs(QBCore.Functions.GetQBPlayers()) do
-    if v.PlayerData.job.name == "lspd" and v.PlayerData.job.onduty or v.PlayerData.job.name == "bcso" and v.PlayerData.job.onduty then or v.PlayerData.job.name == "highwaypatrol" and v.PlayerData.job.onduty then
+    if v.PlayerData.job.name == "lspd" and v.PlayerData.job.onduty or v.PlayerData.job.name == "bcso" and v.PlayerData.job.onduty or v.PlayerData.job.name == "highwaypatrol" and v.PlayerData.job.onduty then
       amount = amount + 1
     end
   end
