@@ -69,10 +69,10 @@ Config = {
     DrawersSearchIcon = 'fas fa-hand-holding', -- Icon for the search
     
     -- Minigames
-    LockShellCircleMinigame = {circles = {min = 4, max = 6}, seconds = {min = 6, max = 6}}, -- Minigame for lockpicking the shell
-    LockIPLCircleMinigame = {circles = {min = 4, max = 6}, seconds = {min = 6, max = 6}}, -- Minigame for lockpicking the ipl
-    SearchShellCircleMinigame = {circles = {min = 2, max = 3}, seconds = {min = 6, max = 10}}, -- Minigame for searching the shell
-    SearchIPLCircleMinigame = {circles = {min = 4, max = 6}, seconds = {min = 6, max = 6}}, -- Minigame for searching the ipl
+    LockShellCircleMinigame = {circles = {min = 4, max = 6}, seconds = {min = 10, max = 12}}, -- Minigame for lockpicking the shell
+    LockIPLCircleMinigame = {circles = {min = 4, max = 6}, seconds = {min = 10, max = 12}}, -- Minigame for lockpicking the ipl
+    SearchShellCircleMinigame = {circles = {min = 2, max = 3}, seconds = {min = 10, max = 12}}, -- Minigame for searching the shell
+    SearchIPLCircleMinigame = {circles = {min = 4, max = 6}, seconds = {min = 10, max = 12}}, -- Minigame for searching the ipl
 
     -- Animations
     OpeningHouseAnimation = "keyfob", -- Animation for opening the house
