@@ -15,7 +15,7 @@ QBCore.Functions.CreateCallback('trainheist:server:checkPoliceCount', function(s
 
     for i = 1, #players do
         local player = QBCore.Functions.GetPlayer(players[i])
-        if player.PlayerData.job.name == 'police' then
+        if player.PlayerData.job.name == 'lspd' or player.PlayerData.job.name == 'bcso' or player.PlayerData.job.name == 'highwaypatrol' then
             policeCount = policeCount + 1
         end
     end
