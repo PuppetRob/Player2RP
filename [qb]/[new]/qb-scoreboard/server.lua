@@ -12,7 +12,7 @@ QBCore.Functions.CreateCallback('qb-scoreboard:server:GetActivity', function(sou
     local PoliceCount = 0
     local AmbulanceCount = 0
     for k, v in pairs(QBCore.Functions.GetQBPlayers()) do
-        if v.PlayerData.job.name == "police" and v.PlayerData.job.onduty then
+        if v.PlayerData.job.name == "lspd" and v.PlayerData.job.onduty or v.PlayerData.job.name == "bcso" and v.PlayerData.job.onduty or v.PlayerData.job.name == "highwaypatrol" and v.PlayerData.job.onduty then
             PoliceCount = PoliceCount + 1
         end
 
