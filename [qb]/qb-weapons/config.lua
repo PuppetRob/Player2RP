@@ -152,6 +152,9 @@ Config.DurabilityMultiplier = {
     weapon_fireextinguisher      = 0.08,
     weapon_hazardcan             = 0.08,
     weapon_fertilizercan         = 0.08,
+
+    -- //CUSTOM WEAPONS \\ --
+    weapon_lesslethal  = 0.08,
 }
 
 Config.WeaponRepairPoints = {
