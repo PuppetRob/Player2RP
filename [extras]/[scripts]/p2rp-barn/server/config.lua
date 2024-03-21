@@ -1,13 +1,12 @@
 Config = {
     VehicleName = 'sultanrs',
     VehicleLoc = {
-        x = -31.03,
-        y = 3028.25,
-        z = 40.35,
-        h = 133.25,
+        x = 62.75,
+        y = -331.23,
+        z = 55.5,
+        h = 69.45,
     }, 
 
-    
 
     VehicleCost = {
         copper = 100,
