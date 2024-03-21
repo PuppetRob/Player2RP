@@ -1,6 +1,6 @@
 Config = {}
 Config['ArtHeist'] = {
-    ['requiredPoliceCount'] = 1, -- required police count for start heist
+    ['requiredPoliceCount'] = 4, -- required police count for start heist
     ['nextRob'] = 3600, -- seconds for next heist
     ['startHeist'] ={ -- heist start coords
         pos = vector3(244.24, 373.25, 105.74),
