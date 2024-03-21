@@ -279,7 +279,7 @@ Config.Blips = {
         offset = false,
         flash = false
     },
-    ['VangelicoRobbery'] = {
+    ['vangelicorobbery'] = {
         radius = 0,
         sprite = 434,
         color = 5,

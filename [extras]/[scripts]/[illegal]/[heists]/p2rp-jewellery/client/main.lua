@@ -385,16 +385,16 @@ end)
 AddEventHandler('p2rp-jewellery:client:Thermite', function(store)
   local AlertChance = randomNum(1, 100)
   if checkTime(Config.VangelicoHours.alertmorn.start, Config.VangelicoHours.alertmorn.fin) or checkTime(Config.VangelicoHours.alertnight.start, Config.VangelicoHours.alertnight.fin) then
-    AlertChance = randomNum(1, 50)
+    AlertChance = randomNum(1, 100)
   else
     AlertChance = AlertChance
   end
 
-  if AlertChance <= 10 then
+  if AlertChance <= 100 then
     if Config.Dispatch == 'qb' then
       TriggerServerEvent('police:server:policeAlert', 'Suspicious Activity')
     elseif Config.Dispatch == 'ps' then
-      exports['ps-dispatch']:SuspiciousActivity()
+      exports['ps-dispatch']:VangelicoRobbery()
     elseif Config.Dispatch == 'cd' then
       alertsCD('suspicious')
     end
@@ -468,7 +468,7 @@ AddEventHandler('p2rp-jewellery:client:Thermite', function(store)
                   if Config.Dispatch == 'qb' then
                     TriggerServerEvent('police:server:policeAlert', 'Explosion Reported')
                   elseif Config.Dispatch == 'ps' then
-                    exports["ps-dispatch"]:Explosion()
+                    exports['ps-dispatch']:VangelicoRobbery()
                   elseif Config.Dispatch == 'cd' then
                     alertsCD('explosion')
                   end
