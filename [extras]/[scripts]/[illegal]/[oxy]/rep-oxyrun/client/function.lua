@@ -3,7 +3,7 @@ function Notification(msg, type , time)
 end
 
 function PoliceAlert()
-    exports['ps-dispatch']:SuspiciousActivity()
+    exports['ps-dispatch']:DrugSale()
 end
 
 function CreatePeds(boss)

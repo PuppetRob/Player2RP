@@ -510,7 +510,7 @@ Config.Blips = {
         offset = false,
         flash = false
     },
-    ['oxydeal'] = {
+    ['suspicioushandoff'] = {
         radius = 0,
         sprite = 486,
         color = 59,
