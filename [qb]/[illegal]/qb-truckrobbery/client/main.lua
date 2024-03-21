@@ -146,57 +146,16 @@ RegisterNetEvent('qb-armoredtruckheist:client:911alert', function()
 		if street2 ~= nil then
 			streetLabel = streetLabel .. " " .. street2
 		end
-		TriggerServerEvent("qb-armoredtruckheist:server:callCops", streetLabel, transCoords)
+		exports['ps-dispatch']:TruckRobbery()
+		--TriggerServerEvent("qb-armoredtruckheist:server:callCops", streetLabel, transCoords)
 		PlaySoundFrontend(-1, "Mission_Pass_Notify", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 0)
 		PoliceAlert = 1
 	end
 end)
 
 RegisterNetEvent('qb-armoredtruckheist:client:robberyCall', function(streetLabel, coords)
-	if PlayerJob.name == "police" then
-		local store = "Armored Truck"
-		PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-		TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
-			timeOut = 10000,
-			alertTitle = "Armored Truck Robbery Attempt",
-			coords = {
-				x = coords.x,
-				y = coords.y,
-				z = coords.z,
-			},
-			details = {
-				[1] = {
-					icon = '<i class="fas fa-university"></i>',
-					detail = store,
-				},
-				[2] = {
-					icon = '<i class="fas fa-globe-europe"></i>',
-					detail = streetLabel,
-				},
-			},
-			callSign = QBCore.Functions.GetPlayerData().metadata["callsign"],
-		})
-		local transG = 250
-		local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
-		SetBlipSprite(blip, 487)
-		SetBlipColour(blip, 4)
-		SetBlipDisplay(blip, 4)
-		SetBlipAlpha(blip, transG)
-		SetBlipScale(blip, 1.2)
-		SetBlipFlashes(blip, true)
-		BeginTextCommandSetBlipName('STRING')
-		AddTextComponentSubstringPlayerName("10-90: Armored Truck Robbery")
-		EndTextCommandSetBlipName(blip)
-		while transG ~= 0 do
-			Wait(180 * 4)
-			transG = transG - 1
-			SetBlipAlpha(blip, transG)
-			if transG == 0 then
-				SetBlipSprite(blip, 2)
-				RemoveBlip(blip)
-				return
-			end
-		end
+	if PlayerJob.name == "lspd" or PlayerJob.name == "bcso" or PlayerJob.name == "highwaypatrol" then
+		exports['ps-dispatch']:TruckRobbery()
 	end
 end)
 
