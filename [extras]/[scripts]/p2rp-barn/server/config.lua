@@ -1,5 +1,5 @@
 Config = {
-    VehicleName = 'sultanrs',
+    VehicleName = 'vectre',
     VehicleLoc = {
         x = 62.75,
         y = -331.23,
