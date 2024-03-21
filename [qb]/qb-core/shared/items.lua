@@ -2519,4 +2519,17 @@ underglow                   = { name = 'underglow', label = 'Underglow LEDS', we
       ['pet_water'] 			 		 = {['name'] = 'pet_water', 						['label'] = 'Pet Water', 						['weight'] = 1, 		['type'] = 'item', 		['image'] = 'pet_water.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pet Water'},
       ['pet_food'] 			 			 = {['name'] = 'pet_food', 							['label'] = 'Pet Food', 						['weight'] = 1, 		['type'] = 'item', 		['image'] = 'pet_food.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pet Food'},
       ['pet_medikit'] 					 = {['name'] = 'pet_medikit', 						['label'] = 'Pet Medikit', 						['weight'] = 1, 		['type'] = 'item', 		['image'] = 'pet_medikit.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Pet Medikit'},
-}
+
+      backpack1                    = { name = "backpack1", label = "Backpack", weight = 7500, type = "item", image = "backpack1.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A stylish backpack" },
+      backpack2                    = { name = "backpack2", label = "Backpack", weight = 15000, type = "item", image = "backpack2.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A stylish backpack" },
+      duffle1                      = { name = "duffle1", label = "Duffle bag", weight = 15000, type = "item", image = "duffle1.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A stylish duffle bag" },
+      briefcase                    = { name = "briefcase", label = "Briefcase", weight = 10000, type = "item", image = "briefcase.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A portable rectangular case used for carrying important documents, files, or other personal belongings." },
+      paramedicbag                 = { name = "paramedicbag", label = "Paramedic bag", weight = 5000, type = "item", image = "paramedicbag.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A medical bag used by paramedics, containing essential supplies for emergency care." },
+      policepouches                = { name = "policepouches", label = "Police Pouch", weight = 5000, type = "item", image = "policepouches.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A pouch used by police officers to store and carry essential supplies such as handcuffs, pepper spray, and other tactical equipment." },
+      policepouches1               = { name = "policepouches1", label = "Police Pouch", weight = 5000, type = "item", image = "policepouches1.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "A larger version of the police pouch used to store additional tactical gear and equipment." },
+      briefcaselockpicker          = { name = "briefcaselockpicker", label = "Briefcase Lockpicker", weight = 500, type = "item", image = "lockpick.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Briefcase Lockpicker" },
+
+
+
+
+    }

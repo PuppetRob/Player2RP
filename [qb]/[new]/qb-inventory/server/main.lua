@@ -538,18 +538,20 @@ local function GetStashItems(stashId)
 end
 
 local function SaveStashItems(stashId, items)
-	if Stashes[stashId].label == "Stash-None" or not items then return end
+	if Stashes[stashId].label == 'Stash-None' or not items then return end
 
 	for _, item in pairs(items) do
 		item.description = nil
 	end
 
-	MySQL.insert('INSERT INTO stashitems (stash, items) VALUES (:stash, :items) ON DUPLICATE KEY UPDATE items = :items', {
-		['stash'] = stashId,
-		['items'] = json.encode(items)
-	})
+	MySQL.insert('INSERT INTO stashitems (stash, items) VALUES (:stash, :items) ON DUPLICATE KEY UPDATE items = :items',
+		{
+			['stash'] = stashId,
+			['items'] = json.encode(items)
+		})
 
 	Stashes[stashId].isOpen = false
+	TriggerEvent('keep-harmony:stash->close', stashId) --- this is the line 
 end
 
 local function AddToStash(stashId, slot, otherslot, itemName, amount, info, created)
@@ -2532,4 +2534,10 @@ QBCore.Functions.CreateCallback('inventory:server:ConvertQuality', function(sour
     data.inventory = inventory
     data.other = other
     cb(data)
+end)
+
+exports('GetInventoryData', function(type, id)
+	if type == 'stash' then
+		return Stashes[id]
+	end
 end)
