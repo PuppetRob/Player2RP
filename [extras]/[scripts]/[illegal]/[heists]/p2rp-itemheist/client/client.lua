@@ -162,7 +162,7 @@ function CheckBuyerCoords()
                 DeleteEntity(car)
                 Citizen.Wait(20000)
                 TriggerServerEvent("QBCore:Server:AddItem", Config.ThermiteItem, math.random(Config.MinEarn,Config.MaxEarn))
-                TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['robbery_usb_01'], "add")
+                TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['c4_bomb'], "add")
                 TriggerEvent("p2rp-itemheist:ResetMission")
                 break
             end
@@ -196,6 +196,7 @@ function MissionBlip()
             Citizen.Wait(7)
             if InMilitaryPoint == true then
                 RemoveBlip(Mblip)
+                exports['ps-dispatch']:FortRobbery()
                 TriggerServerEvent('police:server:policeAlert', 'Attempted Zancudo Robbery')
                 break
             end

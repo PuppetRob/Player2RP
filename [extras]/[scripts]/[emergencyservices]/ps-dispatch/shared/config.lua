@@ -279,6 +279,16 @@ Config.Blips = {
         offset = false,
         flash = false
     },
+    ['fortrobbery'] = {
+        radius = 0,
+        sprite = 434,
+        color = 5,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
     ['vangelicorobbery'] = {
         radius = 0,
         sprite = 434,

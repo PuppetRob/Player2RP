@@ -16,7 +16,7 @@ Config.ThermiteItem = 'c4_bomb'
 
 Config.MinEarn = 1
 
-Config.MaxEarn = 2
+Config.MaxEarn = 3
 
 Config.NextRob = 7200 -- Time player can start the mission again (in seconds)
 
@@ -27,8 +27,8 @@ Config.StartPeds = {  -- Start ped locations + model
         Label = "Start Mission", -- Label for the target
         Ped = "csb_paige", -- Ped more can be found : https://docs.fivem.net/docs/game-references/ped-models/
         Coords = { -- Coords table  
-            PedCoords = vector3(-604.0787, -773.9486, 24.403778), -- Main coords for the ped vector3 format always
-            Heading = 189.80155, -- Heading for the ped
+            PedCoords = vector3(-579.99, -778.64, 24.02), -- Main coords for the ped vector3 format always
+            Heading = 83.29, -- Heading for the ped
             Distance = 2.0, -- Distance to interact with the ped
         },
     },

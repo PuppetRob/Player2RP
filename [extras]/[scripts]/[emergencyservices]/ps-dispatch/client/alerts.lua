@@ -328,6 +328,26 @@ local function HouseRobbery()
 end
 exports('HouseRobbery', HouseRobbery)
 
+local function FortRobbery()
+    local coords = GetEntityCoords(cache.ped)
+
+    local dispatchData = {
+        message = locale('fortrobbery'),
+        codeName = 'fortrobbery',
+        code = '10-90',
+        icon = 'fas fa-truck-field',
+        priority = 2,
+        coords = coords,
+        gender = GetPlayerGender(),
+        street = GetStreetAndZone(coords),
+        alertTime = nil,
+        jobs = { 'leo' }
+    }
+
+    TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
+end
+exports('FortRobbery', FortRobbery)
+
 local function YachtHeist()
     local coords = GetEntityCoords(cache.ped)
 
