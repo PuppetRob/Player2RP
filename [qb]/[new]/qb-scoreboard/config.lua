@@ -60,7 +60,7 @@ Config.IllegalActions = {
         busy = false,
     },
     ["unionheist"] = {
-        minimum = 7,
+        minimum = 8,
         busy = false,
     },
     ["pacificbank"] = {
@@ -68,7 +68,7 @@ Config.IllegalActions = {
         busy = false,
     },
     ["hiddenfibheist"] = {
-        minimum = 8,
+        minimum = 10,
         busy = false,
     },
 

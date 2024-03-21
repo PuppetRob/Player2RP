@@ -55,7 +55,7 @@ Config.Burnerphones = {
     -- You can add as man phone items as you want by following the first burnerphone's template
     ['burnerphone'] = { -- Item used to call
         CallCops = true, -- When true, has a chance to call cops when ordering with this phone
-        CopsNeeded = 0, -- Cops needed to be on duty to be able to order from this phone
+        CopsNeeded = 2, -- Cops needed to be on duty to be able to order from this phone
         VPNEnabled = false, -- Set true if you want the VPN Item to work with this phone, disabling the cop call.
 
         BreakChance = 50, -- if BatteryType == "chance, chance of the phone breaking after using it (is a %)

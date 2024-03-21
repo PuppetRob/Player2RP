@@ -1,7 +1,7 @@
 Config = {}
 
 Config['TrainHeist'] = {
-    ['requiredPoliceCount'] = 4, -- required police count for start heist
+    ['requiredPoliceCount'] = 5, -- required police count for start heist
     ['nextRob'] = 3600, -- seconds for next heist
     ['requiredItems'] = { -- add those to database or shared
         'cutter',
