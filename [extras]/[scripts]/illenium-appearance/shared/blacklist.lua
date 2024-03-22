@@ -126,7 +126,7 @@ Config.Blacklist = {
                     jobs = {"lspd"}
                 },
                 {
-                    drawables = { 17, 23, 25, 27, 79, 80, 81, 82, 83, 84, 92, 106, 110, 113, 115, 118, 121,     },
+                    drawables = { 17, 23, 25, 27, 79, 80, 81, 82, 83, 84, 92, 106, 110, 113, 115, 118, 121 },
                     jobs = {"bcso"}
                 },
                 {
@@ -158,7 +158,7 @@ Config.Blacklist = {
                     jobs = {"lspd", "bcso", "ambulance", "firefighter", "highwaypatrol"}
                 },
                 {
-                    drawables = { },
+                    drawables = { 137 },
                     gangs = {"aod"}
                 },
             },
@@ -198,6 +198,9 @@ Config.Blacklist = {
             },
             jackets = {
                 {
+                    drawables = { 91, 445, 446, 447, 448, 449, 452, 453, 454, 456, 457, 458, 459, 460, 462, 465, 466, 468, 469, 470, 471, 474, 475, 476, 482, 483, 484, 487, 488, 489, 493, 494, 498, 511, 512, 515, 516 },
+                },
+                {
                     drawables = { 95, 533, 534 },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
                 },
@@ -226,11 +229,11 @@ Config.Blacklist = {
                     jobs = {"sapr"}
                 },
                 {
-                    drawables = { 110, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 599, 600 },
+                    drawables = { 110, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600 },
                     jobs = {"sast"}
                 },
                 {
-                    drawables = { },
+                    drawables = { 741, 728, 645, 644 },
                     gangs = {"aod"}
                 }
             }
