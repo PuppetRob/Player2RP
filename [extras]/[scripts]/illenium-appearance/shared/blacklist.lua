@@ -196,7 +196,7 @@ Config.Blacklist = {
                     jobs = {"ambulance"}
                 }
             },
-            jackets = {,
+            jackets = {
                 {
                     drawables = { 95, 533, 534 },
                     jobs = {"lspd", "bcso", "highwaypatrol"}
