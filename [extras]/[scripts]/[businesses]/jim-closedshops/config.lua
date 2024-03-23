@@ -34,11 +34,11 @@ Config = {
 				['caffeagra'] = 100,
 				['bigfruit'] = 100,
 			},
-		},
+		}, ]]
 		['burgershot'] = {
 			enable = true,
 			locations = {
-				[1] = vec4(-1187.05, -876.65, 13.75, 32.0),
+				[1] = vec4(-1191.05, -878.31, 13.62, 35.61),
 			},
 			ped = "U_M_Y_BurgerDrug_01",
 			--prop = "prop_vend_snak_01",
@@ -59,7 +59,7 @@ Config = {
 				['chickenwrap'] = 100,
 			},
 		},
-		['catcafe'] = {
+	--[[	['catcafe'] = {
 			enable = true,
 			locations = {
 				[1] = vec4(-579.49, -1070.62, 22.33, 180.0),
@@ -129,8 +129,8 @@ Config = {
 			locations = {
 				[1] = vec4(793.6, -742.23, 27.27, 90.0),
 			},
-			--ped = "S_M_Y_Chef_01",
-			prop = "prop_vend_snak_01",
+			ped = "S_M_Y_Chef_01",
+			--prop = "prop_vend_snak_01",
 			itemlist = {
 				--Food
 				['capricciosabox'] = 100,
@@ -151,8 +151,8 @@ Config = {
 			locations = { 
 				[1] = vec4(192.81, -239.03, 54.07, 154.43),
 			},
-			--ped = "S_M_Y_Chef_01",
-			prop = "prop_vend_snak_01",
+			ped = "S_M_Y_Chef_01",
+			--prop = "prop_vend_snak_01",
 			itemlist = {
 				--Food
 				['drug_scales'] = 2500,
