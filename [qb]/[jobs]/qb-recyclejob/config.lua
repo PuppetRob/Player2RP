@@ -3,7 +3,7 @@ Config = {
 	-- UseTarget should only be set to true when using qb-target
 	UseTarget = GetConvar('UseTarget', 'false') == 'true',
 
-	OutsideLocation 	= vector4(55.82, 6472.04, 31.43, 40.97),
+	OutsideLocation 	= vector4(55.68, 6472.17, 31.42, 46.42),
 	InsideLocation 		= vector4(1073.0, -3102.49, -39.0, 266.61),
 	DutyLocation 		= vector4(1048.7, -3100.62, -38.2, 88.02),
 	DropLocation 		= vector4(1048.224, -3097.071, -38.999, 274.810),
