@@ -197,12 +197,12 @@ Config = {
         ['ruby_earring_silver'] = 325,
         ['sapphire_earring_silver'] = 325, ]]
 
-        ['gold_ring'] = 110,
-        ['goldchain'] = 110,
-        ['goldearring'] = 110,
-        ['silver_ring'] = 90,
-        ['silverchain'] = 90,
-        ['silverearring'] = 90, 
+        ['gold_ring'] = 80,
+        ['goldchain'] = 80,
+        ['goldearring'] = 80,
+        ['silver_ring'] = 70,
+        ['silverchain'] = 70,
+        ['silverearring'] = 70, 
 
 	},
 
@@ -291,13 +291,9 @@ Config = {
 }
 Crafting = {
 	SmeltMenu = {
-		{ ["copper"] = { ["copperore"] = 1 }, ['amount'] = 4 },
+		{ ["copper"] = { ["copperore"] = 2 }, ['amount'] = 4 },
 		{ ["goldingot"] = { ["goldore"] = 2 } },
-		{ ["goldingot"] = { ["goldchain"] = 3 } },
-		{ ["goldingot"] = { ["gold_ring"] = 4 } },
-		{ ["silveringot"] = { ["silverore"] = 1 } },
-		{ ["silveringot"] = { ["silverchain"] = 3 } },
-		{ ["silveringot"] = { ["silver_ring"] = 4 } },
+		{ ["silveringot"] = { ["silverore"] = 2 } },
 		{ ["iron"] = { ["ironore"] = 1 } },
 		{ ["steel"] = { ["ironore"] = 1, ["carbon"] = 1 } },
 		{ ["aluminium"] = { ["can"] = 2, }, ['amount'] = 3 },
