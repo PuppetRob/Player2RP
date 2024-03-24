@@ -94,7 +94,7 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         {
             id = 2,
             header = "Metal Trash",
-            txt = "Trade 50 Metal Trash for 30 Metal Scrap!",
+            txt = "Trade 30 Metal Trash for 100 Metal Scrap!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
@@ -107,7 +107,7 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         {
             id = 3,
             header = "Iron Trash",
-            txt = "Trade 50 Iron Trash for 30 Iron",
+            txt = "Trade 30 Iron Trash for 100 Iron",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
@@ -119,92 +119,53 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         },
         {
             id = 4,
-            header = "Bullet Casings",
-            txt = "Trade 50 Bullet Casings for 30 Copper!",
+            header = "aluminium Cans",
+            txt = "Trade 30 aluminium Cans for 100 Aluminium",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
                 args = {
                     id = 4,
-                    item = 'bulletcasings'
-                }
-            }
-        },
-        {
-            id = 5,
-            header = "aluminium Cans",
-            txt = "Trade 50 aluminium Cans for 30 Aluminium",
-            params = {
-                isServer = true,
-                event = "qb-metaldetector:server:CommonTrade",
-                args = {
-                    id = 5,
                     item = 'aluminiumcan'
                 }
             }
         },
         {
-            id = 6,
+            id = 5,
             header = "Steel Trash",
-            txt = "Trade 50 Steel Trash for 25 Steel!",
+            txt = "Trade 30 Steel Trash for 100 Steel!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
                 args = {
-                    id = 6,
+                    id = 5,
                     item = 'steeltrash'
                 }
             }
         },
         {
-            id = 7,
+            id = 6,
             header = "Broken Knives",
-            txt = "Trade 5 Broken Knives for a Dagger!",
+            txt = "Trade 5 Broken Knives for a Switchblade!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
                 args = {
-                    id = 7,
+                    id = 6,
                     item = 'brokenknife'
                 }
             }
         },
         {
-            id = 8,
-            header = "Broken Metal Detectors",
-            txt = "Trade 1 Broken Metal Detectors for $30!",
-            params = {
-                isServer = true,
-                event = "qb-metaldetector:server:CommonTrade",
-                args = {
-                    id = 8,
-                    item = 'brokendetector'
-                }
-            }
-        },
-        {
-            id = 9,
-            header = "House Keys",
-            txt = "Trade 50 House Keys for 30 Copper!",
-            params = {
-                isServer = true,
-                event = "qb-metaldetector:server:CommonTrade",
-                args = {
-                    id = 9,
-                    item = 'housekeys'
-                }
-            }
-        },
-        {
-        id = 10,
-        header = "Broken Phones",
-        txt = "Trade 1 Broken Phones for $25!",
+        id = 7,
+        header = "Broken Gameboy",
+        txt = "Trade 1 Broken Gameboy for $100!",
         params = {
             isServer = true,
             event = "qb-metaldetector:server:CommonTrade",
             args = {
-                id = 10,
-                item = 'brokenphone'
+                id = 7,
+                item = 'brokengameboy'
                 }
             }
         },
@@ -223,7 +184,7 @@ RegisterNetEvent('qb-metaldetector:RareTradingMenu', function(data)
         {
             id = 2,
             header = "Burried Treasure",
-            txt = "Trade 1 Burried Treasure for $10,000!",
+            txt = "Trade 1 Burried Treasure for $5,000!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:RareTrade",
@@ -236,7 +197,7 @@ RegisterNetEvent('qb-metaldetector:RareTradingMenu', function(data)
         {
             id = 3,
             header = "Treasure Key",
-            txt = "Trade 1 Treasure Key for $1,500!",
+            txt = "Trade 1 Treasure Key for $1,200!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:RareTrade",
@@ -261,78 +222,39 @@ RegisterNetEvent('qb-metaldetector:RareTradingMenu', function(data)
         },
         {
             id = 5,
-            header = "Golden Nuggets",
-            txt = "Trade 1 Golden Nuggets $200!",
+            header = "Ancient Coin",
+            txt = "Trade 1 Ancient Coin for $800!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:RareTrade",
                 args = {
                     id = 5,
-                    item = 'goldennugget'
-                }
-            }
-        },
-        {
-            id = 6,
-            header = "Gold Coin",
-            txt = "Trade 1 Gold Coin for $300!",
-            params = {
-                isServer = true,
-                event = "qb-metaldetector:server:RareTrade",
-                args = {
-                    id = 6,
-                    item = 'goldcoin'
-                }
-            }
-        },
-        {
-            id = 7,
-            header = "Ancient Coin",
-            txt = "Trade 1 Ancient Coin for $1000!",
-            params = {
-                isServer = true,
-                event = "qb-metaldetector:server:RareTrade",
-                args = {
-                    id = 7,
                     item = 'ancientcoin'
                 }
             }
         },
         {
-            id = 8,
+            id = 6,
             header = "WW2 Relic",
             txt = "Trade 1 WW2 Relic for $800!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:RareTrade",
                 args = {
-                    id = 8,
+                    id = 6,
                     item = 'ww2relic'
                 }
             }
         },
         {
-            id = 9,
-            header = "Broken Gameboys",
-            txt = "Trade 10 Broken Gameboys for 1 working Gameboy!",
-            params = {
-                isServer = true,
-                event = "qb-metaldetector:server:RareTrade",
-                args = {
-                    id = 9,
-                    item = 'brokengameboy'
-                }
-            }
-        },
-        {
-            id = 10,
+            id = 7,
             header = "Pocket Watch",
-            txt = "Trade 1 Pocket watch for $150!",
+            txt = "Trade 1 Pocket watch for $600!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:RareTrade",
                 args = {
-                    id = 10,
+                    id = 7,
                     item = 'pocketwatch'
                 }
             }

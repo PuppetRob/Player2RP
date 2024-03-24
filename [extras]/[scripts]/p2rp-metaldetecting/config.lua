@@ -4,7 +4,7 @@ Config = {}
 Config.DebugPoly = false 
 
 -- common trade ped location & ped hash
-Config.CommonPedLocation = vector4(-1158.44, -1986.14, 13.16, 322.02)
+Config.CommonPedLocation = vector4(346.77, 3405.45, 36.85, 15.96)
 Config.CommonPed = 'mp_m_forgery_01'
 
 -- rare trade ped location & ped hash
@@ -28,24 +28,25 @@ Config.CommonAmount = math.random(1,1)
 Config.RareAmount = 1 
 
 -- %6 chance of overheating. 
-Config.OverheatChance = 6 
+Config.OverheatChance = 5 
 
 -- how long the detecter gets overheated for
 Config.OverheatTime = math.random(30000, 40000) 
 
 -- list of common items detectable
 Config.CommonItems = {
-    'goldore',
+    'metaltrash',
     'irontrash',
-    'bullet_casing',
+    'aluminiumcan',
     'steeltrash',
+    'bullet_casing',
     'brokenknife',
-    'brokendetector',
-    'brokenphone',
     'metalscrap',
+    'steel',
     'copper',
     'metal-bolt',
     'metal-screw',
+    'brokengameboy',
 }
 
 -- list of rare items detectable
@@ -55,15 +56,13 @@ Config.RareItems = {
     'antiquecoin',
     'ancientcoin',
     'ww2relic',
-    'brokengameboy',
     'pocketwatch',
-    'seccard',
-    'advancedrepairkit',
     'iphone',
     'greenchip',
     'weapon_navyrevolver',
-    'robbery_red_pen',
-    'electronickit', 
+    'electronickit',
+    'shedkey',
+    'rustykey',  
 }
 
 -- metal detection zones

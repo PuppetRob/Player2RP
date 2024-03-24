@@ -23,427 +23,407 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 Config.PawnItems = {
     [1] = {
-        item = 'goldchain',
-        price = math.random(150,200)
-    },
-    [2] = {
-        item = "diamond_ring",
-        price = math.random(150, 300)
-    },
-    [3] = {
         item = "rolex",
         price = math.random(250, 250)
     },
-    [4] = {
-        item = "10kgoldchain",
-        price = math.random(200, 225)
-    },
-    [5] = {
+    [2] = {
         item = "tablet",
         price = math.random(150,200)
     },
-    [6] = {
+    [3] = {
         item = "iphone",
         price = math.random(210, 230)
     },
-    [7] = {
+    [4] = {
         item = "samsungphone",
         price = math.random(100, 220)
     },
-    [8] = {
+    [5] = {
         item = "bobross",
         price = math.random(100, 220)
     },
-    [9] = {
+    [6] = {
         item = "actionfigure",
         price = math.random(100, 220)
     },
-    [10] = {
+    [7] = {
         item = "gamecube",
         price = math.random(100, 220)
     },
-    [11] = {
+    [8] = {
         item = "xboxx",
         price = math.random(100, 220)
     },
-    [12] = {
+    [9] = {
         item = "ps2",
         price = math.random(100, 220)
     },
-    [13] = {
+    [10] = {
         item = "ps5",
         price = math.random(100, 220)
     },
-    [14] = {
-        item = "brokendetector",
-        price = math.random(100, 220)
-    },
-    [15] = {
+    [12] = {
         item = "binoculars",
         price = math.random(100, 220)
     },
-
-    [16] = {
+    [13] = {
         item = "walkstick",
         price = math.random(100, 220)
     },
-    [17] = {
+    [14] = {
         item = "weapon_navyrevolver",
         price = math.random(100, 220)
     },
-
-    [18] = {
+    [15] = {
         item = "burriedtreasure",
         price = math.random(1000, 2220)
     },
-    [19] = {
+    [16] = {
         item = "treasurekey",
-        price = math.random(100, 220)
+        price = math.random(350, 450)
     },
-    [20] = {
+    [17] = {
         item = "antiquecoin",
-        price = math.random(300, 420)
+        price = math.random(300, 350)
     },
-    [21] = {
+    [18] = {
         item = "ancientcoin",
         price = math.random(300, 420)
     },
-    [22] = {
+    [19] = {
         item = "ww2relic",
         price = math.random(300, 420)
     },
-    [23] = {
+    [20] = {
         item = "pocketwatch",
         price = math.random(300, 420)
     },
-    [24] = {
+    [21] = {
         item = "nokia",
         price = math.random(100, 420)
     }, 
-    [25] = {
+    [22] = {
         item = "dusty_usb",
         price = math.random(80, 120)
     },
-    [26] = {
+    [23] = {
         item = "yellow_diamond",
         price = math.random(380000, 450000)
     }, 
-    [27] = {
+    [24] = {
         item = "goldbar",
         price = math.random(750, 950)
-    }, 
+    },
+    [25] = {
+        item = "radioscanner",
+        price = math.random(500, 750)
+    },
+    [26] = {
+        item = "green-card",
+        price = math.random(200, 350)
+    },
+    [27] = {
+        item = "trojan_usb",
+        price = math.random(50, 75)
+    },
+    [28] = {
+        item = "robbery_green_laptop",
+        price = math.random(600, 750)
+    },
+    [29] = {
+        item = "seccard",
+        price = math.random(600, 750)
+    },
+    [30] = {
+        item = "printerdocument",
+        price = math.random(10, 20)
+    },
+    [31] = {
+        item = "gatecrack",
+        price = math.random(150, 250)
+    },
+    [32] = {
+        item = "agraphicnovel",
+        price = math.random(350, 550)
+    },
+    [33] = {
+        item = "redchip",
+        price = math.random(150, 200)
+    },
+    [34] = {
+        item = "greenchip",
+        price = math.random(250, 350)
+    },
+    [35] = {
+        item = "bluechip",
+        price = math.random(250, 350)
+    },
+    [36] = {
+        item = "television",
+        price = math.random(450, 550)
+    },
+    [37] = {
+        item = "microwave",
+        price = math.random(150, 250)
+    },
+    [38] = {
+        item = "painting",
+        price = math.random(450, 550)
+    },
+    [39] = {
+        item = "safe",
+        price = math.random(800, 1250)
+    },
+    [40] = {
+        item = "robbery_hdd_01",
+        price = math.random(5000, 6000)
+    },
+    [41] = {
+        item = "atmkit",
+        price = math.random(180, 450)
+    },
+
+    -- // HOUSE ROBBERYS \\ --
+    [42] = {
+        item = "flight_artpiece",
+        price = math.random(180, 450)
+    },
+    [43] = {
+        item = "flight_television",
+        price = math.random(180, 450)
+    },
+    [44] = {
+        item = "musicequipment",
+        price = math.random(180, 450)
+    },
+    [45] = {
+        item = "pcequipment",
+        price = math.random(180, 450)
+    },
+    [46] = {
+        item = "microwave",
+        price = math.random(180, 450)
+    },
+    [47] = {
+        item = "flight_painting",
+        price = math.random(180, 450)
+    },
+    [48] = {
+        item = "flight_painting2",
+        price = math.random(180, 450)
+    },
+    [49] = {
+        item = "flight_guitar",
+        price = math.random(180, 450)
+    },
+    [50] = {
+        item = "flight_suitcase",
+        price = math.random(180, 450)
+    },
+ 
+
 
     -- // Pokemon Cards Normal \\ --
-    [28] = {
+    [51] = {
         item = "abra",
         price = math.random(10, 50)
     },
-    [29] = {
+    [52] = {
         item = "aerodactyl",
         price = math.random(10, 50)
     },
-    [30] = {
+    [53] = {
         item = "alakazam",
         price = math.random(10, 50)
     },
-    [31] = {
+    [54] = {
         item = "arbok",
         price = math.random(10, 50)
     },
-    [32] = {
+    [55] = {
         item = "arcanine",
         price = math.random(10, 50)
     },
-    [33] = {
+    [56] = {
         item = "articuno",
         price = math.random(10, 50)
     },
-    [34] = {
+    [57] = {
         item = "beedrill",
         price = math.random(10, 50)
     },
-    [35] = {
+    [58] = {
         item = "bellsprout",
         price = math.random(10, 50)
     },
-    [36] = {
+    [59] = {
         item = "blastoise",
         price = math.random(10, 50)
     },
-    [37] = {
+    [60] = {
         item = "butterfree",
         price = math.random(10, 50)
     },
-    [38] = {
+    [61] = {
         item = "caterpie",
         price = math.random(10, 50)
     },
-    [39] = {
+    [62] = {
         item = "chansey",
         price = math.random(10, 50)
     },
-    [40] = {
+    [63] = {
         item = "charizard",
         price = math.random(10, 50)
     },
-    [41] = {
+    [64] = {
         item = "charmander",
         price = math.random(10, 50)
     },
-    [42] = {
+    [65] = {
         item = "charmeleon",
         price = math.random(10, 50)
     },
-    [43] = {
+    [66] = {
         item = "clefable",
         price = math.random(10, 50)
     },
-    [44] = {
+    [67] = {
         item = "clefairy",
         price = math.random(10, 50)
     },
-    [45] = {
+    [68] = {
         item = "cloyster",
         price = math.random(10, 50)
     },
-    [46] = {
+    [69] = {
         item = "cubone",
         price = math.random(10, 50)
     },
-    [47] = {
+    [70] = {
         item = "dewgong",
         price = math.random(10, 50)
     },
-    [48] = {
+    [71] = {
         item = "diglett",
         price = math.random(10, 50)
     },
-    [49] = {
+    [72] = {
         item = "ditto",
         price = math.random(10, 50)
     },
-    [50] = {
+    [73] = {
         item = "dodrio",
         price = math.random(10, 50)
     },
-    [51] = {
+    [74] = {
         item = "doduo",
         price = math.random(10, 50)
     },
-    [52] = {
+    [75] = {
         item = "dragonair",
         price = math.random(10, 50)
     },
-    [53] = {
+    [76] = {
         item = "dragonite",
         price = math.random(10, 50)
     },
-    [54] = {
+    [77] = {
         item = "dratini",
         price = math.random(10, 50)
     },
-    [55] = {
+    [78] = {
         item = "drowzee",
         price = math.random(10, 50)
     },
-    [56] = {
+    [79] = {
         item = "dugtrio",
         price = math.random(10, 50)
     },
-    [57] = {
+    [80] = {
         item = "eevee",
         price = math.random(10, 50)
     },
-    [58] = {
+    [81] = {
         item = "ekans",
         price = math.random(10, 50)
     },
-
-    [59] = {
+    [82] = {
         item = "electabuzz",
         price = math.random(10, 50)
     },
-
-    [60] = {
+    [83] = {
         item = "electrode",
         price = math.random(10, 50)
     },
-
-    [61] = {
+    [84] = {
         item = "exeggcute",
         price = math.random(10, 50)
     },
-
-    [62] = {
+    [85] = {
         item = "exeggutor",
         price = math.random(10, 50)
     },
-
-    [63] = {
+    [86] = {
         item = "farfetchd",
         price = math.random(10, 50)
     },
-
-    [64] = {
+    [87] = {
         item = "fearow",
         price = math.random(10, 50)
     },
 
-    [65] = {
+    [88] = {
         item = "flareon",
         price = math.random(10, 50)
     },
 
-    [66] = {
+    [89] = {
         item = "gastly",
         price = math.random(10, 50)
     },
-
-    [67] = {
+    [90] = {
         item = "gengar",
         price = math.random(10, 50)
     },
-
-    [68] = {
+    [91] = {
         item = "geodude",
         price = math.random(10, 50)
     },
-
-    [69] = {
+    [92] = {
         item = "gloom",
         price = math.random(10, 50)
     },
-
-    [70] = {
+    [93] = {
         item = "golbat",
         price = math.random(10, 50)
     },
-
-    [71] = {
+    [94] = {
         item = "goldeen",
         price = math.random(10, 50)
     },
-
-    [72] = {
+    [95] = {
         item = "golduck",
         price = math.random(10, 50)
     },
-
-    [73] = {
+    [96] = {
         item = "golem",
         price = math.random(10, 50)
     },
-
-    [74] = {
+    [97] = {
         item = "graveler",
         price = math.random(10, 50)
     },
-    [75] = {
+    [98] = {
         item = "grimer",
         price = math.random(10, 50)
     },
-    [76] = {
+    [99] = {
         item = "growlithe",
         price = math.random(10, 50)
     },
-    [77] = {
-        item = "gyarados",
-        price = math.random(10, 50)
-    },
-    [78] = {
-        item = "haunter",
-        price = math.random(10, 50)
-    },
-    [79] = {
-        item = "hitmonchan",
-        price = math.random(10, 50)
-    },
-    [80] = {
-        item = "hitmonlee",
-        price = math.random(10, 50)
-    },
-    [81] = {
-        item = "horsea",
-        price = math.random(10, 50)
-    },
-
-    [82] = {
-        item = "hypno",
-        price = math.random(10, 50)
-    },
-    [83] = {
-        item = "ivysaur",
-        price = math.random(10, 50)
-    },
-    [84] = {
-        item = "jigglypuff",
-        price = math.random(10, 50)
-    },
-    [85] = {
-        item = "jolteon",
-        price = math.random(10, 50)
-    },
-
-    [86] = {
-        item = "jynx",
-        price = math.random(10, 50)
-    },
-    [87] = {
-        item = "kabuto",
-        price = math.random(10, 50)
-    },
-    [88] = {
-        item = "kabutops",
-        price = math.random(10, 50)
-    },
-    [89] = {
-        item = "kadabra",
-        price = math.random(10, 50)
-    },
-
-    [90] = {
-        item = "kakuna",
-        price = math.random(10, 50)
-    },
-    [91] = {
-        item = "kangaskhan",
-        price = math.random(10, 50)
-    },
-    [92] = {
-        item = "kingler",
-        price = math.random(10, 50)
-    },
-    [93] = {
-        item = "koffing",
-        price = math.random(10, 50)
-    },
-
-    [94] = {
-        item = "krabby",
-        price = math.random(10, 50)
-    },
-    [95] = {
-        item = "lapras",
-        price = math.random(10, 50)
-    },
-    [96] = {
-        item = "lickitung",
-        price = math.random(10, 50)
-    },
-    [97] = {
-        item = "machamp",
-        price = math.random(10, 50)
-    },
-    [98] = {
-        item = "machoke",
-        price = math.random(10, 50)
-    },
-    [99] = {
-        item = "machop",
-        price = math.random(10, 50)
-    },
     [100] = {
-        item = "magikarp",
+        item = "gyarados",
         price = math.random(10, 50)
     },
     [101] = {
@@ -711,12 +691,10 @@ Config.PawnItems = {
         item = "tauros",
         price = math.random(10, 50)
     },
-
-  [161] = {
+    [161] = {
         item = "tentacool",
         price = math.random(10, 50)
     }, 
-
     [162] = {
         item = "tentacruel",
         price = math.random(10, 50)
@@ -873,6 +851,7 @@ Config.PawnItems = {
         price = math.random(500, 1000)
     },
 
+
     -- // Pacific Heist Items \\ --
     [196] = {
         item = "vandiamond",
@@ -894,6 +873,8 @@ Config.PawnItems = {
         item = "vanpogo",
         price = math.random(45000, 50000)
     },
+
+    -- // KEYS \\ --
     [201] = {
         item = "metalkey",
         price = math.random(500, 750)
@@ -906,90 +887,214 @@ Config.PawnItems = {
         item = "rustykey",
         price = math.random(500, 750)
     },
+
+    --// GEMS \\ --
+
+    -- RINGS GOLD
     [204] = {
-        item = "radioscanner",
-        price = math.random(500, 750)
+        item = "diamond_ring",
+        price = math.random(300, 380)
     },
     [205] = {
-        item = "green-card",
-        price = math.random(200, 350)
+        item = "emerald_ring",
+        price = math.random(300, 380)
     },
     [206] = {
-        item = "trojan_usb",
-        price = math.random(50, 75)
+        item = "emerald_ring",
+        price = math.random(300, 380)
     },
     [207] = {
-        item = "robbery_green_laptop",
-        price = math.random(600, 750)
+        item = "sapphire_ring",
+        price = math.random(300, 380)
     },
+
+    -- RINGS SILVER
     [208] = {
-        item = "seccard",
-        price = math.random(600, 750)
+        item = "diamond_ring_silver",
+        price = math.random(250, 300)
     },
     [209] = {
-        item = "printerdocument",
-        price = math.random(10, 20)
+        item = "emerald_ring_silver",
+        price = math.random(250, 300)
     },
     [210] = {
-        item = "gatecrack",
-        price = math.random(150, 250)
+        item = "ruby_ring_silver",
+        price = math.random(250, 300)
     },
     [211] = {
-        item = "agraphicnovel",
-        price = math.random(350, 550)
+        item = "sapphire_ring_silver",
+        price = math.random(250, 300)
     },
+
+    -- NECKLACE GOLD
     [212] = {
-        item = "silver_ring",
-        price = math.random(50, 100)
+        item = "diamond_necklace",
+        price = math.random(300, 380)
     },
     [213] = {
-        item = "ruby_ring_silver",
-        price = math.random(250, 350)
+        item = "emerald_necklace",
+        price = math.random(300, 380)
     },
     [214] = {
-        item = "emerald_necklace",
-        price = math.random(150, 250)
+        item = "ruby_necklace",
+        price = math.random(300, 380)
     },
     [215] = {
-        item = "silverchain",
-        price = math.random(150, 250)
+        item = "sapphire_necklace",
+        price = math.random(300, 380)
     },
+
+    -- NECKLACE SILVER
     [216] = {
-        item = "redchip",
-        price = math.random(150, 200)
+        item = "diamond_necklace_silver",
+        price = math.random(250, 300)
     },
     [217] = {
-        item = "greenchip",
-        price = math.random(250, 350)
+        item = "emerald_necklace_silver",
+        price = math.random(250, 300)
     },
     [218] = {
-        item = "bluechip",
-        price = math.random(250, 350)
+        item = "ruby_necklace_silver",
+        price = math.random(250, 300)
     },
     [219] = {
-        item = "television",
-        price = math.random(450, 550)
+        item = "sapphire_necklace_silver",
+        price = math.random(250, 300)
     },
+
+    -- EARRING GOLD
     [220] = {
-        item = "microwave",
-        price = math.random(150, 250)
+        item = "diamond_earring",
+        price = math.random(300, 380)
     },
     [221] = {
-        item = "painting",
-        price = math.random(450, 550)
+        item = "emerald_earring",
+        price = math.random(300, 380)
     },
     [222] = {
-        item = "safe",
-        price = math.random(800, 1250)
+        item = "ruby_earring",
+        price = math.random(300, 380)
     },
     [223] = {
-        item = "robbery_hdd_01",
-        price = math.random(5000, 6000)
+        item = "sapphire_earring",
+        price = math.random(300, 380)
     },
+
+    -- EARRING SILVER
     [224] = {
-        item = "atmkkit",
-        price = math.random(180, 450)
-    }
+        item = "diamond_earring_silver",
+        price = math.random(250, 300)
+    },
+    [225] = {
+        item = "emerald_earring_silver",
+        price = math.random(250, 300)
+    },
+    [226] = {
+        item = "ruby_earring_silver",
+        price = math.random(250, 300)
+    },
+    [227] = {
+        item = "sapphire_earring_silver",
+        price = math.random(250, 300)
+    },
+
+        -- // Normal Cards \\ --
+        [228] = {
+            item = "haunter",
+            price = math.random(10, 50)
+        },
+        [229] = {
+            item = "hitmonchan",
+            price = math.random(10, 50)
+        },
+        [230] = {
+            item = "hitmonlee",
+            price = math.random(10, 50)
+        },
+        [231] = {
+            item = "horsea",
+            price = math.random(10, 50)
+        },
+    
+        [232] = {
+            item = "hypno",
+            price = math.random(10, 50)
+        },
+        [233] = {
+            item = "ivysaur",
+            price = math.random(10, 50)
+        },
+        [234] = {
+            item = "jigglypuff",
+            price = math.random(10, 50)
+        },
+        [235] = {
+            item = "jolteon",
+            price = math.random(10, 50)
+        },
+    
+        [236] = {
+            item = "jynx",
+            price = math.random(10, 50)
+        },
+        [237] = {
+            item = "kabuto",
+            price = math.random(10, 50)
+        },
+        [238] = {
+            item = "kabutops",
+            price = math.random(10, 50)
+        },
+        [239] = {
+            item = "kadabra",
+            price = math.random(10, 50)
+        },
+    
+        [240] = {
+            item = "kakuna",
+            price = math.random(10, 50)
+        },
+        [241] = {
+            item = "kangaskhan",
+            price = math.random(10, 50)
+        },
+        [242] = {
+            item = "kingler",
+            price = math.random(10, 50)
+        },
+        [243] = {
+            item = "koffing",
+            price = math.random(10, 50)
+        },
+    
+        [244] = {
+            item = "krabby",
+            price = math.random(10, 50)
+        },
+        [245] = {
+            item = "lapras",
+            price = math.random(10, 50)
+        },
+        [246] = {
+            item = "lickitung",
+            price = math.random(10, 50)
+        },
+        [247] = {
+            item = "machamp",
+            price = math.random(10, 50)
+        },
+        [248] = {
+            item = "machoke",
+            price = math.random(10, 50)
+        },
+        [249] = {
+            item = "machop",
+            price = math.random(10, 50)
+        },
+        [250] = {
+            item = "magikarp",
+            price = math.random(10, 50)
+        },
 }
 
 
