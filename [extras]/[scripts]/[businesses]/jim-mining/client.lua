@@ -650,7 +650,7 @@ end)
 
 ------------------------------------------------------------
 RegisterNetEvent('jim-mining:SellOre', function(data)
-	local list = {"goldingot", "silveringot", "copperore", "ironore", "goldore", "silverore", "carbon"}
+	local list = {"copperore", "ironore", "goldore", "silverore", "carbon"}
 	local sellMenu = {
 		{ header = Loc[Config.Lan].info["header_oresell"], txt = Loc[Config.Lan].info["oresell_txt"], isMenuHeader = true },
 		{ icon = "fas fa-circle-xmark", header = "", txt = Loc[Config.Lan].info["close"], params = { event = "jim-mining:CraftMenu:Close" } } }

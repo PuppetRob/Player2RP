@@ -39,15 +39,15 @@ Config = {
 			{ name = "Foundary", coords = vector3(1112.29, -2009.9, 31.46), sprite = 436, col = 1, blipTrue = false, },
 		},
 		["Washing"] = {
-			{ name = "Stone Washing", coords = vector3(1840.18, 412.42, 160.49), sprite = 467, col = 3, disp = 6, blipTrue = false }, -- Mountains
-			{ name = "Stone Washing", coords = vector3(1870.91, 395.1, 160.16), sprite = 467, col = 3, disp = 6, blipTrue = false },
+		--	{ name = "Stone Washing", coords = vector3(1840.18, 412.42, 160.49), sprite = 467, col = 3, disp = 6, blipTrue = false }, -- Mountains
+		--	{ name = "Stone Washing", coords = vector3(1870.91, 395.1, 160.16), sprite = 467, col = 3, disp = 6, blipTrue = false },
 
 			{ name = "Stone Washing", coords = vector3(-432.59, 2936.84, 13.87), sprite = 467, col = 3, disp = 6, blipTrue = true }, -- Stream Blip
 			{ name = "Stone Washing", coords = vector3(-422.37, 2946.18, 13.77), sprite = 467, col = 3, blipTrue = false },
 			{ name = "Stone Washing", coords = vector3(-443.21, 2926.5, 13.62), sprite = 467, col = 3, blipTrue = false },
 			{ name = "Stone Washing", coords = vector3(-455.48, 2917.16, 13.52), sprite = 467, col = 3, blipTrue = false },
 
-			{ name = "Stone Washing", coords = vector3(2500.64, 6129.4, 162.46), sprite = 467, col = 3, disp = 6, blipTrue = false }, -- Gordo
+		--	{ name = "Stone Washing", coords = vector3(2500.64, 6129.4, 162.46), sprite = 467, col = 3, disp = 6, blipTrue = false }, -- Gordo
 
 			{ name = "Stone Washing", coords = vector3(907.06, 4377.66, 30.28), sprite = 467, col = 3, disp = 6, blipTrue = true }, -- Alamo Sea
 			{ name = "Stone Washing", coords = vector3(894.14, 4386.56, 30.24), sprite = 467, col = 3, blipTrue = false },
@@ -55,14 +55,14 @@ Config = {
 			{ name = "Stone Washing", coords = vector3(912.88, 4365.7, 30.39), sprite = 467, col = 3, blipTrue = false },
 		},
 		["Panning"] = {
-			{ name = "Gold Panning", coords = vector3(-1656.67, 2074.85, 87.37), sprite = 618, col = 5, disp = 6, blipTrue = false }, -- Vineyard
-			{ name = "Gold Panning", coords = vector3(-1672.06, 2070.89, 91.68), sprite = 618, col = 5, blipTrue = false },
+		--	{ name = "Gold Panning", coords = vector3(-1656.67, 2074.85, 87.37), sprite = 618, col = 5, disp = 6, blipTrue = false }, -- Vineyard
+		--	{ name = "Gold Panning", coords = vector3(-1672.06, 2070.89, 91.68), sprite = 618, col = 5, blipTrue = false },
 
 			{ name = "Gold Panning", coords = vector3(-1273.16, 1898.19, 100.82), sprite = 618, col = 5, disp = 6, blipTrue = false }, -- Tongva
 
-			{ name = "Gold Panning", coords = vector3(-1551.31, 1444.15, 116.44), sprite = 618, col = 5, disp = 6, blipTrue = false }, -- Tongva
-			{ name = "Gold Panning", coords = vector3(-1565.47, 1431.46, 117.1), sprite = 618, col = 5, blipTrue = false },
-			{ name = "Gold Panning", coords = vector3(-1578.39, 1419.59, 118.13), sprite = 618, col = 5, blipTrue = false },
+		--	{ name = "Gold Panning", coords = vector3(-1551.31, 1444.15, 116.44), sprite = 618, col = 5, disp = 6, blipTrue = false }, -- Tongva
+		--	{ name = "Gold Panning", coords = vector3(-1565.47, 1431.46, 117.1), sprite = 618, col = 5, blipTrue = false },
+		--	{ name = "Gold Panning", coords = vector3(-1578.39, 1419.59, 118.13), sprite = 618, col = 5, blipTrue = false },
 
 			{ name = "Gold Panning", coords = vector3(-850.78, 4433.95, 14.21), sprite = 618, col = 5, disp = 6, blipTrue = false }, -- Wilderness
 		},
@@ -157,52 +157,52 @@ Config = {
         ['ironore'] = 20,
         ['carbon'] = 10,
 
-        ['goldingot'] = 250,
-        ['silveringot'] = 150,
+--[[         ['goldingot'] = 250,
+        ['silveringot'] = 150, ]]
 
-        ['uncut_diamond'] = 50,
-        ['uncut_emerald'] = 40,
-        ['uncut_ruby'] = 30,
-        ['uncut_sapphire'] = 20,
+        ['uncut_diamond'] = 90,
+        ['uncut_emerald'] = 90,
+        ['uncut_ruby'] = 90,
+        ['uncut_sapphire'] = 90,
 
-        ['diamond'] = 80,
-        ['emerald'] = 70,
-        ['ruby'] = 60,
-        ['sapphire'] = 50,
+        ['diamond'] = 125,
+        ['emerald'] = 125,
+        ['ruby'] = 125,
+        ['sapphire'] = 125,
 
-        ['diamond_ring'] = 200,
-        ['emerald_ring'] = 190,
-        ['ruby_ring'] = 180,
-        ['sapphire_ring'] = 170,
-        ['diamond_ring_silver'] = 160,
-        ['emerald_ring_silver'] = 150,
-        ['ruby_ring_silver'] = 140,
-        ['sapphire_ring_silver'] = 130,
+        ['diamond_ring'] = 325,
+        ['emerald_ring'] = 325,
+        ['ruby_ring'] = 325,
+        ['sapphire_ring'] = 325,
+        ['diamond_ring_silver'] = 325,
+        ['emerald_ring_silver'] = 325,
+        ['ruby_ring_silver'] = 325,
+        ['sapphire_ring_silver'] = 325,
 
-        ['diamond_necklace'] = 200,
-        ['emerald_necklace'] = 190,
-        ['ruby_necklace'] = 180,
-        ['sapphire_necklace'] = 170,
-        ['diamond_necklace_silver'] = 160,
-        ['emerald_necklace_silver'] = 150,
-        ['ruby_necklace_silver'] = 140,
-        ['sapphire_necklace_silver'] = 130,
+        ['diamond_necklace'] = 325,
+        ['emerald_necklace'] = 325,
+        ['ruby_necklace'] = 325,
+        ['sapphire_necklace'] = 325,
+        ['diamond_necklace_silver'] = 325,
+        ['emerald_necklace_silver'] = 325,
+        ['ruby_necklace_silver'] = 325,
+        ['sapphire_necklace_silver'] = 325,
 
-        ['diamond_earring'] = 200,
-        ['emerald_earring'] = 190,
-        ['ruby_earring'] = 180,
-        ['sapphire_earring'] = 170,
-        ['diamond_earring_silver'] = 160,
-        ['emerald_earring_silver'] = 150,
-        ['ruby_earring_silver'] = 140,
-        ['sapphire_earring_silver'] = 130,
+        ['diamond_earring'] = 325,
+        ['emerald_earring'] = 325,
+        ['ruby_earring'] = 325,
+        ['sapphire_earring'] = 325,
+        ['diamond_earring_silver'] = 325,
+        ['emerald_earring_silver'] = 325,
+        ['ruby_earring_silver'] = 325,
+        ['sapphire_earring_silver'] = 325,
 
-        ['gold_ring'] = 100,
-        ['goldchain'] = 100,
-        ['goldearring'] = 100,
-        ['silver_ring'] = 60,
-        ['silverchain'] = 60,
-        ['silverearring'] = 60,
+        ['gold_ring'] = 150,
+        ['goldchain'] = 150,
+        ['goldearring'] = 150,
+        ['silver_ring'] = 125,
+        ['silverchain'] = 125,
+        ['silverearring'] = 125,
 
 	},
 
@@ -292,7 +292,7 @@ Config = {
 Crafting = {
 	SmeltMenu = {
 		{ ["copper"] = { ["copperore"] = 1 }, ['amount'] = 4 },
-		{ ["goldingot"] = { ["goldore"] = 1 } },
+		{ ["goldingot"] = { ["goldore"] = 2 } },
 		{ ["goldingot"] = { ["goldchain"] = 3 } },
 		{ ["goldingot"] = { ["gold_ring"] = 4 } },
 		{ ["silveringot"] = { ["silverore"] = 1 } },

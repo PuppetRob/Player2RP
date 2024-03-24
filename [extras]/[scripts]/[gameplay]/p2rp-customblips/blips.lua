@@ -6,7 +6,7 @@ local blips = {
   {title="Gold Mining", colour=5, id=618, x = -1273.16, y = 1898.18, z = 100.82, scale = 0.65},
 
   {title="Foundry", colour=1, id=436, x =  1112.29, y = -2009.9, z = 31.46, scale = 0.65}, -- Smelter
-  {title="Recycle Centre", colour=2, id=365, x =  746.83, y = -1399.59, z = 26.61, scale = 0.7}, -- Smelter
+ -- {title="Recycle Centre", colour=2, id=365, x =  746.83, y = -1399.59, z = 26.61, scale = 0.7}, -- Smelter
 
    {title="Ore Buyer", colour=9, id=434, x = 304.91, y = 2821.12, z = 43.44, scale = 0.65}, -- Ore Buyer
    {title="Jewel Buyer", colour=9, id=434, x = 1651.49, y = 4879.89, z = 41.16, scale = 0.65}, -- Jewel Buyer
