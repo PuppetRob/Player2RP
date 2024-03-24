@@ -112,7 +112,7 @@ Config.Bags = {
           size = 100000,
           cloth = {
                male = {
-                    ["bag"] = { item = 82, texture = 0 }
+                    ["bag"] = { item = 125, texture = 0 }
                },
                female = {
                     ["bag"] = { item = 123, texture = 0 }
