@@ -2530,6 +2530,7 @@ underglow                   = { name = 'underglow', label = 'Underglow LEDS', we
       briefcaselockpicker          = { name = "briefcaselockpicker", label = "Briefcase Lockpicker", weight = 500, type = "item", image = "lockpick.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Briefcase Lockpicker" },
 
 
+      ['gruppesechstablet'] 			 = {['name'] = 'gruppesechstablet', 				['label'] = 'Gruppe Sechs Tablet', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'gruppesechstablet.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A nice device that allows you to rob the gruppe sechs transports'},
 
 
     }
