@@ -13,6 +13,7 @@ QBShared.Jobs = {
 	hotdog = { label = 'Hotdog', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Sales', payment = 50 } } },
 	mower = { label = 'Gardener', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Gardener', payment = 50 } } },
 	windowcleaner = { label = 'Window Cleaner', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Window Cleaner', payment = 50 } } },
+	security = { label = 'Gruppe Sechs', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Security Driver', payment = 50 } } },
 
 	-- // Emergency Services \\ --
 
