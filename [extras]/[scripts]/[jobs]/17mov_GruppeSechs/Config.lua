@@ -10,8 +10,8 @@ Config.UseTarget = true                -- Change it to true if you want to use a
 Config.RequiredJob = "security"             -- Set to "none" if you dont want using jobs. If you are using target, you have to set "job" parameter inside every export in target.lua
 Config.RequireJobAlsoForFriends = true          -- If it's false, then only host needs to have the job, if it's true then everybody from group needs to have the Config.RequiredJob
 Config.RequireOneFriendMinimum = false  -- Set to true if you want to force players to create teams
-Config.Reward = 5000                    -- Complete transport will give the team this value. 
-Config.GiveRewardAfterHeist = true      -- Set to false, if you don't want to give players money after they have got robbed.
+Config.Reward = 8000                    -- Complete transport will give the team this value. 
+Config.GiveRewardAfterHeist = false      -- Set to false, if you don't want to give players money after they have got robbed.
 Config.JobCooldown = 0 * 60 -- 10 * 60            -- 0 minutes cooldown between making jobs (in brackets there's example for 10 minutes)
 Config.GiveKeysToAllLobby = true                -- Set to false if you want to give keys only for group creator while starting job
 Config.ProgressBarOffset = "25px"                   -- Value in px of counter offset on screen
@@ -69,7 +69,7 @@ Config.AttachSettings = {
 
 Config.AutoCashGrabbing = true
 
-Config.TabletPassword = "password"              -- Password for tablet
+Config.TabletPassword = "p2rp"              -- Password for tablet
 Config.TabletItemName = "gruppesechstablet"     -- Item you need to use to open the tablet
 
 Config.DefaultMessages = {
@@ -349,7 +349,7 @@ Config.BankLocations = {
             -- For k4mb1 Map:
             -- [-2075524880] = true,
             -- For gabz map:
-            -- [-2018598162] = true,
+            [-2018598162] = true,
             [-1645229742] = true,
             [-1474093263] = true,
         },
@@ -379,7 +379,7 @@ Config.BankLocations = {
             -- For k4mb1 Map:
             -- [-2075524880] = true,
             -- For gabz map:
-            -- [-2018598162] = true,
+             [-2018598162] = true,
             [-1645229742] = true,
             [-1474093263] = true,
         },
@@ -409,7 +409,7 @@ Config.BankLocations = {
             -- For k4mb1 Map:
             -- [-2075524880] = true,
             -- For gabz map:
-            -- [-2018598162] = true,
+             [-2018598162] = true,
             [-1645229742] = true,
             [-1474093263] = true,
         },
@@ -439,7 +439,7 @@ Config.BankLocations = {
             -- For k4mb1 Map:
             -- [-2075524880] = true,
             -- For gabz map:
-            -- [-2018598162] = true,
+             [-2018598162] = true,
             [-1645229742] = true,
             [-1474093263] = true,
         },
@@ -469,7 +469,7 @@ Config.BankLocations = {
             -- For k4mb1 Map:
             -- [-2075524880] = true,
             -- For gabz map:
-            -- [-2018598162] = true,
+             [-2018598162] = true,
             [-1645229742] = true,
             [-1474093263] = true,
         },
@@ -499,7 +499,7 @@ Config.BankLocations = {
             -- For k4mb1 Map:
             -- [-2075524880] = true,
             -- For gabz map:
-            -- [-2018598162] = true,
+            [-2018598162] = true,
             [-1645229742] = true,
             [-1474093263] = true,
         },
