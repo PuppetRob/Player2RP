@@ -62,6 +62,10 @@ Config.PawnItems = {
         item = "ps5",
         price = math.random(100, 220)
     },
+    [11] = {
+        item = "magikarp",
+        price = math.random(10, 50)
+    },
     [12] = {
         item = "binoculars",
         price = math.random(100, 220)
@@ -1090,11 +1094,7 @@ Config.PawnItems = {
         [249] = {
             item = "machop",
             price = math.random(10, 50)
-        },
-        [250] = {
-            item = "magikarp",
-            price = math.random(10, 50)
-        },
+        }
 }
 
 
