@@ -37,32 +37,32 @@ Config.RewardItemsToGive = {
      {
          item_name = "metalscrap",
          chance = 100,
-         amountPerBag = 20,
+         amountPerBag = 5,
      },
      {
         item_name = "iron",
         chance = 100,
-        amountPerBag = 20,
+        amountPerBag = 5,
     },
     {
         item_name = "steel",
         chance = 100,
-        amountPerBag = 20,
+        amountPerBag = 5,
     },
     {
         item_name = "plastic",
         chance = 100,
-        amountPerBag = 20,
+        amountPerBag = 5,
     },
     {
         item_name = "rubber",
         chance = 100,
-        amountPerBag = 20,
+        amountPerBag = 5,
     },
     {
         item_name = "glass",
         chance = 100,
-        amountPerBag = 20,
+        amountPerBag = 5,
     },
 }
 
