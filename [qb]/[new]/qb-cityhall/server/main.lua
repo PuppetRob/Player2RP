@@ -3,7 +3,9 @@ local availableJobs = { --[[ If you change this you need to go in app.js and sea
     ["trucker"] = "Trucker",
     ["taxi"] = "Taxi Driver",
     ["bus"] = "Bus Driver",
-    ["windowcleaner"] = "Window Cleaner",
+    ["windowcleaner"] = "(M) Window Cleaner",
+    ["garbage"] = "(M) Garbage Collection",
+    ["security"] = "(M) Gruppe Sechs",
 }
 
 -- Functions
