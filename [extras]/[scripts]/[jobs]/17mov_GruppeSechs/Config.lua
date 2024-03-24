@@ -6,7 +6,7 @@ Config.UseBuiltInNotifications = true   -- Set to false if you want to use ur fr
 
 Config.letBossSplitReward = true                    -- If it's true, then boss can manage whole party rewards percent in menu. If you'll set it to false, then everybody will get same amount.
 Config.multiplyRewardWhileWorkingInGroup = true     -- If it's false, then reward will stay by default. For example $1000 for completing whole job. If you'll set it to true, then the payout will depend on how many players is there in the group. For example, if for full job there's $1000, then if player will work in 4 member group, the reward will be $4000. (baseReward * partyCount)
-Config.UseTarget = false                -- Change it to true if you want to use a target system. All setings about the target system are under target.lua file.
+Config.UseTarget = true                -- Change it to true if you want to use a target system. All setings about the target system are under target.lua file.
 Config.RequiredJob = "security"             -- Set to "none" if you dont want using jobs. If you are using target, you have to set "job" parameter inside every export in target.lua
 Config.RequireJobAlsoForFriends = true          -- If it's false, then only host needs to have the job, if it's true then everybody from group needs to have the Config.RequiredJob
 Config.RequireOneFriendMinimum = false  -- Set to true if you want to force players to create teams
@@ -141,7 +141,7 @@ Config.DeliveryLocations = {
     { coords = vec3(-1296.69287, -1249.671, 3.1778616), rotation = vec3(0.0, -15.0, 0.0) },
 }
 
-Config.RestrictBlipToRequiredJob = false            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
+Config.RestrictBlipToRequiredJob = true            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
 Config.Blips = { -- Here you can configure Company blip.
     [1] = {
         Sprite = 460,
