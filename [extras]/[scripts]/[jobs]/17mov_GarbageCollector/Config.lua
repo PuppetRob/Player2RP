@@ -39,6 +39,31 @@ Config.RewardItemsToGive = {
          chance = 100,
          amountPerBag = 20,
      },
+     {
+        item_name = "iron",
+        chance = 100,
+        amountPerBag = 20,
+    },
+    {
+        item_name = "steel",
+        chance = 100,
+        amountPerBag = 20,
+    },
+    {
+        item_name = "plastic",
+        chance = 100,
+        amountPerBag = 20,
+    },
+    {
+        item_name = "rubber",
+        chance = 100,
+        amountPerBag = 20,
+    },
+    {
+        item_name = "glass",
+        chance = 100,
+        amountPerBag = 20,
+    },
 }
 
 Config.EnableExploitFix = false                     -- If somebody is close to you, you'll not able to pick up bag. This will prevent exploit of copying bugs but will be also annoying
@@ -46,7 +71,7 @@ Config.RequiredItem = "none"                        -- Set it to anything you wa
 Config.RequireItemFromWholeTeam = true              -- If it's false, then only host needs to have the required item, otherwise all team needs it.
 
 Config.RequireFullJob = false                       -- Set it to true, if you want players first to have 100% of progress, otherwise they'll not be able to end job.
-Config.RequireWorkClothes = false                   -- Set it to true, to change players clothes everytime when they're starting job.
+Config.RequireWorkClothes = true                   -- Set it to true, to change players clothes everytime when they're starting job.
 
 Config.RestrictBlipToRequiredJob = true            -- Set to true, to hide job blip for players, who dont have RequiredJob. If requried job is "none", then this option will not have any effect.
 Config.Blips = { -- Here you can configure Company blip.
