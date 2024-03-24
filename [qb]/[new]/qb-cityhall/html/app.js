@@ -236,6 +236,14 @@ $(document).on("click", ".job-page-block", function(e){
             let value2 = getComputedStyle(document.documentElement).getPropertyValue('--percentage2');
             $(".stats1").html(`${value1}%`);
             $(".stats2").html(`${value2}%`);
+        } else if (selectedJobId == "hotdog"){
+            $(".job-image").attr("src", "./img/Avatars/hotdog.png");
+            document.documentElement.style.setProperty('--percentage', bushard);
+            document.documentElement.style.setProperty('--percentage2', busheavy);
+            let value1 = getComputedStyle(document.documentElement).getPropertyValue('--percentage');
+            let value2 = getComputedStyle(document.documentElement).getPropertyValue('--percentage2');
+            $(".stats1").html(`${value1}%`);
+            $(".stats2").html(`${value2}%`);
         } else if (selectedJobId == "windowcleaner"){
             $(".job-image").attr("src", "./img/Avatars/windowcleaner.png");
             document.documentElement.style.setProperty('--percentage', windowcleanerhard);
@@ -245,7 +253,7 @@ $(document).on("click", ".job-page-block", function(e){
             $(".stats1").html(`${value1}%`);
             $(".stats2").html(`${value2}%`);
         } else if (selectedJobId == "garbage"){
-            $(".job-image").attr("src", "./img/Avatars/windowcleaner.png");
+            $(".job-image").attr("src", "./img/Avatars/garbage.png");
             document.documentElement.style.setProperty('--percentage', windowcleanerhard);
             document.documentElement.style.setProperty('--percentage2', windowcleanerheavy);
             let value1 = getComputedStyle(document.documentElement).getPropertyValue('--percentage');
@@ -253,7 +261,7 @@ $(document).on("click", ".job-page-block", function(e){
             $(".stats1").html(`${value1}%`);
             $(".stats2").html(`${value2}%`);
         } else if (selectedJobId == "security"){
-            $(".job-image").attr("src", "./img/Avatars/windowcleaner.png");
+            $(".job-image").attr("src", "./img/Avatars/sechs.png");
             document.documentElement.style.setProperty('--percentage', windowcleanerhard);
             document.documentElement.style.setProperty('--percentage2', windowcleanerheavy);
             let value1 = getComputedStyle(document.documentElement).getPropertyValue('--percentage');
