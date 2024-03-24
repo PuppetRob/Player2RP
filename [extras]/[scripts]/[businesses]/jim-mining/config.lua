@@ -170,7 +170,7 @@ Config = {
         ['ruby'] = 125,
         ['sapphire'] = 125,
 
-        ['diamond_ring'] = 325,
+--[[          ['diamond_ring'] = 325,
         ['emerald_ring'] = 325,
         ['ruby_ring'] = 325,
         ['sapphire_ring'] = 325,
@@ -195,14 +195,14 @@ Config = {
         ['diamond_earring_silver'] = 325,
         ['emerald_earring_silver'] = 325,
         ['ruby_earring_silver'] = 325,
-        ['sapphire_earring_silver'] = 325,
+        ['sapphire_earring_silver'] = 325, ]]
 
-        ['gold_ring'] = 150,
-        ['goldchain'] = 150,
-        ['goldearring'] = 150,
-        ['silver_ring'] = 125,
-        ['silverchain'] = 125,
-        ['silverearring'] = 125,
+        ['gold_ring'] = 110,
+        ['goldchain'] = 110,
+        ['goldearring'] = 110,
+        ['silver_ring'] = 90,
+        ['silverchain'] = 90,
+        ['silverearring'] = 90, 
 
 	},
 
