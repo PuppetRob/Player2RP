@@ -1,6 +1,6 @@
 Config.Locations["gabzkois"] = {
-    zoneEnabled = false,
-    chairsEnabled = false,
+    zoneEnabled = true,
+    chairsEnabled = true,
     job = "kois", -- Set this to the required job
     label = "Kois",
     MLO = "koi",

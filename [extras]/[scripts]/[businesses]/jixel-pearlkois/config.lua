@@ -9,7 +9,7 @@ Config = {
 	Inv = "qb", -- set to "ox" if using OX Inventory
 	Menu = "qb", -- set to "ox" if using ox_lib context menus
 	Notify = "qb",
-	JimConsumables = false, -- Enable this to disable this scripts control of food/drink items
+	JimConsumables = true, -- Enable this to disable this scripts control of food/drink items
 	JimShop = false, -- Enable this to use jim-shops for buying ingredients
 }
 Ingredients = {
@@ -43,9 +43,9 @@ Ingredients = {
 		label = "Food Fridge Store",
 		slots = 16,
 		items = {
-		--	{ name = "codfish", price = 0, amount = 50, info = {}, type = "item", slot = 1, },
-		--	{ name = "salmon", price = 0, amount = 50, info = {}, type = "item", slot = 2, },
-		--	{ name = "tuna", price = 0, amount = 50, info = {}, type = "item", slot = 3, },
+			{ name = "cod", price = 0, amount = 50, info = {}, type = "item", slot = 1, },
+			{ name = "salmon", price = 0, amount = 50, info = {}, type = "item", slot = 2, },
+			{ name = "tuna", price = 0, amount = 50, info = {}, type = "item", slot = 3, },
 			{ name = "scallops", price = 0, amount = 50, info = {}, type = "item", slot = 4, },
 			{ name = "lobster", price = 0, amount = 50, info = {}, type = "item", slot = 5,},
 			{ name = "mussels", price = 0, amount = 50, info = {}, type = "item", slot = 6, },
@@ -63,14 +63,14 @@ Ingredients = {
 			{ name = "pasta", price = 0, amount = 50, info = {}, type = "item", slot = 18, },
 			{ name = "banana", price = 0, amount = 50, info = {}, type = "item", slot = 19, },
 			{ name = "orange", price = 0, amount = 50, info = {}, type = "item", slot = 20, },
-		--	{ name = "fish", price = 0, amount = 50, info = {}, type = "item", slot = 21, },
+			{ name = "fish", price = 0, amount = 50, info = {}, type = "item", slot = 21, },
 		},
 	},
 	FoodItemsKoi = {
 		label = "Food Fridge Store",
 		slots = 17,
 		items = {
-			{ name = "codfish", price = 0, amount = 50, info = {}, type = "item", slot = 1, },
+			{ name = "cod", price = 0, amount = 50, info = {}, type = "item", slot = 1, },
 			{ name = "salmon", price = 0, amount = 50, info = {}, type = "item", slot = 2, },
 			{ name = "tuna", price = 0, amount = 50, info = {}, type = "item", slot = 3, },
 			{ name = "scallops", price = 0, amount = 50, info = {}, type = "item", slot = 4, },
@@ -118,16 +118,16 @@ Pearls = {
 	},
 	Oven = {
 		{ ['fishnchips'] = { ['fishfingers'] = 1, ['frenchfries'] = 1, } },
-		{ ['tunapog'] = { ['tuna-fish'] = 1, ['cheddar'] = 1, } },
+		{ ['tunapog'] = { ['tuna'] = 1, ['cheddar'] = 1, } },
 		{ ['steriyaki'] = { ['meat'] = 1, ['pasta'] = 1, } },
 		{ ['lobstertail'] = { ['lobster'] = 1, ['lettuce'] = 1, } },
 		{ ['smokedsalmon'] = { ['salmon'] = 1, ['lettuce'] = 1, } },
 		{ ['filetmignon'] = { ['meat'] = 1, ['cheddar'] = 1, } },
-		{ ['mackrel'] = { ['catfish'] = 1, } },
+		{ ['mackrel'] = { ['fish'] = 1, } },
 	},
 	Fryer = {
 		{ ['frenchfries'] = { ['slicedpotatoes'] = 1, } },
-		{ ['fishfingers'] = { ['codfish'] = 1, } },
+		{ ['fishfingers'] = { ['cod'] = 1, } },
 	},
 	ChopBlock = {
 		{ ['slicedpotatoes'] = { ['potatoes'] = 1, }, ['amount'] = 3 },
@@ -163,7 +163,7 @@ Koi = {
 	},
 	Oven = {
 		{ ['fishnchips'] = { ['fishfingers'] = 1, ['frenchfries'] = 1, } },
-		{ ['tunapog'] = { ['tuna-fish'] = 1, ['cheddar'] = 1, } },
+		{ ['tunapog'] = { ['tuna'] = 1, ['cheddar'] = 1, } },
 		{ ['steriyaki'] = { ['meat'] = 1, ['pasta'] = 1, } },
 		{ ['fdicks'] = { ['fishfingers'] = 1, } },
 		{ ['splate'] = { ['meat'] = 1, ['frenchfries'] = 1, } },
@@ -175,11 +175,11 @@ Koi = {
 	},
 	Fryer = {
 		{ ['frenchfries'] = { ['slicedpotatoes'] = 1, } },
-		{ ['fishfingers'] = { ['codfish'] = 1, } },
+		{ ['fishfingers'] = { ['cod'] = 1, } },
 	},
 	ChopBlock = {
 		{ ['sushi'] = { ['slicedfish'] = 1, ['rice'] = 1, ['avocado'] = 1, ['slicedcarrot'] = 1}, ['amount'] = 3 },
-		{ ['slicedfish'] = { ['codfish'] = 1, }, ['amount'] = 3 },
+		{ ['slicedfish'] = { ['cod'] = 1, }, ['amount'] = 3 },
 		{ ['slicedonions'] = { ['onions'] = 1, },  ['amount'] = 3 },
 		{ ['slicedcarrot'] = { ['carrot'] = 1, },  ['amount'] = 3 },
 		{ ['slicedpotatoes'] = { ['potatoes'] = 1, }, ['amount'] = 3 },
@@ -193,7 +193,7 @@ Koi = {
 		{ ['pisswasser3'] = { } },
 	},
 	Sushi = {
-		{ ['sushi'] = { ['eelfish'] = 1, ['tuna-fish'] = 1, ['rice'] = 1} },
+		{ ['sushi'] = { ['nori'] = 1, ['tuna'] = 1, ['rice'] = 1} },
 	}
 }
 

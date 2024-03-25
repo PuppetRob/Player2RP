@@ -13,7 +13,7 @@ Config.Locations["gabzpearls"] = {
         vec2(-1797.5230712891, -1189.0334472656),
         vec2(-1837.7026367188, -1225.6320800781)
     },
-    blip = vector3(-1826.28, -1197.81, 14.31), blipcolor = 77, blipsprite = 267, blipscale = 0.55, blipdisp = 6, blipcat = nil,
+    blip = vector3(-1826.28, -1197.81, 14.31), blipcolor = 5, blipsprite = 106, blipscale = 0.7, blipdisp = 6, blipcat = nil,
     garage = { spawn = vector4(-1812.39, -1191.22, 13.02, 215.34), out = vector4(-1809.3, -1196.06, 13.02, 313.04), list = { ["panto"] = {}, ["burrito3"] = {} } },
     Booth = {
         enableBooth = false,
