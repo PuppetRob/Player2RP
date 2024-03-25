@@ -355,6 +355,7 @@ Config = {
 			{ coords = vec4(-483.48, 6008.65, 31.27, 226.9), prop = true }, -- Paleto 
 			{ coords = vec4(1777.72, 3628.17, 34.55, 31.05), prop = true }, -- Sandy Hospital
 			{ coords = vec4(1864.2, 3701.99, 33.71, 125.09), prop = true }, -- Sandy Hospital
+			{ coords = vec4(1560.16, 808.84, 77.12, 56.61), prop = true }, -- Highway Patrol
 		},
 		CosmeticTable = { 			-- This controls what will appear in the emergency mech bench, "false" to hide it
 			["Repair" ] = true,
