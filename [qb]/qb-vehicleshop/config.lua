@@ -66,6 +66,70 @@ Config.Shops = {
             },
         },
     },
+    ['pdmx'] = {
+        ['Type'] = 'free-use', -- no player interaction is required to purchase a car
+        ['Zone'] = {
+            ['Shape'] = {      --polygon that surrounds the shop
+                vector2(-1267.2431640625, -376.81649780273),
+                vector2(-1275.2344970703, -356.0036315918),
+                vector2(-1235.6983642578, -333.12744140625),
+                vector2(-1225.3665771484, -353.48822021484)
+            },
+            ['minZ'] = 35.0,  -- min height of the shop zone
+            ['maxZ'] = 42.0,  -- max height of the shop zone
+            ['size'] = 2.75, -- size of the vehicles zones
+        },
+        ['Job'] = 'none',                                            -- Name of job or none
+        ['ShopLabel'] = 'PDMX',                 -- Blip name
+        ['showBlip'] = false,                                         -- true or false
+        ['blipSprite'] = 326,                                        -- Blip sprite
+        ['blipColor'] = 3,   
+        
+        
+        ['TestDriveTimeLimit'] = 0.5, -- Time in minutes until the vehicle gets deleted
+        ['Location'] = vector3(-1251.36, -357.93, 36.91), -- Blip Location
+        ['ReturnLocation'] = vector3(-1237.4, -340.85, 37.33), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+        ['VehicleSpawn'] = vector4(-1233.18, -347.16, 37.33, 19.59), -- Spawn location when vehicle is bought
+        ['TestDriveSpawn'] = vector4(-1240.26, -355.58, 37.33, 289.09), -- Spawn location for test drive
+        ['FinanceZone'] = vector3(-1251.37, -347.04, 37.33),          -- Where the finance menu is located
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(-1255.74, -366.88, 37.17, 115.42), -- where the vehicle will spawn on display
+                defaultVehicle = 'dominator', -- Default display vehicle
+                chosenVehicle = 'dominator', -- Same as default but is dynamically changed when swapping vehicles
+            },
+            [2] = {
+                coords = vector4(-1269.78, -364.77, 37.18, 298.98),
+                defaultVehicle = 'blista',
+                chosenVehicle = 'blista'
+            },
+            [3] = {
+                coords = vector4(-1271.13, -360.48, 37.18, 252.32),
+                defaultVehicle = 'asterope',
+                chosenVehicle = 'asterope'
+            },
+            [4] = {
+                coords = vector4(-1268.65, -356.13, 37.18, 213.38),
+                defaultVehicle = 'tailgater',
+                chosenVehicle = 'tailgater'
+            },
+            [5] = {
+                coords = vector4(-1264.32, -353.45, 37.18, 209.28),
+                defaultVehicle = 'asbo',
+                chosenVehicle = 'asbo'
+            },
+            [6] = {
+                coords = vector4(-1242.99, -356.58, 40.57, 91.91),
+                defaultVehicle = 'cavalcade',
+                chosenVehicle = 'cavalcade'
+            },
+            [7] = {
+                coords = vector4(-1245.53, -351.19, 40.57, 92.35),
+                defaultVehicle = 'fq2',
+                chosenVehicle = 'fq2'
+            },
+        },
+    },
 --[[     ['luxuryautos'] = {
         ['Type'] = 'managed', -- meaning a real player has to sell the car
         ['Zone'] = {

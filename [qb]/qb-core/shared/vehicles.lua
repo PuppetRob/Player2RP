@@ -10,9 +10,9 @@ local Vehicles = {
         price = 4000,          -- The price that the vehicle sells for
         category = 'compacts', -- Catgegory of the vehilce, stick with GetVehicleClass() options https://docs.fivem.net/natives/?_0x29439776AAA00A62
         type = 'automobile',   -- Vehicle type, refer here https://docs.fivem.net/natives/?_0x6AE51D4B & here https://docs.fivem.net/natives/?_0xA273060E
-        shop = 'pdm',          -- Can be a single shop or multiple shops. For multiple shops for example {'shopname1','shopname2','shopname3'}
+        shop = 'pdmx',          -- Can be a single shop or multiple shops. For multiple shops for example {'shopname1','shopname2','shopname3'}
     },
-    { model = 'blista',        name = 'Blista',                        brand = 'Dinka',           price = 13000,   category = 'compacts',       type = 'automobile', shop = 'pdm' },
+    { model = 'blista',        name = 'Blista',                        brand = 'Dinka',           price = 13000,   category = 'compacts',       type = 'automobile', shop = 'pdmx' },
     { model = 'brioso',        name = 'Brioso R/A',                    brand = 'Grotti',          price = 20000,   category = 'compacts',       type = 'automobile', shop = 'pdm' },
     { model = 'club',          name = 'Club',                          brand = 'BF',              price = 8000,    category = 'compacts',       type = 'automobile', shop = 'pdm' },
     { model = 'dilettante',    name = 'Dilettante',                    brand = 'Karin',           price = 9000,    category = 'compacts',       type = 'automobile', shop = 'pdm' },
@@ -35,7 +35,7 @@ local Vehicles = {
     { model = 'boor',          name = 'Boor',                          brand = 'Karin',           price = 23000,   category = 'compacts',       type = 'automobile', shop = 'pdm' },
     --- Sedans (1)
     { model = 'asea',          name = 'Asea',                          brand = 'Declasse',        price = 2500,    category = 'sedans',         type = 'automobile', shop = 'pdm' },
-    { model = 'asterope',      name = 'Asterope',                      brand = 'Karin',           price = 11000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
+    { model = 'asterope',      name = 'Asterope',                      brand = 'Karin',           price = 11000,   category = 'sedans',         type = 'automobile', shop = 'pdmx' },
     { model = 'cog55',         name = 'Cognoscenti 55',                brand = 'Enus',            price = 22000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'cognoscenti',   name = 'Cognoscenti',                   brand = 'Enus',            price = 22500,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'emperor',       name = 'Emperor',                       brand = 'Albany',          price = 4250,    category = 'sedans',         type = 'automobile', shop = 'pdm' },
@@ -54,7 +54,7 @@ local Vehicles = {
     { model = 'stretch',       name = 'Stretch',                       brand = 'Dundreary',       price = 30000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'superd',        name = 'Super Diamond',                 brand = 'Enus',            price = 70000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'surge',         name = 'Surge',                         brand = 'Cheval',          price = 10000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
-    { model = 'tailgater',     name = 'Tailgater',                     brand = 'Obey',            price = 22000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
+    { model = 'tailgater',     name = 'Tailgater',                     brand = 'Obey',            price = 22000,   category = 'sedans',         type = 'automobile', shop = 'pdmx' },
     { model = 'warrener',      name = 'Warrener',                      brand = 'Vulcar',          price = 8000,    category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'washington',    name = 'Washington',                    brand = 'Albany',          price = 9000,    category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'tailgater2',    name = 'Tailgater S',                   brand = 'Obey',            price = 51000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
@@ -78,13 +78,13 @@ local Vehicles = {
     { model = 'baller4',       name = 'Baller LE LWB',                 brand = 'Gallivanter',     price = 26000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'baller5',       name = 'Baller LE (Armored)',           brand = 'Gallivanter',     price = 78000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'baller6',       name = 'Baller LE LWB (Armored)',       brand = 'Gallivanter',     price = 82000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
-    { model = 'bjxl',          name = 'BeeJay XL',                     brand = 'Karin',           price = 19000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
+    { model = 'bjxl',          name = 'BeeJay XL',                     brand = 'Karin',           price = 19000,   category = 'suvs',           type = 'automobile', shop = 'pdmx' },
     { model = 'cavalcade',     name = 'Cavalcade',                     brand = 'Albany',          price = 14000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'cavalcade2',    name = 'Cavalcade II',                  brand = 'Albany',          price = 16500,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'contender',     name = 'Contender',                     brand = 'Vapid',           price = 35000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'dubsta',        name = 'Dubsta',                        brand = 'Benefactor',      price = 38000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'dubsta2',       name = 'Dubsta pdm',                 brand = 'Benefactor',      price = 48000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
-    { model = 'fq2',           name = 'FQ2',                           brand = 'Fathom',          price = 18500,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
+    { model = 'fq2',           name = 'FQ2',                           brand = 'Fathom',          price = 18500,   category = 'suvs',           type = 'automobile', shop = 'pdmx' },
     { model = 'granger',       name = 'Granger',                       brand = 'Declasse',        price = 42000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'gresley',       name = 'Gresley',                       brand = 'Bravado',         price = 25000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
     { model = 'habanero',      name = 'Habanero',                      brand = 'Emperor',         price = 20000,   category = 'suvs',           type = 'automobile', shop = 'pdm' },
@@ -141,7 +141,7 @@ local Vehicles = {
     { model = 'clique',        name = 'Clique',                        brand = 'Vapid',           price = 20000,   category = 'muscle',         type = 'automobile', shop = 'pdm' },
     { model = 'coquette3',     name = 'Coquette BlackFin',             brand = 'Invetero',        price = 160000,  category = 'muscle',         type = 'automobile', shop = 'pdm' },
     { model = 'deviant',       name = 'Deviant',                       brand = 'Schyster',        price = 70000,   category = 'muscle',         type = 'automobile', shop = 'pdm' },
-    { model = 'dominator',     name = 'Dominator',                     brand = 'Vapid',           price = 38000,   category = 'muscle',         type = 'automobile', shop = 'pdm' },
+    { model = 'dominator',     name = 'Dominator',                     brand = 'Vapid',           price = 38000,   category = 'muscle',         type = 'automobile', shop = 'pdmx' },
    --- { model = 'dominator2',    name = 'Pißwasser Dominator',           brand = 'Vapid',           price = 50000,   category = 'muscle',         type = 'automobile', shop = 'pdm' },
     { model = 'dominator3',    name = 'Dominator GTX',                 brand = 'Vapid',           price = 80000,   category = 'muscle',         type = 'automobile', shop = 'pdm' },
     --{ model = 'dominator4',    name = 'Dominator Arena',               brand = 'Vapid',           price = 200000,  category = 'muscle',         type = 'automobile', shop = 'pdm' },
