@@ -94,37 +94,37 @@ Config.Shops = {
         ['FinanceZone'] = vector3(-1251.37, -347.04, 37.33),          -- Where the finance menu is located
         ['ShowroomVehicles'] = {
             [1] = {
-                coords = vector4(-1255.74, -366.88, 37.17, 115.42), -- where the vehicle will spawn on display
+                coords = vector4(-1255.74, -366.88, 36.17, 115.42), -- where the vehicle will spawn on display
                 defaultVehicle = 'dominator', -- Default display vehicle
                 chosenVehicle = 'dominator', -- Same as default but is dynamically changed when swapping vehicles
             },
             [2] = {
-                coords = vector4(-1269.78, -364.77, 37.18, 298.98),
+                coords = vector4(-1269.78, -364.77, 36.18, 298.98),
                 defaultVehicle = 'blista',
                 chosenVehicle = 'blista'
             },
             [3] = {
-                coords = vector4(-1271.13, -360.48, 37.18, 252.32),
+                coords = vector4(-1271.13, -360.48, 36.18, 252.32),
                 defaultVehicle = 'asterope',
                 chosenVehicle = 'asterope'
             },
             [4] = {
-                coords = vector4(-1268.65, -356.13, 37.18, 213.38),
+                coords = vector4(-1268.65, -356.13, 36.18, 213.38),
                 defaultVehicle = 'tailgater',
                 chosenVehicle = 'tailgater'
             },
             [5] = {
-                coords = vector4(-1264.32, -353.45, 37.18, 209.28),
+                coords = vector4(-1264.32, -353.45, 36.18, 209.28),
                 defaultVehicle = 'asbo',
                 chosenVehicle = 'asbo'
             },
             [6] = {
-                coords = vector4(-1242.99, -356.58, 40.57, 91.91),
+                coords = vector4(-1242.99, -356.58, 39.57, 91.91),
                 defaultVehicle = 'cavalcade',
                 chosenVehicle = 'cavalcade'
             },
             [7] = {
-                coords = vector4(-1245.53, -351.19, 40.57, 92.35),
+                coords = vector4(-1245.53, -351.19, 39.57, 92.35),
                 defaultVehicle = 'fq2',
                 chosenVehicle = 'fq2'
             },

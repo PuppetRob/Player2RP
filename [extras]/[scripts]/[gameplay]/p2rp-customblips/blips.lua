@@ -141,6 +141,8 @@ local blips = {
   {title="Car Rentals", colour=17, id=811, x = -500.4, y = -254.27, z = 35.72, scale = 0.65},
   {title="Car Rentals", colour=17, id=811, x = -237.14, y = 6201.52, z = 31.94, scale = 0.65},
 
+  {title="PDMX", colour=60, id=326, x = -1265.23, y = -359.87, z = 36.91, scale = 0.65},
+
   
   {title="Digital Shop", colour=34, id=564, x = -631.64, y = -279.42, z = 35.58, scale = 0.65},
   {title="Phone Shop", colour=30, id=817, x = -778.61, y = -612.73, z = 30.28, scale = 0.65},
